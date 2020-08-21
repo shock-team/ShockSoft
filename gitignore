@@ -1,0 +1,11 @@
+
+bin/
+obj/
+Debug/
+test/
+packages/
+.vs
+*.ide-shm
+*.cache
+*.ide-wal
+*.htm
