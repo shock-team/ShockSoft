@@ -8,19 +8,19 @@ namespace ShockSoft.Dominio
 {
     public class Venta
     {
-        public int idVenta { get; set; }
-        public DateTime iFecha { get; set; }
-        public List<LineaVenta> iLineas { get; set; }
-        public MetodoPago iMetodoPago { get; set; }
+        public int IdVenta { get; set; }
+        public DateTime Fecha { get; set; }
+        public List<LineaVenta> Lineas { get; set; }
+        public MetodoPago MetodoPago { get; set; }
 
         public float ObtenerTotal()
         {
             float total = 0;
-            for (int i = 0; i < iLineas.Count; i++)
+            foreach (LineaVenta linea in Lineas)
             {
-                total += iLineas[i].iCantidad * iLineas[i].iPrecioActual;
+                total += linea.Cantidad * linea.PrecioActual;
             }
-            return total * iMetodoPago.iValor;
+            return total * MetodoPago.Valor;
         }
     }
 }

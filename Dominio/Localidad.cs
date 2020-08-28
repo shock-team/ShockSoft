@@ -8,7 +8,7 @@ namespace ShockSoft.Dominio
 {
     public class Localidad
     {
-        public int idLocalidad { get; set; }
-        public string iNombre { get; set; }
+        public int IdLocalidad { get; set; }
+        public string Nombre { get; set; }
     }
 }

@@ -8,8 +8,8 @@ namespace ShockSoft.Dominio
 {
     public class Pago
     {
-        public int idPago { get; set; }
-        public DateTime iFecha { get; set; }
-        public float iMonto { get; set; }
+        public int IdPago { get; set; }
+        public DateTime Fecha { get; set; }
+        public float Monto { get; set; }
     }
 }

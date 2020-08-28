@@ -8,13 +8,19 @@ namespace ShockSoft.Dominio
 {
     public class Cliente
     {
-        public int idCliente { get; set; }
-        public string iDNI { get; set; }
-        public string iCUIT { get; set; }
-        public string iApellido { get; set; }
-        public string iNombre { get; set; }
-        public string iTelefono { get; set; }
-        public string iDireccion { get; set; }
-        public Localidad iLocalidad { get; set; }
+        public int IdCliente { get; set; }
+        public string DNI { get; set; }
+        public string CUIT { get; set; }
+        public string Apellido { get; set; }
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
+        public string Direccion { get; set; }
+        public Localidad Localidad { get; set; }
+        public CuentaCorriente CuentaCorriente { get; set; }
+
+        public void RegistrarPago(Pago pPago)
+        {
+            CuentaCorriente.AgregarPago(pPago);
+        }
     }
 }

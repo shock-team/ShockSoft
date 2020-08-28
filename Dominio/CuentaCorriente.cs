@@ -8,27 +8,27 @@ namespace ShockSoft.Dominio
 {
     public class CuentaCorriente
     {
-        public int idCuenta { get; set; }
-        public List<Pago> iPagos { get; set; }
-        public List<Venta> iVentas { get; set; }
+        public int IdCuenta { get; set; }
+        public List<Pago> Pagos { get; set; }
+        public List<Venta> Ventas { get; set; }
 
         public float ObtenerSaldo()
         {
             float total = 0;
-            for (int i = 0; i < iPagos.Count; i++)
+            foreach (Pago pago in Pagos)
             {
-                total += iPagos[i].iMonto;
+                total += pago.Monto;
             }
-            for (int i = 0; i < iVentas.Count; i++)
+            foreach (Venta venta in Ventas)
             {
-                total -= iVentas[i].ObtenerTotal();
+                total -= venta.ObtenerTotal();
             }
             return total;
         }
 
         public void AgregarPago(Pago pPago)
         {
-            iPagos.Add(pPago);
+            Pagos.Add(pPago);
         }
     }
 }

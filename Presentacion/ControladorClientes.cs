@@ -9,22 +9,32 @@ namespace ShockSoft.Presentacion
 {
     public class ControladorClientes
     {
-        public void AltaCliente(string pDNI, string pCUIT, string pApellido, string pNombre, string pTelefono, string pDireccion, Localidad pLocalidad)
+        public void AltaCliente(string pDNI, string pCUIT, string pApellido, string pNombre, string pTelefono, string pDireccion, int pLocalidad)
         {
             Cliente cliente = new Cliente();
-            cliente.iDNI = pDNI;
-            cliente.iCUIT = pCUIT;
-            cliente.iApellido = pApellido;
-            cliente.iNombre = pNombre;
-            cliente.iTelefono = pTelefono;
-            cliente.iDireccion = pDireccion;
-            cliente.iLocalidad = pLocalidad;
+            cliente.DNI = pDNI;
+            cliente.CUIT = pCUIT;
+            cliente.Apellido = pApellido;
+            cliente.Nombre = pNombre;
+            cliente.Telefono = pTelefono;
+            cliente.Direccion = pDireccion;
+            //cliente.Localidad = pLocalidad;
         }
 
-        public List<Cliente> ListarClientes(string pNombre = null, string pApellido = null, string pCUIT = null, bool pConDeudas, bool pSinDeudas)
+        public List<Cliente> ListarClientes(bool pConDeudas, bool pSinDeudas, string pNombre = null, string pApellido = null, string pCUIT = null)
         {
             List<Cliente> listaClientes = new List<Cliente>();
             return listaClientes;
+        }
+
+        public void ModificarCliente(Cliente pCliente)
+        {
+
+        }
+
+        public void RegistrarPago(Cliente pCliente, Pago pPago)
+        {
+            pCliente.RegistrarPago(pPago);
         }
     }
 }

@@ -8,7 +8,8 @@ namespace ShockSoft.Dominio
 {
     public class LineaVenta
     {
-        public int iCantidad { get; set; }
-        public float iPrecioActual { get; set; }
+        public int Cantidad { get; set; }
+        public float PrecioActual { get; set; }
+        public Producto Producto { get; set; }
     }
 }
