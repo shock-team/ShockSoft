@@ -1,19 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
 	class Reparacion
 	{
-        public int id { get; set; }
-        public string iProblema { get; set; }
-        public string iSolucion { get; set; }
-        public string iContraseña { get; set; }
-        public DateTime iFechaIngreso { get; set; }
-        public DateTime iFechaReparacion { get; set; }
-        public float iPrecio { get; set; }
-        public bool iEntregado { get; set; }
-        public bool iCargador { get; set; }
-        public bool iCables { get; set; }
+        public int Id { get; set; }
+        public string Problema { get; set; }
+        public string Solucion { get; set; }
+        public string Contraseña { get; set; }
+        public DateTime FechaIngreso { get; set; }
+        public DateTime FechaReparacion { get; set; }
+        public float Precio { get; set; }
+        public bool Entregado { get; set; }
+        public bool Cargador { get; set; }
+        public bool Cables { get; set; }
+        public TipoEquipo TipoEquipo { get; set; }
+        public Cliente Cliente { get; set; }
+        public CuentaCorriente CuentaCorriente { get; set; }
+        public MetodoPago MetodoPago { get; set; }
+        public Marca MarcaEquipo { get; set; }
+        public List<Producto> Productos { get; set; }
+
+        public float getPrecioTotal()
+        {
+            float total = Precio;
+            foreach (var Producto in Productos)
+            {
+                total += Producto.ObtenerPrecioDeVenta();
+            }
+        }
 
     }
 }
