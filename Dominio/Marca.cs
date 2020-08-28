@@ -8,7 +8,7 @@ namespace ShockSoft.Dominio
 {
     public class Marca
     {
-        public int idMarca { get; set; }
-        public string iDescripcion { get; set; }
+        public int IdMarca { get; set; }
+        public string Descripcion { get; set; }
     }
 }

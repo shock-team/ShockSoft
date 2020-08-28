@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-    public class IVA:Parametro
+    class PrecioDolar:Parametro
     {
-
     }
 }

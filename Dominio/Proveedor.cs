@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-    public class IVA:Parametro
+    public class Proveedor
     {
-
+        public int IdProveedor { get; set; }
+        public string Nombre { get; set; }
     }
 }

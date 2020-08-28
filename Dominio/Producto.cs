@@ -8,16 +8,20 @@ namespace ShockSoft.Dominio
 {
     public class Producto
     {
-        public int idProducto { get; set; }
-        public string iDescripcion { get; set; }
-        public int iCantidad { get; set; }
-        public float iPrecioBaseDolar { get; set; }
-        public bool iEnVenta { get; set; }
-        public float iPorcentajeGanancia { get; set; }
+        public int IdProducto { get; set; }
+        public string Descripcion { get; set; }
+        public int Cantidad { get; set; }
+        public float PrecioBaseDolar { get; set; }
+        public bool EnVenta { get; set; }
+        public float PorcentajeGanancia { get; set; }
+        public Marca Marca { get; set; }
+        public IVA IVA { get; set; }
 
         public float ObtenerPrecioDeVenta()
         {
-            
+            return PrecioBaseDolar
+                + (PrecioBaseDolar * PorcentajeGanancia / 100) //Ganancia
+                * IVA.Valor; //IVA
         }
     }
 }

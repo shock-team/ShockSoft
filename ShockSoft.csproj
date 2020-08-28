@@ -50,7 +50,10 @@
     <Compile Include="Dominio\IVA.cs" />
     <Compile Include="Dominio\LineaCompra.cs" />
     <Compile Include="Dominio\Marca.cs" />
+    <Compile Include="Dominio\Parametro.cs" />
+    <Compile Include="Dominio\PrecioDolar.cs" />
     <Compile Include="Dominio\Producto.cs" />
+    <Compile Include="Dominio\Proveedor.cs" />
     <Compile Include="Presentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
