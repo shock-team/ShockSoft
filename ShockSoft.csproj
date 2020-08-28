@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Compra.cs" />
     <Compile Include="Dominio\IVA.cs" />
+    <Compile Include="Dominio\LineaCompra.cs" />
+    <Compile Include="Dominio\Marca.cs" />
+    <Compile Include="Dominio\Producto.cs" />
     <Compile Include="Presentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
