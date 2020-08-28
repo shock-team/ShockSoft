@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-    class Localidad
+    public class Localidad
     {
         public int idLocalidad { get; set; }
         public string iNombre { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-    class IVA
+    public class IVA
     {
     }
 }

@@ -7,7 +7,7 @@ using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
-    class ControladorClientes
+    public class ControladorClientes
     {
         public void AltaCliente(string pDNI, string pCUIT, string pApellido, string pNombre, string pTelefono, string pDireccion, Localidad pLocalidad)
         {

@@ -17,7 +17,7 @@ namespace ShockSoft.Dominio
 
         public float ObtenerPrecioDeVenta()
         {
-            
+            return 0;
         }
     }
 }

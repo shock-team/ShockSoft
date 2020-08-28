@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-    class CuentaCorriente
+    public class CuentaCorriente
     {
         public int idCuenta { get; set; }
         public List<Pago> iPagos { get; set; }

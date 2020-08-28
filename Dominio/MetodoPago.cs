@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-    class MetodoPago
+    public class MetodoPago
     {
         public int idMetodoPago { get; set; }
         public float iValor { get; set; }

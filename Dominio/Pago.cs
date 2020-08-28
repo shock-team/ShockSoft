@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-    class Pago
+    public class Pago
     {
         public int idPago { get; set; }
         public DateTime iFecha { get; set; }
