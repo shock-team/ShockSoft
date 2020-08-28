@@ -46,11 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Compra.cs" />
+    <Compile Include="Dominio\CuentaCorriente.cs" />
     <Compile Include="Dominio\IVA.cs" />
     <Compile Include="Dominio\LineaCompra.cs" />
+    <Compile Include="Dominio\LineaVenta.cs" />
+    <Compile Include="Dominio\Localidad.cs" />
     <Compile Include="Dominio\Marca.cs" />
+    <Compile Include="Dominio\MetodoPago.cs" />
+    <Compile Include="Dominio\Pago.cs" />
     <Compile Include="Dominio\Producto.cs" />
+    <Compile Include="Dominio\Venta.cs" />
+    <Compile Include="Presentacion\ControladorClientes.cs" />
     <Compile Include="Presentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
