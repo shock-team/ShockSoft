@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,14 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Compra.cs" />
+    <Compile Include="Dominio\CuentaCorriente.cs" />
     <Compile Include="Dominio\IVA.cs" />
     <Compile Include="Dominio\LineaCompra.cs" />
+    <Compile Include="Dominio\LineaVenta.cs" />
+    <Compile Include="Dominio\Localidad.cs" />
     <Compile Include="Dominio\Marca.cs" />
     <Compile Include="Dominio\Parametro.cs" />
     <Compile Include="Dominio\PrecioDolar.cs" />
     <Compile Include="Dominio\Producto.cs" />
     <Compile Include="Dominio\Proveedor.cs" />
+    <Compile Include="Dominio\MetodoPago.cs" />
+    <Compile Include="Dominio\Pago.cs" />
+    <Compile Include="Dominio\Producto.cs" />
+    <Compile Include="Dominio\Venta.cs" />
+    <Compile Include="Presentacion\ControladorClientes.cs" />
     <Compile Include="Presentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
