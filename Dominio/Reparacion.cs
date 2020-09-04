@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Dominio
 {
-	class Reparacion
+	public class Reparacion
 	{
         public int Id { get; set; }
         public string Problema { get; set; }

@@ -60,11 +60,17 @@
     <Compile Include="Dominio\Proveedor.cs" />
     <Compile Include="Dominio\MetodoPago.cs" />
     <Compile Include="Dominio\Pago.cs" />
+    <Compile Include="Dominio\Reparacion.cs" />
+    <Compile Include="Dominio\TipoEquipo.cs" />
     <Compile Include="Dominio\Venta.cs" />
     <Compile Include="Presentacion\ControladorClientes.cs" />
     <Compile Include="Presentacion\ControladorLocalidades.cs" />
+    <Compile Include="Presentacion\ControladorMarcas.cs" />
+    <Compile Include="Presentacion\ControladorParametros.cs" />
+    <Compile Include="Presentacion\ControladorProductos.cs" />
+    <Compile Include="Presentacion\ControladorReparaciones.cs" />
     <Compile Include="Presentacion\ControladorVentas.cs" />
-    <Compile Include="Presentacion\CotroladorProovedor.cs" />
+    <Compile Include="Presentacion\CotroladorProveedores.cs" />
     <Compile Include="Presentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
