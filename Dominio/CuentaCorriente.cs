@@ -30,5 +30,10 @@ namespace ShockSoft.Dominio
         {
             Pagos.Add(pPago);
         }
+
+        public void AgregarVenta(Venta pVenta)
+        {
+            Ventas.Add(pVenta);
+        }
     }
 }
