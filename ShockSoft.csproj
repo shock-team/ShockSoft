@@ -60,7 +60,6 @@
     <Compile Include="Dominio\Proveedor.cs" />
     <Compile Include="Dominio\MetodoPago.cs" />
     <Compile Include="Dominio\Pago.cs" />
-    <Compile Include="Dominio\Producto.cs" />
     <Compile Include="Dominio\Venta.cs" />
     <Compile Include="Presentacion\ControladorClientes.cs" />
     <Compile Include="Presentacion\ControladorLocalidades.cs" />
