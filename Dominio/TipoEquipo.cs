@@ -2,7 +2,7 @@
 
 namespace ShockSoft.Dominio
 {
-	public class TipoEquipo
+	class TipoEquipo
 	{
         public int Id { get; set; }
         public string Descripcion { get; set; }
