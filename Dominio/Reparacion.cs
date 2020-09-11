@@ -29,6 +29,7 @@ namespace ShockSoft.Dominio
             {
                 total += Producto.ObtenerPrecioDeVenta();
             }
+            return total;
         }
 
     }
