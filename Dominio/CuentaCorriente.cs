@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ShockSoft.Dominio
 {
@@ -29,6 +25,11 @@ namespace ShockSoft.Dominio
         public void AgregarPago(Pago pPago)
         {
             Pagos.Add(pPago);
+        }
+
+        public void AgregarVenta(Venta pVenta)
+        {
+            Ventas.Add(pVenta);
         }
     }
 }
