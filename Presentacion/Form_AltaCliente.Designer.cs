@@ -71,7 +71,6 @@
             this.lblCUIT.Size = new System.Drawing.Size(35, 13);
             this.lblCUIT.TabIndex = 3;
             this.lblCUIT.Text = "CUIT:";
-            this.lblCUIT.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtCUIT
             // 
@@ -79,7 +78,6 @@
             this.txtCUIT.Name = "txtCUIT";
             this.txtCUIT.Size = new System.Drawing.Size(147, 20);
             this.txtCUIT.TabIndex = 2;
-            this.txtCUIT.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // lblApellido
             // 
@@ -105,7 +103,6 @@
             this.lblLocalidad.Size = new System.Drawing.Size(56, 13);
             this.lblLocalidad.TabIndex = 7;
             this.lblLocalidad.Text = "Localidad:";
-            this.lblLocalidad.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblNombre
             // 
@@ -172,6 +169,7 @@
             this.btnAceptar.TabIndex = 16;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -181,6 +179,7 @@
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // comboLocalidad
             // 

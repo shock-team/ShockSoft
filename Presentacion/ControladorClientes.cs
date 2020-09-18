@@ -7,10 +7,26 @@ namespace ShockSoft.Presentacion
     /// <summary>
     /// Esta clase se encarga de funcionar como intermediaria entre la
     /// GUI correspondiente a los casos de uso asociados a la clase Cliente
-    /// y las clases de dominio
+    /// y las clases de dominio. Esta clase aplica el patrón de diseño Singleton.
     /// </summary>
     public class ControladorClientes
     {
+
+        public static ControladorClientes instancia;
+
+        /// <summary>
+        /// Obtiene la instancia del controlador
+        /// </summary>
+        /// <returns></returns>
+        public static ControladorClientes ObtenerInstancia()
+        {
+            if (instancia.Equals(null))
+            {
+                instancia = new ControladorClientes();
+            }
+            return instancia;
+        }
+
         /// <summary>
         /// Este método se encarga de crear el nuevo cliente y agregarlo al repositorio
         /// </summary>
@@ -78,13 +94,26 @@ namespace ShockSoft.Presentacion
         /// </summary>
         /// <param name="idCliente">El id del cliente</param>
         /// <param name="pMonto">El monto a pagar</param>
-        public void RegistrarPago(int idCliente, float pMonto)
+        public void RegistrarPago(int idCliente, float pMonto, DateTime pFecha, string pDescripcion)
         {
             Cliente cliente = new Cliente();
             Pago pago = new Pago();
             pago.Monto = pMonto;
-            pago.Fecha = DateTime.Today;
+            pago.Fecha = pFecha;
+            pago.Descripcion = pDescripcion;
             cliente.RegistrarPago(pago);
+        }
+
+        /// <summary>
+        /// Este método se encarga de obtener y devolver la instancia de un cliente
+        /// que se encuentra almacenada en la base de datos.
+        /// </summary>
+        /// <param name="pId">El Id del cliente que se desea obtener</param>
+        /// <returns></returns>
+        public Cliente ObtenerCliente(int pId)
+        {
+            Cliente cliente = new Cliente();
+            return cliente;
         }
     }
 }

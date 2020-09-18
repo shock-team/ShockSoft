@@ -6,10 +6,25 @@ namespace ShockSoft.Presentacion
     /// <summary>
     /// Esta clase se encarga de funcionar como intermediaria entre la
     /// GUI correspondiente a los casos de uso asociados a la clase Venta
-    /// y las clases de dominio
+    /// y las clases de dominio. Esta clase aplica el patrón de diseño Singleton.
     /// </summary>
     public class ControladorVentas
     {
+        public static ControladorVentas instancia;
+
+        /// <summary>
+        /// Obtiene la instancia del controlador
+        /// </summary>
+        /// <returns></returns>
+        public static ControladorVentas ObtenerInstancia()
+        {
+            if (instancia.Equals(null))
+            {
+                instancia = new ControladorVentas();
+            }
+            return instancia;
+        }
+
         /// <summary>
         /// Este método se encarga de crear la nueva venta y agregarla al repositorio
         /// </summary>

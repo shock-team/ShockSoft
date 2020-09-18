@@ -1,33 +1,32 @@
 ﻿using System;
 using System.Windows.Forms;
+using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
     public partial class Form_AltaCliente : Form
     {
+        ControladorClientes controlador;
+
         public Form_AltaCliente()
         {
             InitializeComponent();
+            foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
+            {
+                comboLocalidad.Items.Add(localidad);
+            }
+            comboLocalidad.ValueMember = "IdLocalidad";
+            comboLocalidad.DisplayMember = "Nombre";
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
-
+            controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, (int)comboLocalidad.SelectedItem);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }

@@ -41,18 +41,20 @@
             this.lblDNI = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
-            this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregarPago = new System.Windows.Forms.Button();
+            this.comboLocalidad = new System.Windows.Forms.ComboBox();
+            this.lblCUIT = new System.Windows.Forms.Label();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(46, 99);
+            this.lblNombre.Location = new System.Drawing.Point(46, 135);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 25;
@@ -60,7 +62,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(138, 96);
+            this.txtNombre.Location = new System.Drawing.Point(138, 132);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(147, 20);
             this.txtNombre.TabIndex = 24;
@@ -100,7 +102,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(46, 135);
+            this.lblApellido.Location = new System.Drawing.Point(46, 171);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(47, 13);
             this.lblApellido.TabIndex = 19;
@@ -108,7 +110,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(138, 132);
+            this.txtApellido.Location = new System.Drawing.Point(138, 168);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(147, 20);
             this.txtApellido.TabIndex = 18;
@@ -126,6 +128,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(138, 26);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(147, 20);
             this.txtId.TabIndex = 16;
             // 
@@ -154,13 +157,6 @@
             this.lblLocalidad.TabIndex = 27;
             this.lblLocalidad.Text = "Localidad:";
             // 
-            // txtLocalidad
-            // 
-            this.txtLocalidad.Location = new System.Drawing.Point(430, 96);
-            this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(147, 20);
-            this.txtLocalidad.TabIndex = 26;
-            // 
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
@@ -179,43 +175,72 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(562, 195);
+            this.btnAceptar.Location = new System.Drawing.Point(562, 231);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 30;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(465, 195);
+            this.btnModificar.Location = new System.Drawing.Point(465, 231);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 31;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnAgregarPago
             // 
-            this.btnAgregarPago.Location = new System.Drawing.Point(49, 195);
+            this.btnAgregarPago.Location = new System.Drawing.Point(49, 231);
             this.btnAgregarPago.Name = "btnAgregarPago";
             this.btnAgregarPago.Size = new System.Drawing.Size(236, 23);
             this.btnAgregarPago.TabIndex = 32;
             this.btnAgregarPago.Text = "Agregar Pago";
             this.btnAgregarPago.UseVisualStyleBackColor = true;
+            this.btnAgregarPago.Click += new System.EventHandler(this.BtnAgregarPago_Click);
+            // 
+            // comboLocalidad
+            // 
+            this.comboLocalidad.FormattingEnabled = true;
+            this.comboLocalidad.Location = new System.Drawing.Point(430, 96);
+            this.comboLocalidad.Name = "comboLocalidad";
+            this.comboLocalidad.Size = new System.Drawing.Size(147, 21);
+            this.comboLocalidad.TabIndex = 33;
+            // 
+            // lblCUIT
+            // 
+            this.lblCUIT.AutoSize = true;
+            this.lblCUIT.Location = new System.Drawing.Point(58, 102);
+            this.lblCUIT.Name = "lblCUIT";
+            this.lblCUIT.Size = new System.Drawing.Size(35, 13);
+            this.lblCUIT.TabIndex = 35;
+            this.lblCUIT.Text = "CUIT:";
+            // 
+            // txtCUIT
+            // 
+            this.txtCUIT.Location = new System.Drawing.Point(138, 99);
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(147, 20);
+            this.txtCUIT.TabIndex = 34;
             // 
             // Form_DatosCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 230);
+            this.ClientSize = new System.Drawing.Size(649, 266);
+            this.Controls.Add(this.lblCUIT);
+            this.Controls.Add(this.txtCUIT);
+            this.Controls.Add(this.comboLocalidad);
             this.Controls.Add(this.btnAgregarPago);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.lblLocalidad);
-            this.Controls.Add(this.txtLocalidad);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblDireccion);
@@ -250,11 +275,13 @@
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label lblLocalidad;
-        private System.Windows.Forms.TextBox txtLocalidad;
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregarPago;
+        private System.Windows.Forms.ComboBox comboLocalidad;
+        private System.Windows.Forms.Label lblCUIT;
+        private System.Windows.Forms.TextBox txtCUIT;
     }
 }

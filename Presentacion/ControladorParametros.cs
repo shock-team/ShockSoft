@@ -6,10 +6,25 @@ namespace ShockSoft.Presentacion
     /// <summary>
     /// Esta clase se encarga de funcionar como intermediaria entre la
     /// GUI correspondiente a los casos de uso asociados a la clase Parametro
-    /// y las clases de dominio
+    /// y las clases de dominio. Esta clase aplica el patrón de diseño Singleton.
     /// </summary>
     public class ControladorParametros
     {
+        public static ControladorParametros instancia;
+
+        /// <summary>
+        /// Obtiene la instancia del controlador
+        /// </summary>
+        /// <returns></returns>
+        public static ControladorParametros ObtenerInstancia()
+        {
+            if (instancia.Equals(null))
+            {
+                instancia = new ControladorParametros();
+            }
+            return instancia;
+        }
+
         /// <summary>
         /// Este método se encarga de crear el nuevo parámetro y almacenarlo
         /// en el repositorio
