@@ -31,14 +31,14 @@ namespace ShockSoft.Presentacion
         /// <param name="idCuentaCorriente">ID de la cuenta corriente asociada a la venta</param>
         /// <param name="pListaLineaVenta">Lista de líneas de venta asociadas a la venta</param>
         /// <param name="idMetodoPago">ID del método de pago correspondiente a la venta</param>
-        public void AgregarVenta(int idCuentaCorriente, List<LineaVenta> pListaLineaVenta, int idMetodoPago)
+        public void AgregarVenta(int idCliente, List<LineaVenta> pListaLineaVenta, int idMetodoPago)
         {
             Venta venta = new Venta();
             venta.Lineas = pListaLineaVenta;
             MetodoPago metodoPago = new MetodoPago();
             venta.MetodoPago = metodoPago;
-            CuentaCorriente cuentaCorriente = new CuentaCorriente();
-            cuentaCorriente.AgregarVenta(venta);
+            Cliente cliente = new Cliente();
+            cliente.AgregarVenta(venta);
 
         }
 

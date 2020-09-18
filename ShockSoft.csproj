@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Compra.cs" />
-    <Compile Include="Dominio\CuentaCorriente.cs" />
     <Compile Include="Dominio\IVA.cs" />
     <Compile Include="Dominio\LineaCompra.cs" />
     <Compile Include="Dominio\LineaVenta.cs" />
