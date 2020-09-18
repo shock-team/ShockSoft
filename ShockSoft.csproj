@@ -78,6 +78,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistencia\UnitOfWork.cs" />
+    <Compile Include="Presentacion\Form_AñadirProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_AñadirProducto.Designer.cs">
+      <DependentUpon>Form_AñadirProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Form_AltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +96,23 @@
     <Compile Include="Presentacion\Form_ConsultaClientes.Designer.cs">
       <DependentUpon>Form_ConsultaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Form_ConsultarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_ConsultarProducto.Designer.cs">
+      <DependentUpon>Form_ConsultarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Form_DatosCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Form_DatosCliente.Designer.cs">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form_ModificarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_ModificarProducto.Designer.cs">
+      <DependentUpon>Form_ModificarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Form_RegistrarPago.cs">
       <SubType>Form</SubType>
@@ -107,8 +125,14 @@
     <EmbeddedResource Include="Presentacion\Form_AltaCliente.resx">
       <DependentUpon>Form_AltaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_AñadirProducto.resx">
+      <DependentUpon>Form_AñadirProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_ConsultaClientes.resx">
       <DependentUpon>Form_ConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_ConsultarProducto.resx">
+      <DependentUpon>Form_ConsultarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_DatosCliente.resx">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
