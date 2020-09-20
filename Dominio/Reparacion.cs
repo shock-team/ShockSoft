@@ -18,7 +18,6 @@ namespace ShockSoft.Dominio
         public bool Cables { get; set; }
         public TipoEquipo TipoEquipo { get; set; }
         public Cliente Cliente { get; set; }
-        public CuentaCorriente CuentaCorriente { get; set; }
         public MetodoPago MetodoPago { get; set; }
         public Marca MarcaEquipo { get; set; }
         public List<Producto> Productos { get; set; }

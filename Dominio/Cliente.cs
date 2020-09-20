@@ -1,4 +1,7 @@
-﻿namespace ShockSoft.Dominio
+using System.Collections.Generic;
+
+
+namespace ShockSoft.Dominio
 {
     public class Cliente
     {
@@ -10,14 +13,36 @@
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public Localidad Localidad { get; set; }
-        public CuentaCorriente CuentaCorriente { get; set; }
+        public List<Pago> Pagos { get; set; }
+        public List<Venta> Ventas { get; set; }
 
         //Fluent API
         public int IdLocalidad { get; set; }
 
-        public void RegistrarPago(Pago pPago)
+        public float ObtenerSaldo()
         {
-            CuentaCorriente.AgregarPago(pPago);
+            float total = 0;
+            foreach (Pago pago in Pagos)
+            {
+                total += pago.Monto;
+            }
+            foreach (Venta venta in Ventas)
+            {
+                total -= venta.ObtenerTotal();
+            }
+            return total;
         }
+
+        public void AgregarPago(Pago pPago)
+        {
+            Pagos.Add(pPago);
+        }
+
+        public void AgregarVenta(Venta pVenta)
+
+        {
+            Ventas.Add(pVenta);
+        }
+    
     }
 }

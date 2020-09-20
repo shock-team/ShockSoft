@@ -8,5 +8,10 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
         }
+
+        private void BtnAceptar_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
