@@ -15,7 +15,7 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         public ShockDbContext() : base("name=DefaultConnection") { }
 
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente> Clientes { get; set; } 
 
 
         protected override void OnModelCreating(DbModelBuilder pModelBuilder)

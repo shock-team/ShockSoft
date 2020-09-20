@@ -11,6 +11,5 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         public RepositorioCliente(ShockDbContext pDbContext) : base(pDbContext) { }
 
-
     }
 }

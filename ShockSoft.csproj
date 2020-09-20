@@ -181,6 +181,7 @@
     <Compile Include="Dominio\TipoEquipo.cs" />
     <Compile Include="Dominio\Venta.cs" />
     <Compile Include="Persistencia\EntityFramework\FormattedDbException.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\ClienteMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Repositorio.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioCliente.cs" />
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />

@@ -13,6 +13,7 @@ namespace ShockSoft.Dominio
         public DateTime FechaReparacion { get; set; }
         public float Precio { get; set; }
         public bool Entregado { get; set; }
+        public bool Cobrado { get; set; }
         public bool Cargador { get; set; }
         public bool Cables { get; set; }
         public TipoEquipo TipoEquipo { get; set; }
