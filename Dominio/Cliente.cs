@@ -12,6 +12,9 @@
         public Localidad Localidad { get; set; }
         public CuentaCorriente CuentaCorriente { get; set; }
 
+        //Fluent API
+        public int IdLocalidad { get; set; }
+
         public void RegistrarPago(Pago pPago)
         {
             CuentaCorriente.AgregarPago(pPago);
