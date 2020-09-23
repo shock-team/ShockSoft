@@ -179,10 +179,29 @@
     <Compile Include="Dominio\Reparacion.cs" />
     <Compile Include="Dominio\TipoEquipo.cs" />
     <Compile Include="Dominio\Venta.cs" />
+    <Compile Include="Migrations\202009230154182_asd.cs" />
+    <Compile Include="Migrations\202009230154182_asd.designer.cs">
+      <DependentUpon>202009230154182_asd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\EntityFramework\FormattedDbException.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\CompraMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\LineaCompraMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\LineaVentaMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\LocalidadMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\MarcaMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\MetodoPagoMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\PagoMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\ClienteMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\ParametroMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\ProductoMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\ProveedorMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\ReparacionMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\TipoEquipoMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\VentaMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Repositorio.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioCliente.cs" />
+    <Compile Include="Persistencia\EntityFramework\ShockDbContext.Views.cs" />
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
     <Compile Include="Persistencia\IRepositorio.cs" />
@@ -201,17 +220,17 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistencia\IUnitOfWork.cs" />
-    <Compile Include="Presentacion\Form_A�adirProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Form_A�adirProducto.Designer.cs">
-      <DependentUpon>Form_A�adirProducto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Form_AltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Form_AltaCliente.Designer.cs">
       <DependentUpon>Form_AltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form_AñadirProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_AñadirProducto.Designer.cs">
+      <DependentUpon>Form_AñadirProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Form_ConsultaClientes.cs">
       <SubType>Form</SubType>
@@ -245,11 +264,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202009230154182_asd.resx">
+      <DependentUpon>202009230154182_asd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_AltaCliente.resx">
       <DependentUpon>Form_AltaCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_A�adirProducto.resx">
-      <DependentUpon>Form_A�adirProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_ConsultaClientes.resx">
       <DependentUpon>Form_ConsultaClientes.cs</DependentUpon>
@@ -290,7 +309,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauraci�n de paquetes NuGet para descargarlos. Para obtener m�s informaci�n, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauraci n de paquetes NuGet para descargarlos. Para obtener m s informaci n, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />

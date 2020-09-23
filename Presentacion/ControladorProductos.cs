@@ -43,7 +43,7 @@ namespace ShockSoft.Presentacion
             producto.EnVenta = pEnVenta;
             producto.PorcentajeGanancia = pGanancia;
             IVA iva = new IVA();
-            producto.IVA = iva;
+            producto.Parametro = iva;
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace ShockSoft.Presentacion
             producto.PrecioBaseDolar = pPrecioBaseDolar;
             producto.PorcentajeGanancia = pGanancia;
             IVA iva = new IVA();
-            producto.IVA = iva;
+            producto.Parametro = iva;
         }
 
         /// <summary>

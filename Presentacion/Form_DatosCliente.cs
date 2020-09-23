@@ -25,7 +25,7 @@ namespace ShockSoft.Presentacion
             }
             comboLocalidad.ValueMember = "IdLocalidad";
             comboLocalidad.DisplayMember = "Nombre";
-            txtSaldo.Text = pCliente.CuentaCorriente.ObtenerSaldo().ToString();
+            txtSaldo.Text = pCliente.ObtenerSaldo().ToString();
         }
 
         private void BtnAceptar_Click(object sender, System.EventArgs e)
@@ -42,7 +42,7 @@ namespace ShockSoft.Presentacion
 
         private void BtnAgregarPago_Click(object sender, System.EventArgs e)
         {
-            Form_RegistrarPago formRegistrarPago = new Form_RegistrarPago();
+            Form_RegistrarPago formRegistrarPago = new Form_RegistrarPago(0);
             formRegistrarPago.Show();
         }
 

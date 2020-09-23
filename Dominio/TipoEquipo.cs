@@ -1,8 +1,14 @@
-﻿namespace ShockSoft.Dominio
+﻿using System.Collections.Generic;
+
+namespace ShockSoft.Dominio
 {
     public class TipoEquipo
     {
-        public int Id { get; set; }
+        //Atributos
+        public int IdTipoEquipo { get; set; }
         public string Descripcion { get; set; }
+
+        //Fluent API
+        public ICollection<Reparacion> Reparaciones { get; set; }
     }
 }

@@ -58,7 +58,7 @@ namespace ShockSoft.Presentacion
             reparacion.Precio = pPrecio;
             reparacion.Entregado = pEntregado;
             Marca marca = new Marca();
-            reparacion.MarcaEquipo = marca;
+            reparacion.Marca = marca;
             TipoEquipo tipo = new TipoEquipo();
             reparacion.TipoEquipo = tipo;
             MetodoPago metodoPago = new MetodoPago();

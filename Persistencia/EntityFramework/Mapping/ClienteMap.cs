@@ -14,39 +14,39 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
         {
             this.ToTable("Clientes");
 
-            this.HasKey(pCliente => pCliente.IdCliente);
-            this.Property(pCliente => pCliente.IdCliente)
+            this.HasKey(x => x.IdCliente);
+            this.Property(x => x.IdCliente)
                 .HasColumnName("id")
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
-            this.Property(pCliente => pCliente.Nombre)
+            this.Property(x => x.Nombre)
                 .HasColumnName("nombre")
                 .IsRequired()
                 .HasMaxLength(40);
 
-            this.Property(pCliente => pCliente.Apellido)
+            this.Property(x => x.Apellido)
                 .HasColumnName("apellido")
                 .IsRequired()
                 .HasMaxLength(40);
 
-            this.HasIndex(pCliente => pCliente.DNI)
+            this.HasIndex(x => x.DNI)
                 .IsUnique();
-            this.Property(pCliente => pCliente.DNI)
+            this.Property(x => x.DNI)
                 .HasColumnName("dni")
                 .HasMaxLength(10);
 
-            this.HasIndex(pCliente => pCliente.CUIT)
+            this.HasIndex(x => x.CUIT)
                 .IsUnique();
-            this.Property(pCliente => pCliente.CUIT)
+            this.Property(x => x.CUIT)
                 .HasColumnName("cuit")
                 .HasMaxLength(20);
 
-            this.Property(pCliente => pCliente.Telefono)
+            this.Property(x => x.Telefono)
                 .HasColumnName("telefono")
                 .IsRequired()
                 .HasMaxLength(30);
 
-            this.Property(pCliente => pCliente.Direccion)
+            this.Property(x => x.Direccion)
                 .HasColumnName("direccion")
                 .HasMaxLength(50);
 
