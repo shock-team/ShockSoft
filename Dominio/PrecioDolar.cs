@@ -1,6 +1,6 @@
 ﻿namespace ShockSoft.Dominio
 {
-    class PrecioDolar : Parametro
+    public class PrecioDolar : Parametro
     {
     }
 }

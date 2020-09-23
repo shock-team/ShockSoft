@@ -5,11 +5,18 @@ namespace ShockSoft.Dominio
 {
     public class Venta
     {
+        //Atributos
         public int IdVenta { get; set; }
         public DateTime Fecha { get; set; }
-        public List<LineaVenta> Lineas { get; set; }
+        public ICollection<LineaVenta> Lineas { get; set; }
         public MetodoPago MetodoPago { get; set; }
+        public Cliente Cliente { get; set; }
 
+        //Fluent API
+        public int IdCliente { get; set; }
+        public int IdMetodoPago { get; set; }
+
+        //Métodos
         public float ObtenerTotal()
         {
             float total = 0;
