@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using System;
 using System.Collections.Generic;
+using ShockSoft.Persistencia.EntityFramework;
 
 namespace ShockSoft.Presentacion
 {
@@ -64,6 +65,10 @@ namespace ShockSoft.Presentacion
             MetodoPago metodoPago = new MetodoPago();
             reparacion.MetodoPago = metodoPago;
             reparacion.Productos = pProductosUtilizados;
+            using (UnitOfWork bUow)
+            {
+
+            }
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using ShockSoft.Dominio;
 using System.Collections.Generic;
+using ShockSoft.Persistencia.EntityFramework;
 
 namespace ShockSoft.Presentacion
 {
@@ -34,6 +35,13 @@ namespace ShockSoft.Presentacion
         {
             Localidad localidad = new Localidad();
             localidad.Nombre = pNombre;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    
+                }
+            }
         }
 
         /// <summary>

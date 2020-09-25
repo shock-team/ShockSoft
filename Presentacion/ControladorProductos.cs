@@ -29,18 +29,17 @@ namespace ShockSoft.Presentacion
         /// Este método se encarga de crear el nuevo producto y agregarlo al repositorio
         /// </summary>
         /// <param name="pDescripcion">La descripción del nuevo producto</param>
-        /// <param name="pCantidad">La cantidad inicial del nuevo producto</param>
         /// <param name="pPrecioBaseDolar">El precio base en dólares del nuevo producto</param>
-        /// <param name="pEnVenta">Si el nuevo producto se encuentra en venta o no</param>
         /// <param name="pGanancia">El porcentaje de ganancia del nuevo producto</param>
         /// <param name="pIVA">El ID del IVA asociado al nuevo producto</param>
-        public void AgregarProducto(string pDescripcion, int pCantidad, float pPrecioBaseDolar, bool pEnVenta, float pGanancia, int pIVA)
+        /// <param name="pMarca">El ID de la marca asociada al nuevo producto</param>
+        public void AgregarProducto(string pDescripcion, float pPrecioBaseDolar, float pGanancia, int pIVA, int pMarca)
         {
             Producto producto = new Producto();
             producto.Descripcion = pDescripcion;
-            producto.Cantidad = pCantidad;
+            producto.Cantidad = 0;
             producto.PrecioBaseDolar = pPrecioBaseDolar;
-            producto.EnVenta = pEnVenta;
+            producto.EnVenta = true;
             producto.PorcentajeGanancia = pGanancia;
             IVA iva = new IVA();
             producto.Parametro = iva;

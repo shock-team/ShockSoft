@@ -101,7 +101,7 @@ namespace ShockSoft.Presentacion
             pago.Monto = pMonto;
             pago.Fecha = pFecha;
             pago.Descripcion = pDescripcion;
-            cliente.AgregarPago(pago);
+            cliente.RegistrarPago(pago);
         }
 
         /// <summary>
