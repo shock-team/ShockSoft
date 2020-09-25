@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
-    class RepositorioMetodoPago : Repositorio<MetodoPago, ShockDbContext>
+    public class RepositorioMetodoPago : Repositorio<MetodoPago, ShockDbContext>
     {
         public RepositorioMetodoPago(ShockDbContext pDbContext) : base(pDbContext) { }
     }

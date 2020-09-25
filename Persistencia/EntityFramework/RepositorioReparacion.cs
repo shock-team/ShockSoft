@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
-    class RepositorioReparacion : Repositorio<Reparacion, ShockDbContext>
+    public class RepositorioReparacion : Repositorio<Reparacion, ShockDbContext>
     {
         public RepositorioReparacion(ShockDbContext pDbContext) : base(pDbContext) { }
     }
