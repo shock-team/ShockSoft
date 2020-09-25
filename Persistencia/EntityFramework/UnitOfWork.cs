@@ -12,6 +12,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         private bool iDisposedValue = false;
 
         public RepositorioCliente RepositorioCliente { get; private set; }
+        public RepositorioLocalidad RepositorioLocalidad { get; private set; }
 
         public UnitOfWork(ShockDbContext pDbContext)
         {
