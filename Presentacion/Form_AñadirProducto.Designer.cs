@@ -133,6 +133,7 @@
             this.btnAgregarMarca.TabIndex = 10;
             this.btnAgregarMarca.Text = "Añadir Marca";
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.BtnAgregarMarca_Click);
             // 
             // btnCancelar
             // 
@@ -142,6 +143,7 @@
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -151,6 +153,7 @@
             this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // Form_AñadirProducto
             // 

@@ -160,6 +160,7 @@
             this.btnNuevaLocalidad.TabIndex = 15;
             this.btnNuevaLocalidad.Text = "Nueva Localidad";
             this.btnNuevaLocalidad.UseVisualStyleBackColor = true;
+            this.btnNuevaLocalidad.Click += new System.EventHandler(this.BtnNuevaLocalidad_Click);
             // 
             // btnAceptar
             // 
