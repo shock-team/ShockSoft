@@ -201,7 +201,16 @@
     <Compile Include="Persistencia\EntityFramework\Mapping\VentaMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Repositorio.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioCliente.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioCompra.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioLocalidad.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioMarca.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioMetodoPago.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioPago.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioProducto.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioProveedor.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioReparacion.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioTipoEquipo.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioVenta.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.Views.cs" />
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
