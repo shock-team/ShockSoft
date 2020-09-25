@@ -37,7 +37,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pTelefono">El teléfono del nuevo cliente</param>
         /// <param name="pDireccion">La dirección del nuevo cliente</param>
         /// <param name="pLocalidad">ID de la localidad del nuevo cliente</param>
-        public void AltaCliente(string pDNI, string pCUIT, string pApellido, string pNombre, string pTelefono, string pDireccion, int pLocalidad)
+        public void AltaCliente(string pDNI, string pCUIT, string pApellido, string pNombre, string pTelefono, string pDireccion, int pIdLocalidad)
         {
             Cliente cliente = new Cliente();
             cliente.Nombre = pNombre;
@@ -94,14 +94,14 @@ namespace ShockSoft.Presentacion
         /// </summary>
         /// <param name="idCliente">El id del cliente</param>
         /// <param name="pMonto">El monto a pagar</param>
-        public void RegistrarPago(int idCliente, float pMonto, DateTime pFecha, string pDescripcion)
+        public void RegistrarPago(int pIdCliente, float pMonto, DateTime pFecha, string pDescripcion)
         {
             Cliente cliente = new Cliente();
             Pago pago = new Pago();
             pago.Monto = pMonto;
             pago.Fecha = pFecha;
             pago.Descripcion = pDescripcion;
-            cliente.RegistrarPago(pago);
+            cliente.AgregarPago(pago);
         }
 
         /// <summary>
