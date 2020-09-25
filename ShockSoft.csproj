@@ -201,6 +201,7 @@
     <Compile Include="Persistencia\EntityFramework\Mapping\VentaMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Repositorio.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioCliente.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioLocalidad.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.Views.cs" />
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
