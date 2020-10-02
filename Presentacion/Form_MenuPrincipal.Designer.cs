@@ -35,8 +35,10 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
             this.panelControl.SuspendLayout();
             this.panelLateral.SuspendLayout();
@@ -52,6 +54,7 @@
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(800, 45);
             this.panelControl.TabIndex = 0;
+            this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
             // btnTamano
             // 
@@ -66,6 +69,7 @@
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
             this.btnTamano.UseVisualStyleBackColor = false;
+            this.btnTamano.Click += new System.EventHandler(this.btnTamano_Click);
             // 
             // btnCerrar
             // 
@@ -80,13 +84,15 @@
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelPrincipal.Location = new System.Drawing.Point(0, 45);
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(500, 405);
+            this.panelPrincipal.Size = new System.Drawing.Size(800, 450);
             this.panelPrincipal.TabIndex = 1;
             // 
             // btnMinimizar
@@ -102,11 +108,13 @@
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -120,14 +128,48 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panelLateral.Controls.Add(this.panel1);
+            this.panelLateral.Controls.Add(this.button1);
             this.panelLateral.Controls.Add(this.panel3);
             this.panelLateral.Controls.Add(this.panel2);
             this.panelLateral.Controls.Add(this.btnProductos);
             this.panelLateral.Controls.Add(this.btnClientes);
+            this.panelLateral.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelLateral.Location = new System.Drawing.Point(500, 45);
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(300, 405);
             this.panelLateral.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(40)))));
+            this.panel1.Location = new System.Drawing.Point(250, 237);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 90);
+            this.panel1.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(40)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(40, 237);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(210, 90);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Reparaciones";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(175)))), ((int)(((byte)(45)))));
+            this.panel3.Location = new System.Drawing.Point(250, 141);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 90);
+            this.panel3.TabIndex = 11;
             // 
             // panel2
             // 
@@ -137,18 +179,11 @@
             this.panel2.Size = new System.Drawing.Size(10, 90);
             this.panel2.TabIndex = 9;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(175)))), ((int)(((byte)(40)))));
-            this.panel3.Location = new System.Drawing.Point(250, 141);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 90);
-            this.panel3.TabIndex = 11;
-            // 
             // btnProductos
             // 
             this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.btnProductos.FlatAppearance.BorderSize = 0;
+            this.btnProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(175)))), ((int)(((byte)(45)))));
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -190,5 +225,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnProductos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

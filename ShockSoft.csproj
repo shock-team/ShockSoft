@@ -261,6 +261,12 @@
     <Compile Include="Presentacion\Form_DatosCliente.Designer.cs">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Form_MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_MenuPrincipal.Designer.cs">
+      <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Form_ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_DatosCliente.resx">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_MenuPrincipal.resx">
+      <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_RegistrarPago.resx">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
