@@ -21,13 +21,14 @@ namespace ShockSoft.Persistencia.EntityFramework
         }
 
         /// <summary>
-        /// Devuelve una <paramref name="pCantidad"/> de Clientes específica.
+        /// Devuelve un segmento de Clientes ordenado por Apellido.
         /// </summary>
-        /// <param name="pCantidad">Cantidad de clientes</param>
+        /// <param name="pDesde"></param>
+        /// <param name="pHasta"></param>
         /// <returns></returns>
-        public IEnumerable<Cliente> ObtenerPorCantidad(int pCantidad)
+        public IEnumerable<Cliente> ObtenerPorParte(int pDesde, int pHasta)
         {
-            return this.iDbContext.Set<Cliente>().Take(pCantidad).ToList();
+            return this.iDbContext.Set<Cliente>().OrderBy(x => x.Apellido).Skip(pDesde).Take(pHasta);
         }
 
         /// <summary>
