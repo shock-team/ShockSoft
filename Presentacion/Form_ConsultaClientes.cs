@@ -1,6 +1,6 @@
-﻿using System.Data;
+﻿using ShockSoft.Dominio;
+using System.Data;
 using System.Windows.Forms;
-using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
@@ -53,8 +53,9 @@ namespace ShockSoft.Presentacion
         private void DgClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //Obtiene el cliente seleccionado a partir de su ID
-            Cliente clienteSeleccionado = controlador.ObtenerCliente(tablaDeClientes.Rows[dgClientes.SelectedRows[0].Index].Field<int>("ID"));
+            int clienteSeleccionado = tablaDeClientes.Rows[dgClientes.SelectedRows[0].Index].Field<int>("ID");
             Form_DatosCliente formDatosCliente = new Form_DatosCliente(clienteSeleccionado);
+            formDatosCliente.Show();
             this.Hide();
         }
     }

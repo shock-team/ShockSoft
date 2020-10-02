@@ -1,14 +1,9 @@
 ﻿using ShockSoft.Dominio;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework.Mapping
 {
-    class ClienteMap:EntityTypeConfiguration<Cliente>
+    class ClienteMap : EntityTypeConfiguration<Cliente>
     {
         public ClienteMap()
         {

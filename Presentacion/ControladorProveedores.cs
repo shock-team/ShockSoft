@@ -72,7 +72,7 @@ namespace ShockSoft.Presentacion
                     bUoW.GuardarCambios();
                 }
             }
-            
+
         }
     }
 }

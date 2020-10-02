@@ -1,7 +1,7 @@
 ﻿using ShockSoft.Dominio;
+using ShockSoft.Persistencia.EntityFramework;
 using System;
 using System.Collections.Generic;
-using ShockSoft.Persistencia.EntityFramework;
 
 namespace ShockSoft.Presentacion
 {
@@ -44,6 +44,8 @@ namespace ShockSoft.Presentacion
             cliente.Nombre = pNombre;
             cliente.Telefono = pTelefono;
             cliente.Direccion = pDireccion;
+            cliente.Pagos = new List<Pago>();
+            cliente.Ventas = new List<Venta>();
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
@@ -101,7 +103,7 @@ namespace ShockSoft.Presentacion
                     cliente.Localidad = localidad;
                     bUoW.GuardarCambios();
                 }
-            }          
+            }
         }
 
         /// <summary>
@@ -124,7 +126,7 @@ namespace ShockSoft.Presentacion
                     bUoW.GuardarCambios();
                 }
             }
-            
+
         }
 
         /// <summary>

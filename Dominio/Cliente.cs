@@ -46,6 +46,6 @@ namespace ShockSoft.Dominio
         {
             Ventas.Add(pVenta);
         }
-    
+
     }
 }

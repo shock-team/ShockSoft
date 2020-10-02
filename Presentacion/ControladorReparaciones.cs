@@ -1,7 +1,7 @@
 ﻿using ShockSoft.Dominio;
+using ShockSoft.Persistencia.EntityFramework;
 using System;
 using System.Collections.Generic;
-using ShockSoft.Persistencia.EntityFramework;
 
 namespace ShockSoft.Presentacion
 {
@@ -47,6 +47,7 @@ namespace ShockSoft.Presentacion
             reparacion.Cargador = pCargador;
             reparacion.Cables = pCables;
             reparacion.Entregado = false;
+            reparacion.Productos = new List<Producto>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
