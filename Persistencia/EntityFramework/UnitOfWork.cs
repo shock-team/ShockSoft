@@ -21,6 +21,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         public RepositorioReparacion RepositorioReparacion { get; private set; }
         public RepositorioTipoEquipo RepositorioTipoEquipo { get; private set; }
         public RepositorioVenta RepositorioVenta { get; private set; }
+        public RepositorioParametro RepositorioParametro { get; private set; }
 
         public UnitOfWork(ShockDbContext pDbContext)
         {
@@ -40,6 +41,7 @@ namespace ShockSoft.Persistencia.EntityFramework
             this.RepositorioReparacion = new RepositorioReparacion(pDbContext);
             this.RepositorioTipoEquipo = new RepositorioTipoEquipo(pDbContext);
             this.RepositorioVenta = new RepositorioVenta(pDbContext);
+            this.RepositorioParametro = new RepositorioParametro(pDbContext);
         }
 
         public void GuardarCambios()
