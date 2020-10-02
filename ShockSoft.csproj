@@ -197,6 +197,7 @@
     <Compile Include="Persistencia\EntityFramework\Mapping\ProductoMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\ProveedorMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\ReparacionMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioParametro.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\TipoEquipoMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\VentaMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Repositorio.cs" />
@@ -260,12 +261,6 @@
     <Compile Include="Presentacion\Form_DatosCliente.Designer.cs">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Form_MenuPrincipal.Designer.cs">
-      <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Form_ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,12 +293,6 @@
     <EmbeddedResource Include="Presentacion\Form_DatosCliente.resx">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_MenuPrincipal.resx">
-      <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ModificarProducto.resx">
-      <DependentUpon>Form_ModificarProducto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_RegistrarPago.resx">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,7 +304,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -331,11 +319,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shock_img04.png" />
-    <None Include="Resources\Shock_img03.png" />
-    <None Include="Resources\Shock_img02.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
