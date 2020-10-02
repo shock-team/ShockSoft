@@ -1,14 +1,9 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ShockSoft.Dominio;
+﻿using ShockSoft.Dominio;
+using System.Data.Entity.ModelConfiguration;
 
 namespace ShockSoft.Persistencia.EntityFramework.Mapping
 {
-    class ProductoMap:EntityTypeConfiguration<Producto>
+    class ProductoMap : EntityTypeConfiguration<Producto>
     {
         public ProductoMap()
         {

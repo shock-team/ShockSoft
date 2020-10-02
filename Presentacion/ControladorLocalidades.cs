@@ -1,6 +1,6 @@
 ﻿using ShockSoft.Dominio;
-using System.Collections.Generic;
 using ShockSoft.Persistencia.EntityFramework;
+using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {

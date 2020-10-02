@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShockSoft.Dominio;
+using System;
 using System.Windows.Forms;
-using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
@@ -39,7 +32,7 @@ namespace ShockSoft.Presentacion
 
         private void BtnAgregarMarca_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void BtnAceptar_Click(object sender, EventArgs e)

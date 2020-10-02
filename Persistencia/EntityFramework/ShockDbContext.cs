@@ -1,37 +1,32 @@
 ﻿using MySql.Data.EntityFramework;
 using ShockSoft.Dominio;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    public class ShockDbContext :DbContext
+    public class ShockDbContext : DbContext
     {
         //Connection
         public ShockDbContext() : base("name=DefaultConnection") { }
 
         //Databases
-        public DbSet<Cliente> Clientes { get; set; } 
-        public DbSet<LineaCompra> LineasDeCompras { get; set; } 
-        public DbSet<LineaVenta> LineasDeVentas { get; set; } 
-        public DbSet<Marca> Marcas { get; set; } 
-        public DbSet<MetodoPago> MetodosDePago { get; set; } 
-        public DbSet<Pago> Pagos { get; set; } 
-        public DbSet<Producto> Productos { get; set; } 
-        public DbSet<Reparacion> Reparaciones { get; set; } 
-        public DbSet<TipoEquipo> TiposDeEquipo { get; set; } 
-        public DbSet<Venta> Ventas { get; set; } 
-        public DbSet<Proveedor> Proveedores { get; set; } 
-        public DbSet<Compra> Compras { get; set; } 
-        public DbSet<Parametro> Parametros { get; set; } 
-        public DbSet<IVA> IVA { get; set; } 
-        public DbSet<PrecioDolar> PrecioDolar { get; set; } 
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<LineaCompra> LineasDeCompras { get; set; }
+        public DbSet<LineaVenta> LineasDeVentas { get; set; }
+        public DbSet<Marca> Marcas { get; set; }
+        public DbSet<MetodoPago> MetodosDePago { get; set; }
+        public DbSet<Pago> Pagos { get; set; }
+        public DbSet<Producto> Productos { get; set; }
+        public DbSet<Reparacion> Reparaciones { get; set; }
+        public DbSet<TipoEquipo> TiposDeEquipo { get; set; }
+        public DbSet<Venta> Ventas { get; set; }
+        public DbSet<Proveedor> Proveedores { get; set; }
+        public DbSet<Compra> Compras { get; set; }
+        public DbSet<Parametro> Parametros { get; set; }
+        public DbSet<IVA> IVA { get; set; }
+        public DbSet<PrecioDolar> PrecioDolar { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder pModelBuilder)

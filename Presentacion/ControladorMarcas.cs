@@ -1,6 +1,6 @@
 ﻿using ShockSoft.Dominio;
-using System.Collections.Generic;
 using ShockSoft.Persistencia.EntityFramework;
+using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {
@@ -63,8 +63,6 @@ namespace ShockSoft.Presentacion
         /// <param name="idMarca">El ID de la marca a modificar</param>
         public void ModificarMarca(string pDescripcion, int idMarca)
         {
-            Marca marca = new Marca();
-            marca.Descripcion = pDescripcion;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))

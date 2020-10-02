@@ -1,31 +1,34 @@
-﻿using System.Windows.Forms;
-using ShockSoft.Dominio;
+﻿using ShockSoft.Dominio;
+using System.Windows.Forms;
 
 namespace ShockSoft.Presentacion
 {
     public partial class Form_DatosCliente : Form
     {
-        public Form_DatosCliente(Cliente pCliente)
+        ControladorClientes controlador = ControladorClientes.ObtenerInstancia();
+
+        public Form_DatosCliente(int idCliente)
         {
             InitializeComponent();
-            txtId.Text = pCliente.IdCliente.ToString();
-            txtDNI.Text = pCliente.DNI;
-            txtCUIT.Text = pCliente.CUIT;
-            txtNombre.Text = pCliente.Nombre;
-            txtApellido.Text = pCliente.Apellido;
-            txtTelefono.Text = pCliente.Telefono;
-            txtDireccion.Text = pCliente.Direccion;
+            Cliente cliente = controlador.ObtenerCliente(idCliente);
+            txtId.Text = cliente.IdCliente.ToString();
+            txtDNI.Text = cliente.DNI;
+            txtCUIT.Text = cliente.CUIT;
+            txtNombre.Text = cliente.Nombre;
+            txtApellido.Text = cliente.Apellido;
+            txtTelefono.Text = cliente.Telefono;
+            txtDireccion.Text = cliente.Direccion;
             foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
             {
                 comboLocalidad.Items.Add(localidad);
-                if (localidad.Equals(pCliente.Localidad))
+                if (localidad.Equals(cliente.Localidad))
                 {
                     comboLocalidad.SelectedItem = localidad;
                 }
             }
             comboLocalidad.ValueMember = "IdLocalidad";
             comboLocalidad.DisplayMember = "Nombre";
-            txtSaldo.Text = pCliente.ObtenerSaldo().ToString();
+            txtSaldo.Text = cliente.ObtenerSaldo().ToString();
         }
 
         private void BtnAceptar_Click(object sender, System.EventArgs e)

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ShockSoft.Dominio;
+using System;
 using System.Windows.Forms;
-using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {

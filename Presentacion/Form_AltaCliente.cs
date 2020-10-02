@@ -1,12 +1,12 @@
-﻿using System;
+﻿using ShockSoft.Dominio;
+using System;
 using System.Windows.Forms;
-using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
     public partial class Form_AltaCliente : Form
     {
-         ControladorClientes controlador;
+        ControladorClientes controlador;
 
         public Form_AltaCliente()
         {
@@ -32,7 +32,7 @@ namespace ShockSoft.Presentacion
 
         private void BtnNuevaLocalidad_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using ShockSoft.Dominio;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
 
 namespace ShockSoft.Persistencia.EntityFramework.Mapping

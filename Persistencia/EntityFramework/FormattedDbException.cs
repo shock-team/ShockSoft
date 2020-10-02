@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Validation;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
-    class FormattedDbException: Exception
+    class FormattedDbException : Exception
     {
         public FormattedDbException(DbEntityValidationException innerException) :
             base(null, innerException)
