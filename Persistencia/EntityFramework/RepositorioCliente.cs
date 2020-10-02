@@ -1,4 +1,9 @@
 ﻿using ShockSoft.Dominio;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
@@ -6,5 +11,52 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         public RepositorioCliente(ShockDbContext pDbContext) : base(pDbContext) { }
 
+        /// <summary>
+        /// Devuelve todos los Clientes de la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Cliente> ObtenerTodos()
+        {
+            return this.iDbContext.Set<Cliente>().ToList();
+        }
+
+        /// <summary>
+        /// Devuelve una <paramref name="pCantidad"/> de Clientes específica.
+        /// </summary>
+        /// <param name="pCantidad">Cantidad de clientes</param>
+        /// <returns></returns>
+        public IEnumerable<Cliente> ObtenerPorCantidad(int pCantidad)
+        {
+            return this.iDbContext.Set<Cliente>().Take(pCantidad).ToList();
+        }
+
+        /// <summary>
+        /// Devuelve Clientes filtrados por <paramref name="pConDeudas"/>.
+        /// </summary>
+        /// <param name="pConDeudas"></param>
+        /// <returns></returns>
+        public IEnumerable<Cliente> ObtenerDeudores(bool pConDeudas)
+        {
+            var clientesFiltrados = (from c in iDbContext.Clientes
+                                     join r in iDbContext.Reparaciones on c.IdCliente equals r.IdCliente
+                                     where r.Cobrado == pConDeudas
+                                     select c);
+            return clientesFiltrados;
+        }
+
+        /// <summary>
+        /// Devuelve Clientes filtrados por <paramref name="pNombre"/> y <paramref name="pApellido"/>.
+        /// </summary>
+        /// <param name="pNombre"></param>
+        /// <param name="pApellido"></param>
+        /// <returns></returns>
+        public IEnumerable<Cliente> ObtenerPorDatos(string pNombre, string pApellido)
+        {
+            var clientesFiltrados = (from c in iDbContext.Clientes
+                                     where (string.IsNullOrEmpty(pNombre) || c.Nombre.Contains(pNombre)) &&
+                                            (string.IsNullOrEmpty(pApellido) || c.Apellido.Contains(pApellido))
+                                     select c);
+            return clientesFiltrados;                                          
+        }
     }
 }
