@@ -1,5 +1,6 @@
 ﻿using ShockSoft.Dominio;
 using System.Collections.Generic;
+using ShockSoft.Persistencia.EntityFramework;
 
 namespace ShockSoft.Presentacion
 {
@@ -18,7 +19,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorParametros ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new ControladorParametros();
             }
@@ -36,6 +37,14 @@ namespace ShockSoft.Presentacion
             Parametro parametro = new Parametro();
             parametro.Descripcion = pDescripcion;
             parametro.Valor = pValor;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    bUoW.RepositorioParametro.Agregar(parametro);
+                    bUoW.GuardarCambios();
+                }
+            }
         }
 
         /// <summary>
@@ -58,7 +67,16 @@ namespace ShockSoft.Presentacion
         /// <param name="idParametro">El ID del parámetro a modificar</param>
         public void ModificarParametro(string pDescripcion, float pValor, int idParametro)
         {
-
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Parametro parametro = bUoW.RepositorioParametro.Obtener(idParametro);
+                    parametro.Descripcion = pDescripcion;
+                    parametro.Valor = pValor;
+                    bUoW.GuardarCambios();
+                }
+            }
         }
     }
 }

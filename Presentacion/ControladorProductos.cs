@@ -1,4 +1,5 @@
 ﻿using ShockSoft.Dominio;
+using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
@@ -18,7 +19,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorProductos ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new ControladorProductos();
             }
@@ -41,8 +42,18 @@ namespace ShockSoft.Presentacion
             producto.PrecioBaseDolar = pPrecioBaseDolar;
             producto.EnVenta = true;
             producto.PorcentajeGanancia = pGanancia;
-            IVA iva = new IVA();
-            producto.Parametro = iva;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Parametro iva = bUoW.RepositorioParametro.Obtener(pIVA);
+                    producto.Parametro = iva;
+                    Marca marca = bUoW.RepositorioMarca.Obtener(pMarca);
+                    producto.Marca = marca;
+                    bUoW.RepositorioProducto.Agregar(producto);
+                    bUoW.GuardarCambios();
+                }
+            }
         }
 
         /// <summary>
@@ -61,20 +72,25 @@ namespace ShockSoft.Presentacion
         /// en el repositorio
         /// </summary>
         /// <param name="pDescripcion">La nueva descripción del producto</param>
-        /// <param name="pCantidad">La nueva cantidad del producto</param>
         /// <param name="pPrecioBaseDolar">El nuevo precio base en dólares del producto</param>
         /// <param name="pGanancia">El nuevo porcentaje de ganancia del producto</param>
         /// <param name="pIVA">El ID del nuevo IVA asociado al producto</param>
         /// <param name="idProducto">El ID del producto a modificar</param>
-        public void ModificarProducto(string pDescripcion, int pCantidad, float pPrecioBaseDolar, float pGanancia, int pIVA, int idProducto)
+        public void ModificarProducto(string pDescripcion, float pPrecioBaseDolar, float pGanancia, int pIVA, int idProducto)
         {
-            Producto producto = new Producto();
-            producto.Descripcion = pDescripcion;
-            producto.Cantidad = pCantidad;
-            producto.PrecioBaseDolar = pPrecioBaseDolar;
-            producto.PorcentajeGanancia = pGanancia;
-            IVA iva = new IVA();
-            producto.Parametro = iva;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
+                    producto.Descripcion = pDescripcion;
+                    producto.PrecioBaseDolar = pPrecioBaseDolar;
+                    producto.PorcentajeGanancia = pGanancia;
+                    Parametro iva = bUoW.RepositorioParametro.Obtener(pIVA);
+                    producto.Parametro = iva;
+                    bUoW.GuardarCambios();
+                }
+            }
         }
 
         /// <summary>
@@ -83,8 +99,15 @@ namespace ShockSoft.Presentacion
         /// <param name="idProducto">El ID del producto</param>
         public void DarDeBaja(int idProducto)
         {
-            Producto producto = new Producto();
-            producto.EnVenta = false;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
+                    producto.EnVenta = false;
+                    bUoW.GuardarCambios();
+                }
+            }
         }
     }
 }

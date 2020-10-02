@@ -1,4 +1,5 @@
 ﻿using ShockSoft.Dominio;
+using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
@@ -18,7 +19,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static CotroladorProveedores ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new CotroladorProveedores();
             }
@@ -33,6 +34,14 @@ namespace ShockSoft.Presentacion
         {
             Proveedor proveedor = new Proveedor();
             proveedor.Nombre = pNombre;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    bUoW.RepositorioProveedor.Agregar(proveedor);
+                    bUoW.GuardarCambios();
+                }
+            }
         }
 
         /// <summary>
@@ -54,8 +63,16 @@ namespace ShockSoft.Presentacion
         /// <param name="idProveedor">El ID del proveedor a modificar</param>
         public void ModificarProveedor(string pNombre, int idProveedor)
         {
-            Proveedor proveedor = new Proveedor();
-            proveedor.Nombre = pNombre;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Proveedor proveedor = bUoW.RepositorioProveedor.Obtener(idProveedor);
+                    proveedor.Nombre = pNombre;
+                    bUoW.GuardarCambios();
+                }
+            }
+            
         }
     }
 }

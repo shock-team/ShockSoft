@@ -1,5 +1,6 @@
 ﻿using ShockSoft.Dominio;
 using System.Collections.Generic;
+using ShockSoft.Persistencia.EntityFramework;
 
 namespace ShockSoft.Presentacion
 {
@@ -18,7 +19,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorMarcas ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new ControladorMarcas();
             }
@@ -33,6 +34,14 @@ namespace ShockSoft.Presentacion
         {
             Marca marca = new Marca();
             marca.Descripcion = pDescripcion;
+            using (var pDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
+                {
+                    bUoW.RepositorioMarca.Agregar(marca);
+                    bUoW.GuardarCambios();
+                }
+            }
         }
 
         /// <summary>
@@ -56,6 +65,15 @@ namespace ShockSoft.Presentacion
         {
             Marca marca = new Marca();
             marca.Descripcion = pDescripcion;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Marca marcaAModificar = bUoW.RepositorioMarca.Obtener(idMarca);
+                    marcaAModificar.Descripcion = pDescripcion;
+                    bUoW.GuardarCambios();
+                }
+            }
         }
     }
 }

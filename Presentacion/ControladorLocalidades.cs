@@ -20,7 +20,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorLocalidades ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new ControladorLocalidades();
             }
@@ -39,7 +39,8 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    
+                    bUoW.RepositorioLocalidad.Agregar(localidad);
+                    bUoW.GuardarCambios();
                 }
             }
         }
@@ -63,7 +64,28 @@ namespace ShockSoft.Presentacion
         /// <param name="idLocalidad">El ID de la localidad a modificar</param>
         public void ModificarLocalidad(string pNombre, int idLocalidad)
         {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Localidad localidadAModificar = bUoW.RepositorioLocalidad.Obtener(idLocalidad);
+                    localidadAModificar.Nombre = pNombre;
+                    bUoW.GuardarCambios();
+                }
+            }
+        }
 
+        public Localidad ObtenerLocalidad(int idLocalidad)
+        {
+            Localidad localidadObtenida;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    localidadObtenida = bUoW.RepositorioLocalidad.Obtener(idLocalidad);
+                }
+            }
+            return localidadObtenida;
         }
     }
 }

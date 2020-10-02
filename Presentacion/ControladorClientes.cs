@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using System;
 using System.Collections.Generic;
+using ShockSoft.Persistencia.EntityFramework;
 
 namespace ShockSoft.Presentacion
 {
@@ -20,7 +21,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorClientes ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new ControladorClientes();
             }
@@ -43,8 +44,16 @@ namespace ShockSoft.Presentacion
             cliente.Nombre = pNombre;
             cliente.Telefono = pTelefono;
             cliente.Direccion = pDireccion;
-            Localidad localidad = new Localidad();
-            cliente.Localidad = localidad;
+            using (var pDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
+                {
+                    Localidad localidad = bUoW.RepositorioLocalidad.Obtener(pIdLocalidad);
+                    cliente.Localidad = localidad;
+                    bUoW.RepositorioCliente.Agregar(cliente);
+                    bUoW.GuardarCambios();
+                }
+            }
         }
 
         /// <summary>
@@ -77,31 +86,45 @@ namespace ShockSoft.Presentacion
         /// <param name="idCliente">El ID del cliente a modificar</param>
         public void ModificarCliente(string pDNI, string pCUIT, string pApellido, string pNombre, string pTelefono, string pDireccion, int pLocalidad, int idCliente)
         {
-            Cliente cliente = new Cliente();
-            cliente.DNI = pDNI;
-            cliente.CUIT = pCUIT;
-            cliente.Apellido = pApellido;
-            cliente.Nombre = pNombre;
-            cliente.Telefono = pTelefono;
-            cliente.Direccion = pDireccion;
-            Localidad localidad = new Localidad();
-            cliente.Localidad = localidad;
-
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Cliente cliente = bUoW.RepositorioCliente.Obtener(idCliente);
+                    cliente.DNI = pDNI;
+                    cliente.CUIT = pCUIT;
+                    cliente.Apellido = pApellido;
+                    cliente.Nombre = pNombre;
+                    cliente.Telefono = pTelefono;
+                    cliente.Direccion = pDireccion;
+                    Localidad localidad = bUoW.RepositorioLocalidad.Obtener(pLocalidad);
+                    cliente.Localidad = localidad;
+                    bUoW.GuardarCambios();
+                }
+            }          
         }
 
         /// <summary>
         /// Este método se encarga de registrar un pago a un cliente
         /// </summary>
-        /// <param name="idCliente">El id del cliente</param>
+        /// <param name="pIdCliente">El id del cliente</param>
         /// <param name="pMonto">El monto a pagar</param>
         public void RegistrarPago(int pIdCliente, float pMonto, DateTime pFecha, string pDescripcion)
         {
-            Cliente cliente = new Cliente();
             Pago pago = new Pago();
             pago.Monto = pMonto;
             pago.Fecha = pFecha;
             pago.Descripcion = pDescripcion;
-            cliente.RegistrarPago(pago);
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Cliente cliente = bUoW.RepositorioCliente.Obtener(pIdCliente);
+                    cliente.RegistrarPago(pago);
+                    bUoW.GuardarCambios();
+                }
+            }
+            
         }
 
         /// <summary>
@@ -113,6 +136,13 @@ namespace ShockSoft.Presentacion
         public Cliente ObtenerCliente(int pId)
         {
             Cliente cliente = new Cliente();
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    cliente = bUoW.RepositorioCliente.Obtener(pId);
+                }
+            }
             return cliente;
         }
     }

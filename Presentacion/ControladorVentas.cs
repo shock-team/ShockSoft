@@ -1,4 +1,5 @@
 ﻿using ShockSoft.Dominio;
+using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
@@ -18,7 +19,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorVentas ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new ControladorVentas();
             }
@@ -28,18 +29,24 @@ namespace ShockSoft.Presentacion
         /// <summary>
         /// Este método se encarga de crear la nueva venta y agregarla al repositorio
         /// </summary>
-        /// <param name="idCuentaCorriente">ID de la cuenta corriente asociada a la venta</param>
+        /// <param name="idCliente">ID del cliente correspondiente a la venta</param>
         /// <param name="pListaLineaVenta">Lista de líneas de venta asociadas a la venta</param>
         /// <param name="idMetodoPago">ID del método de pago correspondiente a la venta</param>
         public void AgregarVenta(int idCliente, List<LineaVenta> pListaLineaVenta, int idMetodoPago)
         {
             Venta venta = new Venta();
             venta.Lineas = pListaLineaVenta;
-            MetodoPago metodoPago = new MetodoPago();
-            venta.MetodoPago = metodoPago;
-            Cliente cliente = new Cliente();
-            cliente.AgregarVenta(venta);
-
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    MetodoPago metodoPago = bUoW.RepositorioMetodoPago.Obtener(idMetodoPago);
+                    venta.MetodoPago = metodoPago;
+                    Cliente cliente = bUoW.RepositorioCliente.Obtener(idCliente);
+                    cliente.AgregarVenta(venta);
+                    bUoW.GuardarCambios();
+                }
+            }
         }
 
         /// <summary>

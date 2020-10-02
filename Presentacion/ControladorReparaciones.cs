@@ -20,7 +20,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorReparaciones ObtenerInstancia()
         {
-            if (instancia.Equals(null))
+            if (instancia == null)
             {
                 instancia = new ControladorReparaciones();
             }
@@ -36,15 +36,9 @@ namespace ShockSoft.Presentacion
         /// <param name="pCargador">Si el dispositivo de la nueva reparación incluye cargador o no</param>
         /// <param name="pCables">Si el dispositivo de la nueva reparación incluye cables o no</param>
         /// <param name="pCliente">El ID del cliente asociado a la nueva reparación</param>
-        /// <param name="pSolucion">La solución para la nueva reparación</param>
-        /// <param name="pFechaReparacion">La fecha en que el dispositivo fue reparado</param>
-        /// <param name="pPrecio">El precio de la nueva reparación</param>
-        /// <param name="pEntregado">Si el dispositivo reparado fue entregado o no</param>
         /// <param name="pTipoEquipo">El tipo del equipo correspondiente a la nueva reparación</param>
         /// <param name="pMarcaEquipo">La marca del equipo correspondiente a la nueva reparación</param>
-        /// <param name="pMetodoPago">El método de pago elegido para la nueva reparación</param>
-        /// <param name="pProductosUtilizados">Los productos utilizados en la nueva reparación</param>
-        public void AgregarReparacion(string pProblema, DateTime pFechaIngreso, string pContraseña, bool pCargador, bool pCables, int pCliente, string pSolucion, DateTime pFechaReparacion, float pPrecio, bool pEntregado, int pTipoEquipo, int pMarcaEquipo, int pMetodoPago, List<Producto> pProductosUtilizados)
+        public void AgregarReparacion(string pProblema, DateTime pFechaIngreso, string pContraseña, bool pCargador, bool pCables, int pCliente, int pTipoEquipo, int pMarcaEquipo)
         {
             Reparacion reparacion = new Reparacion();
             reparacion.Problema = pProblema;
@@ -52,22 +46,20 @@ namespace ShockSoft.Presentacion
             reparacion.Contraseña = pContraseña;
             reparacion.Cargador = pCargador;
             reparacion.Cables = pCables;
-            Cliente cliente = new Cliente();
-            reparacion.Cliente = cliente;
-            reparacion.Solucion = pSolucion;
-            reparacion.FechaReparacion = pFechaReparacion;
-            reparacion.Precio = pPrecio;
-            reparacion.Entregado = pEntregado;
-            Marca marca = new Marca();
-            reparacion.Marca = marca;
-            TipoEquipo tipo = new TipoEquipo();
-            reparacion.TipoEquipo = tipo;
-            MetodoPago metodoPago = new MetodoPago();
-            reparacion.MetodoPago = metodoPago;
-            reparacion.Productos = pProductosUtilizados;
-            using (UnitOfWork bUow)
+            reparacion.Entregado = false;
+            using (var bDbContext = new ShockDbContext())
             {
-
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Cliente cliente = bUoW.RepositorioCliente.Obtener(pCliente);
+                    reparacion.Cliente = cliente;
+                    Marca marca = bUoW.RepositorioMarca.Obtener(pMarcaEquipo);
+                    reparacion.Marca = marca;
+                    TipoEquipo tipo = bUoW.RepositorioTipoEquipo.Obtener(pTipoEquipo);
+                    reparacion.TipoEquipo = tipo;
+                    bUoW.RepositorioReparacion.Agregar(reparacion);
+                    bUoW.GuardarCambios();
+                }
             }
         }
 
@@ -99,20 +91,31 @@ namespace ShockSoft.Presentacion
         /// <param name="pEntregado">Si la reparación fue entregada o no</param>
         /// <param name="pMetodoPago">El nuevo método de pago de la reparación</param>
         /// <param name="pProductosUtilizados">Los nuevos productos untilizados en la reparación</param>
-        public void ModificarReparacion(string pProblema, string pContraseña, bool pCargador, bool pCables, string pSolucion, DateTime pFechaReparacion, float pPrecio, bool pEntregado, int pMetodoPago, List<Producto> pProductosUtilizados)
+        /// <param name="idReparacion">El ID de la reparación a modificar</param>
+        public void ModificarReparacion(string pProblema, string pContraseña, bool pCargador, bool pCables, string pSolucion, DateTime pFechaReparacion, float pPrecio, bool pEntregado, List<Producto> pProductosUtilizados, int idReparacion, int pMetodoPago = 0)
         {
-            Reparacion reparacion = new Reparacion();
-            reparacion.Problema = pProblema;
-            reparacion.Contraseña = pContraseña;
-            reparacion.Cargador = pCargador;
-            reparacion.Cables = pCables;
-            reparacion.Solucion = pSolucion;
-            reparacion.FechaReparacion = pFechaReparacion;
-            reparacion.Precio = pPrecio;
-            reparacion.Entregado = pEntregado;
-            MetodoPago metodoPago = new MetodoPago();
-            reparacion.MetodoPago = metodoPago;
-            reparacion.Productos = pProductosUtilizados;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Reparacion reparacion = bUoW.RepositorioReparacion.Obtener(idReparacion);
+                    reparacion.Problema = pProblema;
+                    reparacion.Contraseña = pContraseña;
+                    reparacion.Cargador = pCargador;
+                    reparacion.Cables = pCables;
+                    reparacion.Solucion = pSolucion;
+                    reparacion.FechaReparacion = pFechaReparacion;
+                    reparacion.Precio = pPrecio;
+                    reparacion.Entregado = pEntregado;
+                    if (pMetodoPago != 0)
+                    {
+                        MetodoPago metodoPago = bUoW.RepositorioMetodoPago.Obtener(pMetodoPago);
+                        reparacion.MetodoPago = metodoPago;
+                    }
+                    reparacion.Productos = pProductosUtilizados;
+                    bUoW.GuardarCambios();
+                }
+            }
         }
     }
 }
