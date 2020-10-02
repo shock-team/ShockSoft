@@ -44,7 +44,7 @@ namespace ShockSoft.Presentacion
         {
             //Limpia la tabla y vuelve a cargarla
             tablaDeClientes.Rows.Clear();
-            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text, txtCUIT.Text))
+            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text))
             {
                 tablaDeClientes.Rows.Add(cliente.IdCliente, cliente.Nombre, cliente.Apellido, cliente.CUIT, cliente.ObtenerSaldo());
             }

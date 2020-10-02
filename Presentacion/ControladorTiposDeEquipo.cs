@@ -30,7 +30,7 @@ namespace ShockSoft.Presentacion
         /// Este método se encarga de crear el nuevo tipo de equipo y agregarlo al repositorio
         /// </summary>
         /// <param name="pDescripcion">La descripción del nuevo tipo de equipo</param>
-        public void AgregarTipo(string pDescripcion)
+        public void AgregarTipoDeEquipo(string pDescripcion)
         {
             TipoEquipo tipo = new TipoEquipo();
             tipo.Descripcion = pDescripcion;
@@ -61,7 +61,7 @@ namespace ShockSoft.Presentacion
         /// </summary>
         /// <param name="pDescripcion">La nueva descripción del tipo de equipo</param>
         /// <param name="idTipoEquipo">El ID del tipo de equipo a modificar</param>
-        public void ModificarMarca(string pDescripcion, int idTipoEquipo)
+        public void ModificarTipoDeEquipo(string pDescripcion, int idTipoEquipo)
         {
             using (var bDbContext = new ShockDbContext())
             {

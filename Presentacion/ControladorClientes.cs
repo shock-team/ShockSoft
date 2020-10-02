@@ -44,6 +44,8 @@ namespace ShockSoft.Presentacion
             cliente.Nombre = pNombre;
             cliente.Telefono = pTelefono;
             cliente.Direccion = pDireccion;
+            cliente.DNI = pDNI;
+            cliente.CUIT = pCUIT;
             cliente.Pagos = new List<Pago>();
             cliente.Ventas = new List<Venta>();
             using (var pDbContext = new ShockDbContext())
@@ -68,7 +70,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pApellido">El apellido por el cual filtrar los clientes</param>
         /// <param name="pCUIT">El CUIT por el cual filtrar los clientes</param>
         /// <returns></returns>
-        public List<Cliente> ListarClientes(bool pConDeudas, bool pSinDeudas, string pNombre = null, string pApellido = null, string pCUIT = null)
+        public List<Cliente> ListarClientes(bool pConDeudas, bool pSinDeudas, string pNombre = null, string pApellido = null)
         {
             List<Cliente> listaClientes = new List<Cliente>();
             return listaClientes;

@@ -30,10 +30,12 @@ namespace ShockSoft.Presentacion
         /// Este método se encarga de crear el nuevo método y agregarlo al repositorio
         /// </summary>
         /// <param name="pDescripcion">La descripción del nuevo método de pago</param>
-        public void AgregarMetodoDePago(string pDescripcion)
+        /// <param name="pValor">El valor del nuevo método de pago</param>
+        public void AgregarMetodoDePago(string pDescripcion, float pValor)
         {
             MetodoPago metodo = new MetodoPago();
             metodo.Descripcion = pDescripcion;
+            metodo.Valor = pValor;
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))

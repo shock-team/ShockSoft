@@ -30,10 +30,8 @@
         {
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtCUIT = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.lblCUIT = new System.Windows.Forms.Label();
             this.cbConDeudas = new System.Windows.Forms.CheckBox();
             this.cbSinDeudas = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -57,14 +55,6 @@
             this.txtApellido.TabIndex = 2;
             this.txtApellido.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
-            // txtCUIT
-            // 
-            this.txtCUIT.Location = new System.Drawing.Point(148, 418);
-            this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(146, 20);
-            this.txtCUIT.TabIndex = 3;
-            this.txtCUIT.TextChanged += new System.EventHandler(this.ValorCambiado);
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
@@ -82,15 +72,6 @@
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 5;
             this.lblApellido.Text = "Apellido";
-            // 
-            // lblCUIT
-            // 
-            this.lblCUIT.AutoSize = true;
-            this.lblCUIT.Location = new System.Drawing.Point(71, 421);
-            this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(32, 13);
-            this.lblCUIT.TabIndex = 6;
-            this.lblCUIT.Text = "CUIT";
             // 
             // cbConDeudas
             // 
@@ -116,7 +97,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(623, 416);
+            this.btnCancelar.Location = new System.Drawing.Point(713, 384);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 10;
@@ -137,15 +118,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 421);
             this.Controls.Add(this.dgClientes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cbSinDeudas);
             this.Controls.Add(this.cbConDeudas);
-            this.Controls.Add(this.lblCUIT);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtCUIT);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
             this.Name = "Form_ConsultaClientes";
@@ -159,10 +138,8 @@
         #endregion
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblCUIT;
         private System.Windows.Forms.CheckBox cbConDeudas;
         private System.Windows.Forms.CheckBox cbSinDeudas;
         private System.Windows.Forms.Button btnCancelar;
