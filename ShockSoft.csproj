@@ -197,6 +197,8 @@
     <Compile Include="Persistencia\EntityFramework\Mapping\ProductoMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\ProveedorMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\ReparacionMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioLineasDeCompras.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioLineasDeVentas.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioParametro.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\TipoEquipoMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\VentaMap.cs" />
