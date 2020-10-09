@@ -52,5 +52,37 @@ namespace ShockSoft.Presentacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            this.panelPrincipal.BackColor = Color.FromArgb(255, 45, 175, 45);
+            
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            this.panelPrincipal.BackColor = Color.FromArgb(255, 0, 80, 200);
+            AbrirFormHija(new Form_MenuClientes());
+        }
+
+        private void btnReparaciones_Click(object sender, EventArgs e)
+        {
+            this.panelPrincipal.BackColor = Color.FromArgb(255, 200, 200, 40);
+        }
+
+        private void AbrirFormHija(object formHija)
+        {
+            if (this.panelPrincipal.Controls.Count > 0)
+            {
+                this.panelPrincipal.Controls.RemoveAt(0);
+            }
+
+            Form fh = formHija as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelPrincipal.Controls.Add(fh);
+            this.panelPrincipal.Tag = fh;
+            fh.Show();
+        }
     }
 }

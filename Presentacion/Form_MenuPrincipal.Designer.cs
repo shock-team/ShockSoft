@@ -29,32 +29,62 @@
         private void InitializeComponent()
         {
             this.panelControl = new System.Windows.Forms.Panel();
+            this.picShock = new System.Windows.Forms.PictureBox();
+            this.lblShock = new System.Windows.Forms.Label();
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReparaciones = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
             this.panelControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panelLateral.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl
             // 
             this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelControl.Controls.Add(this.picShock);
+            this.panelControl.Controls.Add(this.lblShock);
             this.panelControl.Controls.Add(this.btnTamano);
             this.panelControl.Controls.Add(this.btnCerrar);
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(800, 45);
+            this.panelControl.Size = new System.Drawing.Size(1000, 45);
             this.panelControl.TabIndex = 0;
             this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
+            // 
+            // picShock
+            // 
+            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Location = new System.Drawing.Point(3, 3);
+            this.picShock.Name = "picShock";
+            this.picShock.Size = new System.Drawing.Size(40, 40);
+            this.picShock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShock.TabIndex = 9;
+            this.picShock.TabStop = false;
+            // 
+            // lblShock
+            // 
+            this.lblShock.AutoSize = true;
+            this.lblShock.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblShock.Location = new System.Drawing.Point(40, 9);
+            this.lblShock.Name = "lblShock";
+            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.TabIndex = 8;
+            this.lblShock.Text = "Shock!Soft";
             // 
             // btnTamano
             // 
@@ -64,7 +94,7 @@
             this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
-            this.btnTamano.Location = new System.Drawing.Point(710, 0);
+            this.btnTamano.Location = new System.Drawing.Point(910, 0);
             this.btnTamano.Name = "btnTamano";
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
@@ -79,7 +109,7 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
-            this.btnCerrar.Location = new System.Drawing.Point(755, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(955, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
@@ -88,27 +118,12 @@
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.panelPrincipal.Location = new System.Drawing.Point(0, 45);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(800, 450);
+            this.panelPrincipal.Size = new System.Drawing.Size(700, 555);
             this.panelPrincipal.TabIndex = 1;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
-            this.btnMinimizar.Location = new System.Drawing.Point(665, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
-            this.btnMinimizar.TabIndex = 7;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnClientes
             // 
@@ -120,55 +135,107 @@
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClientes.Location = new System.Drawing.Point(40, 45);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(210, 90);
+            this.btnClientes.Size = new System.Drawing.Size(210, 70);
             this.btnClientes.TabIndex = 8;
             this.btnClientes.Text = "Clientes / Ventas";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panelLateral.Controls.Add(this.panel1);
+            this.panelLateral.Controls.Add(this.button2);
             this.panelLateral.Controls.Add(this.button1);
+            this.panelLateral.Controls.Add(this.panel5);
+            this.panelLateral.Controls.Add(this.panel4);
+            this.panelLateral.Controls.Add(this.panel1);
+            this.panelLateral.Controls.Add(this.btnReparaciones);
             this.panelLateral.Controls.Add(this.panel3);
             this.panelLateral.Controls.Add(this.panel2);
             this.panelLateral.Controls.Add(this.btnProductos);
             this.panelLateral.Controls.Add(this.btnClientes);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelLateral.Location = new System.Drawing.Point(500, 45);
+            this.panelLateral.Location = new System.Drawing.Point(700, 45);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(300, 405);
+            this.panelLateral.Size = new System.Drawing.Size(300, 555);
             this.panelLateral.TabIndex = 8;
             // 
-            // panel1
+            // button2
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(40)))));
-            this.panel1.Location = new System.Drawing.Point(250, 237);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 90);
-            this.panel1.TabIndex = 13;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(80)))), ((int)(((byte)(30)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(40, 345);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(210, 70);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "???";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(40)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(125)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(40, 237);
+            this.button1.Location = new System.Drawing.Point(40, 120);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 90);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Reparaciones";
+            this.button1.Size = new System.Drawing.Size(210, 70);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "???";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(125)))));
+            this.panel5.Location = new System.Drawing.Point(250, 120);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 70);
+            this.panel5.TabIndex = 12;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(80)))), ((int)(((byte)(30)))));
+            this.panel4.Location = new System.Drawing.Point(250, 345);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 70);
+            this.panel4.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(40)))));
+            this.panel1.Location = new System.Drawing.Point(250, 270);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 70);
+            this.panel1.TabIndex = 13;
+            // 
+            // btnReparaciones
+            // 
+            this.btnReparaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnReparaciones.FlatAppearance.BorderSize = 0;
+            this.btnReparaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(40)))));
+            this.btnReparaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReparaciones.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReparaciones.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReparaciones.Location = new System.Drawing.Point(40, 270);
+            this.btnReparaciones.Name = "btnReparaciones";
+            this.btnReparaciones.Size = new System.Drawing.Size(210, 70);
+            this.btnReparaciones.TabIndex = 12;
+            this.btnReparaciones.Text = "Reparaciones";
+            this.btnReparaciones.UseVisualStyleBackColor = false;
+            this.btnReparaciones.Click += new System.EventHandler(this.btnReparaciones_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(175)))), ((int)(((byte)(45)))));
-            this.panel3.Location = new System.Drawing.Point(250, 141);
+            this.panel3.Location = new System.Drawing.Point(250, 195);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 90);
+            this.panel3.Size = new System.Drawing.Size(10, 70);
             this.panel3.TabIndex = 11;
             // 
             // panel2
@@ -176,7 +243,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel2.Location = new System.Drawing.Point(250, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 90);
+            this.panel2.Size = new System.Drawing.Size(10, 70);
             this.panel2.TabIndex = 9;
             // 
             // btnProductos
@@ -187,27 +254,47 @@
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnProductos.Location = new System.Drawing.Point(40, 141);
+            this.btnProductos.Location = new System.Drawing.Point(40, 195);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(210, 90);
+            this.btnProductos.Size = new System.Drawing.Size(210, 70);
             this.btnProductos.TabIndex = 10;
             this.btnProductos.Text = "Productos / Compras";
             this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
+            this.btnMinimizar.Location = new System.Drawing.Point(865, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
+            this.btnMinimizar.TabIndex = 7;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // Form_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelLateral);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.panelControl);
-            this.Controls.Add(this.panelPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Form_MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_MenuPrincipal";
             this.panelControl.ResumeLayout(false);
+            this.panelControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
             this.panelLateral.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -226,6 +313,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnReparaciones;
+        private System.Windows.Forms.Label lblShock;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox picShock;
     }
 }
