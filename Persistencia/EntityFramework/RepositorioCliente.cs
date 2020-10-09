@@ -32,15 +32,15 @@ namespace ShockSoft.Persistencia.EntityFramework
         }
 
         /// <summary>
-        /// Devuelve Clientes filtrados por <paramref name="pConDeudas"/>.
+        /// Devuelve Clientes filtrados por <paramref name="pConDeudas"/> o <paramref name="pSinDeudas"/>.
         /// </summary>
         /// <param name="pConDeudas"></param>
         /// <returns></returns>
-        public IEnumerable<Cliente> ObtenerDeudores(bool pConDeudas)
+        public IEnumerable<Cliente> ObtenerDeudores(bool pConDeudas, bool pSinDeudas)
         {
             var clientesFiltrados = (from c in iDbContext.Clientes
                                      join r in iDbContext.Reparaciones on c.IdCliente equals r.IdCliente
-                                     where r.Cobrado == pConDeudas
+                                     where (r.Cobrado == pConDeudas) || (r.Cobrado == pSinDeudas)
                                      select c);
             return clientesFiltrados;
         }
