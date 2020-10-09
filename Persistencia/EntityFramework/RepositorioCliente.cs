@@ -50,5 +50,11 @@ namespace ShockSoft.Persistencia.EntityFramework
                                      select c);
             return clientesFiltrados;                                          
         }
+
+        public int CantidadFilas()
+        {
+            var sql = "SELECT COUNT(*) FROM clientes";
+            return this.iDbContext.Database.SqlQuery<int>(sql).Single();
+        }
     }
 }
