@@ -13,18 +13,18 @@ namespace ShockSoft.Persistencia.EntityFramework
             return this.iDbContext.Set<Producto>().OrderBy(x => x.IdProducto).Skip(pDesde).Take(pHasta);
         }
 
-        public IEnumerable<Producto> ObtenerEnVenta(bool pEnVenta)
+        public IEnumerable<Producto> ObtenerEnVenta(bool pNoEnVenta)
         {
             var prodFiltrados = (from p in iDbContext.Productos
-                                 where p.EnVenta == pEnVenta
+                                 where p.EnVenta || p.EnVenta == pNoEnVenta
                                  select p);
             return prodFiltrados;
         }
 
-        public IEnumerable<Producto> ObtenerConStock()
+        public IEnumerable<Producto> ObtenerConStock(bool pSinStock)
         {
             var prodFiltrados = (from p in iDbContext.Productos
-                                 where p.Cantidad > 0
+                                 where p.Cantidad > 0 || ((p.Cantidad == 0) == pSinStock)
                                  select p);
             return prodFiltrados;
         }

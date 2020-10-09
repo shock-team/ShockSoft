@@ -64,12 +64,25 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, int pId)
         {
-            List<Producto> listaProductos;
+            IEnumerable<Producto> listaProductosPorStock;
+            IEnumerable<Producto> listaProductosPorEnVenta;
+            IEnumerable<Producto> listaProductosPorDescripcion;
+            List<Producto> listaProductos = new List<Producto>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    listaProductos = bUoW.RepositorioProducto.Ob;
+                    if (pId != -1)
+                    {
+                        listaProductosPorStock = bUoW.RepositorioProducto.ObtenerConStock(pSinStock);
+                        listaProductosPorEnVenta = bUoW.RepositorioProducto.ObtenerEnVenta(pDeBaja);
+                        listaProductosPorDescripcion = bUoW.RepositorioProducto.ObtenerPorDescripcion(pDescripcion);
+                        listaProductos = listaProductosPorStock.Intersect(listaProductosPorEnVenta).Intersect(listaProductosPorDescripcion).ToList();
+                    }
+                    else
+                    {
+                        listaProductos.Add(bUoW.RepositorioProducto.Obtener(pId));
+                    }
                 }
             }
             return listaProductos;
