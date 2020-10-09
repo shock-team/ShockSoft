@@ -16,5 +16,11 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
         }
+
+        private void btnAltaCliente_Click(object sender, EventArgs e)
+        {
+            Form_AltaCliente form_AltaCliente = new Form_AltaCliente();
+            form_AltaCliente.Show();
+        }
     }
 }

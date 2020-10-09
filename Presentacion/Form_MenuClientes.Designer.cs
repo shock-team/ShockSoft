@@ -46,6 +46,7 @@
             this.btnAltaCliente.TabIndex = 0;
             this.btnAltaCliente.Text = "Nuevo Cliente";
             this.btnAltaCliente.UseVisualStyleBackColor = false;
+            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
             // 
             // button2
             // 
