@@ -61,7 +61,7 @@ namespace ShockSoft.Presentacion
         /// presentes en el repositorio, según distintos filtros
         /// </summary>
         /// <returns></returns>
-        public List<Producto> ListarProductos()
+        public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, int pId)
         {
             List<Producto> listaProductos = new List<Producto>();
             return listaProductos;

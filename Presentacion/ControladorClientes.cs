@@ -2,6 +2,7 @@
 using ShockSoft.Persistencia.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShockSoft.Presentacion
 {
@@ -73,6 +74,13 @@ namespace ShockSoft.Presentacion
         public List<Cliente> ListarClientes(bool pConDeudas, bool pSinDeudas, string pNombre = null, string pApellido = null)
         {
             List<Cliente> listaClientes = new List<Cliente>();
+            using (var pDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
+                {
+                    listaClientes = bUoW.RepositorioCliente.ObtenerPorDatos(pNombre, pApellido).ToList();
+                }
+            }
             return listaClientes;
         }
 

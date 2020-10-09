@@ -31,8 +31,6 @@
             this.lblFiltro = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.cbMostrarProductosBaja = new System.Windows.Forms.CheckBox();
             this.dgProductos = new System.Windows.Forms.DataGridView();
             this.btnAñadir = new System.Windows.Forms.Button();
@@ -40,6 +38,9 @@
             this.btnAltaBaja = new System.Windows.Forms.Button();
             this.btnHistorialVenta = new System.Windows.Forms.Button();
             this.btnHistorialCompra = new System.Windows.Forms.Button();
+            this.cbSinStock = new System.Windows.Forms.CheckBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,31 +68,16 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(222, 20);
             this.txtDescripcion.TabIndex = 2;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(454, 19);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 13);
-            this.lblID.TabIndex = 3;
-            this.lblID.Text = "ID:";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(501, 16);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(222, 20);
-            this.txtID.TabIndex = 4;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // cbMostrarProductosBaja
             // 
             this.cbMostrarProductosBaja.AutoSize = true;
             this.cbMostrarProductosBaja.Location = new System.Drawing.Point(90, 55);
             this.cbMostrarProductosBaja.Name = "cbMostrarProductosBaja";
-            this.cbMostrarProductosBaja.Size = new System.Drawing.Size(180, 17);
+            this.cbMostrarProductosBaja.Size = new System.Drawing.Size(181, 17);
             this.cbMostrarProductosBaja.TabIndex = 5;
-            this.cbMostrarProductosBaja.Text = "mostrar productos dados de baja";
+            this.cbMostrarProductosBaja.Text = "Mostrar productos dados de baja";
             this.cbMostrarProductosBaja.UseVisualStyleBackColor = true;
             // 
             // dgProductos
@@ -147,11 +133,40 @@
             this.btnHistorialCompra.Text = "Historial de Compra";
             this.btnHistorialCompra.UseVisualStyleBackColor = true;
             // 
+            // cbSinStock
+            // 
+            this.cbSinStock.AutoSize = true;
+            this.cbSinStock.Location = new System.Drawing.Point(590, 55);
+            this.cbSinStock.Name = "cbSinStock";
+            this.cbSinStock.Size = new System.Drawing.Size(156, 17);
+            this.cbSinStock.TabIndex = 14;
+            this.cbSinStock.Text = "Mostrar productos sin stock";
+            this.cbSinStock.UseVisualStyleBackColor = true;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(587, 19);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(21, 13);
+            this.lblId.TabIndex = 15;
+            this.lblId.Text = "ID:";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(646, 16);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 16;
+            // 
             // Form_ConsultarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.cbSinStock);
             this.Controls.Add(this.btnHistorialCompra);
             this.Controls.Add(this.btnHistorialVenta);
             this.Controls.Add(this.btnAltaBaja);
@@ -159,8 +174,6 @@
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.dgProductos);
             this.Controls.Add(this.cbMostrarProductosBaja);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblFiltro);
@@ -177,8 +190,6 @@
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.CheckBox cbMostrarProductosBaja;
         private System.Windows.Forms.DataGridView dgProductos;
         private System.Windows.Forms.Button btnAñadir;
@@ -186,5 +197,8 @@
         private System.Windows.Forms.Button btnAltaBaja;
         private System.Windows.Forms.Button btnHistorialVenta;
         private System.Windows.Forms.Button btnHistorialCompra;
+        private System.Windows.Forms.CheckBox cbSinStock;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

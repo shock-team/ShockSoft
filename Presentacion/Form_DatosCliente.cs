@@ -45,7 +45,7 @@ namespace ShockSoft.Presentacion
 
         private void BtnAgregarPago_Click(object sender, System.EventArgs e)
         {
-            Form_RegistrarPago formRegistrarPago = new Form_RegistrarPago(0);
+            Form_RegistrarPago formRegistrarPago = new Form_RegistrarPago(int.Parse(txtId.Text));
             formRegistrarPago.Show();
         }
 
