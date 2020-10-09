@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShockSoft.Presentacion
 {
@@ -52,7 +53,14 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public List<Localidad> ListarLocalidades()
         {
-            List<Localidad> listaLocalidades = new List<Localidad>();
+            List<Localidad> listaLocalidades;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaLocalidades = bUoW.RepositorioLocalidad.ObtenerTodos().ToList();
+                }
+            }
             return listaLocalidades;
         }
 

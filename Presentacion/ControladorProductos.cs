@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShockSoft.Presentacion
 {
@@ -63,7 +64,14 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, int pId)
         {
-            List<Producto> listaProductos = new List<Producto>();
+            List<Producto> listaProductos;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaProductos = bUoW.RepositorioProducto.Ob;
+                }
+            }
             return listaProductos;
         }
 

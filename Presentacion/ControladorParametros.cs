@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShockSoft.Presentacion
 {
@@ -54,7 +55,14 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public List<Parametro> ListarParametros()
         {
-            List<Parametro> listaParametros = new List<Parametro>();
+            List<Parametro> listaParametros;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaParametros = bUoW.RepositorioParametro.ObtenerTodos().ToList();
+                }
+            }
             return listaParametros;
         }
 

@@ -2,6 +2,7 @@
 using ShockSoft.Persistencia.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShockSoft.Presentacion
 {
@@ -74,7 +75,14 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public List<Reparacion> ListarReparaciones(bool esPendiente, bool esFinalizada, bool esPaga)
         {
-            List<Reparacion> listaReparaciones = new List<Reparacion>();
+            List<Reparacion> listaReparaciones;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaReparaciones = bUoW.RepositorioReparacion.ObtenerTodos().ToList();
+                }
+            }
             return listaReparaciones;
         }
 

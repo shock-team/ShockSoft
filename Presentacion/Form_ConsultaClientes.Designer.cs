@@ -36,12 +36,15 @@
             this.cbSinDeudas = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.lblPaginaActual = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(148, 348);
+            this.txtNombre.Location = new System.Drawing.Point(150, 395);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(146, 20);
             this.txtNombre.TabIndex = 1;
@@ -49,7 +52,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(148, 384);
+            this.txtApellido.Location = new System.Drawing.Point(150, 431);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(146, 20);
             this.txtApellido.TabIndex = 2;
@@ -58,7 +61,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(71, 351);
+            this.lblNombre.Location = new System.Drawing.Point(73, 398);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 4;
@@ -67,7 +70,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(71, 387);
+            this.lblApellido.Location = new System.Drawing.Point(73, 434);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 5;
@@ -76,7 +79,7 @@
             // cbConDeudas
             // 
             this.cbConDeudas.AutoSize = true;
-            this.cbConDeudas.Location = new System.Drawing.Point(337, 351);
+            this.cbConDeudas.Location = new System.Drawing.Point(339, 398);
             this.cbConDeudas.Name = "cbConDeudas";
             this.cbConDeudas.Size = new System.Drawing.Size(83, 17);
             this.cbConDeudas.TabIndex = 7;
@@ -87,7 +90,7 @@
             // cbSinDeudas
             // 
             this.cbSinDeudas.AutoSize = true;
-            this.cbSinDeudas.Location = new System.Drawing.Point(337, 386);
+            this.cbSinDeudas.Location = new System.Drawing.Point(339, 433);
             this.cbSinDeudas.Name = "cbSinDeudas";
             this.cbSinDeudas.Size = new System.Drawing.Size(79, 17);
             this.cbSinDeudas.TabIndex = 8;
@@ -97,7 +100,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(713, 384);
+            this.btnCancelar.Location = new System.Drawing.Point(715, 431);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 10;
@@ -114,11 +117,43 @@
             this.dgClientes.TabIndex = 11;
             this.dgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgClientes_CellDoubleClick);
             // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Location = new System.Drawing.Point(469, 331);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 12;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(279, 331);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.TabIndex = 13;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.BtnAnterior_Click);
+            // 
+            // lblPaginaActual
+            // 
+            this.lblPaginaActual.AutoSize = true;
+            this.lblPaginaActual.Location = new System.Drawing.Point(405, 336);
+            this.lblPaginaActual.Name = "lblPaginaActual";
+            this.lblPaginaActual.Size = new System.Drawing.Size(13, 13);
+            this.lblPaginaActual.TabIndex = 14;
+            this.lblPaginaActual.Text = "1";
+            // 
             // Form_ConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 421);
+            this.ClientSize = new System.Drawing.Size(800, 462);
+            this.Controls.Add(this.lblPaginaActual);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.dgClientes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cbSinDeudas);
@@ -144,5 +179,8 @@
         private System.Windows.Forms.CheckBox cbSinDeudas;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dgClientes;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Label lblPaginaActual;
     }
 }
