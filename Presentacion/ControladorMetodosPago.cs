@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShockSoft.Presentacion
 {
@@ -54,6 +55,13 @@ namespace ShockSoft.Presentacion
         public List<MetodoPago> ListarMetodosDePago()
         {
             List<MetodoPago> listaMetodos = new List<MetodoPago>();
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaMetodos = bUoW.RepositorioMetodoPago.ObtenerTodos().ToList();
+                }
+            }
             return listaMetodos;
         }
 

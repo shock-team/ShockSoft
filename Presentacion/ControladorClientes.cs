@@ -69,19 +69,41 @@ namespace ShockSoft.Presentacion
         /// <param name="pSinDeudas">Indica si se deben incluir los clientes sin deuda</param>
         /// <param name="pNombre">El nombre por el cual filtrar los clientes</param>
         /// <param name="pApellido">El apellido por el cual filtrar los clientes</param>
-        /// <param name="pCUIT">El CUIT por el cual filtrar los clientes</param>
+        /// <param name="pDesde">La posición inicial de la lista desde la cual traer</param>
+        /// <param name="pCantidad">La cantidad de clientes a traer</param>
         /// <returns></returns>
-        public List<Cliente> ListarClientes(bool pConDeudas, bool pSinDeudas, string pNombre = null, string pApellido = null)
+        public List<Cliente> ListarClientes(bool pConDeudas, bool pSinDeudas, string pNombre, string pApellido, int pDesde, int pCantidad)
         {
-            List<Cliente> listaClientes = new List<Cliente>();
+            IEnumerable<Cliente> listaClientesPorDatos;
+            IEnumerable<Cliente> listaClientesPorDeuda;
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
                 {
-                    listaClientes = bUoW.RepositorioCliente.ObtenerPorDatos(pNombre, pApellido).ToList();
+                    listaClientesPorDatos = bUoW.RepositorioCliente.ObtenerPorDatos(pNombre, pApellido);
+                    listaClientesPorDeuda = bUoW.RepositorioCliente.ObtenerDeudores(pConDeudas, pSinDeudas);
                 }
             }
-            return listaClientes;
+            return listaClientesPorDatos.Intersect(listaClientesPorDeuda).Skip(pDesde).Take(pCantidad).ToList();
+        }
+
+        /// <summary>
+        /// El objetivo de este método es devolver una parte de 
+        /// </summary>
+        /// <param name="pDesde">La posición inicial en la lista</param>
+        /// <param name="pCantidad">La cantidad a traer</param>
+        /// <returns></returns>
+        public List<Cliente> ObtenerPorPartes(int pDesde, int pCantidad)
+        {
+            List<Cliente> listaDeClientes;
+            using (var pDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
+                {
+                    listaDeClientes = bUoW.RepositorioCliente.ObtenerPorParte(pDesde, pCantidad).ToList();
+                }
+            }
+            return listaDeClientes;
         }
 
         /// <summary>
@@ -156,6 +178,24 @@ namespace ShockSoft.Presentacion
                 }
             }
             return cliente;
+        }
+
+        /// <summary>
+        /// Este método se encarga de devolver la cantidad de clientes presente
+        /// en la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public int ObtenerCantidadDeClientes()
+        {
+            int cantidad = 0;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    cantidad = bUoW.RepositorioCliente.CantidadFilas();
+                }
+            }
+            return cantidad;
         }
     }
 }

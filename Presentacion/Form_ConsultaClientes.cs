@@ -15,6 +15,13 @@ namespace ShockSoft.Presentacion
             controlador = ControladorClientes.ObtenerInstancia();
             cbConDeudas.Checked = true;
             cbSinDeudas.Checked = true;
+            btnAnterior.Enabled = false;
+            btnAnterior.Visible = false;
+            if (controlador.ObtenerCantidadDeClientes() <= 15)
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
 
             //Genera una DataTable que muestre los datos especificados
             tablaDeClientes = new DataTable();
@@ -27,12 +34,7 @@ namespace ShockSoft.Presentacion
                 new DataColumn("Saldo", typeof(float)),
             });
             dgClientes.DataSource = tablaDeClientes;
-
-            //Carga los datos a la DataTable
-            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked))
-            {
-                tablaDeClientes.Rows.Add(cliente.IdCliente, cliente.Nombre, cliente.Apellido, cliente.CUIT, cliente.ObtenerSaldo());
-            }
+            ActualizarTabla();
         }
 
         private void BtnCancelar_Click(object sender, System.EventArgs e)
@@ -42,12 +44,8 @@ namespace ShockSoft.Presentacion
 
         private void ValorCambiado(object sender, System.EventArgs e)
         {
-            //Limpia la tabla y vuelve a cargarla
-            tablaDeClientes.Rows.Clear();
-            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text))
-            {
-                tablaDeClientes.Rows.Add(cliente.IdCliente, cliente.Nombre, cliente.Apellido, cliente.CUIT, cliente.ObtenerSaldo());
-            }
+            lblPaginaActual.Text = "1";
+            ActualizarTabla();
         }
 
         private void DgClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -57,6 +55,41 @@ namespace ShockSoft.Presentacion
             Form_DatosCliente formDatosCliente = new Form_DatosCliente(clienteSeleccionado);
             formDatosCliente.Show();
             this.Hide();
+        }
+
+        private void BtnAnterior_Click(object sender, System.EventArgs e)
+        {
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = false;
+                btnAnterior.Visible = false;
+            }
+            ActualizarTabla();
+        }
+
+        private void BtnSiguiente_Click(object sender, System.EventArgs e)
+        {
+            btnAnterior.Enabled = true;
+            btnAnterior.Visible = true;
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
+            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeClientes() / 15))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            ActualizarTabla();
+        }
+
+        private void ActualizarTabla()
+        {
+            tablaDeClientes.Rows.Clear();
+            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text, 15 * (int.Parse(lblPaginaActual.Text) - 1) + 1, 15 * int.Parse(lblPaginaActual.Text)))
+            {
+                tablaDeClientes.Rows.Add(cliente.IdCliente, cliente.Nombre, cliente.Apellido, cliente.CUIT, cliente.ObtenerSaldo());
+            }
         }
     }
 }
