@@ -12,15 +12,6 @@ namespace ShockSoft.Persistencia.EntityFramework
         public RepositorioCliente(ShockDbContext pDbContext) : base(pDbContext) { }
 
         /// <summary>
-        /// Devuelve todos los Clientes de la base de datos.
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<Cliente> ObtenerTodos()
-        {
-            return this.iDbContext.Set<Cliente>().ToList();
-        }
-
-        /// <summary>
         /// Devuelve un segmento de Clientes ordenado por Apellido.
         /// </summary>
         /// <param name="pDesde"></param>

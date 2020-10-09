@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
@@ -43,5 +45,13 @@ namespace ShockSoft.Persistencia.EntityFramework
             return this.iDbContext.Set<TEntity>().Find(pId);
         }
 
+        /// <summary>
+        /// Devuelve todos los objetos de una base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TEntity> ObtenerTodos()
+        {
+            return this.iDbContext.Set<TEntity>().ToList();
+        }
     }
 }
