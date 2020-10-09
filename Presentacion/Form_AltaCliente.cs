@@ -23,7 +23,7 @@ namespace ShockSoft.Presentacion
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, (int)comboLocalidad.SelectedItem);
+            controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, ((Localidad)comboLocalidad.SelectedItem).IdLocalidad);
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
