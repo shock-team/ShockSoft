@@ -43,6 +43,7 @@ namespace ShockSoft.Presentacion
         {
             Cliente cliente = new Cliente();
             cliente.Nombre = pNombre;
+            cliente.Apellido = pApellido;
             cliente.Telefono = pTelefono;
             cliente.Direccion = pDireccion;
             cliente.DNI = pDNI;

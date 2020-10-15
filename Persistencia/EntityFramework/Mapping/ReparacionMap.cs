@@ -15,34 +15,44 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
             this.Property(x => x.Problema)
-                .HasColumnName("problema");
+                .HasColumnName("problema")
+                .IsOptional();
 
             this.Property(x => x.Solucion)
-                .HasColumnName("solucion");
+                .HasColumnName("solucion")
+                .IsOptional();
 
             this.Property(x => x.Contraseña)
-                .HasColumnName("contraseña");
+                .HasColumnName("contraseña")
+                .IsOptional();
 
             this.Property(x => x.FechaIngreso)
-                .HasColumnName("fechaIngreso");
+                .HasColumnName("fechaIngreso")
+                .IsOptional();
 
             this.Property(x => x.FechaReparacion)
-                .HasColumnName("fechaReparacion");
+                .HasColumnName("fechaReparacion")
+                .IsOptional();
 
             this.Property(x => x.Precio)
-                .HasColumnName("precio");
+                .HasColumnName("precio")
+                .IsOptional();
 
             this.Property(x => x.Entregado)
-                .HasColumnName("fueEntregado");
+                .HasColumnName("fueEntregado")
+                .IsOptional();
 
             this.Property(x => x.Cobrado)
-                 .HasColumnName("fueCobrado");
+                 .HasColumnName("fueCobrado")
+                 .IsOptional();
 
             this.Property(x => x.Cargador)
-                .HasColumnName("traeCargador");
+                .HasColumnName("traeCargador")
+                .IsOptional();
 
             this.Property(x => x.Cables)
-                 .HasColumnName("traeCables");
+                 .HasColumnName("traeCables")
+                 .IsOptional();
 
             this.HasRequired<Cliente>(x => x.Cliente)
                 .WithMany(x => x.Reparaciones)

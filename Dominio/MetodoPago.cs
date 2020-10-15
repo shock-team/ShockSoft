@@ -6,7 +6,7 @@ namespace ShockSoft.Dominio
     {
         //Atributos
         public int IdMetodoPago { get; set; }
-        public float Valor { get; set; }
+        public float MultiplicadorInteres { get; set; }
         public string Descripcion { get; set; }
 
         //Fluent API

@@ -24,21 +24,18 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
                 .IsRequired()
                 .HasMaxLength(40);
 
-            this.HasIndex(x => x.DNI)
-                .IsUnique();
+            this.HasIndex(x => x.DNI);
             this.Property(x => x.DNI)
                 .HasColumnName("dni")
                 .HasMaxLength(10);
 
-            this.HasIndex(x => x.CUIT)
-                .IsUnique();
+            this.HasIndex(x => x.CUIT);
             this.Property(x => x.CUIT)
                 .HasColumnName("cuit")
                 .HasMaxLength(20);
 
             this.Property(x => x.Telefono)
                 .HasColumnName("telefono")
-                .IsRequired()
                 .HasMaxLength(30);
 
             this.Property(x => x.Direccion)
@@ -48,7 +45,6 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
             this.HasRequired<Localidad>(x => x.Localidad)
                 .WithMany(x => x.Clientes)
                 .HasForeignKey<int>(x => x.IdLocalidad);
-
         }
     }
 }

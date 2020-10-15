@@ -14,8 +14,8 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
                 .HasColumnName("id")
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
-            this.Property(x => x.Valor)
-                .HasColumnName("valor");
+            this.Property(x => x.MultiplicadorInteres)
+                .HasColumnName("multiplicadorInteres");
 
             this.Property(x => x.Descripcion)
                 .HasColumnName("descripcion");

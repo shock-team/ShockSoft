@@ -32,11 +32,11 @@ namespace ShockSoft.Presentacion
         /// </summary>
         /// <param name="pDescripcion">La descripción del nuevo método de pago</param>
         /// <param name="pValor">El valor del nuevo método de pago</param>
-        public void AgregarMetodoDePago(string pDescripcion, float pValor)
+        public void AgregarMetodoDePago(string pDescripcion, float pMultiplicadorInteres)
         {
             MetodoPago metodo = new MetodoPago();
             metodo.Descripcion = pDescripcion;
-            metodo.Valor = pValor;
+            metodo.MultiplicadorInteres = pMultiplicadorInteres;
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
