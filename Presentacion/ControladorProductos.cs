@@ -130,5 +130,24 @@ namespace ShockSoft.Presentacion
                 }
             }
         }
+
+        /// <summary>
+        /// Este método se encarga de obtener y devolver la instancia de un producto
+        /// que se encuentra almacenada en la base de datos.
+        /// </summary>
+        /// <param name="pId">El Id del producto que se desea obtener</param>
+        /// <returns></returns>
+        public Producto ObtenerProducto(int pId)
+        {
+            Producto producto = new Producto();
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    producto = bUoW.RepositorioProducto.Obtener(pId);
+                }
+            }
+            return producto;
+        }
     }
 }
