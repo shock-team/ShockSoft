@@ -198,5 +198,21 @@ namespace ShockSoft.Presentacion
             }
             return cantidad;
         }
+
+        /// <summary>
+        /// Verifica que no exista en la base de datos un cliente con el DNI y CUIT especificados
+        /// </summary>
+        /// <param name="pDNI">El DNI a verificar</param>
+        /// <param name="pCUIT">El CUIT a verificar</param>
+        public void VerificarDatos(string pDNI, string pCUIT)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    bUoW.RepositorioCliente.VerificarInformacion(pDNI, pCUIT);
+                }
+            }
+        }
     }
 }

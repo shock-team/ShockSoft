@@ -182,6 +182,7 @@
     <Compile Include="Dominio\Reparacion.cs" />
     <Compile Include="Dominio\TipoEquipo.cs" />
     <Compile Include="Dominio\Venta.cs" />
+    <Compile Include="Excepciones\ClienteYaExisteException.cs" />
     <Compile Include="Migrations\202009230154182_asd.cs" />
     <Compile Include="Migrations\202009230154182_asd.designer.cs">
       <DependentUpon>202009230154182_asd.cs</DependentUpon>

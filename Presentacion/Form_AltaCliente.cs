@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ShockSoft.Excepciones;
 
 namespace ShockSoft.Presentacion
 {
@@ -34,7 +35,15 @@ namespace ShockSoft.Presentacion
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, ((Localidad)comboLocalidad.SelectedItem).IdLocalidad);
+            try
+            {
+                controlador.VerificarDatos(txtDNI.Text, txtCUIT.Text);
+                controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, ((Localidad)comboLocalidad.SelectedItem).IdLocalidad);
+            }
+            catch (ClienteYaExisteException)
+            {
+                MessageBox.Show("Ya existe un cliente con ese DNI o CUIT. Intente nuevamente", "Error");
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
