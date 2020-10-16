@@ -22,5 +22,11 @@ namespace ShockSoft.Presentacion
             Form_AltaCliente form_AltaCliente = new Form_AltaCliente();
             form_AltaCliente.Show();
         }
+
+        private void btnConsultarClientes_Click(object sender, EventArgs e)
+        {
+            Form_ConsultaClientes form_ConsultaCliente = new Form_ConsultaClientes();
+            form_ConsultaCliente.Show();
+        }
     }
 }

@@ -63,6 +63,7 @@
             this.btnConsultarClientes.TabIndex = 2;
             this.btnConsultarClientes.Text = "Lista de Clientes";
             this.btnConsultarClientes.UseVisualStyleBackColor = false;
+            this.btnConsultarClientes.Click += new System.EventHandler(this.btnConsultarClientes_Click);
             // 
             // label1
             // 
