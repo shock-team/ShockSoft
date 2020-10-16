@@ -14,8 +14,8 @@ namespace ShockSoft.Dominio
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public Localidad Localidad { get; set; }
-        public ICollection<Pago> Pagos { get; set; }
-        public ICollection<Venta> Ventas { get; set; }
+        public ICollection<Pago> Pagos { get; set; } = new List<Pago>();
+        public ICollection<Venta> Ventas { get; set; } = new List<Venta>();
 
         //Fluent API
         public int IdLocalidad { get; set; }

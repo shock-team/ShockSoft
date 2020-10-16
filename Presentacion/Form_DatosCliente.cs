@@ -22,7 +22,7 @@ namespace ShockSoft.Presentacion
             foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
             {
                 comboLocalidad.Items.Add(localidad);
-                if (localidad.Equals(cliente.Localidad))
+                if (localidad.IdLocalidad == cliente.IdLocalidad)
                 {
                     comboLocalidad.SelectedItem = localidad;
                 }

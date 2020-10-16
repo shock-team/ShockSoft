@@ -14,16 +14,7 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             controlador = ControladorClientes.ObtenerInstancia();
-            cbConDeudas.Checked = true;
-            cbSinDeudas.Checked = true;
-            btnAnterior.Enabled = false;
-            btnAnterior.Visible = false;
-            if (controlador.ObtenerCantidadDeClientes() <= 15)
-            {
-                btnSiguiente.Enabled = false;
-                btnSiguiente.Visible = false;
-            }
-
+           
             //Genera una DataTable que muestre los datos especificados
             tablaDeClientes = new DataTable();
             tablaDeClientes.Columns.AddRange(new DataColumn[5]
@@ -35,6 +26,17 @@ namespace ShockSoft.Presentacion
                 new DataColumn("Saldo", typeof(float)),
             });
             dgClientes.DataSource = tablaDeClientes;
+
+            cbConDeudas.Checked = true;
+            cbSinDeudas.Checked = true;
+            btnAnterior.Enabled = false;
+            btnAnterior.Visible = false;
+            if (controlador.ObtenerCantidadDeClientes() <= 15)
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+
             ActualizarTabla();
         }
 
@@ -48,7 +50,7 @@ namespace ShockSoft.Presentacion
         private void DgClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //Obtiene el cliente seleccionado a partir de su ID
-            int clienteSeleccionado = tablaDeClientes.Rows[dgClientes.SelectedRows[0].Index].Field<int>("ID");
+            int clienteSeleccionado = (int)dgClientes.CurrentRow.Cells[0].Value;
             Form_DatosCliente formDatosCliente = new Form_DatosCliente(clienteSeleccionado);
             formDatosCliente.Show();
             this.Hide();
