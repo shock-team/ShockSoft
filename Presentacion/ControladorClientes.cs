@@ -3,6 +3,7 @@ using ShockSoft.Persistencia.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ShockSoft.Excepciones;
 
 namespace ShockSoft.Presentacion
 {
@@ -77,15 +78,17 @@ namespace ShockSoft.Presentacion
         {
             IEnumerable<Cliente> listaClientesPorDatos;
             IEnumerable<Cliente> listaClientesPorDeuda;
+            List<Cliente> listaDeClientes = new List<Cliente>();
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
                 {
                     listaClientesPorDatos = bUoW.RepositorioCliente.ObtenerPorDatos(pNombre, pApellido);
                     listaClientesPorDeuda = bUoW.RepositorioCliente.ObtenerDeudores(pConDeudas, pSinDeudas);
+                    listaDeClientes = listaClientesPorDatos.Intersect(listaClientesPorDeuda).Skip(pDesde).Take(pCantidad).ToList();
                 }
             }
-            return listaClientesPorDatos.Intersect(listaClientesPorDeuda).Skip(pDesde).Take(pCantidad).ToList();
+            return listaDeClientes;
         }
 
         /// <summary>
@@ -210,7 +213,11 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    bUoW.RepositorioCliente.VerificarInformacion(pDNI, pCUIT);
+                    IEnumerable<Cliente> clientes = bUoW.RepositorioCliente.VerificarInformacion(pDNI, pCUIT);
+                    if (clientes.Count() > 0)
+                    {
+                        throw new ClienteYaExisteException();
+                    }
                 }
             }
         }

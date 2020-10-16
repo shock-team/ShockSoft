@@ -39,6 +39,14 @@ namespace ShockSoft.Presentacion
             {
                 controlador.VerificarDatos(txtDNI.Text, txtCUIT.Text);
                 controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, ((Localidad)comboLocalidad.SelectedItem).IdLocalidad);
+                MessageBox.Show("El cliente se ha agregado correctamente", "Exito");
+                txtDNI.Text = "";
+                txtTelefono.Text = "";
+                txtCUIT.Text = "";
+                txtDireccion.Text = "";
+                txtApellido.Text = "";
+                txtNombre.Text = "";
+                comboLocalidad.SelectedIndex = 0;
             }
             catch (ClienteYaExisteException)
             {

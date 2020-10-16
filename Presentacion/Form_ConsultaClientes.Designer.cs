@@ -244,6 +244,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(250, 25);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // panel2
             // 
@@ -273,6 +274,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(250, 25);
             this.txtApellido.TabIndex = 0;
+            this.txtApellido.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // panel3
             // 

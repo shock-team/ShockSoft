@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ShockSoft.Excepciones;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
@@ -46,8 +45,8 @@ namespace ShockSoft.Persistencia.EntityFramework
         public IEnumerable<Cliente> ObtenerPorDatos(string pNombre, string pApellido)
         {
             var clientesFiltrados = (from c in iDbContext.Clientes
-                                     where (string.IsNullOrEmpty(pNombre) || c.Nombre.Contains(pNombre)) &&
-                                            (string.IsNullOrEmpty(pApellido) || c.Apellido.Contains(pApellido))
+                                     where (string.IsNullOrEmpty(pNombre) || pNombre.Equals("") || c.Nombre.Contains(pNombre)) &&
+                                            (string.IsNullOrEmpty(pApellido) || pApellido.Equals("") || c.Apellido.Contains(pApellido))
                                      select c);
             return clientesFiltrados;                                          
         }
@@ -63,15 +62,12 @@ namespace ShockSoft.Persistencia.EntityFramework
         /// </summary>
         /// <param name="pDNI">El DNI del cliente a cargar</param>
         /// <param name="pCUIT">El CUIT del cliente a cargar</param>
-        public void VerificarInformacion(string pDNI, string pCUIT)
+        public IEnumerable<Cliente> VerificarInformacion(string pDNI, string pCUIT)
         {
             var cliente = (from c in iDbContext.Clientes
                            where (c.DNI.Equals(pDNI) || (c.CUIT.Equals(pCUIT)))
                            select c);
-            if (cliente != null)
-            {
-                throw new ClienteYaExisteException();
-            }
+            return cliente;
         }
     }
 }
