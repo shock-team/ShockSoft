@@ -23,18 +23,25 @@ namespace ShockSoft.Presentacion
                 new DataColumn("Cantidad", typeof(int)),
                 new DataColumn("Precio", typeof(float))
             });
+
             dgProductos.DataSource = tablaDeProductos;
 
             //Carga los datos a la DataTable
-            foreach (Producto producto in controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, int.Parse(txtId.Text)))
-            {
-                tablaDeProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
-            }
+            ActualizarTabla();
         }
 
         private void ValorCambiado(object sender, System.EventArgs e)
         {
+            ActualizarTabla();
+        }
 
+        private void ActualizarTabla()
+        {
+            tablaDeProductos.Rows.Clear();
+            foreach (Producto producto in controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, int.Parse(txtId.Text)))
+            {
+                tablaDeProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
+            }
         }
     }
 }
