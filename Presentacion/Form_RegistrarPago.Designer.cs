@@ -64,7 +64,7 @@
             // calendarFecha
             // 
             this.calendarFecha.BackColor = System.Drawing.SystemColors.Window;
-            this.calendarFecha.Location = new System.Drawing.Point(15, 40);
+            this.calendarFecha.Location = new System.Drawing.Point(23, 40);
             this.calendarFecha.Name = "calendarFecha";
             this.calendarFecha.TabIndex = 5;
             // 
@@ -76,9 +76,9 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAceptar.Location = new System.Drawing.Point(490, 410);
+            this.btnAceptar.Location = new System.Drawing.Point(500, 410);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(120, 30);
+            this.btnAceptar.Size = new System.Drawing.Size(125, 30);
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -94,7 +94,7 @@
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCancelar.Location = new System.Drawing.Point(335, 410);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(120, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(125, 30);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -304,7 +304,7 @@
             this.panel4.Controls.Add(this.calendarFecha);
             this.panel4.Location = new System.Drawing.Point(335, 180);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(275, 220);
+            this.panel4.Size = new System.Drawing.Size(290, 220);
             this.panel4.TabIndex = 46;
             // 
             // lblFecha
@@ -312,7 +312,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFecha.Location = new System.Drawing.Point(110, 12);
+            this.lblFecha.Location = new System.Drawing.Point(120, 12);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(51, 19);
             this.lblFecha.TabIndex = 10;
@@ -323,7 +323,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
             this.panel5.Location = new System.Drawing.Point(335, 120);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(275, 47);
+            this.panel5.Size = new System.Drawing.Size(290, 47);
             this.panel5.TabIndex = 44;
             // 
             // Form_RegistrarPago

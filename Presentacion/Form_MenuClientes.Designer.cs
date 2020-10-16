@@ -35,15 +35,15 @@
             // 
             // btnAltaCliente
             // 
-            this.btnAltaCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnAltaCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.btnAltaCliente.FlatAppearance.BorderSize = 0;
-            this.btnAltaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnAltaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
             this.btnAltaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaCliente.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaCliente.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAltaCliente.Location = new System.Drawing.Point(45, 35);
             this.btnAltaCliente.Name = "btnAltaCliente";
-            this.btnAltaCliente.Size = new System.Drawing.Size(190, 45);
+            this.btnAltaCliente.Size = new System.Drawing.Size(600, 45);
             this.btnAltaCliente.TabIndex = 0;
             this.btnAltaCliente.Text = "Nuevo Cliente";
             this.btnAltaCliente.UseVisualStyleBackColor = false;
@@ -51,15 +51,15 @@
             // 
             // btnConsultarClientes
             // 
-            this.btnConsultarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnConsultarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.btnConsultarClientes.FlatAppearance.BorderSize = 0;
-            this.btnConsultarClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnConsultarClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
             this.btnConsultarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarClientes.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarClientes.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarClientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnConsultarClientes.Location = new System.Drawing.Point(45, 101);
             this.btnConsultarClientes.Name = "btnConsultarClientes";
-            this.btnConsultarClientes.Size = new System.Drawing.Size(190, 45);
+            this.btnConsultarClientes.Size = new System.Drawing.Size(600, 45);
             this.btnConsultarClientes.TabIndex = 2;
             this.btnConsultarClientes.Text = "Lista de Clientes";
             this.btnConsultarClientes.UseVisualStyleBackColor = false;
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultarClientes);
