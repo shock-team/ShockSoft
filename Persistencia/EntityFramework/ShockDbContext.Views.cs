@@ -11,7 +11,7 @@ using System.Data.Entity.Infrastructure.MappingViews;
 
 [assembly: DbMappingViewCacheTypeAttribute(
     typeof(ShockSoft.Persistencia.EntityFramework.ShockDbContext),
-    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets75914e34237d7093921beb780cd3f984b8544dc9144ba6010f7e9257e8c4c6d6))]
+    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets9a409100e50e148c4c55aad5f27e42783dfe99eb19db04cfe58f95cbab923f63))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -23,14 +23,14 @@ namespace Edm_EntityMappingGeneratedViews
     /// Implements a mapping view cache.
     /// </summary>
     [GeneratedCode("Entity Framework 6 Power Tools", "0.9.2.0")]
-    internal sealed class ViewsForBaseEntitySets75914e34237d7093921beb780cd3f984b8544dc9144ba6010f7e9257e8c4c6d6 : DbMappingViewCache
+    internal sealed class ViewsForBaseEntitySets9a409100e50e148c4c55aad5f27e42783dfe99eb19db04cfe58f95cbab923f63 : DbMappingViewCache
     {
         /// <summary>
         /// Gets a hash value computed over the mapping closure.
         /// </summary>
         public override string MappingHashValue
         {
-            get { return "75914e34237d7093921beb780cd3f984b8544dc9144ba6010f7e9257e8c4c6d6"; }
+            get { return "9a409100e50e148c4c55aad5f27e42783dfe99eb19db04cfe58f95cbab923f63"; }
         }
 
         /// <summary>
@@ -445,11 +445,11 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing MetodoPago
-        [CodeFirstDatabaseSchema.MetodoPago](T1.MetodoPago_id, T1.MetodoPago_valor, T1.MetodoPago_descripcion)
+        [CodeFirstDatabaseSchema.MetodoPago](T1.MetodoPago_id, T1.MetodoPago_multiplicadorInteres, T1.MetodoPago_descripcion)
     FROM (
         SELECT 
             T.IdMetodoPago AS MetodoPago_id, 
-            T.Valor AS MetodoPago_valor, 
+            T.MultiplicadorInteres AS MetodoPago_multiplicadorInteres, 
             T.Descripcion AS MetodoPago_descripcion, 
             True AS _from0
         FROM ShockDbContext.MetodosDePago AS T
@@ -770,11 +770,11 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing MetodosDePago
-        [ShockSoft.Persistencia.EntityFramework.MetodoPago](T1.MetodoPago_IdMetodoPago, T1.MetodoPago_Valor, T1.MetodoPago_Descripcion)
+        [ShockSoft.Persistencia.EntityFramework.MetodoPago](T1.MetodoPago_IdMetodoPago, T1.MetodoPago_MultiplicadorInteres, T1.MetodoPago_Descripcion)
     FROM (
         SELECT 
             T.id AS MetodoPago_IdMetodoPago, 
-            T.valor AS MetodoPago_Valor, 
+            T.multiplicadorInteres AS MetodoPago_MultiplicadorInteres, 
             T.descripcion AS MetodoPago_Descripcion, 
             True AS _from0
         FROM CodeFirstDatabase.MetodoPago AS T
