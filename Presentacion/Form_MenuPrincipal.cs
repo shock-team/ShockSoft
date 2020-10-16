@@ -55,19 +55,17 @@ namespace ShockSoft.Presentacion
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            this.panelPrincipal.BackColor = Color.FromArgb(255, 45, 175, 45);
             
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            this.panelPrincipal.BackColor = Color.FromArgb(255, 0, 80, 200);
             AbrirFormHija(new Form_MenuClientes());
         }
 
         private void btnReparaciones_Click(object sender, EventArgs e)
         {
-            this.panelPrincipal.BackColor = Color.FromArgb(255, 200, 200, 40);
+
         }
 
         private void AbrirFormHija(object formHija)

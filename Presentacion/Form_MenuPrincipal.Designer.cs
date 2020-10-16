@@ -36,7 +36,7 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReparaciones = new System.Windows.Forms.Button();
@@ -142,7 +142,7 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panelLateral.Controls.Add(this.button2);
+            this.panelLateral.Controls.Add(this.btnVenta);
             this.panelLateral.Controls.Add(this.panel4);
             this.panelLateral.Controls.Add(this.panel1);
             this.panelLateral.Controls.Add(this.btnReparaciones);
@@ -156,20 +156,20 @@
             this.panelLateral.Size = new System.Drawing.Size(300, 555);
             this.panelLateral.TabIndex = 8;
             // 
-            // button2
+            // btnVenta
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(40, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 70);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Venta / Compra";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnVenta.FlatAppearance.BorderSize = 0;
+            this.btnVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVenta.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnVenta.Location = new System.Drawing.Point(40, 270);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(210, 70);
+            this.btnVenta.TabIndex = 16;
+            this.btnVenta.Text = "Venta / Compra";
+            this.btnVenta.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -288,7 +288,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnReparaciones;
         private System.Windows.Forms.Label lblShock;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox picShock;
     }
