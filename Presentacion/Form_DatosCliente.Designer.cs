@@ -51,6 +51,7 @@
             this.lblDNI = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnAgregarPago = new System.Windows.Forms.Button();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -62,7 +63,6 @@
             this.lblShock = new System.Windows.Forms.Label();
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnAgregarPago = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
@@ -310,6 +310,22 @@
             this.panel8.Size = new System.Drawing.Size(450, 47);
             this.panel8.TabIndex = 39;
             // 
+            // btnAgregarPago
+            // 
+            this.btnAgregarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnAgregarPago.FlatAppearance.BorderSize = 0;
+            this.btnAgregarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
+            this.btnAgregarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPago.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarPago.Location = new System.Drawing.Point(350, 0);
+            this.btnAgregarPago.Name = "btnAgregarPago";
+            this.btnAgregarPago.Size = new System.Drawing.Size(100, 47);
+            this.btnAgregarPago.TabIndex = 16;
+            this.btnAgregarPago.Text = "Agregar Pago";
+            this.btnAgregarPago.UseVisualStyleBackColor = false;
+            // 
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
@@ -429,7 +445,7 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
             this.btnCerrar.Location = new System.Drawing.Point(755, 0);
@@ -438,22 +454,6 @@
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnAgregarPago
-            // 
-            this.btnAgregarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnAgregarPago.FlatAppearance.BorderSize = 0;
-            this.btnAgregarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
-            this.btnAgregarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarPago.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregarPago.Location = new System.Drawing.Point(350, 0);
-            this.btnAgregarPago.Name = "btnAgregarPago";
-            this.btnAgregarPago.Size = new System.Drawing.Size(100, 47);
-            this.btnAgregarPago.TabIndex = 16;
-            this.btnAgregarPago.Text = "Agregar Pago";
-            this.btnAgregarPago.UseVisualStyleBackColor = false;
             // 
             // panel10
             // 
@@ -499,6 +499,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_DatosCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_DatosCliente";
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
