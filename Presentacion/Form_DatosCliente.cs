@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ShockSoft.Excepciones;
 
 namespace ShockSoft.Presentacion
 {
@@ -35,9 +36,21 @@ namespace ShockSoft.Presentacion
 
         private void BtnModificar_Click(object sender, System.EventArgs e)
         {
-            Localidad localidad = (Localidad)comboLocalidad.SelectedItem;
-            ControladorClientes.ObtenerInstancia().ModificarCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, localidad.IdLocalidad, int.Parse(txtId.Text));
-            MessageBox.Show("Datos modificados con éxito");
+            string dniActual = txtDNI.Text;
+            string cuitActual = txtCUIT.Text;
+            try
+            {
+                Localidad localidad = (Localidad)comboLocalidad.SelectedItem;
+                controlador.VerificarDatos(txtDNI.Text, txtCUIT.Text);
+                controlador.ModificarCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, localidad.IdLocalidad, int.Parse(txtId.Text));
+                MessageBox.Show("Datos modificados correctamente", "Éxito");
+            }
+            catch (DatosRepetidosException)
+            {
+                MessageBox.Show("Ya existe un cliente con ese DNI o CUIT. Intente nuevamente", "Error");
+                txtDNI.Text = dniActual;
+                txtCUIT.Text = cuitActual;
+            }
         }
 
         private void BtnAgregarPago_Click(object sender, System.EventArgs e)
@@ -45,12 +58,6 @@ namespace ShockSoft.Presentacion
             Form_RegistrarPago formRegistrarPago = new Form_RegistrarPago(int.Parse(txtId.Text));
             formRegistrarPago.Show();
         }
-
-        private void btnModificar_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
 
         // Deslizar ventana desde el panel de control
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

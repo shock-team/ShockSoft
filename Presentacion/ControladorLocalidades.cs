@@ -1,5 +1,6 @@
 ﻿using ShockSoft.Dominio;
 using ShockSoft.Persistencia.EntityFramework;
+using ShockSoft.Excepciones;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -83,6 +84,11 @@ namespace ShockSoft.Presentacion
             }
         }
 
+        /// <summary>
+        /// Este método se encarga de obtener una localidad específica cargada en la base de datos.
+        /// </summary>
+        /// <param name="idLocalidad">El ID de la localidad a buscar</param>
+        /// <returns></returns>
         public Localidad ObtenerLocalidad(int idLocalidad)
         {
             Localidad localidadObtenida;
@@ -94,6 +100,21 @@ namespace ShockSoft.Presentacion
                 }
             }
             return localidadObtenida;
+        }
+
+        public void VerificarDatos(string pNombre)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    IEnumerable<Localidad> localidades = bUoW.RepositorioLocalidad.VerificarDatos(pNombre);
+                    if (localidades.Count() > 0)
+                    {
+                        throw new DatosRepetidosException();
+                    }
+                }
+            }
         }
     }
 }

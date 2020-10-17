@@ -182,7 +182,7 @@
     <Compile Include="Dominio\Reparacion.cs" />
     <Compile Include="Dominio\TipoEquipo.cs" />
     <Compile Include="Dominio\Venta.cs" />
-    <Compile Include="Excepciones\ClienteYaExisteException.cs" />
+    <Compile Include="Excepciones\DatosRepetidosException.cs" />
     <Compile Include="Migrations\202009230154182_asd.cs" />
     <Compile Include="Migrations\202009230154182_asd.designer.cs">
       <DependentUpon>202009230154182_asd.cs</DependentUpon>
@@ -257,6 +257,12 @@
     <Compile Include="Presentacion\Form_AltaCliente.Designer.cs">
       <DependentUpon>Form_AltaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Form_AltaLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_AltaLocalidad.Designer.cs">
+      <DependentUpon>Form_AltaLocalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Form_AñadirProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,12 @@
     </Compile>
     <Compile Include="Presentacion\Form_DatosCliente.Designer.cs">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form_DatosLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_DatosLocalidad.Designer.cs">
+      <DependentUpon>Form_DatosLocalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Form_DatosProducto.cs">
       <SubType>Form</SubType>
@@ -328,6 +340,9 @@
     <EmbeddedResource Include="Presentacion\Form_AltaCliente.resx">
       <DependentUpon>Form_AltaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_AltaLocalidad.resx">
+      <DependentUpon>Form_AltaLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_AñadirProducto.resx">
       <DependentUpon>Form_AñadirProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_DatosCliente.resx">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_DatosLocalidad.resx">
+      <DependentUpon>Form_DatosLocalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_DatosProducto.resx">
       <DependentUpon>Form_DatosProducto.cs</DependentUpon>

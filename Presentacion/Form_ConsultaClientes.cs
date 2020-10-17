@@ -85,7 +85,7 @@ namespace ShockSoft.Presentacion
         private void ActualizarTabla()
         {
             tablaDeClientes.Rows.Clear();
-            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text, 15 * (int.Parse(lblPaginaActual.Text) - 1) + 1, 15 * int.Parse(lblPaginaActual.Text)))
+            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text, 15 * (int.Parse(lblPaginaActual.Text) - 1) + 1, 15))
             {
                 tablaDeClientes.Rows.Add(cliente.IdCliente, cliente.Nombre, cliente.Apellido, cliente.CUIT, cliente.ObtenerSaldo());
             }

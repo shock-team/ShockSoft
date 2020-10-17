@@ -40,15 +40,15 @@ namespace ShockSoft.Presentacion
                 controlador.VerificarDatos(txtDNI.Text, txtCUIT.Text);
                 controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, ((Localidad)comboLocalidad.SelectedItem).IdLocalidad);
                 MessageBox.Show("El cliente se ha agregado correctamente", "Exito");
-                txtDNI.Text = "";
-                txtTelefono.Text = "";
-                txtCUIT.Text = "";
-                txtDireccion.Text = "";
-                txtApellido.Text = "";
-                txtNombre.Text = "";
+                txtDNI.Clear();
+                txtTelefono.Clear();
+                txtCUIT.Clear();
+                txtDireccion.Clear();
+                txtApellido.Clear();
+                txtNombre.Clear();
                 comboLocalidad.SelectedIndex = 0;
             }
-            catch (ClienteYaExisteException)
+            catch (DatosRepetidosException)
             {
                 MessageBox.Show("Ya existe un cliente con ese DNI o CUIT. Intente nuevamente", "Error");
             }

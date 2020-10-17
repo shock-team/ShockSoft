@@ -83,9 +83,10 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
                 {
-                    listaClientesPorDatos = bUoW.RepositorioCliente.ObtenerPorDatos(pNombre, pApellido);
-                    listaClientesPorDeuda = bUoW.RepositorioCliente.ObtenerDeudores(pConDeudas, pSinDeudas);
-                    listaDeClientes = listaClientesPorDatos.Intersect(listaClientesPorDeuda).Skip(pDesde).Take(pCantidad).ToList();
+                    //listaClientesPorDatos = bUoW.RepositorioCliente.ObtenerPorDatos(pNombre, pApellido);
+                    //listaClientesPorDeuda = bUoW.RepositorioCliente.ObtenerDeudores(pConDeudas, pSinDeudas);
+                    //listaDeClientes = listaClientesPorDatos.Intersect(listaClientesPorDeuda).Skip(pDesde).Take(pCantidad).ToList();
+                    listaDeClientes = bUoW.RepositorioCliente.ObtenerClientes(pNombre, pApellido, pConDeudas, pSinDeudas, pDesde, pCantidad).ToList();
                 }
             }
             return listaDeClientes;
@@ -216,7 +217,7 @@ namespace ShockSoft.Presentacion
                     IEnumerable<Cliente> clientes = bUoW.RepositorioCliente.VerificarInformacion(pDNI, pCUIT);
                     if (clientes.Count() > 0)
                     {
-                        throw new ClienteYaExisteException();
+                        throw new DatosRepetidosException();
                     }
                 }
             }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Excepciones
 {
-    class ClienteYaExisteException : Exception
+    class DatosRepetidosException : Exception
     {
-        public ClienteYaExisteException() : base("Ya existe un cliente con ese DNI o CUIT") { }
+        public DatosRepetidosException() : base("Los datos están repetidos") { }
     }
 }

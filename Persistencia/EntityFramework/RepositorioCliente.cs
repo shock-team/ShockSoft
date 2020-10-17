@@ -36,6 +36,17 @@ namespace ShockSoft.Persistencia.EntityFramework
             return clientesFiltrados;
         }
 
+        public IEnumerable<Cliente> ObtenerClientes(string pNombre, string pApellido, bool pConDeudas, bool pSinDeudas, int pDesde, int pHasta)
+        {
+            var clientesFiltrados = (from c in iDbContext.Clientes
+                                     join r in iDbContext.Reparaciones on c.IdCliente equals r.IdCliente
+                                     where (r.Cobrado == pConDeudas) || (r.Cobrado == pSinDeudas) &&
+                                     (string.IsNullOrEmpty(pNombre) || pNombre.Equals("") || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
+                                     (string.IsNullOrEmpty(pApellido) || pApellido.Equals("") || c.Apellido.ToUpper().Contains(pApellido.ToUpper()))
+                                     select c);
+            return clientesFiltrados.Distinct().OrderBy(x => x.Apellido).Skip(pDesde).Take(pHasta);
+        }
+
         /// <summary>
         /// Devuelve Clientes filtrados por <paramref name="pNombre"/> y <paramref name="pApellido"/>.
         /// </summary>
