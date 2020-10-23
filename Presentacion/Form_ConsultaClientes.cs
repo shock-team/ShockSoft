@@ -54,8 +54,9 @@ namespace ShockSoft.Presentacion
             //Obtiene el cliente seleccionado a partir de su ID
             int clienteSeleccionado = (int)dgClientes.CurrentRow.Cells[0].Value;
             Form_DatosCliente formDatosCliente = new Form_DatosCliente(clienteSeleccionado);
-            formDatosCliente.Show();
             this.Hide();
+            formDatosCliente.ShowDialog();
+            this.Show();
         }
 
         private void BtnAnterior_Click(object sender, System.EventArgs e)
