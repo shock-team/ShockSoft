@@ -11,6 +11,7 @@ namespace ShockSoft.Dominio
         public float PrecioBaseDolar { get; set; }
         public bool EnVenta { get; set; }
         public float PorcentajeGanancia { get; set; }
+        public string Comentarios { get; set; }
         public Marca Marca { get; set; }
         public Parametro Parametro { get; set; }
 

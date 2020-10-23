@@ -31,6 +31,10 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
             this.Property(x => x.PorcentajeGanancia)
                 .HasColumnName("porcentajeGanancia");
 
+            this.Property(x => x.Comentarios)
+                .HasColumnName("comentarios")
+                .IsOptional();
+
             this.HasRequired<Marca>(x => x.Marca)
                 .WithMany(t => t.Productos)
                 .HasForeignKey<int>(x => x.IdMarca);

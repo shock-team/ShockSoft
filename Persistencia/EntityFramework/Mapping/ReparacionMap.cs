@@ -34,6 +34,10 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
                 .HasColumnName("fechaReparacion")
                 .IsOptional();
 
+            this.Property(x => x.FechaEntrega)
+                .HasColumnName("fechaEntrega")
+                .IsOptional();
+
             this.Property(x => x.Precio)
                 .HasColumnName("precio")
                 .IsOptional();

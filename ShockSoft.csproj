@@ -199,6 +199,10 @@
     <Compile Include="Migrations\202010151611133_asd3.designer.cs">
       <DependentUpon>202010151611133_asd3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010231927328_asd4.cs" />
+    <Compile Include="Migrations\202010231927328_asd4.designer.cs">
+      <DependentUpon>202010231927328_asd4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\EntityFramework\FormattedDbException.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\CompraMap.cs" />
@@ -336,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010151611133_asd3.resx">
       <DependentUpon>202010151611133_asd3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010231927328_asd4.resx">
+      <DependentUpon>202010231927328_asd4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_AltaCliente.resx">
       <DependentUpon>Form_AltaCliente.cs</DependentUpon>
