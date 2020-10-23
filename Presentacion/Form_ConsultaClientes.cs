@@ -43,6 +43,8 @@ namespace ShockSoft.Presentacion
 
         private void ValorCambiado(object sender, System.EventArgs e)
         {
+            btnAnterior.Enabled = false;
+            btnAnterior.Visible = false;
             lblPaginaActual.Text = "1";
             ActualizarTabla();
         }
