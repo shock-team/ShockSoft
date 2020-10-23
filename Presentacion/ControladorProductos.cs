@@ -149,5 +149,23 @@ namespace ShockSoft.Presentacion
             }
             return producto;
         }
+
+        /// <summary>
+        /// Este método se encarga de devolver la cantidad de productos presentes
+        /// en la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public int ObtenerCantidadDeProductos()
+        {
+            int cantidad = 0;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    cantidad = bUoW.RepositorioProducto.CantidadFilas();
+                }
+            }
+            return cantidad;
+        }
     }
 }

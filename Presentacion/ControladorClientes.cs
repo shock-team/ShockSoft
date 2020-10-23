@@ -186,7 +186,7 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
-        /// Este método se encarga de devolver la cantidad de clientes presente
+        /// Este método se encarga de devolver la cantidad de clientes presentes
         /// en la base de datos.
         /// </summary>
         /// <returns></returns>

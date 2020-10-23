@@ -43,5 +43,34 @@ namespace ShockSoft.Presentacion
                 tablaDeProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
             }
         }
+
+        private void BtnAnterior_Click(object sender, System.EventArgs e)
+        {
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = false;
+                btnAnterior.Visible = false;
+            }
+            ActualizarTabla();
+        }
+
+        private void BtnSiguiente_Click(object sender, System.EventArgs e)
+        {
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = true;
+                btnAnterior.Visible = true;
+            }
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
+            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeProductos() / 15))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            ActualizarTabla();
+        }
     }
 }

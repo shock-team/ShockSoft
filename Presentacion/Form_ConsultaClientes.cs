@@ -73,8 +73,11 @@ namespace ShockSoft.Presentacion
 
         private void BtnSiguiente_Click(object sender, System.EventArgs e)
         {
-            btnAnterior.Enabled = true;
-            btnAnterior.Visible = true;
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = true;
+                btnAnterior.Visible = true;
+            }
             lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
             if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeClientes() / 15))
             {
