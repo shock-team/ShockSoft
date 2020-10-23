@@ -11,7 +11,7 @@ using System.Data.Entity.Infrastructure.MappingViews;
 
 [assembly: DbMappingViewCacheTypeAttribute(
     typeof(ShockSoft.Persistencia.EntityFramework.ShockDbContext),
-    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets9a409100e50e148c4c55aad5f27e42783dfe99eb19db04cfe58f95cbab923f63))]
+    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets891975c0b8d763f6aee78f30579543dd26d2863cd9ae9638cb1ae9a52c59a347))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -23,14 +23,14 @@ namespace Edm_EntityMappingGeneratedViews
     /// Implements a mapping view cache.
     /// </summary>
     [GeneratedCode("Entity Framework 6 Power Tools", "0.9.2.0")]
-    internal sealed class ViewsForBaseEntitySets9a409100e50e148c4c55aad5f27e42783dfe99eb19db04cfe58f95cbab923f63 : DbMappingViewCache
+    internal sealed class ViewsForBaseEntitySets891975c0b8d763f6aee78f30579543dd26d2863cd9ae9638cb1ae9a52c59a347 : DbMappingViewCache
     {
         /// <summary>
         /// Gets a hash value computed over the mapping closure.
         /// </summary>
         public override string MappingHashValue
         {
-            get { return "9a409100e50e148c4c55aad5f27e42783dfe99eb19db04cfe58f95cbab923f63"; }
+            get { return "891975c0b8d763f6aee78f30579543dd26d2863cd9ae9638cb1ae9a52c59a347"; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Edm_EntityMappingGeneratedViews
                 return GetView15();
             }
 
-            if (extentName == "ShockDbContext.Localidads")
+            if (extentName == "ShockDbContext.Localidades")
             {
                 return GetView16();
             }
@@ -238,7 +238,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.IdLocalidad AS Localidad_id, 
             T.Nombre AS Localidad_nombre, 
             True AS _from0
-        FROM ShockDbContext.Localidads AS T
+        FROM ShockDbContext.Localidades AS T
     ) AS T1");
         }
 
@@ -550,13 +550,13 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for ShockDbContext.Localidads.
+        /// Gets the view for ShockDbContext.Localidades.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView16()
         {
             return new DbMappingView(@"
-    SELECT VALUE -- Constructing Localidads
+    SELECT VALUE -- Constructing Localidades
         [ShockSoft.Persistencia.EntityFramework.Localidad](T1.Localidad_IdLocalidad, T1.Localidad_Nombre)
     FROM (
         SELECT 
