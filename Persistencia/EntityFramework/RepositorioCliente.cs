@@ -40,7 +40,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         {
             var clientesFiltrados = (from c in iDbContext.Clientes
                                      join r in iDbContext.Reparaciones on c.IdCliente equals r.IdCliente
-                                     where (r.Cobrado == pConDeudas) || (r.Cobrado == pSinDeudas) &&
+                                     where ((r.Cobrado == pConDeudas) || (r.Cobrado == pSinDeudas)) &&
                                      (string.IsNullOrEmpty(pNombre) || pNombre.Equals("") || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
                                      (string.IsNullOrEmpty(pApellido) || pApellido.Equals("") || c.Apellido.ToUpper().Contains(pApellido.ToUpper()))
                                      select c);

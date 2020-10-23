@@ -41,6 +41,9 @@
             this.cbSinStock = new System.Windows.Forms.CheckBox();
             this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.lblPaginaActual = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +162,43 @@
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 16;
             // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(265, 359);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.TabIndex = 17;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.BtnAnterior_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Location = new System.Drawing.Point(449, 359);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 18;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
+            // 
+            // lblPaginaActual
+            // 
+            this.lblPaginaActual.AutoSize = true;
+            this.lblPaginaActual.Location = new System.Drawing.Point(385, 364);
+            this.lblPaginaActual.Name = "lblPaginaActual";
+            this.lblPaginaActual.Size = new System.Drawing.Size(13, 13);
+            this.lblPaginaActual.TabIndex = 19;
+            this.lblPaginaActual.Text = "1";
+            // 
             // Form_ConsultarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPaginaActual);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.cbSinStock);
@@ -200,5 +235,8 @@
         private System.Windows.Forms.CheckBox cbSinStock;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Label lblPaginaActual;
     }
 }
