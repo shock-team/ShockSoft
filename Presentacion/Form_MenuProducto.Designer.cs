@@ -49,7 +49,7 @@
             // 
             this.btnAltaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
             this.btnAltaProducto.FlatAppearance.BorderSize = 0;
-            this.btnAltaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
+            this.btnAltaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
             this.btnAltaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaProducto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -64,7 +64,7 @@
             // 
             this.btnConsultaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
             this.btnConsultaProducto.FlatAppearance.BorderSize = 0;
-            this.btnConsultaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
+            this.btnConsultaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
             this.btnConsultaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultaProducto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultaProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;

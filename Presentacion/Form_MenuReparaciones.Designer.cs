@@ -49,7 +49,7 @@
             // 
             this.btnConsultaReparacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
             this.btnConsultaReparacion.FlatAppearance.BorderSize = 0;
-            this.btnConsultaReparacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
+            this.btnConsultaReparacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
             this.btnConsultaReparacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultaReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultaReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -64,7 +64,7 @@
             // 
             this.btnAltaReparacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
             this.btnAltaReparacion.FlatAppearance.BorderSize = 0;
-            this.btnAltaReparacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
+            this.btnAltaReparacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
             this.btnAltaReparacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
