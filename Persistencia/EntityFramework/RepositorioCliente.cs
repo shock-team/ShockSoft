@@ -23,45 +23,30 @@ namespace ShockSoft.Persistencia.EntityFramework
         }
 
         /// <summary>
-        /// Devuelve Clientes filtrados por <paramref name="pConDeudas"/> o <paramref name="pSinDeudas"/>.
+        /// El objetivo de este método es devolver los clientes filtrados en base a distintos criterios.
         /// </summary>
-        /// <param name="pConDeudas"></param>
+        /// <param name="pNombre">La cadena mediante la cual filtrar el nombre del cliente</param>
+        /// <param name="pApellido">La cadena mediante la cual filtrar el apellido del cliente</param>
+        /// <param name="pConDeudas">Si debe incluir a los clientes que tengan deudas</param>
+        /// <param name="pSinDeudas">Si debe incluir a los clientes que no tengan deudas</param>
+        /// <param name="pDesde">El número de clientes a partir del cual debe traerlos</param>
+        /// <param name="pCantidad">El numero de clientes a traer</param>
         /// <returns></returns>
-        public IEnumerable<Cliente> ObtenerDeudores(bool pConDeudas, bool pSinDeudas)
-        {
-            var clientesFiltrados = (from c in iDbContext.Clientes
-                                     join r in iDbContext.Reparaciones on c.IdCliente equals r.IdCliente
-                                     where (r.Cobrado == pConDeudas) || (r.Cobrado == pSinDeudas)
-                                     select c);
-            return clientesFiltrados;
-        }
-
-        public IEnumerable<Cliente> ObtenerClientes(string pNombre, string pApellido, bool pConDeudas, bool pSinDeudas, int pDesde, int pHasta)
+        public IEnumerable<Cliente> ObtenerClientes(string pNombre, string pApellido, bool pConDeudas, bool pSinDeudas, int pDesde, int pCantidad)
         {
             var clientesFiltrados = (from c in iDbContext.Clientes
                                      join r in iDbContext.Reparaciones on c.IdCliente equals r.IdCliente
                                      where ((r.Cobrado == pConDeudas) || (r.Cobrado == pSinDeudas)) &&
-                                     (string.IsNullOrEmpty(pNombre) || pNombre.Equals("") || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
-                                     (string.IsNullOrEmpty(pApellido) || pApellido.Equals("") || c.Apellido.ToUpper().Contains(pApellido.ToUpper()))
+                                     (string.IsNullOrEmpty(pNombre) || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
+                                     (string.IsNullOrEmpty(pApellido) || c.Apellido.ToUpper().Contains(pApellido.ToUpper()))
                                      select c);
-            return clientesFiltrados.Distinct().OrderBy(x => x.Apellido).Skip(pDesde).Take(pHasta);
+            return clientesFiltrados.Distinct().OrderBy(x => x.Apellido).Skip(pDesde).Take(pCantidad);
         }
 
         /// <summary>
-        /// Devuelve Clientes filtrados por <paramref name="pNombre"/> y <paramref name="pApellido"/>.
+        /// Este método devuelve la cantidad de clientes presente en la base de datos
         /// </summary>
-        /// <param name="pNombre"></param>
-        /// <param name="pApellido"></param>
         /// <returns></returns>
-        public IEnumerable<Cliente> ObtenerPorDatos(string pNombre, string pApellido)
-        {
-            var clientesFiltrados = (from c in iDbContext.Clientes
-                                     where (string.IsNullOrEmpty(pNombre) || pNombre.Equals("") || c.Nombre.Contains(pNombre)) &&
-                                            (string.IsNullOrEmpty(pApellido) || pApellido.Equals("") || c.Apellido.Contains(pApellido))
-                                     select c);
-            return clientesFiltrados;                                          
-        }
-
         public int CantidadFilas()
         {
             var sql = "SELECT COUNT(*) FROM clientes";

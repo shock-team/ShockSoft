@@ -234,7 +234,6 @@
     <Compile Include="Persistencia\EntityFramework\RepositorioReparacion.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioTipoEquipo.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioVenta.cs" />
-    <Compile Include="Persistencia\EntityFramework\ShockDbContext.Views.cs" />
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
     <Compile Include="Persistencia\IRepositorio.cs" />

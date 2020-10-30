@@ -33,6 +33,10 @@ namespace ShockSoft.Dominio
             {
                 total -= venta.ObtenerTotal();
             }
+            foreach (Reparacion reparacion in Reparaciones)
+            {
+                total -= reparacion.Precio;
+            }
             return total;
         }
 
