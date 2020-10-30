@@ -180,28 +180,12 @@
     <Compile Include="Dominio\MetodoPago.cs" />
     <Compile Include="Dominio\Pago.cs" />
     <Compile Include="Dominio\Reparacion.cs" />
-    <Compile Include="Dominio\TipoEquipo.cs" />
+    <Compile Include="Dominio\Rubro.cs" />
     <Compile Include="Dominio\Venta.cs" />
     <Compile Include="Excepciones\DatosRepetidosException.cs" />
-    <Compile Include="Migrations\202009230154182_asd.cs" />
-    <Compile Include="Migrations\202009230154182_asd.designer.cs">
-      <DependentUpon>202009230154182_asd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010100743383_test2.cs" />
-    <Compile Include="Migrations\202010100743383_test2.designer.cs">
-      <DependentUpon>202010100743383_test2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010100746262_test3.cs" />
-    <Compile Include="Migrations\202010100746262_test3.designer.cs">
-      <DependentUpon>202010100746262_test3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010151611133_asd3.cs" />
-    <Compile Include="Migrations\202010151611133_asd3.designer.cs">
-      <DependentUpon>202010151611133_asd3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010231927328_asd4.cs" />
-    <Compile Include="Migrations\202010231927328_asd4.designer.cs">
-      <DependentUpon>202010231927328_asd4.cs</DependentUpon>
+    <Compile Include="Migrations\202010301902389_init.cs" />
+    <Compile Include="Migrations\202010301902389_init.designer.cs">
+      <DependentUpon>202010301902389_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\EntityFramework\FormattedDbException.cs" />
@@ -220,7 +204,7 @@
     <Compile Include="Persistencia\EntityFramework\RepositorioLineasDeCompras.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioLineasDeVentas.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioParametro.cs" />
-    <Compile Include="Persistencia\EntityFramework\Mapping\TipoEquipoMap.cs" />
+    <Compile Include="Persistencia\EntityFramework\Mapping\RubroMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Mapping\VentaMap.cs" />
     <Compile Include="Persistencia\EntityFramework\Repositorio.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioCliente.cs" />
@@ -232,9 +216,8 @@
     <Compile Include="Persistencia\EntityFramework\RepositorioProducto.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioProveedor.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioReparacion.cs" />
-    <Compile Include="Persistencia\EntityFramework\RepositorioTipoEquipo.cs" />
+    <Compile Include="Persistencia\EntityFramework\RepositorioRubro.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioVenta.cs" />
-    <Compile Include="Persistencia\EntityFramework\ShockDbContext.Views.cs" />
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
     <Compile Include="Persistencia\IRepositorio.cs" />
@@ -329,20 +312,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202009230154182_asd.resx">
-      <DependentUpon>202009230154182_asd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010100743383_test2.resx">
-      <DependentUpon>202010100743383_test2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010100746262_test3.resx">
-      <DependentUpon>202010100746262_test3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010151611133_asd3.resx">
-      <DependentUpon>202010151611133_asd3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010231927328_asd4.resx">
-      <DependentUpon>202010231927328_asd4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010301902389_init.resx">
+      <DependentUpon>202010301902389_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_AltaCliente.resx">
       <DependentUpon>Form_AltaCliente.cs</DependentUpon>

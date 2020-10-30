@@ -3,14 +3,14 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace ShockSoft.Persistencia.EntityFramework.Mapping
 {
-    class TipoEquipoMap : EntityTypeConfiguration<TipoEquipo>
+    class RubroMap : EntityTypeConfiguration<Rubro>
     {
-        public TipoEquipoMap()
+        public RubroMap()
         {
-            this.ToTable("tiposDeEquipo");
+            this.ToTable("rubros");
 
-            this.HasKey(x => x.IdTipoEquipo);
-            this.Property(x => x.IdTipoEquipo)
+            this.HasKey(x => x.IdRubro);
+            this.Property(x => x.IdRubro)
                 .HasColumnName("id")
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 

@@ -33,13 +33,13 @@ namespace ShockSoft.Presentacion
         /// <param name="pDescripcion">La descripción del nuevo tipo de equipo</param>
         public void AgregarTipoDeEquipo(string pDescripcion)
         {
-            TipoEquipo tipo = new TipoEquipo();
+            Rubro tipo = new Rubro();
             tipo.Descripcion = pDescripcion;
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
                 {
-                    bUoW.RepositorioTipoEquipo.Agregar(tipo);
+                    bUoW.RepositorioRubro.Agregar(tipo);
                     bUoW.GuardarCambios();
                 }
             }
@@ -50,14 +50,14 @@ namespace ShockSoft.Presentacion
         /// de equipo presentes en el repositorio.
         /// </summary>
         /// <returns></returns>
-        public List<TipoEquipo> ListarTiposDeEquipo()
+        public List<Rubro> ListarTiposDeEquipo()
         {
-            List<TipoEquipo> listaTipos;
+            List<Rubro> listaTipos;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    listaTipos = bUoW.RepositorioTipoEquipo.ObtenerTodos().ToList();
+                    listaTipos = bUoW.RepositorioRubro.ObtenerTodos().ToList();
                 }
             }
             return listaTipos;
@@ -68,14 +68,14 @@ namespace ShockSoft.Presentacion
         /// en el repositorio
         /// </summary>
         /// <param name="pDescripcion">La nueva descripción del tipo de equipo</param>
-        /// <param name="idTipoEquipo">El ID del tipo de equipo a modificar</param>
-        public void ModificarTipoDeEquipo(string pDescripcion, int idTipoEquipo)
+        /// <param name="IdRubro">El ID del tipo de equipo a modificar</param>
+        public void ModificarTipoDeEquipo(string pDescripcion, int IdRubro)
         {
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    TipoEquipo tipoAModificar = bUoW.RepositorioTipoEquipo.Obtener(idTipoEquipo);
+                    Rubro tipoAModificar = bUoW.RepositorioRubro.Obtener(IdRubro);
                     tipoAModificar.Descripcion = pDescripcion;
                     bUoW.GuardarCambios();
                 }

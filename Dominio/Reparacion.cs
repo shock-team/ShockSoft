@@ -18,7 +18,7 @@ namespace ShockSoft.Dominio
         public bool Cobrado { get; set; }
         public bool Cargador { get; set; }
         public bool Cables { get; set; }
-        public TipoEquipo TipoEquipo { get; set; }
+        public Rubro TipoEquipo { get; set; }
         public Cliente Cliente { get; set; }
         public MetodoPago MetodoPago { get; set; }
         public Marca Marca { get; set; }
@@ -26,7 +26,7 @@ namespace ShockSoft.Dominio
 
         //Fluent API
         public int IdCliente { get; set; }
-        public int IdTipoEquipo { get; set; }
+        public int IdRubro { get; set; }
         public int IdMarca { get; set; }
         public int IdMetodoPago { get; set; }
 

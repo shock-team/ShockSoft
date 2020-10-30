@@ -14,6 +14,7 @@ namespace ShockSoft.Dominio
         public string Comentarios { get; set; }
         public Marca Marca { get; set; }
         public Parametro Parametro { get; set; }
+        public Rubro Rubro { get; set; }
 
         //Fluent API
         public virtual ICollection<Reparacion> Reparaciones { get; set; }
@@ -21,6 +22,7 @@ namespace ShockSoft.Dominio
         public virtual ICollection<LineaCompra> LineasCompra { get; set; }
         public int IdMarca { get; set; }
         public int IdParametro { get; set; }
+        public int IdRubro { get; set; }
 
         public Producto()
         {

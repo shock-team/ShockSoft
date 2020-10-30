@@ -20,7 +20,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         public DbSet<Pago> Pagos { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Reparacion> Reparaciones { get; set; }
-        public DbSet<TipoEquipo> TiposDeEquipo { get; set; }
+        public DbSet<Rubro> TiposDeEquipo { get; set; }
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Compra> Compras { get; set; }

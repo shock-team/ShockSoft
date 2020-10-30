@@ -15,7 +15,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         public RepositorioProducto RepositorioProducto { get; private set; }
         public RepositorioProveedor RepositorioProveedor { get; private set; }
         public RepositorioReparacion RepositorioReparacion { get; private set; }
-        public RepositorioTipoEquipo RepositorioTipoEquipo { get; private set; }
+        public RepositorioRubro RepositorioRubro { get; private set; }
         public RepositorioVenta RepositorioVenta { get; private set; }
         public RepositorioParametro RepositorioParametro { get; private set; }
         public RepositorioLineasDeCompras RepositorioLineasDeCompras { get; private set; }
@@ -37,7 +37,7 @@ namespace ShockSoft.Persistencia.EntityFramework
             this.RepositorioProducto = new RepositorioProducto(pDbContext);
             this.RepositorioProveedor = new RepositorioProveedor(pDbContext);
             this.RepositorioReparacion = new RepositorioReparacion(pDbContext);
-            this.RepositorioTipoEquipo = new RepositorioTipoEquipo(pDbContext);
+            this.RepositorioRubro = new RepositorioRubro(pDbContext);
             this.RepositorioVenta = new RepositorioVenta(pDbContext);
             this.RepositorioParametro = new RepositorioParametro(pDbContext);
             this.RepositorioLineasDeCompras = new RepositorioLineasDeCompras(pDbContext);
