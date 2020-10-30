@@ -59,6 +59,7 @@
             this.btnAltaProducto.TabIndex = 5;
             this.btnAltaProducto.Text = "Nuevo Producto";
             this.btnAltaProducto.UseVisualStyleBackColor = false;
+            this.btnAltaProducto.Click += new System.EventHandler(this.btnAltaProducto_Click);
             // 
             // btnConsultaProducto
             // 
