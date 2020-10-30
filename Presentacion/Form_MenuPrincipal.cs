@@ -55,7 +55,7 @@ namespace ShockSoft.Presentacion
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            
+            AbrirFormHija(new Form_MenuProducto());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace ShockSoft.Presentacion
 
         private void btnReparaciones_Click(object sender, EventArgs e)
         {
-
+            AbrirFormHija(new Form_MenuReparaciones());
         }
 
         private void AbrirFormHija(object formHija)
@@ -81,6 +81,11 @@ namespace ShockSoft.Presentacion
             this.panelPrincipal.Controls.Add(fh);
             this.panelPrincipal.Tag = fh;
             fh.Show();
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Form_MenuVentas());
         }
     }
 }

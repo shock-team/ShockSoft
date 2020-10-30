@@ -234,7 +234,6 @@
     <Compile Include="Persistencia\EntityFramework\RepositorioReparacion.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioTipoEquipo.cs" />
     <Compile Include="Persistencia\EntityFramework\RepositorioVenta.cs" />
-    <Compile Include="Persistencia\EntityFramework\ShockDbContext.Views.cs" />
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
     <Compile Include="Persistencia\IRepositorio.cs" />
@@ -315,6 +314,24 @@
     <Compile Include="Presentacion\Form_MenuPrincipal.Designer.cs">
       <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Form_MenuProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_MenuProducto.Designer.cs">
+      <DependentUpon>Form_MenuProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form_MenuReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_MenuReparaciones.Designer.cs">
+      <DependentUpon>Form_MenuReparaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form_MenuVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_MenuVentas.Designer.cs">
+      <DependentUpon>Form_MenuVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Form_ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +390,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_MenuPrincipal.resx">
       <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_MenuProducto.resx">
+      <DependentUpon>Form_MenuProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_MenuReparaciones.resx">
+      <DependentUpon>Form_MenuReparaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_MenuVentas.resx">
+      <DependentUpon>Form_MenuVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_RegistrarPago.resx">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
