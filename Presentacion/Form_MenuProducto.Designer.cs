@@ -75,6 +75,7 @@
             this.btnConsultaProducto.TabIndex = 6;
             this.btnConsultaProducto.Text = "Lista de Productos";
             this.btnConsultaProducto.UseVisualStyleBackColor = false;
+            this.btnConsultaProducto.Click += new System.EventHandler(this.btnConsultaProducto_Click);
             // 
             // Form_MenuProducto
             // 
