@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {
@@ -90,8 +91,17 @@ namespace ShockSoft.Presentacion
 
         private void ActualizarTabla()
         {
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
             tablaDeClientes.Rows.Clear();
-            foreach (Cliente cliente in controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text, 15 * (int.Parse(lblPaginaActual.Text) - 1) + 1, 15))
+            int CANTIDAD_POR_PAGINA = 15;
+            List<Cliente> listaDeClientes = controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
+            if (listaDeClientes.Count < (CANTIDAD_POR_PAGINA + 1))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            foreach (Cliente cliente in listaDeClientes)
             {
                 tablaDeClientes.Rows.Add(cliente.IdCliente, cliente.Nombre, cliente.Apellido, cliente.CUIT, cliente.ObtenerSaldo());
             }
