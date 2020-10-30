@@ -76,16 +76,11 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public List<Cliente> ListarClientes(bool pConDeudas, bool pSinDeudas, string pNombre, string pApellido, int pDesde, int pCantidad)
         {
-            IEnumerable<Cliente> listaClientesPorDatos;
-            IEnumerable<Cliente> listaClientesPorDeuda;
             List<Cliente> listaDeClientes = new List<Cliente>();
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
                 {
-                    //listaClientesPorDatos = bUoW.RepositorioCliente.ObtenerPorDatos(pNombre, pApellido);
-                    //listaClientesPorDeuda = bUoW.RepositorioCliente.ObtenerDeudores(pConDeudas, pSinDeudas);
-                    //listaDeClientes = listaClientesPorDatos.Intersect(listaClientesPorDeuda).Skip(pDesde).Take(pCantidad).ToList();
                     listaDeClientes = bUoW.RepositorioCliente.ObtenerClientes(pNombre, pApellido, pConDeudas, pSinDeudas, pDesde, pCantidad).ToList();
                 }
             }

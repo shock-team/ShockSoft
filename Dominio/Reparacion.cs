@@ -43,7 +43,7 @@ namespace ShockSoft.Dominio
             {
                 total += Producto.ObtenerPrecioDeVenta();
             }
-            return total;
+            return total * MetodoPago.MultiplicadorInteres;
         }
 
     }

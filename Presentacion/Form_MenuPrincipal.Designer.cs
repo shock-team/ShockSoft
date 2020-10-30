@@ -170,6 +170,7 @@
             this.btnVenta.TabIndex = 16;
             this.btnVenta.Text = "Venta / Compra";
             this.btnVenta.UseVisualStyleBackColor = false;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
             // panel4
             // 
