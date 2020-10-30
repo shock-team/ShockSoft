@@ -19,7 +19,7 @@ namespace ShockSoft.Dominio
 
         //Fluent API
         public int IdLocalidad { get; set; }
-        public ICollection<Reparacion> Reparaciones { get; set; }
+        public ICollection<Reparacion> Reparaciones { get; set; } = new List<Reparacion>();
 
         //Métodos
         public float ObtenerSaldo()

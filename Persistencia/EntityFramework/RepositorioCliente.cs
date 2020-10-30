@@ -32,15 +32,13 @@ namespace ShockSoft.Persistencia.EntityFramework
         /// <param name="pDesde">El número de clientes a partir del cual debe traerlos</param>
         /// <param name="pCantidad">El numero de clientes a traer</param>
         /// <returns></returns>
-        public IEnumerable<Cliente> ObtenerClientes(string pNombre, string pApellido, bool pConDeudas, bool pSinDeudas, int pDesde, int pCantidad)
+        public IEnumerable<Cliente> ObtenerClientes(string pNombre, string pApellido)
         {
             var clientesFiltrados = (from c in iDbContext.Clientes
-                                     join r in iDbContext.Reparaciones on c.IdCliente equals r.IdCliente
-                                     where ((r.Cobrado == pConDeudas) || (r.Cobrado == pSinDeudas)) &&
-                                     (string.IsNullOrEmpty(pNombre) || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
+                                     where (string.IsNullOrEmpty(pNombre) || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
                                      (string.IsNullOrEmpty(pApellido) || c.Apellido.ToUpper().Contains(pApellido.ToUpper()))
                                      select c);
-            return clientesFiltrados.Distinct().OrderBy(x => x.Apellido).Skip(pDesde).Take(pCantidad);
+            return clientesFiltrados;
         }
 
         /// <summary>
