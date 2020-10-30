@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIVA = new System.Windows.Forms.Label();
-            this.comboIVA = new System.Windows.Forms.ComboBox();
             this.panelControl = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.picShock = new System.Windows.Forms.PictureBox();
@@ -51,30 +49,17 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.comboMarca = new System.Windows.Forms.ComboBox();
             this.btnAgregarMarca = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblIVA = new System.Windows.Forms.Label();
+            this.comboIVA = new System.Windows.Forms.ComboBox();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblIVA
-            // 
-            this.lblIVA.AutoSize = true;
-            this.lblIVA.Location = new System.Drawing.Point(49, 359);
-            this.lblIVA.Name = "lblIVA";
-            this.lblIVA.Size = new System.Drawing.Size(24, 13);
-            this.lblIVA.TabIndex = 2;
-            this.lblIVA.Text = "IVA";
-            // 
-            // comboIVA
-            // 
-            this.comboIVA.FormattingEnabled = true;
-            this.comboIVA.Location = new System.Drawing.Point(182, 356);
-            this.comboIVA.Name = "comboIVA";
-            this.comboIVA.Size = new System.Drawing.Size(195, 21);
-            this.comboIVA.TabIndex = 5;
             // 
             // panelControl
             // 
@@ -253,12 +238,13 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(458, 542);
+            this.btnCancelar.Location = new System.Drawing.Point(450, 280);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -269,12 +255,13 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAceptar.Location = new System.Drawing.Point(568, 542);
+            this.btnAceptar.Location = new System.Drawing.Point(570, 280);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 18;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // panel4
             // 
@@ -322,13 +309,45 @@
             this.btnAgregarMarca.TabIndex = 15;
             this.btnAgregarMarca.Text = "Nueva Marca";
             this.btnAgregarMarca.UseVisualStyleBackColor = false;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(70)))));
+            this.panel5.Controls.Add(this.lblIVA);
+            this.panel5.Controls.Add(this.comboIVA);
+            this.panel5.Location = new System.Drawing.Point(30, 240);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(310, 47);
+            this.panel5.TabIndex = 25;
+            // 
+            // lblIVA
+            // 
+            this.lblIVA.AutoSize = true;
+            this.lblIVA.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIVA.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblIVA.Location = new System.Drawing.Point(8, 12);
+            this.lblIVA.Name = "lblIVA";
+            this.lblIVA.Size = new System.Drawing.Size(36, 19);
+            this.lblIVA.TabIndex = 7;
+            this.lblIVA.Text = "IVA:";
+            // 
+            // comboIVA
+            // 
+            this.comboIVA.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboIVA.FormattingEnabled = true;
+            this.comboIVA.Location = new System.Drawing.Point(130, 10);
+            this.comboIVA.Name = "comboIVA";
+            this.comboIVA.Size = new System.Drawing.Size(160, 27);
+            this.comboIVA.TabIndex = 18;
             // 
             // Form_AñadirProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(700, 600);
+            this.ClientSize = new System.Drawing.Size(700, 320);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -336,8 +355,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl);
-            this.Controls.Add(this.comboIVA);
-            this.Controls.Add(this.lblIVA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AñadirProducto";
             this.Text = "Form_AñadirProducto";
@@ -352,14 +369,13 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblIVA;
-        private System.Windows.Forms.ComboBox comboIVA;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.PictureBox picShock;
@@ -381,5 +397,8 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.ComboBox comboMarca;
         private System.Windows.Forms.Button btnAgregarMarca;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblIVA;
+        private System.Windows.Forms.ComboBox comboIVA;
     }
 }

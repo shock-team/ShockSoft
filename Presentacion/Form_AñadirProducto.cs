@@ -31,21 +31,6 @@ namespace ShockSoft.Presentacion
             comboIVA.ValueMember = "IdParametro";
         }
 
-        private void BtnAgregarMarca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnAceptar_Click(object sender, EventArgs e)
-        {
-            controlador.AgregarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtGanancia.Text), (int)comboIVA.SelectedItem, (int)comboMarca.SelectedItem);
-        }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
 
         // Deslizar ventana desde el panel de control
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -78,6 +63,21 @@ namespace ShockSoft.Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            controlador.AgregarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtGanancia.Text), (int)comboIVA.SelectedItem, (int)comboMarca.SelectedItem);
+        }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
