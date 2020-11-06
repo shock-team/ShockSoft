@@ -9,14 +9,10 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         public RepositorioProducto(ShockDbContext pDbContext) : base(pDbContext) { }
 
-        public IEnumerable<Producto> ObtenerPorParte(int pDesde, int pHasta)
-        {
-            return this.iDbContext.Set<Producto>().OrderBy(x => x.IdProducto).Skip(pDesde).Take(pHasta);
-        }
-
         public IEnumerable<Producto> ObtenerProductos(bool pNoEnVenta, bool pSinStock, string pDescripcion, int pDesde, int pCantidad)
         {
-            var productosFiltrados = (from p in iDbContext.Productos.Include("Marca")
+            var productosFiltrados = (from p in iDbContext.Productos
+                                      .Include("Marca")
                                       where (p.EnVenta || (!p.EnVenta && pNoEnVenta)) &&
                                       (p.Cantidad > 0 || ((p.Cantidad <= 0) && pSinStock)) &&
                                       (string.IsNullOrEmpty(pDescripcion) || p.Descripcion.ToUpper().Contains(pDescripcion.ToUpper()))
@@ -25,7 +21,7 @@ namespace ShockSoft.Persistencia.EntityFramework
             return productosFiltrados.OrderBy(x => x.Descripcion).Skip(pDesde).Take(pCantidad);
         }
 
-        public IEnumerable<Producto> ObtenerEnVenta(bool pNoEnVenta)
+		public IEnumerable<Producto> ObtenerEnVenta(bool pNoEnVenta)
         {
             var prodFiltrados = (from p in iDbContext.Productos.Include("Marca")
                                  where p.EnVenta || p.EnVenta == pNoEnVenta
