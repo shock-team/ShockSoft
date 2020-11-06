@@ -9,7 +9,6 @@ namespace ShockSoft.Presentacion
     public partial class Form_ConsultarProducto : Form
     {
         ControladorProductos controlador;
-
         public Form_ConsultarProducto()
         {
             InitializeComponent();
@@ -39,12 +38,10 @@ namespace ShockSoft.Presentacion
                 btnSiguiente.Enabled = false;
                 btnSiguiente.Visible = false;
             }
-
-            foreach (var producto in listaDeProductos)
+            foreach (Producto producto in listaDeProductos)
             {
                 dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.PrecioBaseDolar, producto.Cantidad);
             }
-        }
 
         // Deslizar ventana desde el panel de control
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -106,6 +103,16 @@ namespace ShockSoft.Presentacion
                 btnSiguiente.Visible = false;
             }
             ActualizarTabla();
+        }
+
+        private void DgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Obtiene el cliente seleccionado a partir de su ID
+            int productoSeleccionado = (int)dgProductos.CurrentRow.Cells[0].Value;
+            Form_DatosProducto formDatosProducto = new Form_DatosProducto(productoSeleccionado);
+            this.Hide();
+            formDatosProducto.ShowDialog();
+            this.Show();
         }
     }
 }

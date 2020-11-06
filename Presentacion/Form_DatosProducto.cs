@@ -26,7 +26,7 @@ namespace ShockSoft.Presentacion
             txtCantidad.Text = producto.Cantidad.ToString();
             txtPrecio.Text = producto.PrecioBaseDolar.ToString();
             txtPorcentajeDeGanancia.Text = producto.PorcentajeGanancia.ToString();
-            txtMarca.Text = producto.Marca.Descripcion;
+            txtMarca.Text = ControladorMarcas.ObtenerInstancia().Obtener(producto.IdMarca).Descripcion;
             if (producto.EnVenta)
             {
                 txtEnVenta.Text = "Sí";
