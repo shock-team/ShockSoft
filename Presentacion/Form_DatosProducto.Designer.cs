@@ -90,6 +90,7 @@
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(900, 45);
             this.panelControl.TabIndex = 27;
+            this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -104,6 +105,7 @@
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 10;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // picShock
             // 
@@ -139,6 +141,7 @@
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
             this.btnTamano.UseVisualStyleBackColor = false;
+            this.btnTamano.Click += new System.EventHandler(this.btnTamano_Click);
             // 
             // btnCerrar
             // 
@@ -153,6 +156,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel5
             // 
@@ -435,6 +439,7 @@
             this.btnHistorialVenta.TabIndex = 27;
             this.btnHistorialVenta.Text = "Historial de Venta";
             this.btnHistorialVenta.UseVisualStyleBackColor = false;
+            this.btnHistorialVenta.Click += new System.EventHandler(this.btnHistorialVenta_Click);
             // 
             // btnHistorialCompra
             // 
@@ -451,6 +456,7 @@
             this.btnHistorialCompra.TabIndex = 26;
             this.btnHistorialCompra.Text = "Historial de Compra";
             this.btnHistorialCompra.UseVisualStyleBackColor = false;
+            this.btnHistorialCompra.Click += new System.EventHandler(this.btnHistorialCompra_Click);
             // 
             // btnAltaBaja
             // 
@@ -467,6 +473,7 @@
             this.btnAltaBaja.TabIndex = 25;
             this.btnAltaBaja.Text = "Alta/Baja";
             this.btnAltaBaja.UseVisualStyleBackColor = false;
+            this.btnAltaBaja.Click += new System.EventHandler(this.btnAltaBaja_Click);
             // 
             // btnModificar
             // 
@@ -483,6 +490,7 @@
             this.btnModificar.TabIndex = 24;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // Form_DatosProducto
             // 
