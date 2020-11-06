@@ -2,31 +2,19 @@
 using ShockSoft.Dominio;
 using System.Data;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {
     public partial class Form_ConsultarProducto : Form
     {
         ControladorProductos controlador;
-        DataTable tablaDeProductos;
         public Form_ConsultarProducto()
         {
             InitializeComponent();
             controlador = ControladorProductos.ObtenerInstancia();
-            /*
-            //Genera una DataTable que muestre los datos especificados
-            tablaDeProductos = new DataTable();
-            tablaDeProductos.Columns.AddRange(new DataColumn[5]
-            {
-                new DataColumn("ID", typeof(int)),
-                new DataColumn("Descripción", typeof(string)),
-                new DataColumn("Marca", typeof(string)),
-                new DataColumn("Cantidad", typeof(int)),
-                new DataColumn("Precio", typeof(float))
-            });
-            
-            dgProductos.DataSource = tablaDeProductos;
-            */
+            btnAnterior.Enabled = false;
+            btnAnterior.Visible = false;
             //Carga los datos a la DataTable
             ActualizarTabla();
         }
@@ -38,10 +26,22 @@ namespace ShockSoft.Presentacion
 
         private void ActualizarTabla()
         {
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
             dgProductos.Rows.Clear();
-            foreach (Producto producto in controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, int.Parse(txtId.Text)))
+            int CANTIDAD_POR_PAGINA = 15;
+            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
+            if (listaDeProductos.Count < (CANTIDAD_POR_PAGINA + 1))
             {
-                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            foreach (Producto producto in listaDeProductos)
+            {
+                if (!(producto == null))
+                {
+                    dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
+                }
             }
         }
 

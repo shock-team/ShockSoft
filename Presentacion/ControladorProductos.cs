@@ -62,26 +62,20 @@ namespace ShockSoft.Presentacion
         /// presentes en el repositorio, según distintos filtros
         /// </summary>
         /// <returns></returns>
-        public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, int pId)
+        public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, string pId, int pDesde, int pCantidad)
         {
-            IEnumerable<Producto> listaProductosPorStock;
-            IEnumerable<Producto> listaProductosPorEnVenta;
-            IEnumerable<Producto> listaProductosPorDescripcion;
             List<Producto> listaProductos = new List<Producto>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    if (pId != -1)
+                    if (pId.Length < 1)
                     {
-                        listaProductosPorStock = bUoW.RepositorioProducto.ObtenerConStock(pSinStock);
-                        listaProductosPorEnVenta = bUoW.RepositorioProducto.ObtenerEnVenta(pDeBaja);
-                        listaProductosPorDescripcion = bUoW.RepositorioProducto.ObtenerPorDescripcion(pDescripcion);
-                        listaProductos = listaProductosPorStock.Intersect(listaProductosPorEnVenta).Intersect(listaProductosPorDescripcion).ToList();
+                        listaProductos = bUoW.RepositorioProducto.ObtenerProductos(pDeBaja, pSinStock, pDescripcion, pDesde, pCantidad).ToList();
                     }
                     else
                     {
-                        listaProductos.Add(bUoW.RepositorioProducto.Obtener(pId));
+                        listaProductos.Add(bUoW.RepositorioProducto.Obtener(int.Parse(pId)));
                     }
                 }
             }
