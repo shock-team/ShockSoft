@@ -40,7 +40,7 @@ namespace ShockSoft.Presentacion
             {
                 if (!(producto == null))
                 {
-                    dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
+                    dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.PrecioBaseDolar, producto.Cantidad);
                 }
             }
         }
@@ -105,6 +105,16 @@ namespace ShockSoft.Presentacion
                 btnSiguiente.Visible = false;
             }
             ActualizarTabla();
+        }
+
+        private void DgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Obtiene el cliente seleccionado a partir de su ID
+            int productoSeleccionado = (int)dgProductos.CurrentRow.Cells[0].Value;
+            Form_DatosProducto formDatosProducto = new Form_DatosProducto(productoSeleccionado);
+            this.Hide();
+            formDatosProducto.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -81,5 +81,17 @@ namespace ShockSoft.Presentacion
                 }
             }
         }
+
+        public Marca Obtener(int pId)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Marca marca = bUoW.RepositorioMarca.Obtener(pId);
+                    return marca;
+                }
+            }
+        }
     }
 }

@@ -78,6 +78,7 @@
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.Size = new System.Drawing.Size(800, 382);
             this.dgProductos.TabIndex = 6;
+            this.dgProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgProductos_CellClick);
             // 
             // Marca
             // 
