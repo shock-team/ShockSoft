@@ -19,22 +19,6 @@ namespace ShockSoft.Presentacion
             InitializeComponent();
         }
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                controlador.VerificarDatos(txtNombre.Text);
-                controlador.AgregarLocalidad(txtNombre.Text);
-                MessageBox.Show("La localidad se ha agregado correctamente", "Exito");
-                txtNombre.Clear();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ya existe una localidad con ese nombre. Intente nuevamente", "Error");
-            }
-        }
-
-
         // Deslizar ventana desde el panel de control
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -66,6 +50,21 @@ namespace ShockSoft.Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnAceptar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                controlador.VerificarDatos(txtNombre.Text);
+                controlador.AgregarLocalidad(txtNombre.Text);
+                MessageBox.Show("La localidad se ha agregado correctamente", "Exito");
+                txtNombre.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ya existe una localidad con ese nombre. Intente nuevamente", "Error");
+            }
         }
     }
 }

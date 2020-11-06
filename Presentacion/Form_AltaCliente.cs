@@ -14,12 +14,7 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             controlador = ControladorClientes.ObtenerInstancia();
-            foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
-            {
-                comboLocalidad.Items.Add(localidad);
-            }
-            comboLocalidad.ValueMember = "IdLocalidad";
-            comboLocalidad.DisplayMember = "Nombre";
+            ActualizarComboBox();
         }
 
         // Deslizar ventana desde el panel de control
@@ -65,6 +60,7 @@ namespace ShockSoft.Presentacion
             this.Hide();
             formAltaLocalidad.ShowDialog();
             this.Show();
+            ActualizarComboBox();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -89,6 +85,16 @@ namespace ShockSoft.Presentacion
             this.Close();
         }
 
-
+        private void ActualizarComboBox()
+        {
+            comboLocalidad.Items.Clear();
+            foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
+            {
+                comboLocalidad.Items.Add(localidad);
+            }
+            comboLocalidad.ValueMember = "IdLocalidad";
+            comboLocalidad.DisplayMember = "Nombre";
+            comboLocalidad.SelectedIndex = comboLocalidad.Items.Count - 1;
+        }
     }
 }

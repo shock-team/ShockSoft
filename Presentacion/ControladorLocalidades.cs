@@ -59,7 +59,7 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    listaLocalidades = bUoW.RepositorioLocalidad.ObtenerTodos().ToList();
+                    listaLocalidades = bUoW.RepositorioLocalidad.ObtenerTodos().OrderBy(x => x.Nombre).ToList();
                 }
             }
             return listaLocalidades;

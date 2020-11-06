@@ -185,6 +185,7 @@
             this.btnAceptar.TabIndex = 23;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click_1);
             // 
             // Form_AltaLocalidad
             // 

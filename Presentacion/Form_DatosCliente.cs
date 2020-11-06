@@ -13,23 +13,14 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             Cliente cliente = controlador.ObtenerCliente(idCliente);
-            txtId.Text = cliente.IdCliente.ToString();
+            txtId.Text = idCliente.ToString();
             txtDNI.Text = cliente.DNI;
             txtCUIT.Text = cliente.CUIT;
             txtNombre.Text = cliente.Nombre;
             txtApellido.Text = cliente.Apellido;
             txtTelefono.Text = cliente.Telefono;
             txtDireccion.Text = cliente.Direccion;
-            foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
-            {
-                comboLocalidad.Items.Add(localidad);
-                if (localidad.IdLocalidad == cliente.IdLocalidad)
-                {
-                    comboLocalidad.SelectedItem = localidad;
-                }
-            }
-            comboLocalidad.ValueMember = "IdLocalidad";
-            comboLocalidad.DisplayMember = "Nombre";
+            ActualizarComboBox();
             txtSaldo.Text = cliente.ObtenerSaldo().ToString();
         }
 
@@ -90,6 +81,32 @@ namespace ShockSoft.Presentacion
         private void btnMinimizar_Click(object sender, System.EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnNuevaLocalidad_Click(object sender, System.EventArgs e)
+        {
+            Form_AltaLocalidad formAltaLocalidad = new Form_AltaLocalidad();
+            this.Hide();
+            formAltaLocalidad.ShowDialog();
+            this.Show();
+            ActualizarComboBox();
+        }
+
+        private void ActualizarComboBox()
+        {
+            comboLocalidad.Items.Clear();
+            foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
+            {
+                Cliente cliente = controlador.ObtenerCliente(int.Parse(txtId.Text));
+                comboLocalidad.Items.Add(localidad);
+                if (localidad.IdLocalidad == cliente.IdLocalidad)
+                {
+                    comboLocalidad.SelectedItem = localidad;
+                }
+            }
+            comboLocalidad.ValueMember = "IdLocalidad";
+            comboLocalidad.DisplayMember = "Nombre";
+            comboLocalidad.SelectedIndex = comboLocalidad.Items.Count - 1;
         }
     }
 }

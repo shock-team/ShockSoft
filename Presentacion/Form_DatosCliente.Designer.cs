@@ -153,6 +153,7 @@
             this.btnNuevaLocalidad.TabIndex = 15;
             this.btnNuevaLocalidad.Text = "Nueva Localidad";
             this.btnNuevaLocalidad.UseVisualStyleBackColor = false;
+            this.btnNuevaLocalidad.Click += new System.EventHandler(this.BtnNuevaLocalidad_Click);
             // 
             // panel6
             // 

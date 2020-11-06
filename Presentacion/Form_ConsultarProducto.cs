@@ -12,7 +12,7 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             controlador = ControladorProductos.ObtenerInstancia();
-
+            /*
             //Genera una DataTable que muestre los datos especificados
             tablaDeProductos = new DataTable();
             tablaDeProductos.Columns.AddRange(new DataColumn[5]
@@ -23,9 +23,9 @@ namespace ShockSoft.Presentacion
                 new DataColumn("Cantidad", typeof(int)),
                 new DataColumn("Precio", typeof(float))
             });
-
+            
             dgProductos.DataSource = tablaDeProductos;
-
+            */
             //Carga los datos a la DataTable
             ActualizarTabla();
         }
@@ -37,10 +37,10 @@ namespace ShockSoft.Presentacion
 
         private void ActualizarTabla()
         {
-            tablaDeProductos.Rows.Clear();
+            dgProductos.Rows.Clear();
             foreach (Producto producto in controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, int.Parse(txtId.Text)))
             {
-                tablaDeProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
+                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
             }
         }
 
