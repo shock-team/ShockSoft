@@ -90,6 +90,7 @@
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(900, 45);
             this.panelControl.TabIndex = 27;
+            this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -104,6 +105,7 @@
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 10;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // picShock
             // 
@@ -139,6 +141,7 @@
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
             this.btnTamano.UseVisualStyleBackColor = false;
+            this.btnTamano.Click += new System.EventHandler(this.btnTamano_Click);
             // 
             // btnCerrar
             // 
@@ -153,6 +156,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel5
             // 
