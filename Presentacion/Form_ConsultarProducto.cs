@@ -18,6 +18,8 @@ namespace ShockSoft.Presentacion
             btnAnterior.Visible = false;
             //Carga los datos a la DataTable
             ActualizarTabla();
+
+
         }
 
         private void ValorCambiado(object sender, System.EventArgs e)
@@ -31,7 +33,7 @@ namespace ShockSoft.Presentacion
             btnSiguiente.Visible = true;
             dgProductos.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
-            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
+            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1, -1, -1);
             if (listaDeProductos.Count < (CANTIDAD_POR_PAGINA + 1))
             {
                 btnSiguiente.Enabled = false;
@@ -40,10 +42,8 @@ namespace ShockSoft.Presentacion
 
             foreach (var producto in listaDeProductos)
             {
-                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
+                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.PrecioBaseDolar, producto.Cantidad);
             }
-
-            //dgProductos.DataSource = tablaProductos;
         }
 
         // Deslizar ventana desde el panel de control

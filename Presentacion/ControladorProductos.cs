@@ -62,7 +62,7 @@ namespace ShockSoft.Presentacion
         /// presentes en el repositorio, según distintos filtros
         /// </summary>
         /// <returns></returns>
-        public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, string pId, int pDesde, int pCantidad)
+        public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, string pId, int pDesde, int pCantidad, int pIdMarca, int pIdRubro)
         {
             List<Producto> listaProductos = new List<Producto>();
             using (var bDbContext = new ShockDbContext())
@@ -71,7 +71,7 @@ namespace ShockSoft.Presentacion
                 {
                     if (string.IsNullOrEmpty(pId))
                     {
-                        listaProductos = bUoW.RepositorioProducto.ObtenerProductos(pDeBaja, pSinStock, pDescripcion, pDesde, pCantidad).ToList();
+                        listaProductos = bUoW.RepositorioProducto.ObtenerProductos(pDeBaja, pSinStock, pDescripcion, pDesde, pCantidad, pIdMarca,pIdRubro).ToList();
                     }
                     else
                     {
