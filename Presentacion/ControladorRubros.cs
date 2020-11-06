@@ -10,66 +10,66 @@ namespace ShockSoft.Presentacion
     /// GUI correspondiente a los casos de uso asociados a la clase TipoEquipo
     /// y las clases de dominio. Esta clase aplica el patrón de diseño Singleton.
     /// </summary>
-    class ControladorTiposDeEquipo
+    class ControladorRubros
     {
-        public static ControladorTiposDeEquipo instancia;
+        public static ControladorRubros instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
         /// </summary>
         /// <returns></returns>
-        public static ControladorTiposDeEquipo ObtenerInstancia()
+        public static ControladorRubros ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new ControladorTiposDeEquipo();
+                instancia = new ControladorRubros();
             }
             return instancia;
         }
 
         /// <summary>
-        /// Este método se encarga de crear el nuevo tipo de equipo y agregarlo al repositorio
+        /// Este método se encarga de crear el nuevo rubro y agregarlo al repositorio
         /// </summary>
-        /// <param name="pDescripcion">La descripción del nuevo tipo de equipo</param>
-        public void AgregarTipoDeEquipo(string pDescripcion)
+        /// <param name="pDescripcion">La descripción del nuevo rubro</param>
+        public void AgregarRubro(string pDescripcion)
         {
-            Rubro tipo = new Rubro();
-            tipo.Descripcion = pDescripcion;
+            Rubro rubro = new Rubro();
+            rubro.Descripcion = pDescripcion;
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
                 {
-                    bUoW.RepositorioRubro.Agregar(tipo);
+                    bUoW.RepositorioRubro.Agregar(rubro);
                     bUoW.GuardarCambios();
                 }
             }
         }
 
         /// <summary>
-        /// Este método se encarga de devolver una lista de todos los tipos
-        /// de equipo presentes en el repositorio.
+        /// Este método se encarga de devolver una lista de todos los rubros
+        /// presentes en el repositorio.
         /// </summary>
         /// <returns></returns>
-        public List<Rubro> ListarTiposDeEquipo()
+        public List<Rubro> ListarRubros()
         {
-            List<Rubro> listaTipos;
+            List<Rubro> listaRubros;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    listaTipos = bUoW.RepositorioRubro.ObtenerTodos().ToList();
+                    listaRubros = bUoW.RepositorioRubro.ObtenerTodos().ToList();
                 }
             }
-            return listaTipos;
+            return listaRubros;
         }
 
         /// <summary>
-        /// Este método se encarga de modificar los datos de un tipo de equipo existente
+        /// Este método se encarga de modificar los datos de un rubro existente
         /// en el repositorio
         /// </summary>
-        /// <param name="pDescripcion">La nueva descripción del tipo de equipo</param>
-        /// <param name="IdRubro">El ID del tipo de equipo a modificar</param>
-        public void ModificarTipoDeEquipo(string pDescripcion, int IdRubro)
+        /// <param name="pDescripcion">La nueva descripción del rubro</param>
+        /// <param name="IdRubro">El ID del rubro a modificar</param>
+        public void ModificarRubro(string pDescripcion, int IdRubro)
         {
             using (var bDbContext = new ShockDbContext())
             {
