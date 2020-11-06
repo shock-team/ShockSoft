@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.dgProductos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelControl = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.picShock = new System.Windows.Forms.PictureBox();
@@ -43,19 +40,24 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbSinStock = new System.Windows.Forms.CheckBox();
+            this.cbMostrarProductosBaja = new System.Windows.Forms.CheckBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAltaBaja = new System.Windows.Forms.Button();
-            this.cbMostrarProductosBaja = new System.Windows.Forms.CheckBox();
-            this.cbSinStock = new System.Windows.Forms.CheckBox();
-            this.btnHistorialCompra = new System.Windows.Forms.Button();
             this.btnHistorialVenta = new System.Windows.Forms.Button();
+            this.btnHistorialCompra = new System.Windows.Forms.Button();
+            this.btnAltaBaja = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
@@ -69,31 +71,18 @@
             this.dgProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Descripcion,
-            this.PrecioUnitario});
+            this.mMarca,
+            this.PrecioUnitario,
+            this.Cantidad});
             this.dgProductos.Location = new System.Drawing.Point(15, 150);
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.Size = new System.Drawing.Size(800, 382);
             this.dgProductos.TabIndex = 6;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
             // Marca
             // 
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
             // 
             // panelControl
             // 
@@ -234,6 +223,63 @@
             this.panel1.Size = new System.Drawing.Size(970, 77);
             this.panel1.TabIndex = 22;
             // 
+            // cbSinStock
+            // 
+            this.cbSinStock.AutoSize = true;
+            this.cbSinStock.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSinStock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbSinStock.Location = new System.Drawing.Point(383, 48);
+            this.cbSinStock.Name = "cbSinStock";
+            this.cbSinStock.Size = new System.Drawing.Size(199, 21);
+            this.cbSinStock.TabIndex = 27;
+            this.cbSinStock.Text = "Mostrar productos sin stock";
+            this.cbSinStock.UseVisualStyleBackColor = true;
+            this.cbSinStock.CheckedChanged += new System.EventHandler(this.ValorCambiado);
+            // 
+            // cbMostrarProductosBaja
+            // 
+            this.cbMostrarProductosBaja.AutoSize = true;
+            this.cbMostrarProductosBaja.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMostrarProductosBaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbMostrarProductosBaja.Location = new System.Drawing.Point(124, 48);
+            this.cbMostrarProductosBaja.Name = "cbMostrarProductosBaja";
+            this.cbMostrarProductosBaja.Size = new System.Drawing.Size(231, 21);
+            this.cbMostrarProductosBaja.TabIndex = 26;
+            this.cbMostrarProductosBaja.Text = "Mostrar productos dados de baja";
+            this.cbMostrarProductosBaja.UseVisualStyleBackColor = true;
+            this.cbMostrarProductosBaja.CheckedChanged += new System.EventHandler(this.ValorCambiado);
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(780, 11);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(180, 25);
+            this.txtId.TabIndex = 4;
+            this.txtId.TextChanged += new System.EventHandler(this.ValorCambiado);
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblId.Location = new System.Drawing.Point(750, 12);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(27, 19);
+            this.lblId.TabIndex = 3;
+            this.lblId.Text = "ID:";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDescripcion.Location = new System.Drawing.Point(120, 12);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(91, 19);
+            this.lblDescripcion.TabIndex = 2;
+            this.lblDescripcion.Text = "Descripción:";
+            // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
@@ -253,37 +299,6 @@
             this.txtDescripcion.Size = new System.Drawing.Size(500, 25);
             this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.ValorCambiado);
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDescripcion.Location = new System.Drawing.Point(120, 12);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(91, 19);
-            this.lblDescripcion.TabIndex = 2;
-            this.lblDescripcion.Text = "Descripción:";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblId.Location = new System.Drawing.Point(750, 12);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(27, 19);
-            this.lblId.TabIndex = 3;
-            this.lblId.Text = "ID:";
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(780, 11);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(180, 25);
-            this.txtId.TabIndex = 4;
-            this.txtId.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // btnAñadir
             // 
@@ -330,47 +345,21 @@
             this.panel2.Size = new System.Drawing.Size(170, 382);
             this.panel2.TabIndex = 25;
             // 
-            // btnAltaBaja
+            // btnHistorialVenta
             // 
-            this.btnAltaBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
-            this.btnAltaBaja.FlatAppearance.BorderSize = 0;
-            this.btnAltaBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAltaBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnAltaBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaBaja.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaBaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAltaBaja.Location = new System.Drawing.Point(0, 119);
-            this.btnAltaBaja.Name = "btnAltaBaja";
-            this.btnAltaBaja.Size = new System.Drawing.Size(170, 50);
-            this.btnAltaBaja.TabIndex = 25;
-            this.btnAltaBaja.Text = "Alta/Baja";
-            this.btnAltaBaja.UseVisualStyleBackColor = false;
-            // 
-            // cbMostrarProductosBaja
-            // 
-            this.cbMostrarProductosBaja.AutoSize = true;
-            this.cbMostrarProductosBaja.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMostrarProductosBaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cbMostrarProductosBaja.Location = new System.Drawing.Point(124, 48);
-            this.cbMostrarProductosBaja.Name = "cbMostrarProductosBaja";
-            this.cbMostrarProductosBaja.Size = new System.Drawing.Size(231, 21);
-            this.cbMostrarProductosBaja.TabIndex = 26;
-            this.cbMostrarProductosBaja.Text = "Mostrar productos dados de baja";
-            this.cbMostrarProductosBaja.UseVisualStyleBackColor = true;
-            this.cbMostrarProductosBaja.CheckedChanged += new System.EventHandler(this.ValorCambiado);
-            // 
-            // cbSinStock
-            // 
-            this.cbSinStock.AutoSize = true;
-            this.cbSinStock.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSinStock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cbSinStock.Location = new System.Drawing.Point(383, 48);
-            this.cbSinStock.Name = "cbSinStock";
-            this.cbSinStock.Size = new System.Drawing.Size(199, 21);
-            this.cbSinStock.TabIndex = 27;
-            this.cbSinStock.Text = "Mostrar productos sin stock";
-            this.cbSinStock.UseVisualStyleBackColor = true;
-            this.cbSinStock.CheckedChanged += new System.EventHandler(this.ValorCambiado);
+            this.btnHistorialVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
+            this.btnHistorialVenta.FlatAppearance.BorderSize = 0;
+            this.btnHistorialVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnHistorialVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnHistorialVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorialVenta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHistorialVenta.Location = new System.Drawing.Point(0, 279);
+            this.btnHistorialVenta.Name = "btnHistorialVenta";
+            this.btnHistorialVenta.Size = new System.Drawing.Size(170, 100);
+            this.btnHistorialVenta.TabIndex = 27;
+            this.btnHistorialVenta.Text = "Historial de Venta";
+            this.btnHistorialVenta.UseVisualStyleBackColor = false;
             // 
             // btnHistorialCompra
             // 
@@ -388,21 +377,46 @@
             this.btnHistorialCompra.Text = "Historial de Compra";
             this.btnHistorialCompra.UseVisualStyleBackColor = false;
             // 
-            // btnHistorialVenta
+            // btnAltaBaja
             // 
-            this.btnHistorialVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
-            this.btnHistorialVenta.FlatAppearance.BorderSize = 0;
-            this.btnHistorialVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnHistorialVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnHistorialVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorialVenta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHistorialVenta.Location = new System.Drawing.Point(0, 279);
-            this.btnHistorialVenta.Name = "btnHistorialVenta";
-            this.btnHistorialVenta.Size = new System.Drawing.Size(170, 100);
-            this.btnHistorialVenta.TabIndex = 27;
-            this.btnHistorialVenta.Text = "Historial de Venta";
-            this.btnHistorialVenta.UseVisualStyleBackColor = false;
+            this.btnAltaBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
+            this.btnAltaBaja.FlatAppearance.BorderSize = 0;
+            this.btnAltaBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAltaBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnAltaBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaBaja.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaBaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAltaBaja.Location = new System.Drawing.Point(0, 119);
+            this.btnAltaBaja.Name = "btnAltaBaja";
+            this.btnAltaBaja.Size = new System.Drawing.Size(170, 50);
+            this.btnAltaBaja.TabIndex = 25;
+            this.btnAltaBaja.Text = "Alta/Baja";
+            this.btnAltaBaja.UseVisualStyleBackColor = false;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // mMarca
+            // 
+            this.mMarca.HeaderText = "Marca";
+            this.mMarca.Name = "mMarca";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
             // 
             // Form_ConsultarProducto
             // 
@@ -434,10 +448,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.PictureBox picShock;
@@ -461,5 +472,10 @@
         private System.Windows.Forms.CheckBox cbMostrarProductosBaja;
         private System.Windows.Forms.Button btnHistorialVenta;
         private System.Windows.Forms.Button btnHistorialCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }
