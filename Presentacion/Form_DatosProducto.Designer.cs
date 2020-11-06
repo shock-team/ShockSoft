@@ -49,7 +49,7 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblGanancia = new System.Windows.Forms.Label();
-            this.txtGanancia = new System.Windows.Forms.TextBox();
+            this.txtPorcentajeDeGanancia = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -293,7 +293,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(70)))));
             this.panel3.Controls.Add(this.lblGanancia);
-            this.panel3.Controls.Add(this.txtGanancia);
+            this.panel3.Controls.Add(this.txtPorcentajeDeGanancia);
             this.panel3.Location = new System.Drawing.Point(465, 120);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(405, 47);
@@ -310,13 +310,13 @@
             this.lblGanancia.TabIndex = 1;
             this.lblGanancia.Text = "Ganancia(%):";
             // 
-            // txtGanancia
+            // txtPorcentajeDeGanancia
             // 
-            this.txtGanancia.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGanancia.Location = new System.Drawing.Point(150, 11);
-            this.txtGanancia.Name = "txtGanancia";
-            this.txtGanancia.Size = new System.Drawing.Size(235, 25);
-            this.txtGanancia.TabIndex = 0;
+            this.txtPorcentajeDeGanancia.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPorcentajeDeGanancia.Location = new System.Drawing.Point(150, 11);
+            this.txtPorcentajeDeGanancia.Name = "txtPorcentajeDeGanancia";
+            this.txtPorcentajeDeGanancia.Size = new System.Drawing.Size(235, 25);
+            this.txtPorcentajeDeGanancia.TabIndex = 0;
             // 
             // panel9
             // 
@@ -549,7 +549,7 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblGanancia;
-        private System.Windows.Forms.TextBox txtGanancia;
+        private System.Windows.Forms.TextBox txtPorcentajeDeGanancia;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;

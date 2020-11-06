@@ -326,6 +326,7 @@
             this.btnAgregarPago.TabIndex = 16;
             this.btnAgregarPago.Text = "Agregar Pago";
             this.btnAgregarPago.UseVisualStyleBackColor = false;
+            this.btnAgregarPago.Click += new System.EventHandler(this.BtnAgregarPago_Click);
             // 
             // lblSaldo
             // 
@@ -480,6 +481,7 @@
             this.btnModificar.TabIndex = 19;
             this.btnModificar.Text = "Modificar Datos";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // Form_DatosCliente
             // 
