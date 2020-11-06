@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbConDeudas = new System.Windows.Forms.CheckBox();
             this.cbSinDeudas = new System.Windows.Forms.CheckBox();
             this.dgClientes = new System.Windows.Forms.DataGridView();
@@ -85,10 +86,19 @@
             // 
             // dgClientes
             // 
+            this.dgClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgClientes.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgClientes.Location = new System.Drawing.Point(15, 60);
             this.dgClientes.Name = "dgClientes";
-            this.dgClientes.Size = new System.Drawing.Size(970, 412);
+            this.dgClientes.Size = new System.Drawing.Size(961, 397);
             this.dgClientes.TabIndex = 11;
             this.dgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgClientes_CellDoubleClick);
             // 
@@ -100,7 +110,7 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSiguiente.Location = new System.Drawing.Point(810, 481);
+            this.btnSiguiente.Location = new System.Drawing.Point(810, 473);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 28);
             this.btnSiguiente.TabIndex = 12;
@@ -116,7 +126,7 @@
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnterior.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnterior.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAnterior.Location = new System.Drawing.Point(650, 481);
+            this.btnAnterior.Location = new System.Drawing.Point(650, 473);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(100, 28);
             this.btnAnterior.TabIndex = 13;
@@ -129,7 +139,7 @@
             this.lblPaginaActual.AutoSize = true;
             this.lblPaginaActual.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaginaActual.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPaginaActual.Location = new System.Drawing.Point(775, 487);
+            this.lblPaginaActual.Location = new System.Drawing.Point(775, 479);
             this.lblPaginaActual.Name = "lblPaginaActual";
             this.lblPaginaActual.Size = new System.Drawing.Size(15, 17);
             this.lblPaginaActual.TabIndex = 14;
@@ -221,7 +231,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Location = new System.Drawing.Point(15, 478);
+            this.panel1.Location = new System.Drawing.Point(15, 470);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(350, 47);
             this.panel1.TabIndex = 21;
@@ -251,7 +261,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel2.Controls.Add(this.lblApellido);
             this.panel2.Controls.Add(this.txtApellido);
-            this.panel2.Location = new System.Drawing.Point(15, 531);
+            this.panel2.Location = new System.Drawing.Point(15, 523);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 47);
             this.panel2.TabIndex = 22;
@@ -280,7 +290,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel3.Controls.Add(this.cbSinDeudas);
-            this.panel3.Location = new System.Drawing.Point(381, 531);
+            this.panel3.Location = new System.Drawing.Point(381, 523);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(150, 47);
             this.panel3.TabIndex = 24;
@@ -289,7 +299,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel4.Controls.Add(this.cbConDeudas);
-            this.panel4.Location = new System.Drawing.Point(381, 478);
+            this.panel4.Location = new System.Drawing.Point(381, 470);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 47);
             this.panel4.TabIndex = 23;
@@ -299,7 +309,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(1000, 585);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);

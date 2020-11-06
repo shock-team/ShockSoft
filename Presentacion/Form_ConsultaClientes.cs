@@ -27,6 +27,12 @@ namespace ShockSoft.Presentacion
                 new DataColumn("Saldo", typeof(float)),
             });
             dgClientes.DataSource = tablaDeClientes;
+            dgClientes.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgClientes.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgClientes.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgClientes.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgClientes.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 
             cbConDeudas.Checked = true;
             cbSinDeudas.Checked = true;
