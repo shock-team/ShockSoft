@@ -225,7 +225,7 @@
     <Compile Include="Presentacion\ControladorLocalidades.cs" />
     <Compile Include="Presentacion\ControladorMarcas.cs" />
     <Compile Include="Presentacion\ControladorMetodosPago.cs" />
-    <Compile Include="Presentacion\ControladorTiposDeEquipo.cs" />
+    <Compile Include="Presentacion\ControladorRubros.cs" />
     <Compile Include="Presentacion\ControladorParametros.cs" />
     <Compile Include="Presentacion\ControladorProductos.cs" />
     <Compile Include="Presentacion\ControladorProveedores.cs" />

@@ -13,6 +13,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         {
             var productosFiltrados = (from p in iDbContext.Productos
                                       .Include("Marca")
+                                      .Include("Rubro")
                                       where (p.EnVenta || (!p.EnVenta && pNoEnVenta)) &&
                                       (p.Cantidad > 0 || ((p.Cantidad <= 0) && pSinStock)) &&
                                       (string.IsNullOrEmpty(pDescripcion) || p.Descripcion.ToUpper().Contains(pDescripcion.ToUpper()))
