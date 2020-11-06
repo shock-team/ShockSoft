@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
@@ -16,7 +17,32 @@ namespace ShockSoft.Persistencia.EntityFramework
                                       (p.Cantidad > 0 || ((p.Cantidad <= 0) && pSinStock)) &&
                                       (string.IsNullOrEmpty(pDescripcion) || p.Descripcion.ToUpper().Contains(pDescripcion.ToUpper()))
                                       select p);
+
             return productosFiltrados.OrderBy(x => x.Descripcion).Skip(pDesde).Take(pCantidad);
+        }
+
+		public IEnumerable<Producto> ObtenerEnVenta(bool pNoEnVenta)
+        {
+            var prodFiltrados = (from p in iDbContext.Productos.Include("Marca")
+                                 where p.EnVenta || p.EnVenta == pNoEnVenta
+                                 select p);
+            return prodFiltrados;
+        }
+
+        public IEnumerable<Producto> ObtenerConStock(bool pSinStock)
+        {
+            var prodFiltrados = (from p in iDbContext.Productos.Include("Marca")
+                                 where p.Cantidad > 0 || ((p.Cantidad == 0) == pSinStock)
+                                 select p);
+            return prodFiltrados;
+        }
+
+        public IEnumerable<Producto> ObtenerPorDescripcion(string pDescripcion)
+        {
+            var prodFiltrados = (from p in iDbContext.Productos.Include("Marca")
+                                 where p.Descripcion.Contains(pDescripcion)
+                                 select p);
+            return prodFiltrados;
         }
 
         public int CantidadFilas()

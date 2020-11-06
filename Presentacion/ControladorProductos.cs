@@ -69,13 +69,15 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    if (pId.Length < 1)
+                    if (string.IsNullOrEmpty(pId))
                     {
                         listaProductos = bUoW.RepositorioProducto.ObtenerProductos(pDeBaja, pSinStock, pDescripcion, pDesde, pCantidad).ToList();
                     }
                     else
                     {
-                        listaProductos.Add(bUoW.RepositorioProducto.Obtener(int.Parse(pId)));
+                        Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pId));
+                        producto.Marca = bUoW.RepositorioMarca.Obtener(producto.IdMarca);
+                        listaProductos.Add(producto);
                     }
                 }
             }
