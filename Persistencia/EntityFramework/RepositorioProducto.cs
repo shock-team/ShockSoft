@@ -16,11 +16,11 @@ namespace ShockSoft.Persistencia.EntityFramework
         public IEnumerable<Producto> ObtenerProductos(bool pNoEnVenta, bool pSinStock, string pDescripcion, int pDesde, int pCantidad)
         {
             var productosFiltrados = (from p in iDbContext.Productos
-                                      where p.EnVenta || (!p.EnVenta && pNoEnVenta) &&
-                                      p.Cantidad > 0 || !((p.Cantidad <= 0) && pSinStock) &&
-                                      string.IsNullOrEmpty(pDescripcion) || p.Descripcion.Contains(pDescripcion)
+                                      where (p.EnVenta || (!p.EnVenta && pNoEnVenta)) &&
+                                      (p.Cantidad > 0 || ((p.Cantidad <= 0) && pSinStock)) &&
+                                      (string.IsNullOrEmpty(pDescripcion) || p.Descripcion.ToUpper().Contains(pDescripcion.ToUpper()))
                                       select p);
-            return productosFiltrados.Skip(pDesde).Take(pCantidad);
+            return productosFiltrados.OrderBy(x => x.Descripcion).Skip(pDesde).Take(pCantidad);
         }
 
         public IEnumerable<Producto> ObtenerEnVenta(bool pNoEnVenta)

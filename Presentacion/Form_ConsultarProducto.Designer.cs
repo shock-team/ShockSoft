@@ -33,6 +33,10 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cbMostrarProductosBaja = new System.Windows.Forms.CheckBox();
             this.dgProductos = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAltaBaja = new System.Windows.Forms.Button();
@@ -44,11 +48,6 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.lblPaginaActual = new System.Windows.Forms.Label();
-
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelControl = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.picShock = new System.Windows.Forms.PictureBox();
@@ -95,6 +94,7 @@
             this.cbMostrarProductosBaja.TabIndex = 5;
             this.cbMostrarProductosBaja.Text = "Mostrar productos dados de baja";
             this.cbMostrarProductosBaja.UseVisualStyleBackColor = true;
+            this.cbMostrarProductosBaja.CheckedChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // dgProductos
             // 
@@ -104,11 +104,30 @@
             this.Marca,
             this.Descripcion,
             this.PrecioUnitario});
-            this.dgProductos.Location = new System.Drawing.Point(12, 81);
             this.dgProductos.Location = new System.Drawing.Point(67, 146);
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.Size = new System.Drawing.Size(776, 272);
             this.dgProductos.TabIndex = 6;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
             // 
             // btnAñadir
             // 
@@ -164,6 +183,7 @@
             this.cbSinStock.TabIndex = 14;
             this.cbSinStock.Text = "Mostrar productos sin stock";
             this.cbSinStock.UseVisualStyleBackColor = true;
+            this.cbSinStock.CheckedChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // lblId
             // 
@@ -180,6 +200,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 16;
+            this.txtId.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // btnAnterior
             // 
@@ -210,25 +231,6 @@
             this.lblPaginaActual.TabIndex = 19;
             this.lblPaginaActual.Text = "1";
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
             // panelControl
             // 
             this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
