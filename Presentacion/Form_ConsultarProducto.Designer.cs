@@ -33,10 +33,6 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cbMostrarProductosBaja = new System.Windows.Forms.CheckBox();
             this.dgProductos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAltaBaja = new System.Windows.Forms.Button();
@@ -54,6 +50,11 @@
             this.lblShock = new System.Windows.Forms.Label();
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
@@ -101,33 +102,14 @@
             this.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.Marca,
             this.Descripcion,
-            this.PrecioUnitario});
+            this.Marca,
+            this.PrecioUnitario,
+            this.Cantidad});
             this.dgProductos.Location = new System.Drawing.Point(67, 146);
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.Size = new System.Drawing.Size(776, 272);
             this.dgProductos.TabIndex = 6;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
             // 
             // btnAñadir
             // 
@@ -312,6 +294,31 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
             // Form_ConsultarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,15 +372,16 @@
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Label lblPaginaActual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.PictureBox picShock;
         private System.Windows.Forms.Label lblShock;
         private System.Windows.Forms.Button btnTamano;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }

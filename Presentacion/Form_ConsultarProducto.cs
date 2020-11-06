@@ -45,36 +45,6 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        private void BtnAnterior_Click(object sender, System.EventArgs e)
-        {
-            btnSiguiente.Enabled = true;
-            btnSiguiente.Visible = true;
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = false;
-                btnAnterior.Visible = false;
-            }
-            ActualizarTabla();
-        }
-
-        private void BtnSiguiente_Click(object sender, System.EventArgs e)
-        {
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = true;
-                btnAnterior.Visible = true;
-            }
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
-            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeProductos() / 15))
-            {
-                btnSiguiente.Enabled = false;
-                btnSiguiente.Visible = false;
-            }
-            ActualizarTabla();
-        }
-
-
         // Deslizar ventana desde el panel de control
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -106,6 +76,35 @@ namespace ShockSoft.Presentacion
         private void btnCerrar_Click(object sender, System.EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAnterior_Click(object sender, System.EventArgs e)
+        {
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = false;
+                btnAnterior.Visible = false;
+            }
+            ActualizarTabla();
+        }
+
+        private void btnSiguiente_Click(object sender, System.EventArgs e)
+        {
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = true;
+                btnAnterior.Visible = true;
+            }
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
+            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeProductos() / 15))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            ActualizarTabla();
         }
     }
 }
