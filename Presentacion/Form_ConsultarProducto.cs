@@ -30,16 +30,7 @@ namespace ShockSoft.Presentacion
             btnSiguiente.Visible = true;
             dgProductos.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
-            int idProducto;
-            if (txtId.Text.Equals(""))
-            {
-                idProducto = -1;
-            }
-            else
-            {
-                idProducto = int.Parse(txtId.Text);
-            }
-            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, idProducto, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
+            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
             if (listaDeProductos.Count < (CANTIDAD_POR_PAGINA + 1))
             {
                 btnSiguiente.Enabled = false;

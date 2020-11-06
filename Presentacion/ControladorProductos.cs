@@ -62,20 +62,20 @@ namespace ShockSoft.Presentacion
         /// presentes en el repositorio, según distintos filtros
         /// </summary>
         /// <returns></returns>
-        public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, int pId, int pDesde, int pCantidad)
+        public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, string pId, int pDesde, int pCantidad)
         {
             List<Producto> listaProductos = new List<Producto>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    if (pId != -1)
+                    if (pId.Length < 1)
                     {
                         listaProductos = bUoW.RepositorioProducto.ObtenerProductos(pDeBaja, pSinStock, pDescripcion, pDesde, pCantidad).ToList();
                     }
                     else
                     {
-                        listaProductos.Add(bUoW.RepositorioProducto.Obtener(pId));
+                        listaProductos.Add(bUoW.RepositorioProducto.Obtener(int.Parse(pId)));
                     }
                 }
             }
