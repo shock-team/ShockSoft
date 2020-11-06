@@ -26,7 +26,7 @@ namespace ShockSoft.Presentacion
             txtCantidad.Text = producto.Cantidad.ToString();
             txtPrecio.Text = producto.PrecioBaseDolar.ToString();
             txtPorcentajeDeGanancia.Text = producto.PorcentajeGanancia.ToString();
-            txtMarca.Text = ControladorMarcas.ObtenerInstancia().Obtener(producto.IdMarca).Descripcion;
+            //txtMarca.Text = ControladorMarcas.ObtenerInstancia().Obtener(producto.IdMarca).Descripcion;
             if (producto.EnVenta)
             {
                 txtEnVenta.Text = "Sí";
@@ -51,17 +51,12 @@ namespace ShockSoft.Presentacion
             comboIVA.DisplayMember = "Descripcion";
         }
 
-        private void BtnHistorialDeVenta_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            controlador.ModificarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtPorcentajeDeGanancia.Text), ((IVA)comboIVA.SelectedItem).IdParametro, int.Parse(txtId.Text));
         }
 
-        private void BtnHistorialDeCompra_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnAltaBaja_Click(object sender, EventArgs e)
+        private void btnAltaBaja_Click(object sender, EventArgs e)
         {
             controlador.DarDeBaja(int.Parse(txtId.Text));
             if (txtEnVenta.Text == "Sí")
@@ -74,9 +69,14 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        private void BtnModificar_Click(object sender, EventArgs e)
+        private void btnHistorialCompra_Click(object sender, EventArgs e)
         {
-            controlador.ModificarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtPorcentajeDeGanancia.Text), ((IVA)comboIVA.SelectedItem).IdParametro, int.Parse(txtId.Text));
+
+        }
+
+        private void btnHistorialVenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
