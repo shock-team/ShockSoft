@@ -9,6 +9,7 @@ namespace ShockSoft.Presentacion
     public partial class Form_ConsultarProducto : Form
     {
         ControladorProductos controlador;
+
         public Form_ConsultarProducto()
         {
             InitializeComponent();
@@ -36,13 +37,13 @@ namespace ShockSoft.Presentacion
                 btnSiguiente.Enabled = false;
                 btnSiguiente.Visible = false;
             }
-            foreach (Producto producto in listaDeProductos)
+
+            foreach (var producto in listaDeProductos)
             {
-                if (!(producto == null))
-                {
-                    dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
-                }
+                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.Cantidad, producto.PrecioBaseDolar);
             }
+
+            //dgProductos.DataSource = tablaProductos;
         }
 
         private void BtnAnterior_Click(object sender, System.EventArgs e)
