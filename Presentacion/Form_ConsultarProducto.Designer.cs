@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgProductos = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelControl = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
@@ -53,11 +59,10 @@
             this.btnHistorialVenta = new System.Windows.Forms.Button();
             this.btnHistorialCompra = new System.Windows.Forms.Button();
             this.btnAltaBaja = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboRubro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
@@ -74,11 +79,53 @@
             this.mMarca,
             this.PrecioUnitario,
             this.Cantidad});
-            this.dgProductos.Location = new System.Drawing.Point(15, 150);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgProductos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgProductos.Location = new System.Drawing.Point(15, 180);
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.Size = new System.Drawing.Size(800, 382);
             this.dgProductos.TabIndex = 6;
             this.dgProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgProductos_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 43;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // mMarca
+            // 
+            this.mMarca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.mMarca.HeaderText = "Marca";
+            this.mMarca.Name = "mMarca";
+            this.mMarca.Width = 62;
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PrecioUnitario.HeaderText = "Precio unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.Width = 99;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 74;
             // 
             // Marca
             // 
@@ -171,7 +218,7 @@
             this.lblPaginaActual.AutoSize = true;
             this.lblPaginaActual.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaginaActual.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPaginaActual.Location = new System.Drawing.Point(395, 557);
+            this.lblPaginaActual.Location = new System.Drawing.Point(395, 587);
             this.lblPaginaActual.Name = "lblPaginaActual";
             this.lblPaginaActual.Size = new System.Drawing.Size(15, 17);
             this.lblPaginaActual.TabIndex = 17;
@@ -185,7 +232,7 @@
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnterior.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnterior.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAnterior.Location = new System.Drawing.Point(270, 551);
+            this.btnAnterior.Location = new System.Drawing.Point(270, 581);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(100, 28);
             this.btnAnterior.TabIndex = 16;
@@ -201,7 +248,7 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSiguiente.Location = new System.Drawing.Point(430, 551);
+            this.btnSiguiente.Location = new System.Drawing.Point(430, 581);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 28);
             this.btnSiguiente.TabIndex = 15;
@@ -212,6 +259,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(70)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboRubro);
+            this.panel1.Controls.Add(this.lblMarca);
+            this.panel1.Controls.Add(this.comboMarca);
             this.panel1.Controls.Add(this.cbSinStock);
             this.panel1.Controls.Add(this.cbMostrarProductosBaja);
             this.panel1.Controls.Add(this.txtId);
@@ -221,7 +272,7 @@
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Location = new System.Drawing.Point(15, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(970, 77);
+            this.panel1.Size = new System.Drawing.Size(970, 107);
             this.panel1.TabIndex = 22;
             // 
             // cbSinStock
@@ -229,7 +280,7 @@
             this.cbSinStock.AutoSize = true;
             this.cbSinStock.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSinStock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cbSinStock.Location = new System.Drawing.Point(383, 48);
+            this.cbSinStock.Location = new System.Drawing.Point(124, 78);
             this.cbSinStock.Name = "cbSinStock";
             this.cbSinStock.Size = new System.Drawing.Size(199, 21);
             this.cbSinStock.TabIndex = 27;
@@ -341,7 +392,7 @@
             this.panel2.Controls.Add(this.btnAltaBaja);
             this.panel2.Controls.Add(this.btnAñadir);
             this.panel2.Controls.Add(this.btnModificar);
-            this.panel2.Location = new System.Drawing.Point(815, 150);
+            this.panel2.Location = new System.Drawing.Point(815, 180);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(170, 382);
             this.panel2.TabIndex = 25;
@@ -394,37 +445,52 @@
             this.btnAltaBaja.Text = "Alta/Baja";
             this.btnAltaBaja.UseVisualStyleBackColor = false;
             // 
-            // ID
+            // lblMarca
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblMarca.Location = new System.Drawing.Point(391, 61);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(55, 19);
+            this.lblMarca.TabIndex = 28;
+            this.lblMarca.Text = "Marca:";
             // 
-            // Descripcion
+            // comboMarca
             // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
+            this.comboMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(460, 59);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(200, 27);
+            this.comboMarca.TabIndex = 29;
             // 
-            // mMarca
+            // label1
             // 
-            this.mMarca.HeaderText = "Marca";
-            this.mMarca.Name = "mMarca";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(691, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Rubro:";
             // 
-            // PrecioUnitario
+            // comboRubro
             // 
-            this.PrecioUnitario.HeaderText = "Precio unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
+            this.comboRubro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboRubro.FormattingEnabled = true;
+            this.comboRubro.Location = new System.Drawing.Point(760, 59);
+            this.comboRubro.Name = "comboRubro";
+            this.comboRubro.Size = new System.Drawing.Size(200, 27);
+            this.comboRubro.TabIndex = 31;
             // 
             // Form_ConsultarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(1000, 630);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPaginaActual);
@@ -478,5 +544,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboRubro;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.ComboBox comboMarca;
     }
 }
