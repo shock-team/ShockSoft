@@ -22,5 +22,11 @@ namespace ShockSoft.Presentacion
             Form_AñadirProducto form_AñadirProducto = new Form_AñadirProducto();
             form_AñadirProducto.Show();
         }
+
+        private void btnConsultaProducto_Click(object sender, EventArgs e)
+        {
+            Form_ConsultarProducto form_ConsultarProducto = new Form_ConsultarProducto();
+            form_ConsultarProducto.Show();
+        }
     }
 }
