@@ -3,6 +3,7 @@ using ShockSoft.Dominio;
 using System.Data;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using System;
 
 namespace ShockSoft.Presentacion
 {
@@ -15,10 +16,36 @@ namespace ShockSoft.Presentacion
             controlador = ControladorProductos.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
+
+            //Carga los datos del ComboBox de Marcas
+            comboMarca.Items.Add(new Marca
+            {
+                IdMarca = -1,
+                Descripcion = "Sin Filtro"
+            });
+
+            foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
+            {
+                comboMarca.Items.Add(marca);
+            }
+            comboMarca.ValueMember = "IdMarca";
+            comboMarca.DisplayMember = "Descripcion";
+
+            //Carga los datos del ComboBox de Rubros
+            comboRubro.Items.Add(new Rubro
+            {
+                IdRubro = -1,
+                Descripcion = "Sin Filtro"
+            });
+            foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
+            {
+                comboRubro.Items.Add(rubro);
+            }
+            comboRubro.ValueMember = "IdRubro";
+            comboRubro.DisplayMember = "Descripcion";
+
             //Carga los datos a la DataTable
             ActualizarTabla();
-
-
         }
 
         private void ValorCambiado(object sender, System.EventArgs e)
@@ -32,7 +59,11 @@ namespace ShockSoft.Presentacion
             btnSiguiente.Visible = true;
             dgProductos.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
-            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1, -1, -1);
+
+            Rubro rubro = (Rubro)comboRubro.SelectedItem ?? new Rubro { IdRubro = -1 };
+            Marca marca = (Marca)comboMarca.SelectedItem ?? new Marca { IdMarca = -1 };
+            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1, marca.IdMarca, rubro.IdRubro);
+
             if (listaDeProductos.Count < (CANTIDAD_POR_PAGINA + 1))
             {
                 btnSiguiente.Enabled = false;
