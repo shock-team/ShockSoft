@@ -13,24 +13,43 @@ namespace ShockSoft.Presentacion
 {
     public partial class Form_AgregarVenta : Form
     {
+        ControladorVentas controlador = ControladorVentas.ObtenerInstancia();
+
         public Form_AgregarVenta()
         {
             InitializeComponent();
+            foreach (MetodoPago metodoDePago in ControladorMetodosPago.ObtenerInstancia().ListarMetodosDePago())
+            {
+                comboMetodoPago.Items.Add(metodoDePago);
+            }
+            comboMetodoPago.DisplayMember = "Descripcion";
+            comboMetodoPago.ValueMember = "IdMetodoPago";
         }
 
         private void BtnAgregarLinea_Click(object sender, EventArgs e)
         {
-
+            Form_AgregarLineaDeVenta formAgregarLineaDeVenta = new Form_AgregarLineaDeVenta();
+            formAgregarLineaDeVenta.Owner = this;
+            this.Hide();
+            formAgregarLineaDeVenta.ShowDialog();
+            this.Show();
         }
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-
+            controlador.AgregarVenta(int.Parse(txtId.Text), controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows), (int)comboMetodoPago.SelectedValue);
+            MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
         }
 
-        public void AgregarLineaDeVenta(LineaVenta pLineaDeVenta)
+        public void AgregarLineaDeVenta(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
         {
-            dglineasDeVenta.Rows.Add(pLineaDeVenta.Producto.IdProducto, pLineaDeVenta.Producto.Descripcion, pLineaDeVenta.PrecioActual, pLineaDeVenta.Cantidad, pLineaDeVenta.ObtenerSubtotal());
+            dglineasDeVenta.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual)*pCantidad);
+            double total = 0;
+            for (int i = 0; i < dglineasDeVenta.Rows.Count; i++)
+            {
+                total += (double)dglineasDeVenta.Rows[i].Cells[4].Value;
+            }
+            txtTotal.Text = total.ToString();
         }
     }
 }

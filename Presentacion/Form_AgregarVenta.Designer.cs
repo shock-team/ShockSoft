@@ -42,6 +42,9 @@
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregarLinea = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.comboMetodoPago = new System.Windows.Forms.ComboBox();
+            this.btnAgregarMetodo = new System.Windows.Forms.Button();
+            this.lblMetodoPago = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,11 +156,40 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
+            // comboMetodoPago
+            // 
+            this.comboMetodoPago.FormattingEnabled = true;
+            this.comboMetodoPago.Location = new System.Drawing.Point(434, 311);
+            this.comboMetodoPago.Name = "comboMetodoPago";
+            this.comboMetodoPago.Size = new System.Drawing.Size(196, 21);
+            this.comboMetodoPago.TabIndex = 9;
+            // 
+            // btnAgregarMetodo
+            // 
+            this.btnAgregarMetodo.Location = new System.Drawing.Point(636, 311);
+            this.btnAgregarMetodo.Name = "btnAgregarMetodo";
+            this.btnAgregarMetodo.Size = new System.Drawing.Size(137, 23);
+            this.btnAgregarMetodo.TabIndex = 10;
+            this.btnAgregarMetodo.Text = "Agregar método de pago";
+            this.btnAgregarMetodo.UseVisualStyleBackColor = true;
+            // 
+            // lblMetodoPago
+            // 
+            this.lblMetodoPago.AutoSize = true;
+            this.lblMetodoPago.Location = new System.Drawing.Point(340, 314);
+            this.lblMetodoPago.Name = "lblMetodoPago";
+            this.lblMetodoPago.Size = new System.Drawing.Size(88, 13);
+            this.lblMetodoPago.TabIndex = 11;
+            this.lblMetodoPago.Text = "Método de pago:";
+            // 
             // Form_AgregarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 343);
+            this.Controls.Add(this.lblMetodoPago);
+            this.Controls.Add(this.btnAgregarMetodo);
+            this.Controls.Add(this.comboMetodoPago);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnAgregarLinea);
             this.Controls.Add(this.dglineasDeVenta);
@@ -191,5 +223,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.Button btnAgregarLinea;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox comboMetodoPago;
+        private System.Windows.Forms.Button btnAgregarMetodo;
+        private System.Windows.Forms.Label lblMetodoPago;
     }
 }

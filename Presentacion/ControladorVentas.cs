@@ -2,6 +2,7 @@
 using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShockSoft.Presentacion
 {
@@ -71,28 +72,30 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
-        /// Este método se encarga de generar una instancia del objeto LineaVenta a partir
-        /// de los datos conocidos por la vista
+        /// Genera una lista de instancias de la clase LineaVenta a partir de los datos conocidos
+        /// por la vista.
         /// </summary>
-        /// <param name="pIdProducto">El ID del producto a registrar</param>
-        /// <param name="pCantidad">La cantidad del producto</param>
+        /// <param name="pFilas">Las filas de la tabla de la vista</param>
         /// <returns></returns>
-        public LineaVenta GenerarLineaDeVenta(string pIdProducto, int pCantidad)
+        public List<LineaVenta> GenerarLineasDeVenta(DataGridViewRowCollection pFilas)
         {
-            LineaVenta lineaDeVenta = new LineaVenta();
-            int idProducto = int.Parse(pIdProducto);
-            lineaDeVenta.IdProducto = idProducto;
-            lineaDeVenta.Cantidad = pCantidad;
+            List<LineaVenta> lineasDeVenta = new List<LineaVenta>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
-                    lineaDeVenta.Producto = producto;
-                    lineaDeVenta.PrecioActual = producto.PrecioBaseDolar;
+                    for (int i = 0; i < pFilas.Count; i++)
+                    {
+                        LineaVenta lineaDeVenta = new LineaVenta();
+                        lineaDeVenta.IdProducto = (int)pFilas[i].Cells[0].Value;
+                        lineaDeVenta.Cantidad = (int)pFilas[i].Cells[3].Value;
+                        Producto producto = bUoW.RepositorioProducto.Obtener((int)pFilas[i].Cells[0].Value);
+                        lineaDeVenta.Producto = producto;
+                        lineaDeVenta.PrecioActual = producto.PrecioBaseDolar;
+                    }
                 }
             }
-            return lineaDeVenta;
+            return lineasDeVenta;
         }
     }
 }
