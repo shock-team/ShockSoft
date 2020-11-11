@@ -71,6 +71,7 @@
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.Size = new System.Drawing.Size(770, 397);
             this.dgProductos.TabIndex = 0;
+            this.dgProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgProductos_CellDoubleClick);
             // 
             // ID
             // 

@@ -69,5 +69,30 @@ namespace ShockSoft.Presentacion
             }
             return listaVentas;
         }
+
+        /// <summary>
+        /// Este método se encarga de generar una instancia del objeto LineaVenta a partir
+        /// de los datos conocidos por la vista
+        /// </summary>
+        /// <param name="pIdProducto">El ID del producto a registrar</param>
+        /// <param name="pCantidad">La cantidad del producto</param>
+        /// <returns></returns>
+        public LineaVenta GenerarLineaDeVenta(string pIdProducto, int pCantidad)
+        {
+            LineaVenta lineaDeVenta = new LineaVenta();
+            int idProducto = int.Parse(pIdProducto);
+            lineaDeVenta.IdProducto = idProducto;
+            lineaDeVenta.Cantidad = pCantidad;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
+                    lineaDeVenta.Producto = producto;
+                    lineaDeVenta.PrecioActual = producto.PrecioBaseDolar;
+                }
+            }
+            return lineaDeVenta;
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
@@ -15,6 +16,21 @@ namespace ShockSoft.Presentacion
         public Form_AgregarVenta()
         {
             InitializeComponent();
+        }
+
+        private void BtnAgregarLinea_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void AgregarLineaDeVenta(LineaVenta pLineaDeVenta)
+        {
+            dglineasDeVenta.Rows.Add(pLineaDeVenta.Producto.IdProducto, pLineaDeVenta.Producto.Descripcion, pLineaDeVenta.PrecioActual, pLineaDeVenta.Cantidad, pLineaDeVenta.ObtenerSubtotal());
         }
     }
 }

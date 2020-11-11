@@ -121,5 +121,13 @@ namespace ShockSoft.Presentacion
             }
             ActualizarTabla();
         }
+
+        private void DgProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int productoSeleccionado = (int)dgProductos.CurrentRow.Cells[0].Value;
+            Form_AgregarLineaDeVenta formAgregarLineaDeVenta = (Form_AgregarLineaDeVenta)Owner;
+            formAgregarLineaDeVenta.AgregarProducto(productoSeleccionado);
+            this.Close();
+        }
     }
 }

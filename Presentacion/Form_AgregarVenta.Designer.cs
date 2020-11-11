@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.dglineasDeVenta = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,131 +42,134 @@
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregarLinea = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCliente
+            // txtNombre
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(13, 19);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(42, 13);
-            this.lblCliente.TabIndex = 0;
-            this.lblCliente.Text = "Cliente:";
+            this.txtNombre.Location = new System.Drawing.Point(573, 12);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(300, 20);
+            this.txtNombre.TabIndex = 0;
             // 
-            // txtCliente
+            // txtId
             // 
-            this.txtCliente.Location = new System.Drawing.Point(71, 16);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(198, 20);
-            this.txtCliente.TabIndex = 1;
+            this.txtId.Location = new System.Drawing.Point(53, 12);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 1;
             // 
-            // btnBuscarCliente
+            // txtTotal
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(275, 14);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarCliente.TabIndex = 2;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.txtTotal.Location = new System.Drawing.Point(63, 311);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(140, 20);
+            this.txtTotal.TabIndex = 2;
             // 
-            // lblPrecio
+            // lblTotal
             // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(544, 18);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(40, 13);
-            this.lblPrecio.TabIndex = 3;
-            this.lblPrecio.Text = "Precio:";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(23, 314);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.TabIndex = 3;
+            this.lblTotal.Text = "Total:";
             // 
-            // txtPrecio
+            // lblNombre
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(590, 16);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(198, 20);
-            this.txtPrecio.TabIndex = 4;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(520, 15);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.TabIndex = 4;
+            this.lblNombre.Text = "Nombre:";
             // 
-            // dataGridView1
+            // lblId
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(26, 15);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(21, 13);
+            this.lblId.TabIndex = 5;
+            this.lblId.Text = "ID:";
+            // 
+            // dglineasDeVenta
+            // 
+            this.dglineasDeVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dglineasDeVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Descripcion,
             this.PrecioUnitario,
             this.Cantidad,
             this.Subtotal});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(763, 223);
-            this.dataGridView1.TabIndex = 5;
+            this.dglineasDeVenta.Location = new System.Drawing.Point(29, 53);
+            this.dglineasDeVenta.Name = "dglineasDeVenta";
+            this.dglineasDeVenta.Size = new System.Drawing.Size(844, 252);
+            this.dglineasDeVenta.TabIndex = 6;
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
             // 
             // Descripcion
             // 
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
             this.Descripcion.Width = 400;
             // 
             // PrecioUnitario
             // 
-            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.HeaderText = "Precio unitario";
             this.PrecioUnitario.Name = "PrecioUnitario";
-            this.PrecioUnitario.ReadOnly = true;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 70;
             // 
             // Subtotal
             // 
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
-            this.Subtotal.ReadOnly = true;
             // 
             // btnAgregarLinea
             // 
-            this.btnAgregarLinea.Location = new System.Drawing.Point(16, 282);
+            this.btnAgregarLinea.Location = new System.Drawing.Point(221, 311);
             this.btnAgregarLinea.Name = "btnAgregarLinea";
-            this.btnAgregarLinea.Size = new System.Drawing.Size(123, 23);
-            this.btnAgregarLinea.TabIndex = 6;
-            this.btnAgregarLinea.Text = "Agregar Linea";
+            this.btnAgregarLinea.Size = new System.Drawing.Size(94, 23);
+            this.btnAgregarLinea.TabIndex = 7;
+            this.btnAgregarLinea.Text = "Agregar línea";
             this.btnAgregarLinea.UseVisualStyleBackColor = true;
+            this.btnAgregarLinea.Click += new System.EventHandler(this.BtnAgregarLinea_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(704, 282);
+            this.btnAceptar.Location = new System.Drawing.Point(798, 311);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 7;
+            this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // Form_AgregarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 317);
+            this.ClientSize = new System.Drawing.Size(899, 343);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnAgregarLinea);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.btnBuscarCliente);
-            this.Controls.Add(this.txtCliente);
-            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.dglineasDeVenta);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtNombre);
             this.Name = "Form_AgregarVenta";
-            this.Text = "Form_RegistrarVenta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Form_AgregarVenta";
+            ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,12 +177,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.DataGridView dglineasDeVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;

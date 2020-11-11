@@ -12,5 +12,10 @@
         public int IdLineaVenta { get; set; }
         public int IdProducto { get; set; }
         public int IdVenta { get; set; }
+
+        public double ObtenerSubtotal()
+        {
+            return PrecioActual * Cantidad;
+        }
     }
 }
