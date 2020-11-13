@@ -116,7 +116,7 @@
             // 
             // btnAgregarMetodo
             // 
-            this.btnAgregarMetodo.Location = new System.Drawing.Point(567, 14);
+            this.btnAgregarMetodo.Location = new System.Drawing.Point(573, 15);
             this.btnAgregarMetodo.Name = "btnAgregarMetodo";
             this.btnAgregarMetodo.Size = new System.Drawing.Size(137, 23);
             this.btnAgregarMetodo.TabIndex = 10;
@@ -296,10 +296,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(55)))));
-            this.panel3.Controls.Add(this.lblMetodoPago);
-            this.panel3.Controls.Add(this.comboMetodoPago);
             this.panel3.Controls.Add(this.lblTotal);
             this.panel3.Controls.Add(this.txtTotal);
+            this.panel3.Controls.Add(this.lblMetodoPago);
+            this.panel3.Controls.Add(this.btnBuscarCliente);
+            this.panel3.Controls.Add(this.comboMetodoPago);
             this.panel3.Controls.Add(this.btnAgregarMetodo);
             this.panel3.Location = new System.Drawing.Point(15, 372);
             this.panel3.Name = "panel3";
@@ -311,7 +312,7 @@
             this.lblMetodoPago.AutoSize = true;
             this.lblMetodoPago.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMetodoPago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMetodoPago.Location = new System.Drawing.Point(10, 13);
+            this.lblMetodoPago.Location = new System.Drawing.Point(12, 19);
             this.lblMetodoPago.Name = "lblMetodoPago";
             this.lblMetodoPago.Size = new System.Drawing.Size(126, 19);
             this.lblMetodoPago.TabIndex = 30;
@@ -322,7 +323,7 @@
             this.comboMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMetodoPago.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMetodoPago.FormattingEnabled = true;
-            this.comboMetodoPago.Location = new System.Drawing.Point(151, 12);
+            this.comboMetodoPago.Location = new System.Drawing.Point(164, 16);
             this.comboMetodoPago.Name = "comboMetodoPago";
             this.comboMetodoPago.Size = new System.Drawing.Size(315, 27);
             this.comboMetodoPago.TabIndex = 31;
@@ -345,9 +346,10 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(180, 25);
             this.txtTotal.TabIndex = 4;
+            // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(763, 10);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(626, 55);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(110, 23);
             this.btnBuscarCliente.TabIndex = 12;
@@ -364,10 +366,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnBuscarCliente);
-            this.Controls.Add(this.lblMetodoPago);
-            this.Controls.Add(this.btnAgregarMetodo);
-            this.Controls.Add(this.comboMetodoPago);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.dglineasDeVenta);

@@ -90,7 +90,7 @@ namespace ShockSoft.Presentacion
         }
         private void BtnBuscarCliente_Click(object sender, EventArgs e)
         {
-            Form_ConsultarClientes form_ConsultaClientes = new Form_ConsultarClientes();
+            Form_ConsultaClientes form_ConsultaClientes = new Form_ConsultaClientes();
             form_ConsultaClientes.Owner = this;
             this.Hide();
             form_ConsultaClientes.ShowDialog();
