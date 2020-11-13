@@ -58,14 +58,14 @@ namespace ShockSoft.Presentacion
         /// <param name="pCliente">El cliente asociado a las ventas</param>
         /// <param name="pProducto">El producto vendido en las ventas</param>
         /// <returns></returns>
-        public List<Venta> ListarVentas(int pCliente, int pProducto)
+        public List<Venta> ListarVentas(int pCliente, int pProducto, int pDesde, int pCantidad)
         {
             List<Venta> listaVentas;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    listaVentas = bUoW.RepositorioVenta.ObtenerTodos().ToList();
+                    listaVentas = bUoW.RepositorioVenta.ObtenerVentas(pCliente, pProducto, pDesde, pCantidad).ToList();
                 }
             }
             return listaVentas;
@@ -96,6 +96,19 @@ namespace ShockSoft.Presentacion
                 }
             }
             return lineasDeVenta;
+        }
+
+        public int ObtenerCantidadDeVentas()
+        {
+            int cantidadDeVentas = 0;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    cantidadDeVentas = bUoW.RepositorioVenta.CantidadFilas();
+                }
+            }
+            return cantidadDeVentas;
         }
     }
 }

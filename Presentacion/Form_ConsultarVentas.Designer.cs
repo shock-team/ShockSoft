@@ -38,7 +38,7 @@
             this.lblIdProducto = new System.Windows.Forms.Label();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgVentas = new System.Windows.Forms.DataGridView();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.lblPaginaActual = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombreCliente
@@ -133,18 +133,18 @@
             this.txtDescripcionProducto.Size = new System.Drawing.Size(231, 20);
             this.txtDescripcionProducto.TabIndex = 5;
             // 
-            // dataGridView1
+            // dgVentas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Fecha,
             this.Cliente,
             this.Total});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 85);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(763, 291);
-            this.dataGridView1.TabIndex = 10;
+            this.dgVentas.Location = new System.Drawing.Point(13, 85);
+            this.dgVentas.Name = "dgVentas";
+            this.dgVentas.Size = new System.Drawing.Size(763, 291);
+            this.dgVentas.TabIndex = 10;
             // 
             // btnAnterior
             // 
@@ -203,7 +203,7 @@
             this.Controls.Add(this.lblPaginaActual);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgVentas);
             this.Controls.Add(this.btnBuscarProducto);
             this.Controls.Add(this.lblDescripcionProducto);
             this.Controls.Add(this.lblIdProducto);
@@ -216,7 +216,7 @@
             this.Controls.Add(this.txtNombreCliente);
             this.Name = "Form_ConsultarVentas";
             this.Text = "Form_ConsultarVentas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,7 +234,7 @@
         private System.Windows.Forms.Label lblIdProducto;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.TextBox txtDescripcionProducto;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;

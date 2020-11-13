@@ -13,6 +13,7 @@ namespace ShockSoft.Presentacion
 {
     public partial class Form_ConsultarVentas : Form, IBusquedaDeClientes, IBusquedaDeProductos
     {
+        ControladorVentas controlador = ControladorVentas.ObtenerInstancia();
         public Form_ConsultarVentas()
         {
             InitializeComponent();
@@ -29,17 +30,40 @@ namespace ShockSoft.Presentacion
 
         private void BtnBuscarProducto_Click(object sender, EventArgs e)
         {
-
+            Form_BuscarProducto form_BuscarProducto = new Form_BuscarProducto();
+            form_BuscarProducto.Owner = this;
+            this.Hide();
+            form_BuscarProducto.ShowDialog();
+            this.Show();
         }
 
         private void BtnAnterior_Click(object sender, EventArgs e)
         {
-
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = false;
+                btnAnterior.Visible = false;
+            }
+            ActualizarTabla();
         }
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = true;
+                btnAnterior.Visible = true;
+            }
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
+            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeVentas() / 15))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            ActualizarTabla();
         }
 
         public void AgregarCliente(int pIdCliente)
@@ -54,6 +78,26 @@ namespace ShockSoft.Presentacion
             txtIdProducto.Text = pIdProducto.ToString();
             Producto productoActual = ControladorProductos.ObtenerInstancia().ObtenerProducto(pIdProducto);
             txtDescripcionProducto.Text = productoActual.Descripcion;
+        }
+
+        private void ActualizarTabla()
+        {
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
+            dgVentas.Rows.Clear();
+            int CANTIDAD_POR_PAGINA = 15;
+
+            List<Venta> listaDeVentas = controlador.ListarVentas(int.Parse(txtIdCliente.Text), int.Parse(txtIdProducto.Text), CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
+
+            if (listaDeVentas.Count < (CANTIDAD_POR_PAGINA + 1))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            foreach (Venta venta in listaDeVentas)
+            {
+                dgVentas.Rows.Add(venta.IdVenta, venta.Fecha, venta.Cliente.Nombre + " " + venta.Cliente.Apellido, venta.ObtenerTotal());
+            }
         }
     }
 }
