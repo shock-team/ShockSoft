@@ -364,6 +364,8 @@
     <Compile Include="Presentacion\Form_RegistrarPago.Designer.cs">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\IBusquedaDeClientes.cs" />
+    <Compile Include="Presentacion\IBusquedaDeProductos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Migrations\202010301902389_init.resx">

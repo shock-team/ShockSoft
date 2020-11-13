@@ -60,6 +60,20 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
+                    listaParametros = bUoW.RepositorioParametro.ObtenerParametros(pDesde,pCantidad).ToList();
+                }
+            }
+            return listaParametros;
+        }
+
+
+        public List<Parametro> ListarParametros()
+        {
+            List<Parametro> listaParametros;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
                     listaParametros = bUoW.RepositorioParametro.ObtenerTodos().ToList();
                 }
             }
