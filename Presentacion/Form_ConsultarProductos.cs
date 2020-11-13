@@ -7,10 +7,10 @@ using System;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_ConsultarProducto : Form
+    public partial class Form_ConsultarProductos : Form
     {
         ControladorProductos controlador;
-        public Form_ConsultarProducto()
+        public Form_ConsultarProductos()
         {
             InitializeComponent();
             controlador = ControladorProductos.ObtenerInstancia();

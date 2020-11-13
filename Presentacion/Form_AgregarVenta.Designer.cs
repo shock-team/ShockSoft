@@ -45,12 +45,13 @@
             this.comboMetodoPago = new System.Windows.Forms.ComboBox();
             this.btnAgregarMetodo = new System.Windows.Forms.Button();
             this.lblMetodoPago = new System.Windows.Forms.Label();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(573, 12);
+            this.txtNombre.Location = new System.Drawing.Point(221, 12);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(300, 20);
             this.txtNombre.TabIndex = 0;
@@ -81,7 +82,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(520, 15);
+            this.lblNombre.Location = new System.Drawing.Point(168, 15);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 4;
@@ -182,11 +183,22 @@
             this.lblMetodoPago.TabIndex = 11;
             this.lblMetodoPago.Text = "Método de pago:";
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(763, 10);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(110, 23);
+            this.btnBuscarCliente.TabIndex = 12;
+            this.btnBuscarCliente.Text = "Buscar cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
+            // 
             // Form_AgregarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 343);
+            this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.lblMetodoPago);
             this.Controls.Add(this.btnAgregarMetodo);
             this.Controls.Add(this.comboMetodoPago);
@@ -226,5 +238,6 @@
         private System.Windows.Forms.ComboBox comboMetodoPago;
         private System.Windows.Forms.Button btnAgregarMetodo;
         private System.Windows.Forms.Label lblMetodoPago;
+        private System.Windows.Forms.Button btnBuscarCliente;
     }
 }

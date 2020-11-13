@@ -51,5 +51,21 @@ namespace ShockSoft.Presentacion
             }
             txtTotal.Text = total.ToString();
         }
+
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            Form_ConsultarClientes form_ConsultaClientes = new Form_ConsultarClientes();
+            form_ConsultaClientes.Owner = this;
+            this.Hide();
+            form_ConsultaClientes.ShowDialog();
+            this.Show();
+        }
+
+        public void AgregarCliente(int pIdCliente)
+        {
+            txtId.Text = pIdCliente.ToString();
+            Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
+            txtNombre.Text = clienteActual.Nombre + " " + clienteActual.Apellido;
+        }
     }
 }
