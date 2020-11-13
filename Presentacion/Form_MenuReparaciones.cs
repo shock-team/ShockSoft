@@ -16,5 +16,13 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
         }
+
+        private void BtnAltaReparacion_Click(object sender, EventArgs e)
+        {
+            Form_AgregarReparacion form_AgregarReparacion = new Form_AgregarReparacion();
+            this.Hide();
+            form_AgregarReparacion.ShowDialog();
+            this.Show();
+        }
     }
 }
