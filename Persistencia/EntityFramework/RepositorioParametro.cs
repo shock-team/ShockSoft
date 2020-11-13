@@ -15,6 +15,11 @@ namespace ShockSoft.Persistencia.EntityFramework
             return parametrosFiltrados.OrderBy(x => x.IdParametro).Skip(pDesde).Take(pCantidad);
         }
 
+        public Parametro ObtenerPrecioDolar()
+        {
+            return iDbContext.Parametros.Where(x => x.IdParametro == 1).FirstOrDefault();
+        }
+
         public int CantidadFilas()
         {
             var sql = "SELECT COUNT(*) FROM parametros";

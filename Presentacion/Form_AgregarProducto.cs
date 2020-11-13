@@ -23,7 +23,7 @@ namespace ShockSoft.Presentacion
             comboMarca.ValueMember = "IdMarca";
 
             //Carga los IVAs en el ComboBox
-            foreach (IVA iva in ControladorParametros.ObtenerInstancia().ListarParametros())
+            foreach (Parametro iva in ControladorParametros.ObtenerInstancia().ListarParametros())
             {
                 comboIVA.Items.Add(iva);
             }

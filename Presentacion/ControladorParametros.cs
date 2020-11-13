@@ -101,14 +101,14 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        public PrecioDolar ObtenerPrecioDolar()
+        public Parametro ObtenerPrecioDolar()
         {
-            PrecioDolar precioDolar = new PrecioDolar();
+            Parametro precioDolar = new Parametro();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    precioDolar =  (PrecioDolar)bUoW.RepositorioParametro.Obtener(1);
+                    precioDolar = bUoW.RepositorioParametro.ObtenerPrecioDolar();
                 }
             }
             return precioDolar;

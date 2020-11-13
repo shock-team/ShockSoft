@@ -28,5 +28,11 @@ namespace ShockSoft.Presentacion
             Form_ConsultarProductos form_ConsultarProducto = new Form_ConsultarProductos();
             form_ConsultarProducto.Show();
         }
+
+        private void btnABMParametro_Click(object sender, EventArgs e)
+        {
+            Form_ABMParametro form_ABMParametro = new Form_ABMParametro();
+            form_ABMParametro.Show();
+        }
     }
 }

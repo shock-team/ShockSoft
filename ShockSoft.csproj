@@ -171,13 +171,11 @@
   <ItemGroup>
     <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Compra.cs" />
-    <Compile Include="Dominio\IVA.cs" />
     <Compile Include="Dominio\LineaCompra.cs" />
     <Compile Include="Dominio\LineaVenta.cs" />
     <Compile Include="Dominio\Localidad.cs" />
     <Compile Include="Dominio\Marca.cs" />
     <Compile Include="Dominio\Parametro.cs" />
-    <Compile Include="Dominio\PrecioDolar.cs" />
     <Compile Include="Dominio\Producto.cs" />
     <Compile Include="Dominio\Proveedor.cs" />
     <Compile Include="Dominio\MetodoPago.cs" />
@@ -186,9 +184,9 @@
     <Compile Include="Dominio\Rubro.cs" />
     <Compile Include="Dominio\Venta.cs" />
     <Compile Include="Excepciones\DatosRepetidosException.cs" />
-    <Compile Include="Migrations\202010301902389_init.cs" />
-    <Compile Include="Migrations\202010301902389_init.designer.cs">
-      <DependentUpon>202010301902389_init.cs</DependentUpon>
+    <Compile Include="Migrations\202011132147587_init.cs" />
+    <Compile Include="Migrations\202011132147587_init.designer.cs">
+      <DependentUpon>202011132147587_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\EntityFramework\FormattedDbException.cs" />
@@ -371,8 +369,8 @@
     <Compile Include="Presentacion\IBusquedaDeProductos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202010301902389_init.resx">
-      <DependentUpon>202010301902389_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011132147587_init.resx">
+      <DependentUpon>202011132147587_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_ABMParametro.resx">
       <DependentUpon>Form_ABMParametro.cs</DependentUpon>

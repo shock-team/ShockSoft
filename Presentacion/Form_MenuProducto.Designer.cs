@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAltaProducto = new System.Windows.Forms.Button();
             this.btnConsultaProducto = new System.Windows.Forms.Button();
+            this.btnABMParametro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,12 +78,26 @@
             this.btnConsultaProducto.UseVisualStyleBackColor = false;
             this.btnConsultaProducto.Click += new System.EventHandler(this.btnConsultaProducto_Click);
             // 
+            // btnABMParametro
+            // 
+            this.btnABMParametro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnABMParametro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnABMParametro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnABMParametro.Location = new System.Drawing.Point(45, 165);
+            this.btnABMParametro.Name = "btnABMParametro";
+            this.btnABMParametro.Size = new System.Drawing.Size(600, 44);
+            this.btnABMParametro.TabIndex = 7;
+            this.btnABMParametro.Text = "ABM Parametros";
+            this.btnABMParametro.UseVisualStyleBackColor = true;
+            this.btnABMParametro.Click += new System.EventHandler(this.btnABMParametro_Click);
+            // 
             // Form_MenuProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.btnABMParametro);
             this.Controls.Add(this.btnConsultaProducto);
             this.Controls.Add(this.btnAltaProducto);
             this.Controls.Add(this.label1);
@@ -99,5 +114,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAltaProducto;
         private System.Windows.Forms.Button btnConsultaProducto;
+        private System.Windows.Forms.Button btnABMParametro;
     }
 }

@@ -25,8 +25,6 @@ namespace ShockSoft.Persistencia.EntityFramework
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Compra> Compras { get; set; }
         public DbSet<Parametro> Parametros { get; set; }
-        public DbSet<IVA> IVA { get; set; }
-        public DbSet<PrecioDolar> PrecioDolar { get; set; }
         public DbSet<Localidad> Localidades { get; set; }
 
 

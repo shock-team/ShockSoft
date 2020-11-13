@@ -199,7 +199,6 @@
                         id = c.Int(nullable: false, identity: true),
                         descripcion = c.String(nullable: false, maxLength: 40, storeType: "nvarchar"),
                         valor = c.Single(nullable: false),
-                        Discriminator = c.String(nullable: false, maxLength: 128, storeType: "nvarchar"),
                     })
                 .PrimaryKey(t => t.id);
             

@@ -40,7 +40,7 @@ namespace ShockSoft.Presentacion
             //Carga los IVAs en el combobox
             foreach (Parametro parametro in ControladorParametros.ObtenerInstancia().ListarParametros())
             {
-                if (!(parametro is PrecioDolar))
+                if (!(parametro.IdParametro == 1))
                 {
                     comboIVA.Items.Add(parametro);
                     if (producto.IdParametro == parametro.IdParametro)
@@ -66,7 +66,7 @@ namespace ShockSoft.Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            controlador.ModificarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtPorcentajeDeGanancia.Text), ((IVA)comboIVA.SelectedItem).IdParametro, int.Parse(txtId.Text));
+            controlador.ModificarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtPorcentajeDeGanancia.Text), ((Parametro)comboIVA.SelectedItem).IdParametro, int.Parse(txtId.Text));
         }
 
         private void btnAltaBaja_Click(object sender, EventArgs e)
