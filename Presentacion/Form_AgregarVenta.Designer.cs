@@ -55,6 +55,7 @@
             this.comboMetodoPago = new System.Windows.Forms.ComboBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
@@ -344,6 +345,15 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(180, 25);
             this.txtTotal.TabIndex = 4;
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(763, 10);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(110, 23);
+            this.btnBuscarCliente.TabIndex = 12;
+            this.btnBuscarCliente.Text = "Buscar cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // Form_AgregarVenta
             // 
@@ -354,6 +364,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.lblMetodoPago);
+            this.Controls.Add(this.btnAgregarMetodo);
+            this.Controls.Add(this.comboMetodoPago);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.dglineasDeVenta);
@@ -401,5 +415,6 @@
         private System.Windows.Forms.ComboBox comboMetodoPago;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button btnBuscarCliente;
     }
 }
