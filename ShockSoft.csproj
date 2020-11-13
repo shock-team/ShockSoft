@@ -280,17 +280,17 @@
     <Compile Include="Presentacion\Form_BuscarProducto.Designer.cs">
       <DependentUpon>Form_BuscarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultaClientes.cs">
+    <Compile Include="Presentacion\Form_ConsultarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultaClientes.Designer.cs">
-      <DependentUpon>Form_ConsultaClientes.cs</DependentUpon>
+    <Compile Include="Presentacion\Form_ConsultarClientes.Designer.cs">
+      <DependentUpon>Form_ConsultarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarProducto.cs">
+    <Compile Include="Presentacion\Form_ConsultarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarProducto.Designer.cs">
-      <DependentUpon>Form_ConsultarProducto.cs</DependentUpon>
+    <Compile Include="Presentacion\Form_ConsultarProductos.Designer.cs">
+      <DependentUpon>Form_ConsultarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Form_ConsultarVentas.cs">
       <SubType>Form</SubType>
@@ -389,12 +389,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_BuscarProducto.resx">
       <DependentUpon>Form_BuscarProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ConsultaClientes.resx">
-      <DependentUpon>Form_ConsultaClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ConsultarProducto.resx">
-      <DependentUpon>Form_ConsultarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_ConsultarVentas.resx">
       <DependentUpon>Form_ConsultarVentas.cs</DependentUpon>
