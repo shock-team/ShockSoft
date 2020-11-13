@@ -62,7 +62,15 @@ namespace ShockSoft.Presentacion
 
             Rubro rubro = (Rubro)comboRubro.SelectedItem ?? new Rubro { IdRubro = -1 };
             Marca marca = (Marca)comboMarca.SelectedItem ?? new Marca { IdMarca = -1 };
-            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, cbMostrarProductosBaja.Checked, cbSinStock.Checked, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1, marca.IdMarca, rubro.IdRubro);
+            List<Producto> listaDeProductos = controlador.ListarProductos(
+                    txtDescripcion.Text, 
+                    cbMostrarProductosBaja.Checked, 
+                    cbSinStock.Checked, 
+                    txtId.Text, 
+                    CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), 
+                    CANTIDAD_POR_PAGINA + 1, 
+                    marca.IdMarca, 
+                    rubro.IdRubro);
 
             if (listaDeProductos.Count < (CANTIDAD_POR_PAGINA + 1))
             {

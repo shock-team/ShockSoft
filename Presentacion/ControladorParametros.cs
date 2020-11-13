@@ -53,7 +53,7 @@ namespace ShockSoft.Presentacion
         /// parámetros presentes en el repositorio
         /// </summary>
         /// <returns></returns>
-        public List<Parametro> ListarParametros()
+        public List<Parametro> ListarParametros(int pDesde, int pCantidad)
         {
             List<Parametro> listaParametros;
             using (var bDbContext = new ShockDbContext())
@@ -83,6 +83,30 @@ namespace ShockSoft.Presentacion
                     parametro.Descripcion = pDescripcion;
                     parametro.Valor = pValor;
                     bUoW.GuardarCambios();
+                }
+            }
+        }
+
+        public PrecioDolar ObtenerPrecioDolar()
+        {
+            PrecioDolar precioDolar = new PrecioDolar();
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    precioDolar =  (PrecioDolar)bUoW.RepositorioParametro.Obtener(1);
+                }
+            }
+            return precioDolar;
+        }
+
+        public int ObtenerCantidadDeParametros()
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    return bUoW.RepositorioParametro.CantidadFilas();
                 }
             }
         }
