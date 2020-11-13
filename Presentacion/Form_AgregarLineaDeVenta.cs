@@ -11,7 +11,7 @@ using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AgregarLineaDeVenta : Form
+    public partial class Form_AgregarLineaDeVenta : Form, IBusquedaDeProductos
     {
         public Form_AgregarLineaDeVenta()
         {

@@ -25,7 +25,7 @@ namespace ShockSoft.Presentacion
 
         private void btnConsultaProducto_Click(object sender, EventArgs e)
         {
-            Form_ConsultarProducto form_ConsultarProducto = new Form_ConsultarProducto();
+            Form_ConsultarProductos form_ConsultarProducto = new Form_ConsultarProductos();
             form_ConsultarProducto.Show();
         }
     }

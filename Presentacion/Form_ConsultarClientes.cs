@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_ConsultaClientes : Form
+    public partial class Form_ConsultarClientes : Form
     {
         ControladorClientes controlador;
         DataTable tablaDeClientes;
 
-        public Form_ConsultaClientes()
+        public Form_ConsultarClientes()
         {
             InitializeComponent();
             controlador = ControladorClientes.ObtenerInstancia();
@@ -58,12 +58,25 @@ namespace ShockSoft.Presentacion
 
         private void DgClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Obtiene el cliente seleccionado a partir de su ID
             int clienteSeleccionado = (int)dgClientes.CurrentRow.Cells[0].Value;
-            Form_DatosCliente formDatosCliente = new Form_DatosCliente(clienteSeleccionado);
-            this.Hide();
-            formDatosCliente.ShowDialog();
-            this.Show();
+            //Las tareas a realizar cambian si esta form es creada desde un Form_AgregarVenta
+            //Si es Form_AgregarVenta selecciona el cliente y lo devuelve al owner
+            if ( (this.Owner != null) && (this.Owner is IBusquedaDeClientes) )
+            {
+                IBusquedaDeClientes owner = (IBusquedaDeClientes)Owner;
+                owner.AgregarCliente(clienteSeleccionado);
+                this.Close();
+            }
+
+            //Si no, muestra sus datos
+            else
+            {
+                //Obtiene el cliente seleccionado a partir de su ID
+                Form_DatosCliente formDatosCliente = new Form_DatosCliente(clienteSeleccionado);
+                this.Hide();
+                formDatosCliente.ShowDialog();
+                this.Show();
+            }
         }
 
         private void BtnAnterior_Click(object sender, System.EventArgs e)
