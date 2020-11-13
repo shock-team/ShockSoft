@@ -27,14 +27,6 @@ namespace ShockSoft.Presentacion
             comboMetodoPago.ValueMember = "IdMetodoPago";
         }
 
-        private void BtnAgregarLinea_Click(object sender, EventArgs e)
-        {
-            Form_AgregarLineaDeVenta formAgregarLineaDeVenta = new Form_AgregarLineaDeVenta();
-            formAgregarLineaDeVenta.Owner = this;
-            this.Hide();
-            formAgregarLineaDeVenta.ShowDialog();
-            this.Show();
-        }
 
 
         public void AgregarLineaDeVenta(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
@@ -88,20 +80,30 @@ namespace ShockSoft.Presentacion
             MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
 
         }
-        private void BtnBuscarCliente_Click(object sender, EventArgs e)
-        {
-            Form_ConsultaClientes form_ConsultaClientes = new Form_ConsultaClientes();
-            form_ConsultaClientes.Owner = this;
-            this.Hide();
-            form_ConsultaClientes.ShowDialog();
-            this.Show();
-        }
 
         public void AgregarCliente(int pIdCliente)
         {
             txtId.Text = pIdCliente.ToString();
             Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
             txtNombre.Text = clienteActual.Nombre + " " + clienteActual.Apellido;
+        }
+
+        private void btnAgregarLinea_Click(object sender, EventArgs e)
+        {
+            Form_AgregarLineaDeVenta formAgregarLineaDeVenta = new Form_AgregarLineaDeVenta();
+            formAgregarLineaDeVenta.Owner = this;
+            this.Hide();
+            formAgregarLineaDeVenta.ShowDialog();
+            this.Show();
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            Form_ConsultarClientes form_ConsultaClientes = new Form_ConsultarClientes();
+            form_ConsultaClientes.Owner = this;
+            this.Hide();
+            form_ConsultaClientes.ShowDialog();
+            this.Show();
         }
     }
 }
