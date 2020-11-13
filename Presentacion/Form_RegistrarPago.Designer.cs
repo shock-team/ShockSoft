@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.calendarFecha = new System.Windows.Forms.MonthCalendar();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.panelControl = new System.Windows.Forms.Panel();
@@ -48,10 +46,11 @@
             this.lblMonto = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel9.SuspendLayout();
@@ -60,13 +59,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // calendarFecha
-            // 
-            this.calendarFecha.BackColor = System.Drawing.SystemColors.Window;
-            this.calendarFecha.Location = new System.Drawing.Point(23, 40);
-            this.calendarFecha.Name = "calendarFecha";
-            this.calendarFecha.TabIndex = 5;
             // 
             // btnAceptar
             // 
@@ -84,21 +76,6 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(335, 410);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(125, 30);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
             // lblID
             // 
             this.lblID.AutoSize = true;
@@ -115,6 +92,7 @@
             this.txtID.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
             this.txtID.Location = new System.Drawing.Point(110, 11);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(150, 25);
             this.txtID.TabIndex = 11;
             // 
@@ -225,6 +203,7 @@
             this.txtNombreYApellido.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreYApellido.Location = new System.Drawing.Point(160, 11);
             this.txtNombreYApellido.Name = "txtNombreYApellido";
+            this.txtNombreYApellido.ReadOnly = true;
             this.txtNombreYApellido.Size = new System.Drawing.Size(425, 25);
             this.txtNombreYApellido.TabIndex = 0;
             // 
@@ -271,7 +250,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel3.Controls.Add(this.lblDescripcion);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtDescripcion);
             this.panel3.Location = new System.Drawing.Point(25, 240);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(275, 200);
@@ -288,20 +267,20 @@
             this.lblDescripcion.TabIndex = 10;
             this.lblDescripcion.Text = "Descripción:";
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
-            this.textBox1.Location = new System.Drawing.Point(10, 42);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 145);
-            this.textBox1.TabIndex = 9;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
+            this.txtDescripcion.Location = new System.Drawing.Point(10, 42);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(255, 145);
+            this.txtDescripcion.TabIndex = 9;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
+            this.panel4.Controls.Add(this.dtpFecha);
             this.panel4.Controls.Add(this.lblFecha);
-            this.panel4.Controls.Add(this.calendarFecha);
             this.panel4.Location = new System.Drawing.Point(335, 180);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(290, 220);
@@ -326,6 +305,13 @@
             this.panel5.Size = new System.Drawing.Size(290, 47);
             this.panel5.TabIndex = 44;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(47, 43);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 11;
+            // 
             // Form_RegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,7 +322,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel9);
@@ -363,9 +348,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.MonthCalendar calendarFecha;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Panel panelControl;
@@ -383,9 +366,10 @@
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }
