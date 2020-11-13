@@ -6,11 +6,11 @@ using ShockSoft.Excepciones;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AltaCliente : Form
+    public partial class Form_AgregarCliente : Form
     {
         ControladorClientes controlador;
 
-        public Form_AltaCliente()
+        public Form_AgregarCliente()
         {
             InitializeComponent();
             controlador = ControladorClientes.ObtenerInstancia();
@@ -56,7 +56,7 @@ namespace ShockSoft.Presentacion
 
         private void BtnNuevaLocalidad_Click(object sender, EventArgs e)
         {
-            Form_AltaLocalidad formAltaLocalidad = new Form_AltaLocalidad();
+            Form_AgregarLocalidad formAltaLocalidad = new Form_AgregarLocalidad();
             this.Hide();
             formAltaLocalidad.ShowDialog();
             this.Show();

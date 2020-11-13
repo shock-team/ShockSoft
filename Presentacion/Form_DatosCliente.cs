@@ -85,7 +85,7 @@ namespace ShockSoft.Presentacion
 
         private void BtnNuevaLocalidad_Click(object sender, System.EventArgs e)
         {
-            Form_AltaLocalidad formAltaLocalidad = new Form_AltaLocalidad();
+            Form_AgregarLocalidad formAltaLocalidad = new Form_AgregarLocalidad();
             this.Hide();
             formAltaLocalidad.ShowDialog();
             this.Show();

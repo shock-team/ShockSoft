@@ -1,6 +1,6 @@
 ﻿namespace ShockSoft.Presentacion
 {
-    partial class Form_AñadirProducto
+    partial class Form_AgregarProducto
     {
         /// <summary>
         /// Required designer variable.

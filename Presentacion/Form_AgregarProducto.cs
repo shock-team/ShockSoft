@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AñadirProducto : Form
+    public partial class Form_AgregarProducto : Form
     {
         ControladorProductos controlador;
 
-        public Form_AñadirProducto()
+        public Form_AgregarProducto()
         {
             InitializeComponent();
             controlador = ControladorProductos.ObtenerInstancia();

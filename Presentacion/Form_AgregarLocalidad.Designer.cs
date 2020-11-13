@@ -1,6 +1,6 @@
 ﻿namespace ShockSoft.Presentacion
 {
-    partial class Form_AltaLocalidad
+    partial class Form_AgregarLocalidad
     {
         /// <summary>
         /// Required designer variable.

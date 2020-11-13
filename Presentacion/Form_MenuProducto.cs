@@ -19,7 +19,7 @@ namespace ShockSoft.Presentacion
 
         private void btnAltaProducto_Click(object sender, EventArgs e)
         {
-            Form_AñadirProducto form_AñadirProducto = new Form_AñadirProducto();
+            Form_AgregarProducto form_AñadirProducto = new Form_AgregarProducto();
             form_AñadirProducto.Show();
         }
 

@@ -11,10 +11,10 @@ using System.Runtime.InteropServices;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AltaLocalidad : Form
+    public partial class Form_AgregarLocalidad : Form
     {
         ControladorLocalidades controlador = ControladorLocalidades.ObtenerInstancia();
-        public Form_AltaLocalidad()
+        public Form_AgregarLocalidad()
         {
             InitializeComponent();
         }

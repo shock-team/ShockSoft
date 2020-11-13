@@ -19,13 +19,14 @@ namespace ShockSoft.Presentacion
 
         private void btnAltaCliente_Click(object sender, EventArgs e)
         {
-            Form_AltaCliente form_AltaCliente = new Form_AltaCliente();
+            Form_AgregarCliente form_AltaCliente = new Form_AgregarCliente();
             form_AltaCliente.Show();
         }
 
         private void btnConsultarClientes_Click(object sender, EventArgs e)
         {
             Form_ConsultaClientes form_ConsultaCliente = new Form_ConsultaClientes();
+            form_ConsultaCliente.Owner = this;
             form_ConsultaCliente.Show();
         }
     }

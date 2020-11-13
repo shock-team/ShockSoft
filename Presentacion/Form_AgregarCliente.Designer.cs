@@ -1,6 +1,6 @@
 ﻿namespace ShockSoft.Presentacion
 {
-    partial class Form_AltaCliente
+    partial class Form_AgregarCliente
     {
         /// <summary>
         /// Required designer variable.
