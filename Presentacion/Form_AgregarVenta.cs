@@ -11,7 +11,7 @@ using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AgregarVenta : Form
+    public partial class Form_AgregarVenta : Form, IBusquedaDeClientes
     {
         ControladorVentas controlador = ControladorVentas.ObtenerInstancia();
 

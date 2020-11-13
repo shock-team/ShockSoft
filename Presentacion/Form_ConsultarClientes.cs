@@ -61,10 +61,10 @@ namespace ShockSoft.Presentacion
             int clienteSeleccionado = (int)dgClientes.CurrentRow.Cells[0].Value;
             //Las tareas a realizar cambian si esta form es creada desde un Form_AgregarVenta
             //Si es Form_AgregarVenta selecciona el cliente y lo devuelve al owner
-            if ( (this.Owner != null) && (this.Owner is  Form_AgregarVenta) )
+            if ( (this.Owner != null) && (this.Owner is IBusquedaDeClientes) )
             {
-                Form_AgregarVenta form_AgregarVenta = (Form_AgregarVenta)this.Owner;
-                form_AgregarVenta.AgregarCliente(clienteSeleccionado);
+                IBusquedaDeClientes owner = (IBusquedaDeClientes)Owner;
+                owner.AgregarCliente(clienteSeleccionado);
                 this.Close();
             }
 

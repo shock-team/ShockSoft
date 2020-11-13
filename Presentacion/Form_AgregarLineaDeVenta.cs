@@ -11,7 +11,7 @@ using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AgregarLineaDeVenta : Form
+    public partial class Form_AgregarLineaDeVenta : Form, IBusquedaDeProductos
     {
         public Form_AgregarLineaDeVenta()
         {
@@ -35,7 +35,7 @@ namespace ShockSoft.Presentacion
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             Form_AgregarVenta formAgregarVenta = (Form_AgregarVenta)Owner;
-            formAgregarVenta.AgregarLineaDeVenta(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value)));
+            formAgregarVenta.AgregarLineaDeVenta(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value));
             MessageBox.Show("Línea agregada exitosamente", "Éxito");
             this.Close();
         }
