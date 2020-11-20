@@ -61,6 +61,7 @@
             this.btnConsultaVenta.TabIndex = 10;
             this.btnConsultaVenta.Text = "Lista de Ventas";
             this.btnConsultaVenta.UseVisualStyleBackColor = false;
+            this.btnConsultaVenta.Click += new System.EventHandler(this.btnConsultaVenta_Click);
             // 
             // btnAltaVenta
             // 
@@ -76,6 +77,7 @@
             this.btnAltaVenta.TabIndex = 9;
             this.btnAltaVenta.Text = "Nueva Venta";
             this.btnAltaVenta.UseVisualStyleBackColor = false;
+            this.btnAltaVenta.Click += new System.EventHandler(this.btnAltaVenta_Click);
             // 
             // button1
             // 

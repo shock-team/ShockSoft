@@ -20,46 +20,6 @@ namespace ShockSoft.Presentacion
             InitializeComponent();
         }
 
-        
-
-        private void BtnBuscarProducto_Click(object sender, EventArgs e)
-        {
-            Form_BuscarProducto form_BuscarProducto = new Form_BuscarProducto();
-            form_BuscarProducto.Owner = this;
-            this.Hide();
-            form_BuscarProducto.ShowDialog();
-            this.Show();
-        }
-
-        private void BtnAnterior_Click(object sender, EventArgs e)
-        {
-            btnSiguiente.Enabled = true;
-            btnSiguiente.Visible = true;
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = false;
-                btnAnterior.Visible = false;
-            }
-            ActualizarTabla();
-        }
-
-        private void BtnSiguiente_Click(object sender, EventArgs e)
-        {
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = true;
-                btnAnterior.Visible = true;
-            }
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
-            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeVentas() / 15))
-            {
-                btnSiguiente.Enabled = false;
-                btnSiguiente.Visible = false;
-            }
-            ActualizarTabla();
-        }
-
         public void AgregarCliente(int pIdCliente)
         {
             txtIdCliente.Text = pIdCliente.ToString();
@@ -134,6 +94,44 @@ namespace ShockSoft.Presentacion
             this.Hide();
             form_ConsultarClientes.ShowDialog();
             this.Show();
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            Form_BuscarProducto form_BuscarProducto = new Form_BuscarProducto();
+            form_BuscarProducto.Owner = this;
+            this.Hide();
+            form_BuscarProducto.ShowDialog();
+            this.Show();
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            btnSiguiente.Enabled = true;
+            btnSiguiente.Visible = true;
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = false;
+                btnAnterior.Visible = false;
+            }
+            ActualizarTabla();
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (lblPaginaActual.Text.Equals("1"))
+            {
+                btnAnterior.Enabled = true;
+                btnAnterior.Visible = true;
+            }
+            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
+            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeVentas() / 15))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+            ActualizarTabla();
         }
     }
 }

@@ -16,5 +16,17 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
         }
+
+        private void btnAltaVenta_Click(object sender, EventArgs e)
+        {
+            Form_AgregarVenta form_AgregarVenta = new Form_AgregarVenta();
+            form_AgregarVenta.Show();
+        }
+
+        private void btnConsultaVenta_Click(object sender, EventArgs e)
+        {
+            Form_ConsultarVentas form_ConsultarVentas = new Form_ConsultarVentas();
+            form_ConsultarVentas.Show();
+        }
     }
 }
