@@ -75,8 +75,8 @@ namespace ShockSoft.Presentacion
                     }
                     else
                     {
-                        Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pId));
-                        producto.Marca = bUoW.RepositorioMarca.Obtener(producto.IdMarca);
+                        Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pId)) ?? new Producto { };
+                        producto.Marca = bUoW.RepositorioMarca.Obtener(producto.IdMarca) ?? new Marca { };
                         listaProductos.Add(producto);
                     }
                 }
