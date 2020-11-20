@@ -17,6 +17,7 @@ namespace ShockSoft.Presentacion
             controlador = ControladorProductos.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
+            this.Controls[1].Visible = false;
 
             //Carga los datos del ComboBox de Marcas
             foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
@@ -46,7 +47,18 @@ namespace ShockSoft.Presentacion
             btnSiguiente.Visible = true;
             dgProductos.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
-            List<Producto> listaDeProductos = controlador.ListarProductos(txtDescripcion.Text, false, false, txtId.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1, (int)comboMarca.SelectedItem, (int)comboRubro.SelectedItem);
+            Rubro rubro = (Rubro)comboRubro.SelectedItem ?? new Rubro { IdRubro = -1 };
+            Marca marca = (Marca)comboMarca.SelectedItem ?? new Marca { IdMarca = -1 };
+            List<Producto> listaDeProductos = controlador.ListarProductos(
+                    txtDescripcion.Text,
+                    false,
+                    false,
+                    txtId.Text,
+                    CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1),
+                    CANTIDAD_POR_PAGINA + 1,
+                    marca.IdMarca,
+                    rubro.IdRubro);
+
             if (listaDeProductos.Count < (CANTIDAD_POR_PAGINA + 1))
             {
                 btnSiguiente.Enabled = false;

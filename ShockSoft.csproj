@@ -299,6 +299,12 @@
     <Compile Include="Presentacion\Form_ConsultarProductos.Designer.cs">
       <DependentUpon>Form_ConsultarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Form_ConsultarReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_ConsultarReparaciones.Designer.cs">
+      <DependentUpon>Form_ConsultarReparaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Form_ConsultarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_BuscarProducto.resx">
       <DependentUpon>Form_BuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_ConsultarReparaciones.resx">
+      <DependentUpon>Form_ConsultarReparaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_ConsultarVentas.resx">
       <DependentUpon>Form_ConsultarVentas.cs</DependentUpon>

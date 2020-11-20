@@ -118,6 +118,7 @@
             this.btnBuscarCliente.TabIndex = 4;
             this.btnBuscarCliente.Text = "Buscar cliente";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // lblFechaIngreso
             // 
@@ -161,6 +162,7 @@
             this.cbReparado.TabIndex = 9;
             this.cbReparado.Text = "Equipo reparado";
             this.cbReparado.UseVisualStyleBackColor = true;
+            this.cbReparado.CheckedChanged += new System.EventHandler(this.CbReparado_CheckedChanged);
             // 
             // dtpFechaReparacion
             // 
@@ -282,6 +284,7 @@
             this.btnAgregarProducto.TabIndex = 19;
             this.btnAgregarProducto.Text = "Agregar producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
             // 
             // lblTotalInsumos
             // 

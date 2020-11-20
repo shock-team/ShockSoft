@@ -8,14 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AgregarReparacion : Form
+    public partial class Form_AgregarReparacion : Form, IBusquedaDeClientes
     {
+        ControladorReparaciones controlador = ControladorReparaciones.ObtenerInstancia();
+
         public Form_AgregarReparacion()
         {
             InitializeComponent();
+            InitializeComponent();
+            foreach (MetodoPago metodoDePago in ControladorMetodosPago.ObtenerInstancia().ListarMetodosDePago())
+            {
+                comboMetodoDePago.Items.Add(metodoDePago);
+            }
+            comboMetodoDePago.DisplayMember = "Descripcion";
+            comboMetodoDePago.ValueMember = "IdMetodoPago";
         }
 
         // Deslizar ventana desde el panel de control
@@ -49,6 +59,31 @@ namespace ShockSoft.Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            Form_ConsultarClientes form_ConsultaClientes = new Form_ConsultarClientes();
+            this.Hide();
+            form_ConsultaClientes.ShowDialog(this);
+            this.Show();
+        }
+
+        private void CbReparado_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFechaReparacion.Enabled = cbReparado.Checked;
+        }
+
+        private void BtnAgregarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void AgregarCliente(int pIdCliente)
+        {
+            txtIdCliente.Text = pIdCliente.ToString();
+            Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
+            txtNombreCliente.Text = clienteActual.Nombre + " " + clienteActual.Apellido;
         }
     }
 
