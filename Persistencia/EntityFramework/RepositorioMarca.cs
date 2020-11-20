@@ -15,5 +15,18 @@ namespace ShockSoft.Persistencia.EntityFramework
                                select m);
             return marcas;
         }
+
+        public IEnumerable<Marca> ObtenerMarcas(int pDesde, int pCantidad)
+        {
+            var marcas = (from m in iDbContext.Marcas
+                          select m);
+            return marcas.OrderBy(x => x.Descripcion).Skip(pDesde).Take(pCantidad);
+        }
+
+        public int CantidadFilas()
+        {
+            var sql = "SELECT COUNT(*) FROM marcas";
+            return this.iDbContext.Database.SqlQuery<int>(sql).Single();
+        }
     }
 }
