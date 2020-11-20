@@ -33,9 +33,12 @@ namespace ShockSoft.Presentacion
         {
             dglineasDeVenta.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual)*pCantidad);
             double total = 0;
-            for (int i = 0; i < dglineasDeVenta.Rows.Count; i++)
+            foreach (DataGridViewRow fila in dglineasDeVenta.Rows)
             {
-                total += (double)dglineasDeVenta.Rows[i].Cells[4].Value;
+                if (!(fila == null))
+                {
+                    total += (double)fila.Cells[4].Value;
+                }
             }
             txtTotal.Text = total.ToString();
         }

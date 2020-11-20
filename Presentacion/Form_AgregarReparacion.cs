@@ -19,7 +19,6 @@ namespace ShockSoft.Presentacion
         public Form_AgregarReparacion()
         {
             InitializeComponent();
-            InitializeComponent();
             foreach (MetodoPago metodoDePago in ControladorMetodosPago.ObtenerInstancia().ListarMetodosDePago())
             {
                 comboMetodoDePago.Items.Add(metodoDePago);

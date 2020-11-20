@@ -13,23 +13,26 @@ namespace ShockSoft.Presentacion
         public Form_BuscarProducto()
         {
             InitializeComponent();
-            InitializeComponent();
             controlador = ControladorProductos.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
-            this.Controls[1].Visible = false;
+            //panelControl.Hide();
 
             //Carga los datos del ComboBox de Marcas
             foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
             {
                 comboMarca.Items.Add(marca);
             }
+            comboMarca.ValueMember = "IdMarca";
+            comboMarca.DisplayMember = "Descripcion";
 
             //Carga los datos del ComboBox de Marcas
             foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
             {
                 comboRubro.Items.Add(rubro);
             }
+            comboRubro.ValueMember = "IdRubro";
+            comboRubro.DisplayMember = "Descripcion";
 
             //Carga los datos a la DataTable
             ActualizarTabla();
@@ -66,10 +69,7 @@ namespace ShockSoft.Presentacion
             }
             foreach (Producto producto in listaDeProductos)
             {
-                if (!(producto == null))
-                {
-                    dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.PrecioBaseDolar, producto.Cantidad);
-                }
+                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.PrecioBaseDolar, producto.Cantidad);
             }
         }
         // Deslizar ventana desde el panel de control
