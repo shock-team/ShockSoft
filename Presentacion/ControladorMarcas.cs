@@ -1,4 +1,5 @@
 ﻿using ShockSoft.Dominio;
+using ShockSoft.Excepciones;
 using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,6 +91,21 @@ namespace ShockSoft.Presentacion
                 {
                     Marca marca = bUoW.RepositorioMarca.Obtener(pId);
                     return marca;
+                }
+            }
+        }
+
+        public void VerificarDatos(string pNombre)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    IEnumerable <Marca> marcas = bUoW.RepositorioMarca.VerificarDatos(pNombre);
+                    if (marcas.Count() > 0)
+                    {
+                        throw new DatosRepetidosException();
+                    }
                 }
             }
         }

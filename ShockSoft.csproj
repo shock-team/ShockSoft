@@ -254,6 +254,12 @@
     <Compile Include="Presentacion\Form_AgregarLineaDeVenta.Designer.cs">
       <DependentUpon>Form_AgregarLineaDeVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Form_AgregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form_AgregarMarca.Designer.cs">
+      <DependentUpon>Form_AgregarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Form_AgregarReparacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_AgregarLineaDeVenta.resx">
       <DependentUpon>Form_AgregarLineaDeVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_AgregarMarca.resx">
+      <DependentUpon>Form_AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_AgregarReparacion.resx">
       <DependentUpon>Form_AgregarReparacion.cs</DependentUpon>
