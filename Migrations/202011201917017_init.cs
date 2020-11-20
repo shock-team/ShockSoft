@@ -81,13 +81,20 @@
                 .Index(t => t.IdMetodoPago);
             
             CreateTable(
-                "dbo.Marcas",
+                "dbo.LineasDeReparaciones",
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        descripcion = c.String(nullable: false, unicode: false),
+                        IdReparacion = c.Int(nullable: false),
+                        cantidad = c.Int(nullable: false),
+                        precioActual = c.Single(nullable: false),
+                        idProducto = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.id);
+                .PrimaryKey(t => new { t.id, t.IdReparacion })
+                .ForeignKey("dbo.Productos", t => t.idProducto, cascadeDelete: true)
+                .ForeignKey("dbo.Reparaciones", t => t.IdReparacion, cascadeDelete: true)
+                .Index(t => t.IdReparacion)
+                .Index(t => t.idProducto);
             
             CreateTable(
                 "dbo.Productos",
@@ -120,13 +127,13 @@
                         IdCompra = c.Int(nullable: false),
                         cantidad = c.Int(nullable: false),
                         precioActual = c.Single(nullable: false),
-                        IdProducto = c.Int(nullable: false),
+                        idProducto = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.id, t.IdCompra })
                 .ForeignKey("dbo.Compras", t => t.IdCompra, cascadeDelete: true)
-                .ForeignKey("dbo.Productos", t => t.IdProducto, cascadeDelete: true)
+                .ForeignKey("dbo.Productos", t => t.idProducto, cascadeDelete: true)
                 .Index(t => t.IdCompra)
-                .Index(t => t.IdProducto);
+                .Index(t => t.idProducto);
             
             CreateTable(
                 "dbo.Compras",
@@ -193,6 +200,15 @@
                 .PrimaryKey(t => t.id);
             
             CreateTable(
+                "dbo.Marcas",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        descripcion = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
                 "dbo.Parametros",
                 c => new
                     {
@@ -211,28 +227,15 @@
                     })
                 .PrimaryKey(t => t.id);
             
-            CreateTable(
-                "dbo.ProductosParaReparacion",
-                c => new
-                    {
-                        IdProducto = c.Int(nullable: false),
-                        IdReparacion = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.IdProducto, t.IdReparacion })
-                .ForeignKey("dbo.Reparaciones", t => t.IdProducto, cascadeDelete: true)
-                .ForeignKey("dbo.Productos", t => t.IdReparacion, cascadeDelete: true)
-                .Index(t => t.IdProducto)
-                .Index(t => t.IdReparacion);
-            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Reparaciones", "IdRubro", "dbo.rubros");
-            DropForeignKey("dbo.ProductosParaReparacion", "IdReparacion", "dbo.Productos");
-            DropForeignKey("dbo.ProductosParaReparacion", "IdProducto", "dbo.Reparaciones");
             DropForeignKey("dbo.Reparaciones", "IdMetodoPago", "dbo.metodosDePago");
             DropForeignKey("dbo.Reparaciones", "IdMarca", "dbo.Marcas");
+            DropForeignKey("dbo.LineasDeReparaciones", "IdReparacion", "dbo.Reparaciones");
+            DropForeignKey("dbo.LineasDeReparaciones", "idProducto", "dbo.Productos");
             DropForeignKey("dbo.Productos", "IdRubro", "dbo.rubros");
             DropForeignKey("dbo.Productos", "IdParametro", "dbo.Parametros");
             DropForeignKey("dbo.Productos", "IdMarca", "dbo.Marcas");
@@ -240,24 +243,24 @@
             DropForeignKey("dbo.LineasDeVentas", "IdVenta", "dbo.Ventas");
             DropForeignKey("dbo.Ventas", "IdCliente", "dbo.Clientes");
             DropForeignKey("dbo.LineasDeVentas", "idProducto", "dbo.Productos");
-            DropForeignKey("dbo.LineasDeCompras", "IdProducto", "dbo.Productos");
+            DropForeignKey("dbo.LineasDeCompras", "idProducto", "dbo.Productos");
             DropForeignKey("dbo.Compras", "IdProveedor", "dbo.Proveedores");
             DropForeignKey("dbo.LineasDeCompras", "IdCompra", "dbo.Compras");
             DropForeignKey("dbo.Reparaciones", "IdCliente", "dbo.Clientes");
             DropForeignKey("dbo.Pagos", "IdCliente", "dbo.Clientes");
             DropForeignKey("dbo.Clientes", "IdLocalidad", "dbo.Localidades");
-            DropIndex("dbo.ProductosParaReparacion", new[] { "IdReparacion" });
-            DropIndex("dbo.ProductosParaReparacion", new[] { "IdProducto" });
             DropIndex("dbo.Ventas", new[] { "IdMetodoPago" });
             DropIndex("dbo.Ventas", new[] { "IdCliente" });
             DropIndex("dbo.LineasDeVentas", new[] { "idProducto" });
             DropIndex("dbo.LineasDeVentas", new[] { "IdVenta" });
             DropIndex("dbo.Compras", new[] { "IdProveedor" });
-            DropIndex("dbo.LineasDeCompras", new[] { "IdProducto" });
+            DropIndex("dbo.LineasDeCompras", new[] { "idProducto" });
             DropIndex("dbo.LineasDeCompras", new[] { "IdCompra" });
             DropIndex("dbo.Productos", new[] { "IdRubro" });
             DropIndex("dbo.Productos", new[] { "IdParametro" });
             DropIndex("dbo.Productos", new[] { "IdMarca" });
+            DropIndex("dbo.LineasDeReparaciones", new[] { "idProducto" });
+            DropIndex("dbo.LineasDeReparaciones", new[] { "IdReparacion" });
             DropIndex("dbo.Reparaciones", new[] { "IdMetodoPago" });
             DropIndex("dbo.Reparaciones", new[] { "IdMarca" });
             DropIndex("dbo.Reparaciones", new[] { "IdRubro" });
@@ -266,9 +269,9 @@
             DropIndex("dbo.Clientes", new[] { "IdLocalidad" });
             DropIndex("dbo.Clientes", new[] { "cuit" });
             DropIndex("dbo.Clientes", new[] { "dni" });
-            DropTable("dbo.ProductosParaReparacion");
             DropTable("dbo.rubros");
             DropTable("dbo.Parametros");
+            DropTable("dbo.Marcas");
             DropTable("dbo.metodosDePago");
             DropTable("dbo.Ventas");
             DropTable("dbo.LineasDeVentas");
@@ -276,7 +279,7 @@
             DropTable("dbo.Compras");
             DropTable("dbo.LineasDeCompras");
             DropTable("dbo.Productos");
-            DropTable("dbo.Marcas");
+            DropTable("dbo.LineasDeReparaciones");
             DropTable("dbo.Reparaciones");
             DropTable("dbo.Pagos");
             DropTable("dbo.Localidades");

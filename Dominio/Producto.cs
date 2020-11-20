@@ -17,17 +17,12 @@ namespace ShockSoft.Dominio
         public Rubro Rubro { get; set; }
 
         //Fluent API
-        public virtual ICollection<Reparacion> Reparaciones { get; set; }
+        public virtual ICollection<LineaReparacion> LineasReparaciones { get; set; }
         public virtual ICollection<LineaVenta> LineasVenta { get; set; }
         public virtual ICollection<LineaCompra> LineasCompra { get; set; }
         public int IdMarca { get; set; }
         public int IdParametro { get; set; }
         public int IdRubro { get; set; }
-
-        public Producto()
-        {
-            this.Reparaciones = new HashSet<Reparacion>();
-        }
 
         //Métodos
         public float ObtenerPrecioDeVenta()

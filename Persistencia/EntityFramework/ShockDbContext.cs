@@ -26,7 +26,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         public DbSet<Compra> Compras { get; set; }
         public DbSet<Parametro> Parametros { get; set; }
         public DbSet<Localidad> Localidades { get; set; }
-
+        public DbSet<LineaReparacion> LineasDeReparacion { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder pModelBuilder)
         {

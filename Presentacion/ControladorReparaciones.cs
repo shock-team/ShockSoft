@@ -48,7 +48,7 @@ namespace ShockSoft.Presentacion
             reparacion.Cargador = pCargador;
             reparacion.Cables = pCables;
             reparacion.Entregado = false;
-            reparacion.Productos = new List<Producto>();
+            reparacion.LineasReparacion = new List<LineaReparacion>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
@@ -101,7 +101,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pMetodoPago">El nuevo método de pago de la reparación</param>
         /// <param name="pProductosUtilizados">Los nuevos productos untilizados en la reparación</param>
         /// <param name="idReparacion">El ID de la reparación a modificar</param>
-        public void ModificarReparacion(string pProblema, string pContraseña, bool pCargador, bool pCables, string pSolucion, DateTime pFechaReparacion, float pPrecio, bool pEntregado, List<Producto> pProductosUtilizados, int idReparacion, int pMetodoPago = 0)
+        public void ModificarReparacion(string pProblema, string pContraseña, bool pCargador, bool pCables, string pSolucion, DateTime pFechaReparacion, float pPrecio, bool pEntregado, List<LineaReparacion> pProductosUtilizados, int idReparacion, int pMetodoPago = 0)
         {
             using (var bDbContext = new ShockDbContext())
             {
@@ -121,7 +121,7 @@ namespace ShockSoft.Presentacion
                         MetodoPago metodoPago = bUoW.RepositorioMetodoPago.Obtener(pMetodoPago);
                         reparacion.MetodoPago = metodoPago;
                     }
-                    reparacion.Productos = pProductosUtilizados;
+                    reparacion.LineasReparacion = pProductosUtilizados;
                     bUoW.GuardarCambios();
                 }
             }

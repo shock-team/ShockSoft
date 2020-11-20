@@ -1,21 +1,26 @@
 ﻿using ShockSoft.Dominio;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework.Mapping
 {
-    class LineaCompraMap : EntityTypeConfiguration<LineaCompra>
+    class LineaReparacionMap : EntityTypeConfiguration<LineaReparacion>
     {
-        public LineaCompraMap()
+        public LineaReparacionMap()
         {
-            this.ToTable("LineasDeCompras");
+            this.ToTable("LineasDeReparaciones");
 
             this.HasKey(x => new
             {
-                x.IdLineaCompra,
-                x.IdCompra
+                x.IdLineaReparacion,
+                x.IdReparacion
             });
 
-            this.Property(x => x.IdLineaCompra)
+            this.Property(x => x.IdLineaReparacion)
                 .HasColumnName("id")
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
@@ -32,8 +37,8 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
                 .IsRequired();
 
             this.HasRequired<Producto>(x => x.Producto)
-                .WithMany(x => x.LineasCompra)
+                .WithMany(x => x.LineasReparaciones)
                 .HasForeignKey<int>(x => x.IdProducto);
         }
-    }
+    }  
 }

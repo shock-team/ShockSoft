@@ -22,7 +22,7 @@ namespace ShockSoft.Dominio
         public Cliente Cliente { get; set; }
         public MetodoPago MetodoPago { get; set; }
         public Marca Marca { get; set; }
-        public virtual ICollection<Producto> Productos { get; set; }
+        public virtual ICollection<LineaReparacion> LineasReparacion { get; set; }
 
         //Fluent API
         public int IdCliente { get; set; }
@@ -30,18 +30,13 @@ namespace ShockSoft.Dominio
         public int IdMarca { get; set; }
         public int IdMetodoPago { get; set; }
 
-        public Reparacion()
-        {
-            this.Productos = new HashSet<Producto>();
-        }
-
         //Métodos
         public float getPrecioTotal()
         {
             float total = Precio;
-            foreach (var Producto in Productos)
+            foreach (var linea in this.LineasReparacion)
             {
-                total += Producto.ObtenerPrecioDeVenta();
+                total += linea.PrecioActual;
             }
             return total * MetodoPago.MultiplicadorInteres;
         }
