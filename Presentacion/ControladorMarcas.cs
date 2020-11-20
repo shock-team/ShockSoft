@@ -51,6 +51,7 @@ namespace ShockSoft.Presentacion
         /// en el repositorio
         /// </summary>
         /// <returns></returns>
+        /// 
         public List<Marca> ListarMarcas()
         {
             List<Marca> listaMarcas;
@@ -59,6 +60,19 @@ namespace ShockSoft.Presentacion
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
                     listaMarcas = bUoW.RepositorioMarca.ObtenerTodos().ToList();
+                }
+            }
+            return listaMarcas;
+        }
+
+        public List<Marca> ListarMarcas(int pDesde, int pCantidad)
+        {
+            List<Marca> listaMarcas;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaMarcas = bUoW.RepositorioMarca.ObtenerMarcas(pDesde, pCantidad).ToList();
                 }
             }
             return listaMarcas;
@@ -108,6 +122,19 @@ namespace ShockSoft.Presentacion
                     }
                 }
             }
+        }
+
+        public int ObtenerCantidadDeMarcas()
+        {
+            int cant = 0;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    cant = bUoW.RepositorioMarca.CantidadFilas();
+                }
+            }
+            return cant;
         }
     }
 }
