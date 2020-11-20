@@ -1,6 +1,12 @@
-﻿namespace ShockSoft.Dominio
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ShockSoft.Dominio
 {
-    public class LineaCompra
+    public class LineaReparacion
     {
         //Atributos
         public Producto Producto { get; set; }
@@ -8,10 +14,10 @@
         public float PrecioActual { get; set; }
 
         //Fluent API
-        public Compra Compra { get; set; }
+        public Reparacion Reparacion { get; set; }
+        public int IdLineaReparacion { get; set; }
         public int IdProducto { get; set; }
-        public int IdLineaCompra { get; set; }
-        public int IdCompra { get; set; }
+        public int IdReparacion { get; set; }
 
         //Métodos
         public float ObtenerSubtotal()

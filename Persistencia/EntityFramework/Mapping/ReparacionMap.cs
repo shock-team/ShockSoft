@@ -74,14 +74,9 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
                 .WithMany(x => x.Reparaciones)
                 .HasForeignKey<int>(x => x.IdMetodoPago);
 
-            this.HasMany<Producto>(x => x.Productos)
-                .WithMany(y => y.Reparaciones)
-                .Map(xy =>
-                    {
-                        xy.MapLeftKey("IdProducto");
-                        xy.MapRightKey("IdReparacion");
-                        xy.ToTable("ProductosParaReparacion");
-                    });
+            this.HasMany(x => x.LineasReparacion)
+                .WithRequired(x => x.Reparacion)
+                .HasForeignKey(x => x.IdReparacion);
         }
     }
 }

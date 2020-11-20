@@ -13,7 +13,7 @@ namespace ShockSoft.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202011132147587_init"; }
+            get { return "202011201917017_init"; }
         }
         
         string IMigrationMetadata.Source

@@ -31,7 +31,6 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
             this.HasMany(x => x.LineasCompra)
                 .WithRequired(x => x.Compra)
                 .HasForeignKey(x => x.IdCompra);
-
         }
     }
 }
