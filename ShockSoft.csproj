@@ -435,6 +435,9 @@
     <EmbeddedResource Include="Presentacion\Form_DatosProducto.resx">
       <DependentUpon>Form_DatosProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form_DatosVenta.resx">
+      <DependentUpon>Form_DatosVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form_MenuClientes.resx">
       <DependentUpon>Form_MenuClientes.cs</DependentUpon>
     </EmbeddedResource>
