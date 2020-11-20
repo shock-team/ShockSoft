@@ -19,27 +19,6 @@ namespace ShockSoft.Presentacion
             InitializeComponent();
         }
 
-        private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            Form_BuscarProducto formBuscarProducto = new Form_BuscarProducto();
-            formBuscarProducto.Owner = this;
-            this.Hide();
-            formBuscarProducto.ShowDialog();
-            this.Show();
-            Producto productoSeleccionado = ControladorProductos.ObtenerInstancia().ObtenerProducto(int.Parse(txtId.Text));
-            txtDescripcion.Text = productoSeleccionado.Descripcion;
-            nmCantidad.Maximum = productoSeleccionado.Cantidad;
-            nmCantidad.Enabled = true;
-            txtPrecioUnitario.Text = productoSeleccionado.PrecioBaseDolar.ToString();
-        }
-
-        private void BtnAceptar_Click(object sender, EventArgs e)
-        {
-            Form_AgregarVenta formAgregarVenta = (Form_AgregarVenta)Owner;
-            formAgregarVenta.AgregarLineaDeVenta(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value));
-            MessageBox.Show("Línea agregada exitosamente", "Éxito");
-            this.Close();
-        }
 
         public void AgregarProducto(int pIdProducto)
         {
@@ -82,6 +61,28 @@ namespace ShockSoft.Presentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Form_BuscarProducto formBuscarProducto = new Form_BuscarProducto();
+            formBuscarProducto.Owner = this;
+            this.Hide();
+            formBuscarProducto.ShowDialog();
+            this.Show();
+            Producto productoSeleccionado = ControladorProductos.ObtenerInstancia().ObtenerProducto(int.Parse(txtId.Text));
+            txtDescripcion.Text = productoSeleccionado.Descripcion;
+            nmCantidad.Maximum = productoSeleccionado.Cantidad;
+            nmCantidad.Enabled = true;
+            txtPrecioUnitario.Text = productoSeleccionado.PrecioBaseDolar.ToString();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Form_AgregarVenta formAgregarVenta = (Form_AgregarVenta)Owner;
+            formAgregarVenta.AgregarLineaDeVenta(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value));
+            MessageBox.Show("Línea agregada exitosamente", "Éxito");
             this.Close();
         }
     }

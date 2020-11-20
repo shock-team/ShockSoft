@@ -28,5 +28,15 @@ namespace ShockSoft.Presentacion
             Form_ConsultarVentas form_ConsultarVentas = new Form_ConsultarVentas();
             form_ConsultarVentas.Show();
         }
+
+        private void btnAgregarCompra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultarCompras_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

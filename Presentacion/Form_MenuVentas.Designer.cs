@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnConsultaVenta = new System.Windows.Forms.Button();
             this.btnAltaVenta = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConsultarCompras = new System.Windows.Forms.Button();
+            this.btnAgregarCompra = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,35 +79,37 @@
             this.btnAltaVenta.UseVisualStyleBackColor = false;
             this.btnAltaVenta.Click += new System.EventHandler(this.btnAltaVenta_Click);
             // 
-            // button1
+            // btnConsultarCompras
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(45, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(600, 45);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Lista de Compras";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnConsultarCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
+            this.btnConsultarCompras.FlatAppearance.BorderSize = 0;
+            this.btnConsultarCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnConsultarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarCompras.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarCompras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnConsultarCompras.Location = new System.Drawing.Point(45, 234);
+            this.btnConsultarCompras.Name = "btnConsultarCompras";
+            this.btnConsultarCompras.Size = new System.Drawing.Size(600, 45);
+            this.btnConsultarCompras.TabIndex = 12;
+            this.btnConsultarCompras.Text = "Lista de Compras";
+            this.btnConsultarCompras.UseVisualStyleBackColor = false;
+            this.btnConsultarCompras.Click += new System.EventHandler(this.btnConsultarCompras_Click);
             // 
-            // button2
+            // btnAgregarCompra
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(45, 168);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(600, 45);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Nueva Compra";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAgregarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
+            this.btnAgregarCompra.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnAgregarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCompra.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCompra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarCompra.Location = new System.Drawing.Point(45, 168);
+            this.btnAgregarCompra.Name = "btnAgregarCompra";
+            this.btnAgregarCompra.Size = new System.Drawing.Size(600, 45);
+            this.btnAgregarCompra.TabIndex = 11;
+            this.btnAgregarCompra.Text = "Nueva Compra";
+            this.btnAgregarCompra.UseVisualStyleBackColor = false;
+            this.btnAgregarCompra.Click += new System.EventHandler(this.btnAgregarCompra_Click);
             // 
             // Form_MenuVentas
             // 
@@ -115,8 +117,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(80)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnConsultarCompras);
+            this.Controls.Add(this.btnAgregarCompra);
             this.Controls.Add(this.btnConsultaVenta);
             this.Controls.Add(this.btnAltaVenta);
             this.Controls.Add(this.label1);
@@ -134,7 +136,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConsultaVenta;
         private System.Windows.Forms.Button btnAltaVenta;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConsultarCompras;
+        private System.Windows.Forms.Button btnAgregarCompra;
     }
 }

@@ -80,6 +80,9 @@
             // 
             // btnABMParametro
             // 
+            this.btnABMParametro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
+            this.btnABMParametro.FlatAppearance.BorderSize = 0;
+            this.btnABMParametro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
             this.btnABMParametro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnABMParametro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnABMParametro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -88,7 +91,7 @@
             this.btnABMParametro.Size = new System.Drawing.Size(600, 44);
             this.btnABMParametro.TabIndex = 7;
             this.btnABMParametro.Text = "ABM Parametros";
-            this.btnABMParametro.UseVisualStyleBackColor = true;
+            this.btnABMParametro.UseVisualStyleBackColor = false;
             this.btnABMParametro.Click += new System.EventHandler(this.btnABMParametro_Click);
             // 
             // Form_MenuProducto
