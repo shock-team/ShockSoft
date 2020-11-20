@@ -9,6 +9,7 @@ namespace ShockSoft.Presentacion
     public partial class Form_BuscarProducto : Form
     {
         ControladorProductos controlador;
+        public List<int> listaDeIDs;
 
         public Form_BuscarProducto()
         {
@@ -16,7 +17,6 @@ namespace ShockSoft.Presentacion
             controlador = ControladorProductos.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
-            //panelControl.Hide();
 
             //Carga los datos del ComboBox de Marcas
             foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
@@ -137,9 +137,16 @@ namespace ShockSoft.Presentacion
         private void DgProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int productoSeleccionado = (int)dgProductos.CurrentRow.Cells[0].Value;
-            IBusquedaDeProductos owner = (IBusquedaDeProductos)Owner;
-            owner.AgregarProducto(productoSeleccionado);
-            this.Close();
+            if (!(listaDeIDs.Contains(productoSeleccionado)))
+            {
+                IBusquedaDeProductos owner = (IBusquedaDeProductos)Owner;
+                owner.AgregarProducto(productoSeleccionado);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ese producto ya ha sido seleccionado", "Error");
+            }
         }
     }
 }

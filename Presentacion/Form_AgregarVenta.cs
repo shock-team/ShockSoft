@@ -35,7 +35,7 @@ namespace ShockSoft.Presentacion
             double total = 0;
             foreach (DataGridViewRow fila in dglineasDeVenta.Rows)
             {
-                if (!(fila == null))
+                if (fila.Cells[4].Value != null)
                 {
                     total += (double)fila.Cells[4].Value;
                 }
@@ -79,9 +79,10 @@ namespace ShockSoft.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            controlador.AgregarVenta(int.Parse(txtId.Text), controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows), (int)comboMetodoPago.SelectedValue);
+            int idVenta = controlador.AgregarVenta(int.Parse(txtId.Text), ((MetodoPago)comboMetodoPago.SelectedItem).IdMetodoPago, dtpFechaVenta.Value);
+            controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows, idVenta);
             MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
-
+            this.Close();
         }
 
         public void AgregarCliente(int pIdCliente)
@@ -93,8 +94,17 @@ namespace ShockSoft.Presentacion
 
         private void btnAgregarLinea_Click(object sender, EventArgs e)
         {
+            List<int> listaDeIDs = new List<int>();
+            foreach (DataGridViewRow fila in dglineasDeVenta.Rows)
+            {
+                if (fila.Cells[0].Value != null)
+                {
+                    listaDeIDs.Add(int.Parse(fila.Cells[0].Value.ToString()));
+                }
+            }
             Form_AgregarLineaDeVenta formAgregarLineaDeVenta = new Form_AgregarLineaDeVenta();
             formAgregarLineaDeVenta.Owner = this;
+            formAgregarLineaDeVenta.listaDeIDs = listaDeIDs;
             this.Hide();
             formAgregarLineaDeVenta.ShowDialog();
             this.Show();

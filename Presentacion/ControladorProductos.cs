@@ -35,7 +35,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pGanancia">El porcentaje de ganancia del nuevo producto</param>
         /// <param name="pIVA">El ID del IVA asociado al nuevo producto</param>
         /// <param name="pMarca">El ID de la marca asociada al nuevo producto</param>
-        public void AgregarProducto(string pDescripcion, float pPrecioBaseDolar, float pGanancia, int pIVA, int pMarca)
+        public void AgregarProducto(string pDescripcion, float pPrecioBaseDolar, float pGanancia, int pIVA, int pMarca, int pRubro)
         {
             Producto producto = new Producto();
             producto.Descripcion = pDescripcion;
@@ -51,6 +51,8 @@ namespace ShockSoft.Presentacion
                     producto.Parametro = iva;
                     Marca marca = bUoW.RepositorioMarca.Obtener(pMarca);
                     producto.Marca = marca;
+                    Rubro rubro = bUoW.RepositorioRubro.Obtener(pRubro);
+                    producto.Rubro = rubro;
                     bUoW.RepositorioProducto.Agregar(producto);
                     bUoW.GuardarCambios();
                 }

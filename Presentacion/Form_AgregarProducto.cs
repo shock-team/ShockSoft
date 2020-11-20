@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
@@ -29,6 +30,14 @@ namespace ShockSoft.Presentacion
             }
             comboIVA.DisplayMember = "Descripcion";
             comboIVA.ValueMember = "IdParametro";
+
+            //Carga los rubros en el ComboBox
+            foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
+            {
+                comboRubro.Items.Add(rubro);
+            }
+            comboRubro.DisplayMember = "Descripcion";
+            comboRubro.ValueMember = "IdRubro";
         }
 
 
@@ -72,12 +81,16 @@ namespace ShockSoft.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            controlador.AgregarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtGanancia.Text), (int)comboIVA.SelectedItem, (int)comboMarca.SelectedItem);
+            controlador.AgregarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtGanancia.Text), ((Parametro)comboIVA.SelectedItem).IdParametro, ((Marca)comboMarca.SelectedItem).IdMarca, ((Rubro)comboRubro.SelectedItem).IdRubro);
+            MessageBox.Show("El producto ha sido agregado correctamente", "Éxito");
         }
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
-
+            Form_AgregarMarca form_AgregarMarca = new Form_AgregarMarca();
+            this.Hide();
+            form_AgregarMarca.ShowDialog();
+            this.Show();
         }
     }
 }

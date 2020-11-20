@@ -3,6 +3,7 @@ using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System;
 
 namespace ShockSoft.Presentacion
 {
@@ -34,10 +35,10 @@ namespace ShockSoft.Presentacion
         /// <param name="idCliente">ID del cliente correspondiente a la venta</param>
         /// <param name="pListaLineaVenta">Lista de líneas de venta asociadas a la venta</param>
         /// <param name="idMetodoPago">ID del método de pago correspondiente a la venta</param>
-        public void AgregarVenta(int idCliente, List<LineaVenta> pListaLineaVenta, int idMetodoPago)
+        public int AgregarVenta(int idCliente, int idMetodoPago, DateTime pFecha)
         {
             Venta venta = new Venta();
-            venta.Lineas = pListaLineaVenta;
+            venta.Fecha = pFecha;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
@@ -47,6 +48,8 @@ namespace ShockSoft.Presentacion
                     Cliente cliente = bUoW.RepositorioCliente.Obtener(idCliente);
                     cliente.AgregarVenta(venta);
                     bUoW.GuardarCambios();
+                    int idVenta = bUoW.RepositorioVenta.ObtenerUltimaVenta().First().IdVenta;
+                    return idVenta;
                 }
             }
         }
@@ -77,7 +80,7 @@ namespace ShockSoft.Presentacion
         /// </summary>
         /// <param name="pFilas">Las filas de la tabla de la vista</param>
         /// <returns></returns>
-        public List<LineaVenta> GenerarLineasDeVenta(DataGridViewRowCollection pFilas)
+        public List<LineaVenta> GenerarLineasDeVenta(DataGridViewRowCollection pFilas, int pIdVenta)
         {
             List<LineaVenta> lineasDeVenta = new List<LineaVenta>();
             using (var bDbContext = new ShockDbContext())
@@ -86,13 +89,20 @@ namespace ShockSoft.Presentacion
                 {
                     for (int i = 0; i < pFilas.Count; i++)
                     {
-                        LineaVenta lineaDeVenta = new LineaVenta();
-                        lineaDeVenta.IdProducto = (int)pFilas[i].Cells[0].Value;
-                        lineaDeVenta.Cantidad = (int)pFilas[i].Cells[3].Value;
-                        Producto producto = bUoW.RepositorioProducto.Obtener((int)pFilas[i].Cells[0].Value);
-                        lineaDeVenta.Producto = producto;
-                        lineaDeVenta.PrecioActual = producto.PrecioBaseDolar;
+                        if (pFilas[i].Cells[0].Value != null)
+                        {
+                            LineaVenta lineaDeVenta = new LineaVenta();
+                            lineaDeVenta.IdProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
+                            lineaDeVenta.Cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
+                            Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pFilas[i].Cells[0].Value.ToString()));
+                            producto.Cantidad -= lineaDeVenta.Cantidad;
+                            lineaDeVenta.Producto = producto;
+                            lineaDeVenta.PrecioActual = producto.PrecioBaseDolar;
+                            lineaDeVenta.IdVenta = pIdVenta;
+                            bUoW.RepositorioLineasDeVentas.Agregar(lineaDeVenta);
+                        }
                     }
+                    bUoW.GuardarCambios();
                 }
             }
             return lineasDeVenta;

@@ -14,6 +14,8 @@ namespace ShockSoft.Presentacion
 {
     public partial class Form_AgregarLineaDeVenta : Form, IBusquedaDeProductos
     {
+        public List<int> listaDeIDs;
+
         public Form_AgregarLineaDeVenta()
         {
             InitializeComponent();
@@ -68,6 +70,7 @@ namespace ShockSoft.Presentacion
         {
             Form_BuscarProducto formBuscarProducto = new Form_BuscarProducto();
             formBuscarProducto.Owner = this;
+            formBuscarProducto.listaDeIDs = listaDeIDs;
             this.Hide();
             formBuscarProducto.ShowDialog();
             this.Show();

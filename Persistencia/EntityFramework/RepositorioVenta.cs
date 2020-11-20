@@ -42,5 +42,12 @@ namespace ShockSoft.Persistencia.EntityFramework
             var sql = "SELECT COUNT(*) FROM ventas";
             return this.iDbContext.Database.SqlQuery<int>(sql).Single();
         }
+
+        public IEnumerable<Venta> ObtenerUltimaVenta()
+        {
+            var ventas = (from v in iDbContext.Ventas
+                          select v);
+            return ventas.OrderByDescending(x => x.IdVenta).Take(1);
+        }
     }
 }

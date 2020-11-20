@@ -42,20 +42,22 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAgregarLinea = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAgregarMetodo = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblMetodoPago = new System.Windows.Forms.Label();
             this.comboMetodoPago = new System.Windows.Forms.ComboBox();
-            this.btnAgregarMetodo = new System.Windows.Forms.Button();
-            this.btnAgregarLinea = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
+            this.lblFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
@@ -215,6 +217,22 @@
             this.panel1.Size = new System.Drawing.Size(970, 88);
             this.panel1.TabIndex = 35;
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnBuscarCliente.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(828, 9);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(134, 68);
+            this.btnBuscarCliente.TabIndex = 38;
+            this.btnBuscarCliente.Text = "Buscar cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,9 +293,27 @@
             this.panel2.Size = new System.Drawing.Size(126, 252);
             this.panel2.TabIndex = 36;
             // 
+            // btnAgregarLinea
+            // 
+            this.btnAgregarLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAgregarLinea.FlatAppearance.BorderSize = 0;
+            this.btnAgregarLinea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnAgregarLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarLinea.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarLinea.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarLinea.Location = new System.Drawing.Point(8, 6);
+            this.btnAgregarLinea.Name = "btnAgregarLinea";
+            this.btnAgregarLinea.Size = new System.Drawing.Size(110, 240);
+            this.btnAgregarLinea.TabIndex = 38;
+            this.btnAgregarLinea.Text = "  Agregar   Línea";
+            this.btnAgregarLinea.UseVisualStyleBackColor = false;
+            this.btnAgregarLinea.Click += new System.EventHandler(this.btnAgregarLinea_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(55)))));
+            this.panel3.Controls.Add(this.lblFecha);
+            this.panel3.Controls.Add(this.dtpFechaVenta);
             this.panel3.Controls.Add(this.btnAgregarMetodo);
             this.panel3.Controls.Add(this.lblTotal);
             this.panel3.Controls.Add(this.txtTotal);
@@ -287,6 +323,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(844, 90);
             this.panel3.TabIndex = 37;
+            // 
+            // btnAgregarMetodo
+            // 
+            this.btnAgregarMetodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAgregarMetodo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarMetodo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnAgregarMetodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarMetodo.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarMetodo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarMetodo.Location = new System.Drawing.Point(612, 11);
+            this.btnAgregarMetodo.Name = "btnAgregarMetodo";
+            this.btnAgregarMetodo.Size = new System.Drawing.Size(226, 27);
+            this.btnAgregarMetodo.TabIndex = 38;
+            this.btnAgregarMetodo.Text = "Agregar método de pago";
+            this.btnAgregarMetodo.UseVisualStyleBackColor = false;
             // 
             // lblTotal
             // 
@@ -328,52 +379,23 @@
             this.comboMetodoPago.Size = new System.Drawing.Size(444, 27);
             this.comboMetodoPago.TabIndex = 31;
             // 
-            // btnAgregarMetodo
+            // dtpFechaVenta
             // 
-            this.btnAgregarMetodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAgregarMetodo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarMetodo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnAgregarMetodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarMetodo.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarMetodo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregarMetodo.Location = new System.Drawing.Point(612, 11);
-            this.btnAgregarMetodo.Name = "btnAgregarMetodo";
-            this.btnAgregarMetodo.Size = new System.Drawing.Size(226, 27);
-            this.btnAgregarMetodo.TabIndex = 38;
-            this.btnAgregarMetodo.Text = "Agregar método de pago";
-            this.btnAgregarMetodo.UseVisualStyleBackColor = false;
+            this.dtpFechaVenta.Location = new System.Drawing.Point(412, 55);
+            this.dtpFechaVenta.Name = "dtpFechaVenta";
+            this.dtpFechaVenta.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaVenta.TabIndex = 39;
             // 
-            // btnAgregarLinea
+            // lblFecha
             // 
-            this.btnAgregarLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAgregarLinea.FlatAppearance.BorderSize = 0;
-            this.btnAgregarLinea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnAgregarLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarLinea.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarLinea.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregarLinea.Location = new System.Drawing.Point(8, 6);
-            this.btnAgregarLinea.Name = "btnAgregarLinea";
-            this.btnAgregarLinea.Size = new System.Drawing.Size(110, 240);
-            this.btnAgregarLinea.TabIndex = 38;
-            this.btnAgregarLinea.Text = "  Agregar   Línea";
-            this.btnAgregarLinea.UseVisualStyleBackColor = false;
-            this.btnAgregarLinea.Click += new System.EventHandler(this.btnAgregarLinea_Click);
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnBuscarCliente.FlatAppearance.BorderSize = 0;
-            this.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(828, 9);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(134, 68);
-            this.btnBuscarCliente.TabIndex = 38;
-            this.btnBuscarCliente.Text = "Buscar cliente";
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFecha.Location = new System.Drawing.Point(355, 55);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(51, 19);
+            this.lblFecha.TabIndex = 40;
+            this.lblFecha.Text = "Fecha:";
             // 
             // Form_AgregarVenta
             // 
@@ -432,5 +454,7 @@
         private System.Windows.Forms.Button btnAgregarMetodo;
         private System.Windows.Forms.Button btnAgregarLinea;
         private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.DateTimePicker dtpFechaVenta;
+        private System.Windows.Forms.Label lblFecha;
     }
 }

@@ -52,6 +52,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblIVA = new System.Windows.Forms.Label();
             this.comboIVA = new System.Windows.Forms.ComboBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblRubro = new System.Windows.Forms.Label();
+            this.comboRubro = new System.Windows.Forms.ComboBox();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel1.SuspendLayout();
@@ -59,6 +62,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl
@@ -238,7 +242,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(450, 280);
+            this.btnCancelar.Location = new System.Drawing.Point(450, 311);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 19;
@@ -255,7 +259,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAceptar.Location = new System.Drawing.Point(570, 280);
+            this.btnAceptar.Location = new System.Drawing.Point(570, 311);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 18;
@@ -341,12 +345,43 @@
             this.comboIVA.Size = new System.Drawing.Size(160, 27);
             this.comboIVA.TabIndex = 18;
             // 
-            // Form_AñadirProducto
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(70)))));
+            this.panel6.Controls.Add(this.lblRubro);
+            this.panel6.Controls.Add(this.comboRubro);
+            this.panel6.Location = new System.Drawing.Point(360, 240);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(310, 47);
+            this.panel6.TabIndex = 26;
+            // 
+            // lblRubro
+            // 
+            this.lblRubro.AutoSize = true;
+            this.lblRubro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRubro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRubro.Location = new System.Drawing.Point(8, 12);
+            this.lblRubro.Name = "lblRubro";
+            this.lblRubro.Size = new System.Drawing.Size(54, 19);
+            this.lblRubro.TabIndex = 7;
+            this.lblRubro.Text = "Rubro:";
+            // 
+            // comboRubro
+            // 
+            this.comboRubro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboRubro.FormattingEnabled = true;
+            this.comboRubro.Location = new System.Drawing.Point(130, 10);
+            this.comboRubro.Name = "comboRubro";
+            this.comboRubro.Size = new System.Drawing.Size(160, 27);
+            this.comboRubro.TabIndex = 18;
+            // 
+            // Form_AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(700, 320);
+            this.ClientSize = new System.Drawing.Size(700, 351);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnCancelar);
@@ -356,7 +391,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_AñadirProducto";
+            this.Name = "Form_AgregarProducto";
             this.Text = "Form_AñadirProducto";
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
@@ -371,6 +406,8 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +437,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblIVA;
         private System.Windows.Forms.ComboBox comboIVA;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lblRubro;
+        private System.Windows.Forms.ComboBox comboRubro;
     }
 }
