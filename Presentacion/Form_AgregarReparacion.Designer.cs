@@ -63,13 +63,21 @@
             this.txtCostoTrabajo = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.panelControl = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.picShock = new System.Windows.Forms.PictureBox();
+            this.lblShock = new System.Windows.Forms.Label();
+            this.btnTamano = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Location = new System.Drawing.Point(51, 19);
+            this.lblIdCliente.Location = new System.Drawing.Point(57, 83);
             this.lblIdCliente.Name = "lblIdCliente";
             this.lblIdCliente.Size = new System.Drawing.Size(72, 13);
             this.lblIdCliente.TabIndex = 0;
@@ -78,7 +86,7 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(25, 49);
+            this.lblNombreCliente.Location = new System.Drawing.Point(31, 113);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(98, 13);
             this.lblNombreCliente.TabIndex = 1;
@@ -87,7 +95,7 @@
             // txtIdCliente
             // 
             this.txtIdCliente.Enabled = false;
-            this.txtIdCliente.Location = new System.Drawing.Point(129, 16);
+            this.txtIdCliente.Location = new System.Drawing.Point(135, 80);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(100, 20);
@@ -96,7 +104,7 @@
             // txtNombreCliente
             // 
             this.txtNombreCliente.Enabled = false;
-            this.txtNombreCliente.Location = new System.Drawing.Point(129, 46);
+            this.txtNombreCliente.Location = new System.Drawing.Point(135, 110);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.ReadOnly = true;
             this.txtNombreCliente.Size = new System.Drawing.Size(265, 20);
@@ -104,7 +112,7 @@
             // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(249, 14);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(255, 78);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(145, 23);
             this.btnBuscarCliente.TabIndex = 4;
@@ -114,7 +122,7 @@
             // lblFechaIngreso
             // 
             this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(431, 21);
+            this.lblFechaIngreso.Location = new System.Drawing.Point(437, 85);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
             this.lblFechaIngreso.Size = new System.Drawing.Size(92, 13);
             this.lblFechaIngreso.TabIndex = 5;
@@ -122,7 +130,7 @@
             // 
             // dtpFechaIngreso
             // 
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(433, 46);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(439, 110);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaIngreso.TabIndex = 6;
@@ -130,7 +138,7 @@
             // lblProblema
             // 
             this.lblProblema.AutoSize = true;
-            this.lblProblema.Location = new System.Drawing.Point(28, 97);
+            this.lblProblema.Location = new System.Drawing.Point(34, 161);
             this.lblProblema.Name = "lblProblema";
             this.lblProblema.Size = new System.Drawing.Size(54, 13);
             this.lblProblema.TabIndex = 7;
@@ -138,7 +146,7 @@
             // 
             // txtProblema
             // 
-            this.txtProblema.Location = new System.Drawing.Point(28, 113);
+            this.txtProblema.Location = new System.Drawing.Point(34, 177);
             this.txtProblema.Multiline = true;
             this.txtProblema.Name = "txtProblema";
             this.txtProblema.Size = new System.Drawing.Size(366, 90);
@@ -147,7 +155,7 @@
             // cbReparado
             // 
             this.cbReparado.AutoSize = true;
-            this.cbReparado.Location = new System.Drawing.Point(772, 20);
+            this.cbReparado.Location = new System.Drawing.Point(778, 84);
             this.cbReparado.Name = "cbReparado";
             this.cbReparado.Size = new System.Drawing.Size(104, 17);
             this.cbReparado.TabIndex = 9;
@@ -156,7 +164,7 @@
             // 
             // dtpFechaReparacion
             // 
-            this.dtpFechaReparacion.Location = new System.Drawing.Point(661, 46);
+            this.dtpFechaReparacion.Location = new System.Drawing.Point(667, 110);
             this.dtpFechaReparacion.Name = "dtpFechaReparacion";
             this.dtpFechaReparacion.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaReparacion.TabIndex = 10;
@@ -164,7 +172,7 @@
             // lblFechaReparacion
             // 
             this.lblFechaReparacion.AutoSize = true;
-            this.lblFechaReparacion.Location = new System.Drawing.Point(658, 21);
+            this.lblFechaReparacion.Location = new System.Drawing.Point(664, 85);
             this.lblFechaReparacion.Name = "lblFechaReparacion";
             this.lblFechaReparacion.Size = new System.Drawing.Size(108, 13);
             this.lblFechaReparacion.TabIndex = 11;
@@ -173,7 +181,7 @@
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(459, 116);
+            this.lblClave.Location = new System.Drawing.Point(465, 180);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(64, 13);
             this.lblClave.TabIndex = 12;
@@ -181,7 +189,7 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(529, 113);
+            this.txtClave.Location = new System.Drawing.Point(535, 177);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(293, 20);
             this.txtClave.TabIndex = 13;
@@ -189,7 +197,7 @@
             // cbIncluyeCargador
             // 
             this.cbIncluyeCargador.AutoSize = true;
-            this.cbIncluyeCargador.Location = new System.Drawing.Point(465, 163);
+            this.cbIncluyeCargador.Location = new System.Drawing.Point(471, 227);
             this.cbIncluyeCargador.Name = "cbIncluyeCargador";
             this.cbIncluyeCargador.Size = new System.Drawing.Size(105, 17);
             this.cbIncluyeCargador.TabIndex = 14;
@@ -199,7 +207,7 @@
             // cbIncluyeCables
             // 
             this.cbIncluyeCables.AutoSize = true;
-            this.cbIncluyeCables.Location = new System.Drawing.Point(465, 186);
+            this.cbIncluyeCables.Location = new System.Drawing.Point(471, 250);
             this.cbIncluyeCables.Name = "cbIncluyeCables";
             this.cbIncluyeCables.Size = new System.Drawing.Size(94, 17);
             this.cbIncluyeCables.TabIndex = 15;
@@ -209,7 +217,7 @@
             // cbCobrado
             // 
             this.cbCobrado.AutoSize = true;
-            this.cbCobrado.Location = new System.Drawing.Point(756, 186);
+            this.cbCobrado.Location = new System.Drawing.Point(762, 250);
             this.cbCobrado.Name = "cbCobrado";
             this.cbCobrado.Size = new System.Drawing.Size(66, 17);
             this.cbCobrado.TabIndex = 17;
@@ -219,7 +227,7 @@
             // cbEntregado
             // 
             this.cbEntregado.AutoSize = true;
-            this.cbEntregado.Location = new System.Drawing.Point(756, 163);
+            this.cbEntregado.Location = new System.Drawing.Point(762, 227);
             this.cbEntregado.Name = "cbEntregado";
             this.cbEntregado.Size = new System.Drawing.Size(75, 17);
             this.cbEntregado.TabIndex = 16;
@@ -235,7 +243,7 @@
             this.Cantidad,
             this.PrecioUnitario,
             this.Subtotal});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 269);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 333);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(812, 194);
             this.dataGridView1.TabIndex = 18;
@@ -268,7 +276,7 @@
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(720, 473);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(726, 537);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(120, 23);
             this.btnAgregarProducto.TabIndex = 19;
@@ -278,7 +286,7 @@
             // lblTotalInsumos
             // 
             this.lblTotalInsumos.AutoSize = true;
-            this.lblTotalInsumos.Location = new System.Drawing.Point(28, 473);
+            this.lblTotalInsumos.Location = new System.Drawing.Point(34, 537);
             this.lblTotalInsumos.Name = "lblTotalInsumos";
             this.lblTotalInsumos.Size = new System.Drawing.Size(75, 13);
             this.lblTotalInsumos.TabIndex = 20;
@@ -286,7 +294,7 @@
             // 
             // txtTotalInsumos
             // 
-            this.txtTotalInsumos.Location = new System.Drawing.Point(109, 469);
+            this.txtTotalInsumos.Location = new System.Drawing.Point(115, 533);
             this.txtTotalInsumos.Name = "txtTotalInsumos";
             this.txtTotalInsumos.ReadOnly = true;
             this.txtTotalInsumos.Size = new System.Drawing.Size(100, 20);
@@ -295,7 +303,7 @@
             // lblSolucion
             // 
             this.lblSolucion.AutoSize = true;
-            this.lblSolucion.Location = new System.Drawing.Point(28, 229);
+            this.lblSolucion.Location = new System.Drawing.Point(34, 293);
             this.lblSolucion.Name = "lblSolucion";
             this.lblSolucion.Size = new System.Drawing.Size(48, 13);
             this.lblSolucion.TabIndex = 22;
@@ -303,7 +311,7 @@
             // 
             // txtSolucion
             // 
-            this.txtSolucion.Location = new System.Drawing.Point(82, 226);
+            this.txtSolucion.Location = new System.Drawing.Point(88, 290);
             this.txtSolucion.Name = "txtSolucion";
             this.txtSolucion.Size = new System.Drawing.Size(740, 20);
             this.txtSolucion.TabIndex = 23;
@@ -311,7 +319,7 @@
             // lblMetodoPago
             // 
             this.lblMetodoPago.AutoSize = true;
-            this.lblMetodoPago.Location = new System.Drawing.Point(229, 473);
+            this.lblMetodoPago.Location = new System.Drawing.Point(235, 537);
             this.lblMetodoPago.Name = "lblMetodoPago";
             this.lblMetodoPago.Size = new System.Drawing.Size(88, 13);
             this.lblMetodoPago.TabIndex = 24;
@@ -320,7 +328,7 @@
             // comboMetodoDePago
             // 
             this.comboMetodoDePago.FormattingEnabled = true;
-            this.comboMetodoDePago.Location = new System.Drawing.Point(323, 468);
+            this.comboMetodoDePago.Location = new System.Drawing.Point(329, 532);
             this.comboMetodoDePago.Name = "comboMetodoDePago";
             this.comboMetodoDePago.Size = new System.Drawing.Size(121, 21);
             this.comboMetodoDePago.TabIndex = 25;
@@ -328,7 +336,7 @@
             // lblCostoTrabajo
             // 
             this.lblCostoTrabajo.AutoSize = true;
-            this.lblCostoTrabajo.Location = new System.Drawing.Point(14, 503);
+            this.lblCostoTrabajo.Location = new System.Drawing.Point(20, 567);
             this.lblCostoTrabajo.Name = "lblCostoTrabajo";
             this.lblCostoTrabajo.Size = new System.Drawing.Size(89, 13);
             this.lblCostoTrabajo.TabIndex = 26;
@@ -336,7 +344,7 @@
             // 
             // txtCostoTrabajo
             // 
-            this.txtCostoTrabajo.Location = new System.Drawing.Point(109, 500);
+            this.txtCostoTrabajo.Location = new System.Drawing.Point(115, 564);
             this.txtCostoTrabajo.Name = "txtCostoTrabajo";
             this.txtCostoTrabajo.Size = new System.Drawing.Size(100, 20);
             this.txtCostoTrabajo.TabIndex = 27;
@@ -344,7 +352,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(283, 503);
+            this.lblTotal.Location = new System.Drawing.Point(289, 567);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 28;
@@ -352,17 +360,100 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(323, 500);
+            this.txtTotal.Location = new System.Drawing.Point(329, 564);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(121, 20);
             this.txtTotal.TabIndex = 29;
             // 
+            // panelControl
+            // 
+            this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelControl.Controls.Add(this.btnMinimizar);
+            this.panelControl.Controls.Add(this.picShock);
+            this.panelControl.Controls.Add(this.lblShock);
+            this.panelControl.Controls.Add(this.btnTamano);
+            this.panelControl.Controls.Add(this.btnCerrar);
+            this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl.Location = new System.Drawing.Point(0, 0);
+            this.panelControl.Name = "panelControl";
+            this.panelControl.Size = new System.Drawing.Size(1000, 45);
+            this.panelControl.TabIndex = 30;
+            this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
+            this.btnMinimizar.Location = new System.Drawing.Point(865, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
+            this.btnMinimizar.TabIndex = 10;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // picShock
+            // 
+            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Location = new System.Drawing.Point(3, 3);
+            this.picShock.Name = "picShock";
+            this.picShock.Size = new System.Drawing.Size(40, 40);
+            this.picShock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShock.TabIndex = 9;
+            this.picShock.TabStop = false;
+            // 
+            // lblShock
+            // 
+            this.lblShock.AutoSize = true;
+            this.lblShock.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblShock.Location = new System.Drawing.Point(40, 9);
+            this.lblShock.Name = "lblShock";
+            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.TabIndex = 8;
+            this.lblShock.Text = "Shock!Soft";
+            // 
+            // btnTamano
+            // 
+            this.btnTamano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTamano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnTamano.FlatAppearance.BorderSize = 0;
+            this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
+            this.btnTamano.Location = new System.Drawing.Point(910, 0);
+            this.btnTamano.Name = "btnTamano";
+            this.btnTamano.Size = new System.Drawing.Size(45, 45);
+            this.btnTamano.TabIndex = 7;
+            this.btnTamano.UseVisualStyleBackColor = false;
+            this.btnTamano.Click += new System.EventHandler(this.btnTamano_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
+            this.btnCerrar.Location = new System.Drawing.Point(955, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(45, 45);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Form_AgregarReparacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 525);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.panelControl);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.txtCostoTrabajo);
@@ -393,9 +484,13 @@
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblIdCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AgregarReparacion";
             this.Text = "Form_AgregarReparacion";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelControl.ResumeLayout(false);
+            this.panelControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,5 +533,11 @@
         private System.Windows.Forms.TextBox txtCostoTrabajo;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Panel panelControl;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.PictureBox picShock;
+        private System.Windows.Forms.Label lblShock;
+        private System.Windows.Forms.Button btnTamano;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
