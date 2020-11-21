@@ -48,9 +48,9 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel9.SuspendLayout();
@@ -89,6 +89,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
             this.txtID.Location = new System.Drawing.Point(110, 11);
             this.txtID.Name = "txtID";
@@ -200,6 +201,7 @@
             // 
             // txtNombreYApellido
             // 
+            this.txtNombreYApellido.Enabled = false;
             this.txtNombreYApellido.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreYApellido.Location = new System.Drawing.Point(160, 11);
             this.txtNombreYApellido.Name = "txtNombreYApellido";
@@ -286,6 +288,13 @@
             this.panel4.Size = new System.Drawing.Size(290, 220);
             this.panel4.TabIndex = 46;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(47, 43);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 11;
+            // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
@@ -304,13 +313,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(290, 47);
             this.panel5.TabIndex = 44;
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Location = new System.Drawing.Point(47, 43);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtpFecha.TabIndex = 11;
             // 
             // Form_RegistrarPago
             // 

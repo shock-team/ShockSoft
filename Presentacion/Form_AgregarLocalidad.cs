@@ -71,5 +71,10 @@ namespace ShockSoft.Presentacion
                 MessageBox.Show(ex.StackTrace, "Error");
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

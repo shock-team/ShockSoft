@@ -131,6 +131,7 @@
             // 
             // comboLocalidad
             // 
+            this.comboLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLocalidad.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboLocalidad.FormattingEnabled = true;
             this.comboLocalidad.Location = new System.Drawing.Point(90, 10);
@@ -341,9 +342,11 @@
             // 
             // txtSaldo
             // 
+            this.txtSaldo.Enabled = false;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldo.Location = new System.Drawing.Point(90, 11);
             this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.ReadOnly = true;
             this.txtSaldo.Size = new System.Drawing.Size(250, 25);
             this.txtSaldo.TabIndex = 8;
             // 

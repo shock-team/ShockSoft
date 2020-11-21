@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Excepciones
 {
+    [Serializable]
     class DatosRepetidosException : Exception
     {
         public DatosRepetidosException() : base("Los datos están repetidos") { }

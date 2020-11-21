@@ -51,13 +51,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAgregarLinea = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.btnAgregarMetodo = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblMetodoPago = new System.Windows.Forms.Label();
             this.comboMetodoPago = new System.Windows.Forms.ComboBox();
-            this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
-            this.lblFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
@@ -235,6 +235,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(623, 50);
             this.txtId.Name = "txtId";
@@ -277,6 +278,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(103, 50);
             this.txtNombre.Name = "txtNombre";
@@ -323,6 +325,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(844, 90);
             this.panel3.TabIndex = 37;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFecha.Location = new System.Drawing.Point(355, 55);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(51, 19);
+            this.lblFecha.TabIndex = 40;
+            this.lblFecha.Text = "Fecha:";
+            // 
+            // dtpFechaVenta
+            // 
+            this.dtpFechaVenta.Location = new System.Drawing.Point(412, 55);
+            this.dtpFechaVenta.Name = "dtpFechaVenta";
+            this.dtpFechaVenta.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaVenta.TabIndex = 39;
             // 
             // btnAgregarMetodo
             // 
@@ -378,24 +398,6 @@
             this.comboMetodoPago.Name = "comboMetodoPago";
             this.comboMetodoPago.Size = new System.Drawing.Size(444, 27);
             this.comboMetodoPago.TabIndex = 31;
-            // 
-            // dtpFechaVenta
-            // 
-            this.dtpFechaVenta.Location = new System.Drawing.Point(412, 55);
-            this.dtpFechaVenta.Name = "dtpFechaVenta";
-            this.dtpFechaVenta.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaVenta.TabIndex = 39;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFecha.Location = new System.Drawing.Point(355, 55);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(51, 19);
-            this.lblFecha.TabIndex = 40;
-            this.lblFecha.Text = "Fecha:";
             // 
             // Form_AgregarVenta
             // 

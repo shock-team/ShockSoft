@@ -247,6 +247,7 @@
             // 
             // comboLocalidad
             // 
+            this.comboLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLocalidad.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboLocalidad.FormattingEnabled = true;
             this.comboLocalidad.Location = new System.Drawing.Point(90, 10);
@@ -406,7 +407,7 @@
             this.panel7.Size = new System.Drawing.Size(350, 47);
             this.panel7.TabIndex = 23;
             // 
-            // Form_AltaCliente
+            // Form_AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -423,7 +424,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_AltaCliente";
+            this.Name = "Form_AgregarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.panelControl.ResumeLayout(false);

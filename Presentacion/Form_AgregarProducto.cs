@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using ShockSoft.Dominio;
+using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {
@@ -26,7 +27,10 @@ namespace ShockSoft.Presentacion
             //Carga los IVAs en el ComboBox
             foreach (Parametro iva in ControladorParametros.ObtenerInstancia().ListarParametros())
             {
-                comboIVA.Items.Add(iva);
+                if (iva.IdParametro != 1)
+                {
+                    comboIVA.Items.Add(iva);
+                }
             }
             comboIVA.DisplayMember = "Descripcion";
             comboIVA.ValueMember = "IdParametro";

@@ -184,6 +184,7 @@
     <Compile Include="Dominio\Reparacion.cs" />
     <Compile Include="Dominio\Rubro.cs" />
     <Compile Include="Dominio\Venta.cs" />
+    <Compile Include="Excepciones\DatosInvalidosException.cs" />
     <Compile Include="Excepciones\DatosRepetidosException.cs" />
     <Compile Include="Migrations\202011201917017_init.cs" />
     <Compile Include="Migrations\202011201917017_init.designer.cs">

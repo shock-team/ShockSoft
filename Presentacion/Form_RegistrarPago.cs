@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ShockSoft.Excepciones;
 
 namespace ShockSoft.Presentacion
 {
@@ -15,11 +16,36 @@ namespace ShockSoft.Presentacion
             txtID.Text = cliente.IdCliente.ToString();
         }
 
+        private float VerificarFloat(string pTxtMonto)
+        {
+            float parsedValue;
+            if (!float.TryParse(pTxtMonto, out parsedValue))
+            {
+                throw new DatosInvalidosException("El monto tiene que ser un valor numérico!");
+            }
+            return parsedValue;
+        }
+
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            ControladorClientes.ObtenerInstancia().RegistrarPago(int.Parse(txtID.Text), float.Parse(txtMonto.Text), dtpFecha.Value, txtDescripcion.Text);
-            MessageBox.Show("El pago ha sido registrado correctamente", "Éxito");
-            this.Close();
+            try
+            {
+                ControladorClientes.ObtenerInstancia().RegistrarPago(int.Parse(txtID.Text), VerificarFloat(txtMonto.Text), dtpFecha.Value, txtDescripcion.Text);
+                MessageBox.Show("El pago ha sido registrado correctamente", "Éxito");
+                this.Close();
+            }
+            catch (DatosInvalidosException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                txtMonto.Clear();
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

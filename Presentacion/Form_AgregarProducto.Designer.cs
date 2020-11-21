@@ -291,6 +291,7 @@
             // 
             // comboMarca
             // 
+            this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(130, 10);
@@ -338,6 +339,7 @@
             // 
             // comboIVA
             // 
+            this.comboIVA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboIVA.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboIVA.FormattingEnabled = true;
             this.comboIVA.Location = new System.Drawing.Point(130, 10);
@@ -368,6 +370,7 @@
             // 
             // comboRubro
             // 
+            this.comboRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRubro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboRubro.FormattingEnabled = true;
             this.comboRubro.Location = new System.Drawing.Point(130, 10);

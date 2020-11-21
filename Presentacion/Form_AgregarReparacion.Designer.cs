@@ -183,7 +183,7 @@
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(465, 180);
+            this.lblClave.Location = new System.Drawing.Point(37, 276);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(64, 13);
             this.lblClave.TabIndex = 12;
@@ -191,7 +191,7 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(535, 177);
+            this.txtClave.Location = new System.Drawing.Point(107, 273);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(293, 20);
             this.txtClave.TabIndex = 13;
@@ -199,7 +199,7 @@
             // cbIncluyeCargador
             // 
             this.cbIncluyeCargador.AutoSize = true;
-            this.cbIncluyeCargador.Location = new System.Drawing.Point(471, 227);
+            this.cbIncluyeCargador.Location = new System.Drawing.Point(218, 307);
             this.cbIncluyeCargador.Name = "cbIncluyeCargador";
             this.cbIncluyeCargador.Size = new System.Drawing.Size(105, 17);
             this.cbIncluyeCargador.TabIndex = 14;
@@ -209,7 +209,7 @@
             // cbIncluyeCables
             // 
             this.cbIncluyeCables.AutoSize = true;
-            this.cbIncluyeCables.Location = new System.Drawing.Point(471, 250);
+            this.cbIncluyeCables.Location = new System.Drawing.Point(89, 307);
             this.cbIncluyeCables.Name = "cbIncluyeCables";
             this.cbIncluyeCables.Size = new System.Drawing.Size(94, 17);
             this.cbIncluyeCables.TabIndex = 15;
@@ -219,7 +219,7 @@
             // cbCobrado
             // 
             this.cbCobrado.AutoSize = true;
-            this.cbCobrado.Location = new System.Drawing.Point(762, 250);
+            this.cbCobrado.Location = new System.Drawing.Point(553, 307);
             this.cbCobrado.Name = "cbCobrado";
             this.cbCobrado.Size = new System.Drawing.Size(66, 17);
             this.cbCobrado.TabIndex = 17;
@@ -229,7 +229,7 @@
             // cbEntregado
             // 
             this.cbEntregado.AutoSize = true;
-            this.cbEntregado.Location = new System.Drawing.Point(762, 227);
+            this.cbEntregado.Location = new System.Drawing.Point(625, 307);
             this.cbEntregado.Name = "cbEntregado";
             this.cbEntregado.Size = new System.Drawing.Size(75, 17);
             this.cbEntregado.TabIndex = 16;
@@ -306,7 +306,7 @@
             // lblSolucion
             // 
             this.lblSolucion.AutoSize = true;
-            this.lblSolucion.Location = new System.Drawing.Point(34, 293);
+            this.lblSolucion.Location = new System.Drawing.Point(403, 161);
             this.lblSolucion.Name = "lblSolucion";
             this.lblSolucion.Size = new System.Drawing.Size(48, 13);
             this.lblSolucion.TabIndex = 22;
@@ -314,9 +314,10 @@
             // 
             // txtSolucion
             // 
-            this.txtSolucion.Location = new System.Drawing.Point(88, 290);
+            this.txtSolucion.Location = new System.Drawing.Point(406, 177);
+            this.txtSolucion.Multiline = true;
             this.txtSolucion.Name = "txtSolucion";
-            this.txtSolucion.Size = new System.Drawing.Size(740, 20);
+            this.txtSolucion.Size = new System.Drawing.Size(395, 90);
             this.txtSolucion.TabIndex = 23;
             // 
             // lblMetodoPago
@@ -330,6 +331,7 @@
             // 
             // comboMetodoDePago
             // 
+            this.comboMetodoDePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMetodoDePago.FormattingEnabled = true;
             this.comboMetodoDePago.Location = new System.Drawing.Point(329, 532);
             this.comboMetodoDePago.Name = "comboMetodoDePago";

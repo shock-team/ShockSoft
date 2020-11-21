@@ -169,6 +169,7 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -187,7 +188,7 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click_1);
             // 
-            // Form_AltaLocalidad
+            // Form_AgregarLocalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +199,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_AltaLocalidad";
+            this.Name = "Form_AgregarLocalidad";
             this.Text = "Form_AltaLocalidad";
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
