@@ -18,6 +18,7 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarVentas()
         {
             InitializeComponent();
+            ActualizarTabla();
         }
 
         public void AgregarCliente(int pIdCliente)
@@ -25,6 +26,7 @@ namespace ShockSoft.Presentacion
             txtIdCliente.Text = pIdCliente.ToString();
             Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
             txtNombreCliente.Text = clienteActual.Nombre + " " + clienteActual.Apellido;
+            ActualizarTabla();
         }
 
         public void AgregarProducto(int pIdProducto)
@@ -32,6 +34,7 @@ namespace ShockSoft.Presentacion
             txtIdProducto.Text = pIdProducto.ToString();
             Producto productoActual = ControladorProductos.ObtenerInstancia().ObtenerProducto(pIdProducto);
             txtDescripcionProducto.Text = productoActual.Descripcion;
+            ActualizarTabla();
         }
 
         private void ActualizarTabla()
@@ -41,7 +44,25 @@ namespace ShockSoft.Presentacion
             dgVentas.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
 
-            List<Venta> listaDeVentas = controlador.ListarVentas(int.Parse(txtIdCliente.Text), int.Parse(txtIdProducto.Text), CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
+            int idCliente = 0;
+            if (txtIdCliente.Text.Length > 0)
+            {
+                idCliente = int.Parse(txtIdCliente.Text);
+            }
+
+            int idProducto = 0;
+            if (txtIdProducto.Text.Length > 0)
+            {
+                idProducto = int.Parse(txtIdProducto.Text);
+            }
+
+            if (lblPaginaActual.Text == "1")
+            {
+                btnAnterior.Enabled = false;
+                btnAnterior.Visible = false;
+            }
+
+            List<Venta> listaDeVentas = controlador.ListarVentas(idCliente, idProducto, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
 
             if (listaDeVentas.Count < (CANTIDAD_POR_PAGINA + 1))
             {

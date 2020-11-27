@@ -39,11 +39,15 @@ namespace ShockSoft.Presentacion
         /// <param name="pCliente">El ID del cliente asociado a la nueva reparación</param>
         /// <param name="pTipoEquipo">El tipo del equipo correspondiente a la nueva reparación</param>
         /// <param name="pMarcaEquipo">La marca del equipo correspondiente a la nueva reparación</param>
-        public void AgregarReparacion(string pProblema, DateTime pFechaIngreso, string pContraseña, bool pCargador, bool pCables, int pCliente, int pTipoEquipo, int pMarcaEquipo)
+        public void AgregarReparacion(string pProblema, DateTime pFechaIngreso, DateTime pFechaReparacion, string pContraseña, bool pCargador, bool pCables, int pCliente, int pTipoEquipo, int pMarcaEquipo, bool pReparado)
         {
             Reparacion reparacion = new Reparacion();
             reparacion.Problema = pProblema;
             reparacion.FechaIngreso = pFechaIngreso;
+            if (pReparado)
+            {
+                reparacion.FechaReparacion = pFechaReparacion;
+            }
             reparacion.Contraseña = pContraseña;
             reparacion.Cargador = pCargador;
             reparacion.Cables = pCables;

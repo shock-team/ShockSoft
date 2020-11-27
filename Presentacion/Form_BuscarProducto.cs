@@ -9,7 +9,7 @@ namespace ShockSoft.Presentacion
     public partial class Form_BuscarProducto : Form
     {
         ControladorProductos controlador;
-        public List<int> listaDeIDs;
+        public List<int> listaDeIDs = new List<int>();
 
         public Form_BuscarProducto()
         {

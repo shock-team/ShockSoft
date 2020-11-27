@@ -116,6 +116,11 @@ namespace ShockSoft.Presentacion
             }
             txtTotal.Text = total.ToString();
         }
+
+        private void CbEntregado_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFechaEntrega.Enabled = cbEntregado.Checked;
+        }
     }
 
 }
