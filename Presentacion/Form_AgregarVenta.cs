@@ -115,6 +115,7 @@ namespace ShockSoft.Presentacion
             Form_ConsultarClientes form_ConsultaClientes = new Form_ConsultarClientes();
             form_ConsultaClientes.Owner = this;
             this.Hide();
+            form_ConsultaClientes.CambiarColor();
             form_ConsultaClientes.ShowDialog();
             this.Show();
         }
