@@ -35,11 +35,11 @@
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.dglineasDeVenta = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -142,24 +142,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(55)))));
-            this.panel1.Controls.Add(this.txtId);
+            this.panel1.Controls.Add(this.txtIdCliente);
             this.panel1.Controls.Add(this.lblId);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.lblCliente);
-            this.panel1.Controls.Add(this.txtNombre);
+            this.panel1.Controls.Add(this.txtNombreCliente);
             this.panel1.Location = new System.Drawing.Point(15, 60);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(845, 88);
             this.panel1.TabIndex = 36;
             // 
-            // txtId
+            // txtIdCliente
             // 
-            this.txtId.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(623, 50);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(200, 25);
-            this.txtId.TabIndex = 4;
+            this.txtIdCliente.Enabled = false;
+            this.txtIdCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdCliente.Location = new System.Drawing.Point(623, 50);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.ReadOnly = true;
+            this.txtIdCliente.Size = new System.Drawing.Size(200, 25);
+            this.txtIdCliente.TabIndex = 4;
             // 
             // lblId
             // 
@@ -194,17 +195,20 @@
             this.lblCliente.TabIndex = 1;
             this.lblCliente.Text = "Cliente:";
             // 
-            // txtNombre
+            // txtNombreCliente
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(103, 50);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(450, 25);
-            this.txtNombre.TabIndex = 0;
+            this.txtNombreCliente.Enabled = false;
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.Location = new System.Drawing.Point(103, 50);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.ReadOnly = true;
+            this.txtNombreCliente.Size = new System.Drawing.Size(450, 25);
+            this.txtNombreCliente.TabIndex = 0;
             // 
             // dglineasDeVenta
             // 
+            this.dglineasDeVenta.AllowUserToAddRows = false;
+            this.dglineasDeVenta.AllowUserToDeleteRows = false;
             this.dglineasDeVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dglineasDeVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -214,6 +218,7 @@
             this.Subtotal});
             this.dglineasDeVenta.Location = new System.Drawing.Point(15, 165);
             this.dglineasDeVenta.Name = "dglineasDeVenta";
+            this.dglineasDeVenta.ReadOnly = true;
             this.dglineasDeVenta.Size = new System.Drawing.Size(844, 252);
             this.dglineasDeVenta.TabIndex = 37;
             // 
@@ -268,9 +273,11 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(71, 53);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(180, 25);
             this.txtTotal.TabIndex = 4;
             // 
@@ -288,6 +295,7 @@
             // comboMetodoPago
             // 
             this.comboMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboMetodoPago.Enabled = false;
             this.comboMetodoPago.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMetodoPago.FormattingEnabled = true;
             this.comboMetodoPago.Location = new System.Drawing.Point(168, 11);
@@ -329,11 +337,11 @@
         private System.Windows.Forms.Button btnTamano;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.DataGridView dglineasDeVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

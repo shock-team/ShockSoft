@@ -129,5 +129,16 @@ namespace ShockSoft.Presentacion
             }
             return cantidadDeVentas;
         }
+
+        public Venta ObtenerVenta(int pIdVenta)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    return bUoW.RepositorioVenta.ObtenerVentaPorId(pIdVenta);
+                }
+            }
+        }
     }
 }
