@@ -96,6 +96,8 @@ namespace ShockSoft.Presentacion
                     listaDeClientesFiltrados.Add(cliente);
                 }
             }
+
+            //Asigna las ventas 
             return listaDeClientesFiltrados.OrderBy(x => x.Apellido).Skip(pDesde).Take(pCantidad).ToList();
         }
 

@@ -1,6 +1,7 @@
 ﻿using ShockSoft.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,14 +28,14 @@ namespace ShockSoft.Persistencia.EntityFramework
         /// </summary>
         /// <param name="pNombre">La cadena mediante la cual filtrar el nombre del cliente</param>
         /// <param name="pApellido">La cadena mediante la cual filtrar el apellido del cliente</param>
-        /// <param name="pConDeudas">Si debe incluir a los clientes que tengan deudas</param>
-        /// <param name="pSinDeudas">Si debe incluir a los clientes que no tengan deudas</param>
-        /// <param name="pDesde">El número de clientes a partir del cual debe traerlos</param>
-        /// <param name="pCantidad">El numero de clientes a traer</param>
         /// <returns></returns>
         public IEnumerable<Cliente> ObtenerClientes(string pNombre, string pApellido)
         {
             var clientesFiltrados = (from c in iDbContext.Clientes
+                                     .Include("Pagos")
+                                     .Include("Ventas")
+                                     .Include("Ventas.Lineas")
+                                     .Include("Ventas.MetodoPago")
                                      where (string.IsNullOrEmpty(pNombre) || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
                                      (string.IsNullOrEmpty(pApellido) || c.Apellido.ToUpper().Contains(pApellido.ToUpper()))
                                      select c);

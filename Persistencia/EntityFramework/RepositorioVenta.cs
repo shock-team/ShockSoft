@@ -63,5 +63,15 @@ namespace ShockSoft.Persistencia.EntityFramework
                           select v);
             return ventas.First();
         }
+
+        public IEnumerable<Venta> ObtenerVentasPorCliente(int pIdCliente)
+        {
+            var ventas = (from v in iDbContext.Ventas
+                          .Include("Lineas")
+                          .Include("MetodoPago")
+                          where v.IdCliente == pIdCliente
+                          select v);
+            return ventas;
+        }
     }
 }
