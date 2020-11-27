@@ -17,13 +17,15 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarReparaciones()
         {
             InitializeComponent();
+            btnReiniciarFiltros.Image = Properties.Resources.filter_reset;
+            ActualizarTabla();
         }
 
         public void AgregarCliente(int pIdCliente)
         {
             txtIdCliente.Text = pIdCliente.ToString();
             Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
-            txtNombreCliente.Text = clienteActual.Nombre + " " + clienteActual.Apellido;
+            txtNombreCliente.Text = Helper.NameFormatter(clienteActual.Nombre, clienteActual.Apellido);
         }
 
         private void ActualizarTabla()
@@ -33,7 +35,17 @@ namespace ShockSoft.Presentacion
             dgReparaciones.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
 
-            List<Reparacion> listaDeReparaciones = controlador.ListarReparaciones(int.Parse(txtIdCliente.Text), cbReparado.Checked, cbEntregado.Checked,cbCobrado.Checked, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
+            int idCliente;
+            if (txtIdCliente.TextLength > 0)
+            {
+                idCliente = int.Parse(txtIdCliente.Text);
+            }
+            else
+            {
+                idCliente = 0;
+            }
+            
+            List<Reparacion> listaDeReparaciones = controlador.ListarReparaciones(idCliente, cbReparado.Checked, cbEntregado.Checked,cbCobrado.Checked, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
 
             if (listaDeReparaciones.Count < (CANTIDAD_POR_PAGINA + 1))
             {
@@ -42,9 +54,10 @@ namespace ShockSoft.Presentacion
             }
             foreach (Reparacion rep in listaDeReparaciones)
             {
-                dgReparaciones.Rows.Add();
+                dgReparaciones.Rows.Add(rep.IdReparacion, rep.FechaIngreso, Helper.NameFormatter(rep.Cliente.Nombre, rep.Cliente.Apellido), rep.Rubro.Descripcion, rep.Problema, rep.Entregado );
             }
         }
+
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -81,6 +94,26 @@ namespace ShockSoft.Presentacion
                 btnAnterior.Enabled = false;
                 btnAnterior.Visible = false;
             }
+            ActualizarTabla();
+        }
+
+        private void txtIdCliente_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarTabla();
+        }
+
+        private void cbReparado_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizarTabla();
+        }
+
+        private void cbCobrado_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizarTabla();
+        }
+
+        private void cbEntregado_CheckedChanged(object sender, EventArgs e)
+        {
             ActualizarTabla();
         }
     }

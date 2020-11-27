@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ConsultarReparaciones));
             this.dgReparaciones = new System.Windows.Forms.DataGridView();
             this.cbEntregado = new System.Windows.Forms.CheckBox();
             this.cbCobrado = new System.Windows.Forms.CheckBox();
@@ -46,7 +47,10 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.lblPaginaActual = new System.Windows.Forms.Label();
+            this.btnReiniciarFiltros = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgReparaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgReparaciones
@@ -73,6 +77,7 @@
             this.cbEntregado.TabIndex = 1;
             this.cbEntregado.Text = "Entregado";
             this.cbEntregado.UseVisualStyleBackColor = true;
+            this.cbEntregado.CheckedChanged += new System.EventHandler(this.cbEntregado_CheckedChanged);
             // 
             // cbCobrado
             // 
@@ -83,6 +88,7 @@
             this.cbCobrado.TabIndex = 2;
             this.cbCobrado.Text = "Cobrado";
             this.cbCobrado.UseVisualStyleBackColor = true;
+            this.cbCobrado.CheckedChanged += new System.EventHandler(this.cbCobrado_CheckedChanged);
             // 
             // cbReparado
             // 
@@ -93,6 +99,7 @@
             this.cbReparado.TabIndex = 3;
             this.cbReparado.Text = "Reparado";
             this.cbReparado.UseVisualStyleBackColor = true;
+            this.cbReparado.CheckedChanged += new System.EventHandler(this.cbReparado_CheckedChanged);
             // 
             // txtIdCliente
             // 
@@ -102,6 +109,7 @@
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(100, 20);
             this.txtIdCliente.TabIndex = 4;
+            this.txtIdCliente.TextChanged += new System.EventHandler(this.txtIdCliente_TextChanged);
             // 
             // txtNombreCliente
             // 
@@ -210,11 +218,32 @@
             this.lblPaginaActual.TabIndex = 11;
             this.lblPaginaActual.Text = "1";
             // 
+            // btnReiniciarFiltros
+            // 
+            this.btnReiniciarFiltros.Location = new System.Drawing.Point(664, 20);
+            this.btnReiniciarFiltros.Name = "btnReiniciarFiltros";
+            this.btnReiniciarFiltros.Size = new System.Drawing.Size(50, 23);
+            this.btnReiniciarFiltros.TabIndex = 12;
+            this.btnReiniciarFiltros.Text = "Reiniciar Filtros";
+            this.btnReiniciarFiltros.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(720, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_ConsultarReparaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 460);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnReiniciarFiltros);
             this.Controls.Add(this.lblPaginaActual);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnSiguiente);
@@ -230,6 +259,7 @@
             this.Name = "Form_ConsultarReparaciones";
             this.Text = "Form_ConsultarReparaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgReparaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +285,7 @@
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Label lblPaginaActual;
+        private System.Windows.Forms.Button btnReiniciarFiltros;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -62,7 +62,7 @@ namespace ShockSoft.Presentacion
                     Marca marca = bUoW.RepositorioMarca.Obtener(pMarcaEquipo);
                     reparacion.Marca = marca;
                     Rubro tipo = bUoW.RepositorioRubro.Obtener(pTipoEquipo);
-                    reparacion.TipoEquipo = tipo;
+                    reparacion.Rubro = tipo;
                     bUoW.RepositorioReparacion.Agregar(reparacion);
                     bUoW.GuardarCambios();
                 }

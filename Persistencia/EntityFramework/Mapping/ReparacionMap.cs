@@ -62,7 +62,7 @@ namespace ShockSoft.Persistencia.EntityFramework.Mapping
                 .WithMany(x => x.Reparaciones)
                 .HasForeignKey<int>(x => x.IdCliente);
 
-            this.HasRequired<Rubro>(x => x.TipoEquipo)
+            this.HasRequired<Rubro>(x => x.Rubro)
                 .WithMany(x => x.Reparaciones)
                 .HasForeignKey<int>(x => x.IdRubro);
 
