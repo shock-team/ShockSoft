@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ConsultarReparaciones));
             this.dgReparaciones = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Entregado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbEntregado = new System.Windows.Forms.CheckBox();
             this.cbCobrado = new System.Windows.Forms.CheckBox();
             this.cbReparado = new System.Windows.Forms.CheckBox();
@@ -38,19 +43,12 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Entregado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.lblPaginaActual = new System.Windows.Forms.Label();
-            this.btnReiniciarFiltros = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReiniciarFiltros = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgReparaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReiniciarFiltros)).BeginInit();
             this.SuspendLayout();
             // 
             // dgReparaciones
@@ -68,10 +66,51 @@
             this.dgReparaciones.Size = new System.Drawing.Size(862, 346);
             this.dgReparaciones.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 43;
+            // 
+            // FechaIngreso
+            // 
+            this.FechaIngreso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.FechaIngreso.HeaderText = "Fecha de ingreso";
+            this.FechaIngreso.Name = "FechaIngreso";
+            this.FechaIngreso.Width = 105;
+            // 
+            // Cliente
+            // 
+            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Width = 64;
+            // 
+            // Rubro
+            // 
+            this.Rubro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Rubro.HeaderText = "Rubro";
+            this.Rubro.Name = "Rubro";
+            this.Rubro.Width = 61;
+            // 
+            // Problema
+            // 
+            this.Problema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Problema.HeaderText = "Problema";
+            this.Problema.Name = "Problema";
+            // 
+            // Entregado
+            // 
+            this.Entregado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Entregado.HeaderText = "Entregado";
+            this.Entregado.Name = "Entregado";
+            this.Entregado.Width = 81;
+            // 
             // cbEntregado
             // 
             this.cbEntregado.AutoSize = true;
-            this.cbEntregado.Location = new System.Drawing.Point(558, 26);
+            this.cbEntregado.Location = new System.Drawing.Point(511, 26);
             this.cbEntregado.Name = "cbEntregado";
             this.cbEntregado.Size = new System.Drawing.Size(75, 17);
             this.cbEntregado.TabIndex = 1;
@@ -82,7 +121,7 @@
             // cbCobrado
             // 
             this.cbCobrado.AutoSize = true;
-            this.cbCobrado.Location = new System.Drawing.Point(462, 26);
+            this.cbCobrado.Location = new System.Drawing.Point(439, 26);
             this.cbCobrado.Name = "cbCobrado";
             this.cbCobrado.Size = new System.Drawing.Size(66, 17);
             this.cbCobrado.TabIndex = 2;
@@ -148,47 +187,6 @@
             this.lblNombre.TabIndex = 8;
             this.lblNombre.Text = "Nombre:";
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 43;
-            // 
-            // FechaIngreso
-            // 
-            this.FechaIngreso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.FechaIngreso.HeaderText = "Fecha de ingreso";
-            this.FechaIngreso.Name = "FechaIngreso";
-            this.FechaIngreso.Width = 105;
-            // 
-            // Cliente
-            // 
-            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            this.Cliente.Width = 64;
-            // 
-            // Rubro
-            // 
-            this.Rubro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Rubro.HeaderText = "Rubro";
-            this.Rubro.Name = "Rubro";
-            this.Rubro.Width = 61;
-            // 
-            // Problema
-            // 
-            this.Problema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Problema.HeaderText = "Problema";
-            this.Problema.Name = "Problema";
-            // 
-            // Entregado
-            // 
-            this.Entregado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Entregado.HeaderText = "Entregado";
-            this.Entregado.Name = "Entregado";
-            this.Entregado.Width = 81;
-            // 
             // btnSiguiente
             // 
             this.btnSiguiente.Location = new System.Drawing.Point(495, 425);
@@ -220,29 +218,20 @@
             // 
             // btnReiniciarFiltros
             // 
-            this.btnReiniciarFiltros.Location = new System.Drawing.Point(664, 20);
+            this.btnReiniciarFiltros.Image = global::ShockSoft.Properties.Resources._5111_512;
+            this.btnReiniciarFiltros.Location = new System.Drawing.Point(607, 10);
             this.btnReiniciarFiltros.Name = "btnReiniciarFiltros";
-            this.btnReiniciarFiltros.Size = new System.Drawing.Size(50, 23);
-            this.btnReiniciarFiltros.TabIndex = 12;
-            this.btnReiniciarFiltros.Text = "Reiniciar Filtros";
-            this.btnReiniciarFiltros.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(720, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.btnReiniciarFiltros.Size = new System.Drawing.Size(61, 45);
+            this.btnReiniciarFiltros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnReiniciarFiltros.TabIndex = 13;
+            this.btnReiniciarFiltros.TabStop = false;
+            this.btnReiniciarFiltros.Click += new System.EventHandler(this.btnReiniciarFiltros_Click);
             // 
             // Form_ConsultarReparaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 460);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnReiniciarFiltros);
             this.Controls.Add(this.lblPaginaActual);
             this.Controls.Add(this.btnAnterior);
@@ -259,7 +248,7 @@
             this.Name = "Form_ConsultarReparaciones";
             this.Text = "Form_ConsultarReparaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgReparaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReiniciarFiltros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +274,6 @@
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Label lblPaginaActual;
-        private System.Windows.Forms.Button btnReiniciarFiltros;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnReiniciarFiltros;
     }
 }

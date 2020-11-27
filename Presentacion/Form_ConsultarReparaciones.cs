@@ -17,7 +17,7 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarReparaciones()
         {
             InitializeComponent();
-            btnReiniciarFiltros.Image = Properties.Resources.filter_reset;
+            //btnReiniciarFiltros.Image = Properties.Resources.filter_reset;
             ActualizarTabla();
         }
 
@@ -115,6 +115,15 @@ namespace ShockSoft.Presentacion
         private void cbEntregado_CheckedChanged(object sender, EventArgs e)
         {
             ActualizarTabla();
+        }
+
+        private void btnReiniciarFiltros_Click(object sender, EventArgs e)
+        {
+            txtIdCliente.Clear();
+            txtNombreCliente.Clear();
+            cbCobrado.Checked = false;
+            cbEntregado.Checked = false;
+            cbReparado.Checked = false;
         }
     }
 }

@@ -393,6 +393,7 @@
     <Compile Include="Presentacion\Form_RegistrarPago.Designer.cs">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Helper.cs" />
     <Compile Include="Presentacion\IAgregarLinea.cs" />
     <Compile Include="Presentacion\IBusquedaDeClientes.cs" />
     <Compile Include="Presentacion\IBusquedaDeProductos.cs" />
@@ -473,13 +474,18 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -491,6 +497,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shock_Simbol02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5111-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
