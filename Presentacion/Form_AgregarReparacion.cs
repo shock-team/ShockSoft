@@ -12,7 +12,7 @@ using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AgregarReparacion : Form, IBusquedaDeClientes
+    public partial class Form_AgregarReparacion : Form, IBusquedaDeClientes, IAgregarLinea
     {
         ControladorReparaciones controlador = ControladorReparaciones.ObtenerInstancia();
 
@@ -75,7 +75,20 @@ namespace ShockSoft.Presentacion
 
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
         {
-
+            List<int> listaDeIDs = new List<int>();
+            foreach (DataGridViewRow fila in dgLineasDeReparacion.Rows)
+            {
+                if (fila.Cells[0].Value != null)
+                {
+                    listaDeIDs.Add(int.Parse(fila.Cells[0].Value.ToString()));
+                }
+            }
+            Form_AgregarLineaDeVenta formAgregarLineaDeReparacion = new Form_AgregarLineaDeVenta();
+            formAgregarLineaDeReparacion.Owner = this;
+            formAgregarLineaDeReparacion.listaDeIDs = listaDeIDs;
+            this.Hide();
+            formAgregarLineaDeReparacion.ShowDialog();
+            this.Show();
         }
 
         public void AgregarCliente(int pIdCliente)
@@ -83,6 +96,25 @@ namespace ShockSoft.Presentacion
             txtIdCliente.Text = pIdCliente.ToString();
             Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
             txtNombreCliente.Text = clienteActual.Nombre + " " + clienteActual.Apellido;
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
+        {
+            dgLineasDeReparacion.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual) * pCantidad);
+            double total = 0;
+            foreach (DataGridViewRow fila in dgLineasDeReparacion.Rows)
+            {
+                if (fila.Cells[4].Value != null)
+                {
+                    total += (double)fila.Cells[4].Value;
+                }
+            }
+            txtTotal.Text = total.ToString();
         }
     }
 

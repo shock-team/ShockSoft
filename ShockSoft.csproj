@@ -393,6 +393,7 @@
     <Compile Include="Presentacion\Form_RegistrarPago.Designer.cs">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\IAgregarLinea.cs" />
     <Compile Include="Presentacion\IBusquedaDeClientes.cs" />
     <Compile Include="Presentacion\IBusquedaDeProductos.cs" />
     <Compile Include="Program.cs" />

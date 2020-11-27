@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_AgregarVenta : Form, IBusquedaDeClientes
+    public partial class Form_AgregarVenta : Form, IBusquedaDeClientes, IAgregarLinea
     {
         ControladorVentas controlador = ControladorVentas.ObtenerInstancia();
 
@@ -29,7 +29,7 @@ namespace ShockSoft.Presentacion
 
 
 
-        public void AgregarLineaDeVenta(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
+        public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
         {
             dglineasDeVenta.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual)*pCantidad);
             double total = 0;

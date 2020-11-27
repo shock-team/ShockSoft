@@ -46,7 +46,7 @@
             this.cbIncluyeCables = new System.Windows.Forms.CheckBox();
             this.cbCobrado = new System.Windows.Forms.CheckBox();
             this.cbEntregado = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgLineasDeReparacion = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,8 @@
             this.lblShock = new System.Windows.Forms.Label();
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeReparacion)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.SuspendLayout();
@@ -236,19 +237,19 @@
             this.cbEntregado.Text = "Entregado";
             this.cbEntregado.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgLineasDeReparacion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgLineasDeReparacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLineasDeReparacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Descripcion,
             this.Cantidad,
             this.PrecioUnitario,
             this.Subtotal});
-            this.dataGridView1.Location = new System.Drawing.Point(34, 333);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(812, 194);
-            this.dataGridView1.TabIndex = 18;
+            this.dgLineasDeReparacion.Location = new System.Drawing.Point(34, 333);
+            this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
+            this.dgLineasDeReparacion.Size = new System.Drawing.Size(812, 194);
+            this.dgLineasDeReparacion.TabIndex = 18;
             // 
             // ID
             // 
@@ -278,7 +279,7 @@
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(726, 537);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(597, 533);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(120, 23);
             this.btnAgregarProducto.TabIndex = 19;
@@ -452,12 +453,23 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(771, 533);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 31;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
             // Form_AgregarReparacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblTotal);
@@ -470,7 +482,7 @@
             this.Controls.Add(this.txtTotalInsumos);
             this.Controls.Add(this.lblTotalInsumos);
             this.Controls.Add(this.btnAgregarProducto);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgLineasDeReparacion);
             this.Controls.Add(this.cbCobrado);
             this.Controls.Add(this.cbEntregado);
             this.Controls.Add(this.cbIncluyeCables);
@@ -492,7 +504,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AgregarReparacion";
             this.Text = "Form_AgregarReparacion";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeReparacion)).EndInit();
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
@@ -521,7 +533,7 @@
         private System.Windows.Forms.CheckBox cbIncluyeCables;
         private System.Windows.Forms.CheckBox cbCobrado;
         private System.Windows.Forms.CheckBox cbEntregado;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgLineasDeReparacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
@@ -544,5 +556,6 @@
         private System.Windows.Forms.Label lblShock;
         private System.Windows.Forms.Button btnTamano;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }

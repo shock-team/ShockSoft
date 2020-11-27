@@ -83,8 +83,8 @@ namespace ShockSoft.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Form_AgregarVenta formAgregarVenta = (Form_AgregarVenta)Owner;
-            formAgregarVenta.AgregarLineaDeVenta(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value));
+            IAgregarLinea formAgregarVenta = (IAgregarLinea)Owner;
+            formAgregarVenta.AgregarLinea(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value));
             MessageBox.Show("Línea agregada exitosamente", "Éxito");
             this.Close();
         }
