@@ -95,6 +95,7 @@ namespace ShockSoft.Presentacion
                 Form_DatosCliente formDatosCliente = new Form_DatosCliente(clienteSeleccionado);
                 this.Hide();
                 formDatosCliente.ShowDialog();
+                ActualizarTabla();
                 this.Show();
             }
         }
