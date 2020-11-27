@@ -154,5 +154,10 @@ namespace ShockSoft.Presentacion
             }
             ActualizarTabla();
         }
+
+        private void DgVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

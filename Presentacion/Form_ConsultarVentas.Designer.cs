@@ -40,14 +40,14 @@
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.lblNombreCliente = new System.Windows.Forms.Label();
+            this.lblIdCliente = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
-            this.lblIdCliente = new System.Windows.Forms.Label();
-            this.lblNombreCliente = new System.Windows.Forms.Label();
-            this.txtNombreCliente = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
@@ -79,6 +79,7 @@
             this.dgVentas.Name = "dgVentas";
             this.dgVentas.Size = new System.Drawing.Size(890, 291);
             this.dgVentas.TabIndex = 10;
+            this.dgVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVentas_CellDoubleClick);
             // 
             // ID
             // 
@@ -197,6 +198,45 @@
             this.panel2.Size = new System.Drawing.Size(445, 130);
             this.panel2.TabIndex = 32;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
+            this.panel3.Location = new System.Drawing.Point(440, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 130);
+            this.panel3.TabIndex = 21;
+            // 
+            // txtNombreCliente
+            // 
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.Location = new System.Drawing.Point(156, 92);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.ReadOnly = true;
+            this.txtNombreCliente.Size = new System.Drawing.Size(270, 25);
+            this.txtNombreCliente.TabIndex = 20;
+            // 
+            // lblNombreCliente
+            // 
+            this.lblNombreCliente.AutoSize = true;
+            this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNombreCliente.Location = new System.Drawing.Point(8, 94);
+            this.lblNombreCliente.Name = "lblNombreCliente";
+            this.lblNombreCliente.Size = new System.Drawing.Size(142, 19);
+            this.lblNombreCliente.TabIndex = 19;
+            this.lblNombreCliente.Text = "Nombre del cliente:";
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblIdCliente.Location = new System.Drawing.Point(8, 52);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
+            this.lblIdCliente.TabIndex = 18;
+            this.lblIdCliente.Text = "ID del cliente:";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
@@ -241,45 +281,6 @@
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(180, 25);
             this.txtIdCliente.TabIndex = 0;
-            // 
-            // lblIdCliente
-            // 
-            this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblIdCliente.Location = new System.Drawing.Point(8, 52);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
-            this.lblIdCliente.TabIndex = 18;
-            this.lblIdCliente.Text = "ID del cliente:";
-            // 
-            // lblNombreCliente
-            // 
-            this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNombreCliente.Location = new System.Drawing.Point(8, 94);
-            this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(142, 19);
-            this.lblNombreCliente.TabIndex = 19;
-            this.lblNombreCliente.Text = "Nombre del cliente:";
-            // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCliente.Location = new System.Drawing.Point(156, 92);
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.ReadOnly = true;
-            this.txtNombreCliente.Size = new System.Drawing.Size(270, 25);
-            this.txtNombreCliente.TabIndex = 20;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
-            this.panel3.Location = new System.Drawing.Point(440, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 130);
-            this.panel3.TabIndex = 21;
             // 
             // panel4
             // 
