@@ -34,5 +34,11 @@ namespace ShockSoft.Presentacion
             Form_ABMParametro form_ABMParametro = new Form_ABMParametro();
             form_ABMParametro.Show();
         }
+
+        private void btnConsultaMarca_Click(object sender, EventArgs e)
+        {
+            Form_ConsultarMarca form_ConsultarMarca = new Form_ConsultarMarca();
+            form_ConsultarMarca.Show();
+        }
     }
 }
