@@ -73,18 +73,18 @@ namespace ShockSoft.Presentacion
         /// Este método se encarga de devolver una lista de todas las reparaciones presentes
         /// en el repositorio, según distintos filtros
         /// </summary>
-        /// <param name="esPendiente">Si las reparaciones listadas incluyen a las pendientes o no</param>
-        /// <param name="esFinalizada">Si las reparaciones listadas incluyen a las finalizadas o no</param>
-        /// <param name="esPaga">Si las reparaciones listadas incluyen a las pagas o no</param>
+        /// <param name="fueReparada">Si las reparaciones listadas incluyen a las reparadas o no</param>
+        /// <param name="fueEntregada">Si las reparaciones listadas incluyen a las entregadas o no</param>
+        /// <param name="fueCobrada">Si las reparaciones listadas incluyen a las pagas o no</param>
         /// <returns></returns>
-        public List<Reparacion> ListarReparaciones(bool esPendiente, bool esFinalizada, bool esPaga)
+        public List<Reparacion> ListarReparaciones(int pIdCliente, bool pFueReparada, bool pFueEntregada, bool pFueCobrada, int pDesde, int pCantidad)
         {
             List<Reparacion> listaReparaciones;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    listaReparaciones = bUoW.RepositorioReparacion.ObtenerTodos().ToList();
+                    listaReparaciones = bUoW.RepositorioReparacion.ObtenerReparaciones(pIdCliente, pFueReparada,pFueEntregada,pFueCobrada,pDesde,pCantidad).ToList();
                 }
             }
             return listaReparaciones;
@@ -129,6 +129,19 @@ namespace ShockSoft.Presentacion
                     bUoW.GuardarCambios();
                 }
             }
+        }
+
+        public int ObtenerCantidadReparaciones()
+        {
+            int cantidad = 0;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    cantidad = bUoW.RepositorioReparacion.CantidadFilas();
+                }
+            }
+            return cantidad;
         }
     }
 }
