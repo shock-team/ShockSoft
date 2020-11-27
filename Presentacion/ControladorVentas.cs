@@ -75,7 +75,7 @@ namespace ShockSoft.Presentacion
 
             foreach (Venta venta in listaVentas)
             {
-                if (!(listaDeVentas.Contains(venta)))
+                if (!(listaDeVentas.Contains(venta)) && ((venta.IdCliente == pCliente) || (pCliente == 0)))
                 {
                     listaDeVentas.Add(venta);
                 }
@@ -128,6 +128,17 @@ namespace ShockSoft.Presentacion
                 }
             }
             return cantidadDeVentas;
+        }
+
+        public Venta ObtenerVenta(int pIdVenta)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    return bUoW.RepositorioVenta.ObtenerVentaPorId(pIdVenta);
+                }
+            }
         }
     }
 }

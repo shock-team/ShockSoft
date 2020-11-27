@@ -57,6 +57,8 @@ namespace ShockSoft.Persistencia.EntityFramework
         {
             var ventas = (from v in iDbContext.Ventas
                           .Include("Lineas")
+                          .Include("Cliente")
+                          .Include("MetodoPago")
                           where v.IdVenta == pIdVenta
                           select v);
             return ventas.First();

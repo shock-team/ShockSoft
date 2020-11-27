@@ -8,14 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
     public partial class Form_DatosVenta : Form
     {
-        public Form_DatosVenta()
+        ControladorVentas controlador = ControladorVentas.ObtenerInstancia();
+        public Form_DatosVenta(int pIdVenta)
         {
             InitializeComponent();
+            Venta ventaActual = controlador.ObtenerVenta(pIdVenta);
+            txtNombreCliente.Text = ventaActual.Cliente.Nombre + " " + ventaActual.Cliente.Apellido;
+            txtIdCliente.Text = ventaActual.Cliente.IdCliente.ToString();
+
+            //Carga las líneas de venta
+            foreach (LineaVenta lineaDeVenta in ventaActual.Lineas)
+            {
+                dglineasDeVenta.Rows.Add(lineaDeVenta.IdProducto, ControladorProductos.ObtenerInstancia().ObtenerProducto(lineaDeVenta.IdProducto).Descripcion, lineaDeVenta.PrecioActual, lineaDeVenta.Cantidad, lineaDeVenta.ObtenerSubtotal());
+            }
+
+            comboMetodoPago.Items.Add(ventaActual.MetodoPago);
+            comboMetodoPago.DisplayMember = "Descripcion";
+            comboMetodoPago.SelectedIndex = 0;
+
+            txtTotal.Text = ventaActual.ObtenerTotal().ToString();
         }
 
 

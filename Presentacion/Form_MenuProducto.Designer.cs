@@ -32,6 +32,7 @@
             this.btnAltaProducto = new System.Windows.Forms.Button();
             this.btnConsultaProducto = new System.Windows.Forms.Button();
             this.btnABMParametro = new System.Windows.Forms.Button();
+            this.btnConsultaMarca = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -94,12 +95,29 @@
             this.btnABMParametro.UseVisualStyleBackColor = false;
             this.btnABMParametro.Click += new System.EventHandler(this.btnABMParametro_Click);
             // 
+            // btnConsultaMarca
+            // 
+            this.btnConsultaMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
+            this.btnConsultaMarca.FlatAppearance.BorderSize = 0;
+            this.btnConsultaMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnConsultaMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaMarca.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnConsultaMarca.Location = new System.Drawing.Point(45, 229);
+            this.btnConsultaMarca.Name = "btnConsultaMarca";
+            this.btnConsultaMarca.Size = new System.Drawing.Size(600, 45);
+            this.btnConsultaMarca.TabIndex = 8;
+            this.btnConsultaMarca.Text = "Lista de Marcas";
+            this.btnConsultaMarca.UseVisualStyleBackColor = false;
+            this.btnConsultaMarca.Click += new System.EventHandler(this.btnConsultaMarca_Click);
+            // 
             // Form_MenuProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.btnConsultaMarca);
             this.Controls.Add(this.btnABMParametro);
             this.Controls.Add(this.btnConsultaProducto);
             this.Controls.Add(this.btnAltaProducto);
@@ -118,5 +136,6 @@
         private System.Windows.Forms.Button btnAltaProducto;
         private System.Windows.Forms.Button btnConsultaProducto;
         private System.Windows.Forms.Button btnABMParametro;
+        private System.Windows.Forms.Button btnConsultaMarca;
     }
 }
