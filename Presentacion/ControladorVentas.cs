@@ -64,6 +64,7 @@ namespace ShockSoft.Presentacion
         public List<Venta> ListarVentas(int pCliente, int pProducto, int pDesde, int pCantidad)
         {
             List<Venta> listaVentas;
+            List<Venta> listaDeVentas = new List<Venta>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
@@ -71,7 +72,15 @@ namespace ShockSoft.Presentacion
                     listaVentas = bUoW.RepositorioVenta.ObtenerVentas(pCliente, pProducto, pDesde, pCantidad).ToList();
                 }
             }
-            return listaVentas;
+
+            foreach (Venta venta in listaVentas)
+            {
+                if (!(listaDeVentas.Contains(venta)))
+                {
+                    listaDeVentas.Add(venta);
+                }
+            }
+            return listaDeVentas;
         }
 
         /// <summary>

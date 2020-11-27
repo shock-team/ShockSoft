@@ -70,6 +70,8 @@
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblFechaEntrega = new System.Windows.Forms.Label();
+            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeReparacion)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
@@ -167,6 +169,7 @@
             // 
             // dtpFechaReparacion
             // 
+            this.dtpFechaReparacion.Enabled = false;
             this.dtpFechaReparacion.Location = new System.Drawing.Point(667, 110);
             this.dtpFechaReparacion.Name = "dtpFechaReparacion";
             this.dtpFechaReparacion.Size = new System.Drawing.Size(200, 20);
@@ -220,7 +223,7 @@
             // cbCobrado
             // 
             this.cbCobrado.AutoSize = true;
-            this.cbCobrado.Location = new System.Drawing.Point(553, 307);
+            this.cbCobrado.Location = new System.Drawing.Point(463, 567);
             this.cbCobrado.Name = "cbCobrado";
             this.cbCobrado.Size = new System.Drawing.Size(66, 17);
             this.cbCobrado.TabIndex = 17;
@@ -230,12 +233,13 @@
             // cbEntregado
             // 
             this.cbEntregado.AutoSize = true;
-            this.cbEntregado.Location = new System.Drawing.Point(625, 307);
+            this.cbEntregado.Location = new System.Drawing.Point(537, 160);
             this.cbEntregado.Name = "cbEntregado";
-            this.cbEntregado.Size = new System.Drawing.Size(75, 17);
+            this.cbEntregado.Size = new System.Drawing.Size(110, 17);
             this.cbEntregado.TabIndex = 16;
-            this.cbEntregado.Text = "Entregado";
+            this.cbEntregado.Text = "Equipo entregado";
             this.cbEntregado.UseVisualStyleBackColor = true;
+            this.cbEntregado.CheckedChanged += new System.EventHandler(this.CbEntregado_CheckedChanged);
             // 
             // dgLineasDeReparacion
             // 
@@ -307,7 +311,7 @@
             // lblSolucion
             // 
             this.lblSolucion.AutoSize = true;
-            this.lblSolucion.Location = new System.Drawing.Point(403, 161);
+            this.lblSolucion.Location = new System.Drawing.Point(436, 183);
             this.lblSolucion.Name = "lblSolucion";
             this.lblSolucion.Size = new System.Drawing.Size(48, 13);
             this.lblSolucion.TabIndex = 22;
@@ -315,7 +319,7 @@
             // 
             // txtSolucion
             // 
-            this.txtSolucion.Location = new System.Drawing.Point(406, 177);
+            this.txtSolucion.Location = new System.Drawing.Point(439, 199);
             this.txtSolucion.Multiline = true;
             this.txtSolucion.Name = "txtSolucion";
             this.txtSolucion.Size = new System.Drawing.Size(395, 90);
@@ -463,12 +467,31 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
+            // lblFechaEntrega
+            // 
+            this.lblFechaEntrega.AutoSize = true;
+            this.lblFechaEntrega.Location = new System.Drawing.Point(437, 161);
+            this.lblFechaEntrega.Name = "lblFechaEntrega";
+            this.lblFechaEntrega.Size = new System.Drawing.Size(94, 13);
+            this.lblFechaEntrega.TabIndex = 32;
+            this.lblFechaEntrega.Text = "Fecha de entrega:";
+            // 
+            // dtpFechaEntrega
+            // 
+            this.dtpFechaEntrega.Enabled = false;
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(667, 157);
+            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaEntrega.TabIndex = 33;
+            // 
             // Form_AgregarReparacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.dtpFechaEntrega);
+            this.Controls.Add(this.lblFechaEntrega);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.txtTotal);
@@ -557,5 +580,7 @@
         private System.Windows.Forms.Button btnTamano;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label lblFechaEntrega;
+        private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
     }
 }

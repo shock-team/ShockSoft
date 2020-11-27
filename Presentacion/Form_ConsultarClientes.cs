@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace ShockSoft.Presentacion
 {
@@ -15,7 +16,7 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             controlador = ControladorClientes.ObtenerInstancia();
-           
+            
             //Genera una DataTable que muestre los datos especificados
             tablaDeClientes = new DataTable();
             tablaDeClientes.Columns.AddRange(new DataColumn[5]
@@ -45,6 +46,25 @@ namespace ShockSoft.Presentacion
             }
 
             ActualizarTabla();
+            //
+            CambiarColor();
+
+        }
+
+        public void CambiarColor()
+        {
+            if ((this.Owner != null) && (this.Owner is IBusquedaDeClientes))
+            {
+                this.BackColor = Color.FromArgb(255, 87, 80, 75);
+                this.panel1.BackColor = Color.FromArgb(255, 75, 60, 55);
+                this.panel2.BackColor = Color.FromArgb(255, 75, 60, 55);
+                this.panel3.BackColor = Color.FromArgb(255, 75, 60, 55);
+                this.panel4.BackColor = Color.FromArgb(255, 75, 60, 55);
+                this.btnAnterior.BackColor = Color.FromArgb(255, 50, 45, 45);
+                this.btnAnterior.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 215, 58, 73);
+                this.btnSiguiente.BackColor = Color.FromArgb(255, 50, 45, 45);
+                this.btnSiguiente.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 215, 58, 73);
+            }
         }
 
 

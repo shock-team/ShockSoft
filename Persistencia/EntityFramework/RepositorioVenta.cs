@@ -1,5 +1,6 @@
 ﻿using ShockSoft.Dominio;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace ShockSoft.Persistencia.EntityFramework
@@ -30,10 +31,12 @@ namespace ShockSoft.Persistencia.EntityFramework
         {
             var ventasFiltradas = (from v in iDbContext.Ventas
                                   join lv in iDbContext.LineasDeVentas on v.IdVenta equals lv.IdVenta
-                                  join c in iDbContext.Clientes on v.IdCliente equals c.IdCliente
                                   where pIdProducto == 0 || lv.IdProducto == pIdProducto &&
-                                  pIdCliente == 0 || c.IdCliente == pIdCliente
+                                  pIdCliente == 0 || v.IdCliente == pIdCliente
                                   select v);
+            ventasFiltradas = ventasFiltradas.Include("Lineas");
+            ventasFiltradas = ventasFiltradas.Include("Cliente");
+            ventasFiltradas = ventasFiltradas.Include("MetodoPago");
             return ventasFiltradas.OrderBy(x => x.Fecha).Skip(pDesde).Take(pCantidad);
         }
 
@@ -48,6 +51,15 @@ namespace ShockSoft.Persistencia.EntityFramework
             var ventas = (from v in iDbContext.Ventas
                           select v);
             return ventas.OrderByDescending(x => x.IdVenta).Take(1);
+        }
+
+        public Venta ObtenerVentaPorId(int pIdVenta)
+        {
+            var ventas = (from v in iDbContext.Ventas
+                          .Include("Lineas")
+                          where v.IdVenta == pIdVenta
+                          select v);
+            return ventas.First();
         }
     }
 }
