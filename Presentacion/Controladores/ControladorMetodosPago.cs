@@ -12,7 +12,7 @@ namespace ShockSoft.Presentacion
     /// </summary>
     class ControladorMetodosPago
     {
-        public static ControladorMetodosPago instancia;
+        public static ControladorMetodosPago _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -20,11 +20,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorMetodosPago ObtenerInstancia()
         {
-            if (instancia == null)
-            {
-                instancia = new ControladorMetodosPago();
-            }
-            return instancia;
+            return _instancia ?? new ControladorMetodosPago();
         }
 
         /// <summary>
