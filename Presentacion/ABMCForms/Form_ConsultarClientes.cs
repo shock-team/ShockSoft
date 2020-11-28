@@ -10,31 +10,11 @@ namespace ShockSoft.Presentacion
     public partial class Form_ConsultarClientes : Form
     {
         ControladorClientes controlador;
-        DataTable tablaDeClientes;
 
         public Form_ConsultarClientes()
         {
             InitializeComponent();
             controlador = ControladorClientes.ObtenerInstancia();
-            
-            //Genera una DataTable que muestre los datos especificados
-            tablaDeClientes = new DataTable();
-            tablaDeClientes.Columns.AddRange(new DataColumn[5]
-            {
-                new DataColumn("ID", typeof(int)),
-                new DataColumn("Nombre", typeof(string)),
-                new DataColumn("Apellido", typeof(string)),
-                new DataColumn("CUIT", typeof(string)),
-                new DataColumn("Saldo", typeof(float)),
-            });
-            dgClientes.DataSource = tablaDeClientes;
-            dgClientes.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgClientes.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgClientes.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgClientes.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgClientes.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-
             cbConDeudas.Checked = true;
             cbSinDeudas.Checked = true;
             btnAnterior.Enabled = false;
@@ -46,7 +26,6 @@ namespace ShockSoft.Presentacion
             }
 
             ActualizarTabla();
-            //
             CambiarColor();
 
         }
@@ -102,30 +81,13 @@ namespace ShockSoft.Presentacion
 
         private void BtnAnterior_Click(object sender, System.EventArgs e)
         {
-            btnSiguiente.Enabled = true;
-            btnSiguiente.Visible = true;
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = false;
-                btnAnterior.Visible = false;
-            }
+            FormsHelper.PaginaAnterior(btnSiguiente, btnAnterior, lblPaginaActual);
             ActualizarTabla();
         }
 
         private void BtnSiguiente_Click(object sender, System.EventArgs e)
         {
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = true;
-                btnAnterior.Visible = true;
-            }
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
-            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeClientes() / 15))
-            {
-                btnSiguiente.Enabled = false;
-                btnSiguiente.Visible = false;
-            }
+            FormsHelper.SiguientePagina(btnSiguiente, btnAnterior, lblPaginaActual, controlador.ObtenerCantidadDeClientes());
             ActualizarTabla();
         }
 
@@ -133,7 +95,7 @@ namespace ShockSoft.Presentacion
         {
             btnSiguiente.Enabled = true;
             btnSiguiente.Visible = true;
-            tablaDeClientes.Rows.Clear();
+            dgClientes.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
             List<Cliente> listaDeClientes = controlador.ListarClientes(cbConDeudas.Checked, cbSinDeudas.Checked, txtNombre.Text, txtApellido.Text, CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), CANTIDAD_POR_PAGINA + 1);
             if (listaDeClientes.Count < (CANTIDAD_POR_PAGINA + 1))
@@ -143,7 +105,7 @@ namespace ShockSoft.Presentacion
             }
             foreach (Cliente cliente in listaDeClientes)
             {
-                tablaDeClientes.Rows.Add(cliente.IdCliente, cliente.Nombre, cliente.Apellido, cliente.CUIT, cliente.ObtenerSaldo());
+                dgClientes.Rows.Add(cliente.IdCliente, FormsHelper.NameFormatter(cliente.Nombre, cliente.Apellido), cliente.CUIT, cliente.ObtenerSaldo());
             }
         }
 

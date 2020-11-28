@@ -78,30 +78,13 @@ namespace ShockSoft.Presentacion
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            btnSiguiente.Enabled = true;
-            btnSiguiente.Visible = true;
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = false;
-                btnAnterior.Visible = false;
-            }
+            FormsHelper.PaginaAnterior(btnSiguiente, btnAnterior, lblPaginaActual);
             ActualizarTabla();
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = true;
-                btnAnterior.Visible = true;
-            }
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
-            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeMarcas() / 15))
-            {
-                btnSiguiente.Enabled = false;
-                btnSiguiente.Visible = false;
-            }
+            FormsHelper.SiguientePagina(btnSiguiente, btnAnterior, lblPaginaActual, controlador.ObtenerCantidadDeMarcas());
             ActualizarTabla();
         }
 

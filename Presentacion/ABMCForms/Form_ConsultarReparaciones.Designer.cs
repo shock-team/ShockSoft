@@ -110,7 +110,7 @@
             // cbEntregado
             // 
             this.cbEntregado.AutoSize = true;
-            this.cbEntregado.Location = new System.Drawing.Point(511, 26);
+            this.cbEntregado.Location = new System.Drawing.Point(465, 26);
             this.cbEntregado.Name = "cbEntregado";
             this.cbEntregado.Size = new System.Drawing.Size(75, 17);
             this.cbEntregado.TabIndex = 1;
@@ -121,7 +121,7 @@
             // cbCobrado
             // 
             this.cbCobrado.AutoSize = true;
-            this.cbCobrado.Location = new System.Drawing.Point(439, 26);
+            this.cbCobrado.Location = new System.Drawing.Point(393, 26);
             this.cbCobrado.Name = "cbCobrado";
             this.cbCobrado.Size = new System.Drawing.Size(66, 17);
             this.cbCobrado.TabIndex = 2;
@@ -132,7 +132,7 @@
             // cbReparado
             // 
             this.cbReparado.AutoSize = true;
-            this.cbReparado.Location = new System.Drawing.Point(362, 26);
+            this.cbReparado.Location = new System.Drawing.Point(314, 26);
             this.cbReparado.Name = "cbReparado";
             this.cbReparado.Size = new System.Drawing.Size(73, 17);
             this.cbReparado.TabIndex = 3;
@@ -219,7 +219,7 @@
             // btnReiniciarFiltros
             // 
             this.btnReiniciarFiltros.Image = global::ShockSoft.Properties.Resources._5111_512;
-            this.btnReiniciarFiltros.Location = new System.Drawing.Point(607, 10);
+            this.btnReiniciarFiltros.Location = new System.Drawing.Point(546, 10);
             this.btnReiniciarFiltros.Name = "btnReiniciarFiltros";
             this.btnReiniciarFiltros.Size = new System.Drawing.Size(61, 45);
             this.btnReiniciarFiltros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

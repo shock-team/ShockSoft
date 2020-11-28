@@ -23,7 +23,7 @@ namespace ShockSoft.Persistencia.EntityFramework
 
                                      select r);
 
-            return listaReparaciones.OrderBy(x => x.FechaIngreso).Skip(pDesde).Take(pCantidad);
+            return listaReparaciones.OrderByDescending(x => x.FechaIngreso).Skip(pDesde).Take(pCantidad);
         }
 
         public int CantidadFilas()
