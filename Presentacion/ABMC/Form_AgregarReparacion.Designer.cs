@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.panelControl = new System.Windows.Forms.Panel();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.picShock = new System.Windows.Forms.PictureBox();
             this.lblShock = new System.Windows.Forms.Label();
-            this.btnTamano = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.gbLista = new System.Windows.Forms.GroupBox();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.lblFechaEntrega = new System.Windows.Forms.Label();
@@ -44,13 +40,13 @@
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProblema = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -59,12 +55,9 @@
             this.cbIncluyeCables = new System.Windows.Forms.CheckBox();
             this.cbIncluyeCargador = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgLineasDeReparacion = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.cbCobrado = new System.Windows.Forms.CheckBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtCostoTrabajo = new System.Windows.Forms.TextBox();
@@ -73,11 +66,19 @@
             this.lblMetodoPago = new System.Windows.Forms.Label();
             this.txtTotalInsumos = new System.Windows.Forms.TextBox();
             this.lblTotalInsumos = new System.Windows.Forms.Label();
-            this.cbCobrado = new System.Windows.Forms.CheckBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.dgLineasDeReparacion = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.picShock = new System.Windows.Forms.PictureBox();
+            this.btnTamano = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblProblema = new System.Windows.Forms.Label();
+            this.lblSolucion = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.gbLista.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,6 +86,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeReparacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl
@@ -102,31 +104,6 @@
             this.panelControl.TabIndex = 30;
             this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
-            this.btnMinimizar.Location = new System.Drawing.Point(1000, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
-            this.btnMinimizar.TabIndex = 10;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // picShock
-            // 
-            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
-            this.picShock.Location = new System.Drawing.Point(3, 3);
-            this.picShock.Name = "picShock";
-            this.picShock.Size = new System.Drawing.Size(40, 40);
-            this.picShock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picShock.TabIndex = 9;
-            this.picShock.TabStop = false;
-            // 
             // lblShock
             // 
             this.lblShock.AutoSize = true;
@@ -137,36 +114,6 @@
             this.lblShock.Size = new System.Drawing.Size(129, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Shock!Soft";
-            // 
-            // btnTamano
-            // 
-            this.btnTamano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTamano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnTamano.FlatAppearance.BorderSize = 0;
-            this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
-            this.btnTamano.Location = new System.Drawing.Point(1045, 0);
-            this.btnTamano.Name = "btnTamano";
-            this.btnTamano.Size = new System.Drawing.Size(45, 45);
-            this.btnTamano.TabIndex = 7;
-            this.btnTamano.UseVisualStyleBackColor = false;
-            this.btnTamano.Click += new System.EventHandler(this.btnTamano_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
-            this.btnCerrar.Location = new System.Drawing.Point(1090, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(45, 45);
-            this.btnCerrar.TabIndex = 6;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // gbLista
             // 
@@ -277,6 +224,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(130, 115);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(293, 25);
+            this.txtClave.TabIndex = 15;
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.Location = new System.Drawing.Point(16, 115);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(88, 19);
+            this.lblClave.TabIndex = 14;
+            this.lblClave.Text = "Contraseña:";
+            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
@@ -325,22 +288,6 @@
             this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
             this.lblIdCliente.TabIndex = 5;
             this.lblIdCliente.Text = "ID del cliente:";
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(130, 115);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(293, 25);
-            this.txtClave.TabIndex = 15;
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(16, 115);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(88, 19);
-            this.lblClave.TabIndex = 14;
-            this.lblClave.Text = "Contraseña:";
             // 
             // groupBox2
             // 
@@ -441,45 +388,41 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Problema";
             // 
-            // dgLineasDeReparacion
+            // btnAceptar
             // 
-            this.dgLineasDeReparacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLineasDeReparacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Descripcion,
-            this.Cantidad,
-            this.PrecioUnitario,
-            this.Subtotal});
-            this.dgLineasDeReparacion.Location = new System.Drawing.Point(20, 24);
-            this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
-            this.dgLineasDeReparacion.Size = new System.Drawing.Size(795, 251);
-            this.dgLineasDeReparacion.TabIndex = 19;
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(828, 267);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(253, 27);
+            this.btnAceptar.TabIndex = 40;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
             // 
-            // ID
+            // btnAgregarProducto
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
+            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(20, 266);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(795, 28);
+            this.btnAgregarProducto.TabIndex = 39;
+            this.btnAgregarProducto.Text = "Agregar producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
             // 
-            // Descripcion
+            // cbCobrado
             // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 350;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
+            this.cbCobrado.AutoSize = true;
+            this.cbCobrado.Location = new System.Drawing.Point(828, 229);
+            this.cbCobrado.Name = "cbCobrado";
+            this.cbCobrado.Size = new System.Drawing.Size(87, 23);
+            this.cbCobrado.TabIndex = 30;
+            this.cbCobrado.Text = "Cobrado";
+            this.cbCobrado.UseVisualStyleBackColor = true;
             // 
             // txtTotal
             // 
@@ -549,41 +492,118 @@
             this.lblTotalInsumos.TabIndex = 31;
             this.lblTotalInsumos.Text = "Total insumos:";
             // 
-            // cbCobrado
+            // dgLineasDeReparacion
             // 
-            this.cbCobrado.AutoSize = true;
-            this.cbCobrado.Location = new System.Drawing.Point(828, 229);
-            this.cbCobrado.Name = "cbCobrado";
-            this.cbCobrado.Size = new System.Drawing.Size(87, 23);
-            this.cbCobrado.TabIndex = 30;
-            this.cbCobrado.Text = "Cobrado";
-            this.cbCobrado.UseVisualStyleBackColor = true;
+            this.dgLineasDeReparacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLineasDeReparacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Descripcion,
+            this.Cantidad,
+            this.PrecioUnitario,
+            this.Subtotal});
+            this.dgLineasDeReparacion.Location = new System.Drawing.Point(20, 24);
+            this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
+            this.dgLineasDeReparacion.Size = new System.Drawing.Size(795, 251);
+            this.dgLineasDeReparacion.TabIndex = 19;
             // 
-            // btnAceptar
+            // ID
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(828, 267);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(253, 27);
-            this.btnAceptar.TabIndex = 40;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
             // 
-            // btnAgregarProducto
+            // Descripcion
             // 
-            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
-            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
-            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(20, 266);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(795, 28);
-            this.btnAgregarProducto.TabIndex = 39;
-            this.btnAgregarProducto.Text = "Agregar producto";
-            this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 350;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
+            this.btnMinimizar.Location = new System.Drawing.Point(1000, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
+            this.btnMinimizar.TabIndex = 10;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // picShock
+            // 
+            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Location = new System.Drawing.Point(3, 3);
+            this.picShock.Name = "picShock";
+            this.picShock.Size = new System.Drawing.Size(40, 40);
+            this.picShock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShock.TabIndex = 9;
+            this.picShock.TabStop = false;
+            // 
+            // btnTamano
+            // 
+            this.btnTamano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTamano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnTamano.FlatAppearance.BorderSize = 0;
+            this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
+            this.btnTamano.Location = new System.Drawing.Point(1045, 0);
+            this.btnTamano.Name = "btnTamano";
+            this.btnTamano.Size = new System.Drawing.Size(45, 45);
+            this.btnTamano.TabIndex = 7;
+            this.btnTamano.UseVisualStyleBackColor = false;
+            this.btnTamano.Click += new System.EventHandler(this.btnTamano_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
+            this.btnCerrar.Location = new System.Drawing.Point(1090, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(45, 45);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // lblProblema
+            // 
+            this.lblProblema.AutoSize = true;
+            this.lblProblema.Location = new System.Drawing.Point(878, 373);
+            this.lblProblema.Name = "lblProblema";
+            this.lblProblema.Size = new System.Drawing.Size(35, 13);
+            this.lblProblema.TabIndex = 47;
+            this.lblProblema.Text = "label1";
+            // 
+            // lblSolucion
+            // 
+            this.lblSolucion.AutoSize = true;
+            this.lblSolucion.Location = new System.Drawing.Point(1098, 367);
+            this.lblSolucion.Name = "lblSolucion";
+            this.lblSolucion.Size = new System.Drawing.Size(35, 13);
+            this.lblSolucion.TabIndex = 41;
+            this.lblSolucion.Text = "label1";
             // 
             // Form_AgregarReparacion
             // 
@@ -591,6 +611,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1135, 700);
+            this.Controls.Add(this.lblSolucion);
+            this.Controls.Add(this.lblProblema);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -603,7 +625,6 @@
             this.Text = "Form_AgregarReparacion";
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
             this.gbLista.ResumeLayout(false);
             this.gbLista.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -617,7 +638,9 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeReparacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -670,5 +693,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.Label lblProblema;
+        private System.Windows.Forms.Label lblSolucion;
     }
 }
