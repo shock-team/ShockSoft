@@ -331,7 +331,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFecha.Location = new System.Drawing.Point(355, 55);
+            this.lblFecha.Location = new System.Drawing.Point(461, 55);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(51, 19);
             this.lblFecha.TabIndex = 40;
@@ -339,9 +339,10 @@
             // 
             // dtpFechaVenta
             // 
-            this.dtpFechaVenta.Location = new System.Drawing.Point(412, 55);
+            this.dtpFechaVenta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
+            this.dtpFechaVenta.Location = new System.Drawing.Point(518, 51);
             this.dtpFechaVenta.Name = "dtpFechaVenta";
-            this.dtpFechaVenta.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaVenta.Size = new System.Drawing.Size(320, 25);
             this.dtpFechaVenta.TabIndex = 39;
             // 
             // btnAgregarMetodo
@@ -375,7 +376,7 @@
             this.txtTotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(71, 53);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(180, 25);
+            this.txtTotal.Size = new System.Drawing.Size(213, 25);
             this.txtTotal.TabIndex = 4;
             // 
             // lblMetodoPago
