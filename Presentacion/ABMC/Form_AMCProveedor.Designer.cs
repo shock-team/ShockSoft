@@ -75,7 +75,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.dgProveedores.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgProveedores.Size = new System.Drawing.Size(487, 250);
             this.dgProveedores.TabIndex = 0;
-            this.dgProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProveedores_CellDoubleClick);
+            this.dgProveedores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProveedores_CellDoubleClick);
             // 
             // id
             // 

@@ -61,7 +61,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.nombre});
             this.dgLocalidades.Location = new System.Drawing.Point(32, 43);
             this.dgLocalidades.Name = "dgLocalidades";
-            this.dgLocalidades.Size = new System.Drawing.Size(326, 153);
+            this.dgLocalidades.Size = new System.Drawing.Size(342, 236);
             this.dgLocalidades.TabIndex = 0;
             this.dgLocalidades.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgLocalidades_CellContentDoubleClick);
             // 
@@ -95,7 +95,7 @@ namespace ShockSoft.Presentacion.ABMC
             // lblPaginaActual
             // 
             this.lblPaginaActual.AutoSize = true;
-            this.lblPaginaActual.Location = new System.Drawing.Point(173, 236);
+            this.lblPaginaActual.Location = new System.Drawing.Point(179, 277);
             this.lblPaginaActual.Name = "lblPaginaActual";
             this.lblPaginaActual.Size = new System.Drawing.Size(13, 13);
             this.lblPaginaActual.TabIndex = 2;
@@ -103,7 +103,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(67, 236);
+            this.btnAnterior.Location = new System.Drawing.Point(56, 272);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 1;
@@ -113,7 +113,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(250, 236);
+            this.btnSiguiente.Location = new System.Drawing.Point(242, 272);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 0;
@@ -142,9 +142,9 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(69, 102);
+            this.btnAñadir.Location = new System.Drawing.Point(6, 102);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(75, 23);
+            this.btnAñadir.Size = new System.Drawing.Size(188, 23);
             this.btnAñadir.TabIndex = 1;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
@@ -175,9 +175,9 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(58, 102);
+            this.btnModificar.Location = new System.Drawing.Point(6, 107);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(188, 23);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(633, 356);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgLocalidades);
