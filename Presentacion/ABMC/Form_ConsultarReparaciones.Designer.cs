@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgReparaciones = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +67,14 @@
             // 
             // dgReparaciones
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgReparaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgReparaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgReparaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -73,6 +83,14 @@
             this.Rubro,
             this.Problema,
             this.Entregado});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgReparaciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgReparaciones.Location = new System.Drawing.Point(12, 182);
             this.dgReparaciones.Name = "dgReparaciones";
             this.dgReparaciones.Size = new System.Drawing.Size(862, 346);
@@ -83,28 +101,28 @@
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
-            this.ID.Width = 43;
+            this.ID.Width = 48;
             // 
             // FechaIngreso
             // 
             this.FechaIngreso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.FechaIngreso.HeaderText = "Fecha de ingreso";
             this.FechaIngreso.Name = "FechaIngreso";
-            this.FechaIngreso.Width = 105;
+            this.FechaIngreso.Width = 134;
             // 
             // Cliente
             // 
             this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
-            this.Cliente.Width = 64;
+            this.Cliente.Width = 80;
             // 
             // Rubro
             // 
             this.Rubro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Rubro.HeaderText = "Rubro";
             this.Rubro.Name = "Rubro";
-            this.Rubro.Width = 61;
+            this.Rubro.Width = 75;
             // 
             // Problema
             // 
@@ -117,7 +135,7 @@
             this.Entregado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Entregado.HeaderText = "Entregado";
             this.Entregado.Name = "Entregado";
-            this.Entregado.Width = 81;
+            this.Entregado.Width = 103;
             // 
             // panelControl
             // 
