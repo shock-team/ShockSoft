@@ -10,20 +10,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace ShockSoft.Presentacion
+namespace ShockSoft.Presentacion.ABMC
 {
-    public partial class Form_ABMParametro : Form
+    public partial class Form_AMCProveedor : Form
     {
-        ControladorParametros controlador;
-
-        public Form_ABMParametro()
+        ControladorProveedores controlador;
+        public Form_AMCProveedor()
         {
             InitializeComponent();
-            controlador = ControladorParametros.ObtenerInstancia();
+
+            controlador = ControladorProveedores.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
 
-            txtDolar.Text = controlador.ObtenerPrecioDolar().Valor.ToString();
             ActualizarTabla();
         }
 
@@ -31,23 +30,23 @@ namespace ShockSoft.Presentacion
         {
             btnSiguiente.Enabled = true;
             btnSiguiente.Visible = true;
-            dgParametros.Rows.Clear();
+            dgProveedores.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
 
-            List<Parametro> listaDeParametros = controlador.ListarParametros(
+            List<Proveedor> listaDeProveedores = controlador.ListarProveedores(
                 CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1),
                 CANTIDAD_POR_PAGINA + 1
                 );
 
-            if (listaDeParametros.Count < (CANTIDAD_POR_PAGINA + 1))
+            if (listaDeProveedores.Count < (CANTIDAD_POR_PAGINA + 1))
             {
                 btnSiguiente.Enabled = false;
                 btnSiguiente.Visible = false;
             }
 
-            foreach (Parametro parametro in listaDeParametros)
+            foreach (Proveedor proveedor in listaDeProveedores)
             {
-                dgParametros.Rows.Add(parametro.IdParametro, parametro.Descripcion, parametro.Valor);
+                dgProveedores.Rows.Add(proveedor.IdProveedor, proveedor.Nombre);
             }
         }
 
@@ -59,7 +58,7 @@ namespace ShockSoft.Presentacion
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            FormsHelper.SiguientePagina(btnSiguiente, btnAnterior, lblPaginaActual, controlador.ObtenerCantidadDeParametros());
+            FormsHelper.SiguientePagina(btnSiguiente, btnAnterior, lblPaginaActual, controlador.ObtenerCantidadDeProveedores());
             ActualizarTabla();
         }
 
@@ -67,28 +66,40 @@ namespace ShockSoft.Presentacion
         {
             try
             {
-                controlador.AgregarParametro(txtDescripcion.Text, float.Parse(txtValor.Text));
-                MessageBox.Show("Parametro agregado correctamente!");
+                controlador.AgregarProveedor(txtAñadirNombre.Text);
                 ActualizarTabla();
+                MessageBox.Show($"El proveedor {txtAñadirNombre.Text} se ha añadido correctamente", "Aviso");
+                txtAñadirNombre.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
-                controlador.ModificarParametro("Precio Dólar", float.Parse(txtDolar.Text), 1);
-                MessageBox.Show("Dolar actualizado!");
+                controlador.ModificarProveedor(int.Parse(txtModificarID.Text), txtModificarNombre.Text);
                 ActualizarTabla();
+                MessageBox.Show($"Se ha cambiado el nombre del proveedor a {txtModificarNombre.Text}", "Aviso");
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message, "Error");
             }
+            finally
+            {
+                txtModificarID.Clear();
+                txtModificarNombre.Clear();
+            }
+        }
+
+        private void dgProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtModificarID.Text = dgProveedores.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtModificarNombre.Text = dgProveedores.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         // Deslizar ventana desde el panel de control

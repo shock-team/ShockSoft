@@ -51,14 +51,14 @@ namespace ShockSoft.Presentacion
         /// presentes en el repositorio
         /// </summary>
         /// <returns></returns>
-        public List<Proveedor> ListarProveedores()
+        public List<Proveedor> ListarProveedores(int pDesde, int pCantidad)
         {
             List<Proveedor> listaProveedores;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    listaProveedores = bUoW.RepositorioProveedor.ObtenerTodos().ToList();
+                    listaProveedores = bUoW.RepositorioProveedor.ObtenerProveedores(pDesde,pCantidad).ToList();
                 }
             }
             return listaProveedores;
@@ -70,7 +70,7 @@ namespace ShockSoft.Presentacion
         /// </summary>
         /// <param name="pNombre">El nuevo nombre del proveedor</param>
         /// <param name="idProveedor">El ID del proveedor a modificar</param>
-        public void ModificarProveedor(string pNombre, int idProveedor)
+        public void ModificarProveedor(int idProveedor, string pNombre)
         {
             using (var bDbContext = new ShockDbContext())
             {
@@ -82,6 +82,17 @@ namespace ShockSoft.Presentacion
                 }
             }
 
+        }
+
+        public int ObtenerCantidadDeProveedores()
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    return bUoW.RepositorioProveedor.CantidadFilas();
+                }
+            }
         }
     }
 }

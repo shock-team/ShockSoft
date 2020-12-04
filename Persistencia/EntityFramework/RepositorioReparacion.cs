@@ -31,5 +31,12 @@ namespace ShockSoft.Persistencia.EntityFramework
             var sql = "SELECT COUNT(*) FROM reparaciones";
             return this.iDbContext.Database.SqlQuery<int>(sql).Single();
         }
+
+        public Reparacion ObtenerUltimaReparacion()
+        {
+            var reparaciones = (from r in iDbContext.Reparaciones
+                                select r);
+            return reparaciones.OrderByDescending(x => x.IdReparacion).Take(1).First();
+        }
     }
 }

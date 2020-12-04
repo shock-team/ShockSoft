@@ -62,6 +62,24 @@ namespace ShockSoft.Presentacion
                 }
             }
             return listaRubros;
+        }        
+        
+        /// <summary>
+        /// Este método se encarga de devolver una lista un rango de rubros
+        /// presentes en el repositorio.
+        /// </summary>
+        /// <returns></returns>
+        public List<Rubro> ListarRubros(int pDesde, int pCantidad)
+        {
+            List<Rubro> listaRubros;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaRubros = bUoW.RepositorioRubro.ObtenerRubros(pDesde, pCantidad).ToList();
+                }
+            }
+            return listaRubros;
         }
 
         /// <summary>
@@ -70,7 +88,7 @@ namespace ShockSoft.Presentacion
         /// </summary>
         /// <param name="pDescripcion">La nueva descripción del rubro</param>
         /// <param name="IdRubro">El ID del rubro a modificar</param>
-        public void ModificarRubro(string pDescripcion, int IdRubro)
+        public void ModificarRubro(int IdRubro, string pDescripcion)
         {
             using (var bDbContext = new ShockDbContext())
             {
@@ -79,6 +97,17 @@ namespace ShockSoft.Presentacion
                     Rubro tipoAModificar = bUoW.RepositorioRubro.Obtener(IdRubro);
                     tipoAModificar.Descripcion = pDescripcion;
                     bUoW.GuardarCambios();
+                }
+            }
+        }
+
+        public int ObtenerCantidadDeRubros()
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    return bUoW.RepositorioRubro.CantidadFilas();
                 }
             }
         }

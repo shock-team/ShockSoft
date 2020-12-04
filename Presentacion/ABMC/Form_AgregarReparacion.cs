@@ -19,12 +19,30 @@ namespace ShockSoft.Presentacion
         public Form_AgregarReparacion()
         {
             InitializeComponent();
+            txtCostoTrabajo.Text = "0";
+            txtTotal.Text = "0";
+            txtTotalInsumos.Text = "0";
             foreach (MetodoPago metodoDePago in ControladorMetodosPago.ObtenerInstancia().ListarMetodosDePago())
             {
                 comboMetodoDePago.Items.Add(metodoDePago);
             }
             comboMetodoDePago.DisplayMember = "Descripcion";
             comboMetodoDePago.ValueMember = "IdMetodoPago";
+            comboMetodoDePago.SelectedIndex = 0;
+            foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
+            {
+                comboRubro.Items.Add(rubro);
+            }
+            comboRubro.DisplayMember = "Descripcion";
+            comboRubro.ValueMember = "IdRubro";
+            comboRubro.SelectedIndex = 0;
+            foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
+            {
+                comboMarca.Items.Add(marca);
+            }
+            comboMarca.DisplayMember = "Descripcion";
+            comboMarca.ValueMember = "IdMarca";
+            comboMarca.SelectedIndex = 0;
         }
 
         // Deslizar ventana desde el panel de control
@@ -68,11 +86,6 @@ namespace ShockSoft.Presentacion
             this.Show();
         }
 
-        private void CbReparado_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpFechaReparacion.Enabled = cbReparado.Checked;
-        }
-
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
         {
             List<int> listaDeIDs = new List<int>();
@@ -100,7 +113,14 @@ namespace ShockSoft.Presentacion
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-
+            int idReparacion = controlador.AgregarReparacion(txtProblema.Text, txtSolucion.Text , dtpFechaIngreso.Value, dtpFechaReparacion.Value,
+                                                             dtpFechaEntrega.Value, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
+                                                             txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
+                                                             ((Marca)comboMarca.SelectedItem).IdMarca, cbReparado.Checked, cbEntregado.Checked,
+                                                             ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago, txtTotal.Text);
+            controlador.GenerarLineasDeReparacion(dgLineasDeReparacion.Rows, idReparacion);
+            MessageBox.Show("La reparación se ha registrado exitosamente", "Éxito");
+            this.Close();
         }
 
         public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
@@ -114,12 +134,62 @@ namespace ShockSoft.Presentacion
                     total += (double)fila.Cells[4].Value;
                 }
             }
-            txtTotal.Text = total.ToString();
+            txtTotalInsumos.Text = total.ToString();
+        }
+
+        private void CbReparado_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFechaReparacion.Enabled = cbReparado.Checked;
         }
 
         private void CbEntregado_CheckedChanged(object sender, EventArgs e)
         {
             dtpFechaEntrega.Enabled = cbEntregado.Checked;
+        }
+
+        private void CbCobrado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbCobrado.Checked)
+            {
+                txtCostoTrabajo.Enabled = true;
+                if (txtCostoTrabajo.TextLength > 0)
+                {
+                    txtTotal.Text = (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text)).ToString();
+                }
+                else
+                {
+                    txtTotal.Text = (float.Parse(txtTotalInsumos.Text)).ToString();
+                }
+            }
+            else
+            {
+                txtCostoTrabajo.Enabled = false;
+                txtCostoTrabajo.Text = "0";
+                txtTotal.Text = "0";
+            }
+        }
+
+        private void TxtCostoTrabajo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char caracter = e.KeyChar;
+            if (caracter == 46 && txtCostoTrabajo.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if(!Char.IsDigit(caracter) && caracter != 8 && caracter != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PreciosCambiados(object sender, EventArgs e)
+        {
+            if ((txtTotalInsumos.TextLength > 0) && (txtCostoTrabajo.TextLength > 0))
+            {
+                txtTotal.Text = (ControladorMetodosPago.ObtenerInstancia().ObtenerMetodoDePago(((MetodoPago) comboMetodoDePago.SelectedItem).IdMetodoPago).MultiplicadorInteres * (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text))).ToString();
+            }
         }
     }
 

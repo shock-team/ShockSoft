@@ -71,7 +71,7 @@ namespace ShockSoft.Persistencia.EntityFramework
                           .Include("MetodoPago")
                           where v.IdCliente == pIdCliente
                           select v);
-            return ventas;
+            return ventas.Distinct();
         }
     }
 }

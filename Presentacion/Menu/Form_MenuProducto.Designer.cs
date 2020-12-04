@@ -33,6 +33,8 @@
             this.btnConsultaProducto = new System.Windows.Forms.Button();
             this.btnABMParametro = new System.Windows.Forms.Button();
             this.btnConsultaMarca = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnRubros = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,12 +113,40 @@
             this.btnConsultaMarca.UseVisualStyleBackColor = false;
             this.btnConsultaMarca.Click += new System.EventHandler(this.btnConsultaMarca_Click);
             // 
+            // btnProveedores
+            // 
+            this.btnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnProveedores.Location = new System.Drawing.Point(45, 293);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(600, 45);
+            this.btnProveedores.TabIndex = 9;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = false;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            // 
+            // btnRubros
+            // 
+            this.btnRubros.Location = new System.Drawing.Point(45, 344);
+            this.btnRubros.Name = "btnRubros";
+            this.btnRubros.Size = new System.Drawing.Size(600, 45);
+            this.btnRubros.TabIndex = 10;
+            this.btnRubros.Text = "Rubros";
+            this.btnRubros.UseVisualStyleBackColor = true;
+            this.btnRubros.Click += new System.EventHandler(this.btnRubros_Click);
+            // 
             // Form_MenuProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.btnRubros);
+            this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnConsultaMarca);
             this.Controls.Add(this.btnABMParametro);
             this.Controls.Add(this.btnConsultaProducto);
@@ -137,5 +167,7 @@
         private System.Windows.Forms.Button btnConsultaProducto;
         private System.Windows.Forms.Button btnABMParametro;
         private System.Windows.Forms.Button btnConsultaMarca;
+        private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Button btnRubros;
     }
 }
