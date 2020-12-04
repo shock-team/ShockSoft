@@ -16,7 +16,7 @@ namespace ShockSoft.Presentacion
     {
         ControladorReparaciones controlador = ControladorReparaciones.ObtenerInstancia();
 
-        public Form_AgregarReparacion()
+        public Form_AgregarReparacion(int pIdReparacion = 0)
         {
             InitializeComponent();
             txtCostoTrabajo.Text = "0";
@@ -189,6 +189,34 @@ namespace ShockSoft.Presentacion
             if ((txtTotalInsumos.TextLength > 0) && (txtCostoTrabajo.TextLength > 0))
             {
                 txtTotal.Text = (ControladorMetodosPago.ObtenerInstancia().ObtenerMetodoDePago(((MetodoPago) comboMetodoDePago.SelectedItem).IdMetodoPago).MultiplicadorInteres * (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text))).ToString();
+            }
+        }
+
+        private void CargarDatos(int pIdReparacion)
+        {
+            if (pIdReparacion != 0)
+            {
+                Reparacion reparacionActual = controlador.ObtenerReparacion(pIdReparacion);
+                txtIdCliente.Text = reparacionActual.IdCliente.ToString();
+                txtNombreCliente.Text = reparacionActual.Cliente.Nombre + " " + reparacionActual.Cliente.Apellido;
+                txtClave.Text = reparacionActual.Contraseña;
+                dtpFechaIngreso.Value = reparacionActual.FechaIngreso;
+                dtpFechaReparacion.Value = reparacionActual.FechaReparacion;
+                dtpFechaEntrega.Value = reparacionActual.FechaEntrega;
+                cbEntregado.Checked = reparacionActual.Entregado;
+                cbCobrado.Checked = reparacionActual.Cobrado;
+                cbReparado.Checked = (reparacionActual.FechaReparacion != DateTime.MinValue);
+                txtProblema.Text = reparacionActual.Problema;
+                txtSolucion.Text = reparacionActual.Solucion;
+                comboMarca.SelectedItem = reparacionActual.Marca;
+                comboMetodoDePago.SelectedItem = reparacionActual.MetodoPago;
+                comboRubro.SelectedItem = reparacionActual.Rubro;
+                foreach (LineaReparacion lineaReparacion in reparacionActual.LineasReparacion)
+                {
+                    AgregarLinea(lineaReparacion.IdProducto.ToString(), lineaReparacion.Producto.Descripcion, lineaReparacion.PrecioActual.ToString(), lineaReparacion.Cantidad);
+                }
+                txtCostoTrabajo.Text = (reparacionActual.Precio - float.Parse(txtTotalInsumos.Text)).ToString();
+                txtTotal.Text = reparacionActual.Precio.ToString();
             }
         }
     }
