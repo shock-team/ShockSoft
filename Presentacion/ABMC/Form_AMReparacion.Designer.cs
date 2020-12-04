@@ -44,13 +44,13 @@
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProblema = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -59,12 +59,9 @@
             this.cbIncluyeCables = new System.Windows.Forms.CheckBox();
             this.cbIncluyeCargador = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgLineasDeReparacion = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.cbCobrado = new System.Windows.Forms.CheckBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtCostoTrabajo = new System.Windows.Forms.TextBox();
@@ -73,9 +70,14 @@
             this.lblMetodoPago = new System.Windows.Forms.Label();
             this.txtTotalInsumos = new System.Windows.Forms.TextBox();
             this.lblTotalInsumos = new System.Windows.Forms.Label();
-            this.cbCobrado = new System.Windows.Forms.CheckBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.dgLineasDeReparacion = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
+            this.comboRubro = new System.Windows.Forms.ComboBox();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.gbLista.SuspendLayout();
@@ -277,6 +279,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(130, 115);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(293, 25);
+            this.txtClave.TabIndex = 15;
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.Location = new System.Drawing.Point(16, 115);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(88, 19);
+            this.lblClave.TabIndex = 14;
+            this.lblClave.Text = "Contraseña:";
+            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
@@ -325,22 +343,6 @@
             this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
             this.lblIdCliente.TabIndex = 5;
             this.lblIdCliente.Text = "ID del cliente:";
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(130, 115);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(293, 25);
-            this.txtClave.TabIndex = 15;
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(16, 115);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(88, 19);
-            this.lblClave.TabIndex = 14;
-            this.lblClave.Text = "Contraseña:";
             // 
             // groupBox2
             // 
@@ -441,45 +443,41 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Problema";
             // 
-            // dgLineasDeReparacion
+            // btnAceptar
             // 
-            this.dgLineasDeReparacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLineasDeReparacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Descripcion,
-            this.Cantidad,
-            this.PrecioUnitario,
-            this.Subtotal});
-            this.dgLineasDeReparacion.Location = new System.Drawing.Point(20, 24);
-            this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
-            this.dgLineasDeReparacion.Size = new System.Drawing.Size(795, 251);
-            this.dgLineasDeReparacion.TabIndex = 19;
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(828, 267);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(253, 27);
+            this.btnAceptar.TabIndex = 40;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
             // 
-            // ID
+            // btnAgregarProducto
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
+            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(20, 266);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(795, 28);
+            this.btnAgregarProducto.TabIndex = 39;
+            this.btnAgregarProducto.Text = "Agregar producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
             // 
-            // Descripcion
+            // cbCobrado
             // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 350;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
+            this.cbCobrado.AutoSize = true;
+            this.cbCobrado.Location = new System.Drawing.Point(828, 229);
+            this.cbCobrado.Name = "cbCobrado";
+            this.cbCobrado.Size = new System.Drawing.Size(87, 23);
+            this.cbCobrado.TabIndex = 30;
+            this.cbCobrado.Text = "Cobrado";
+            this.cbCobrado.UseVisualStyleBackColor = true;
             // 
             // txtTotal
             // 
@@ -549,41 +547,61 @@
             this.lblTotalInsumos.TabIndex = 31;
             this.lblTotalInsumos.Text = "Total insumos:";
             // 
-            // cbCobrado
+            // dgLineasDeReparacion
             // 
-            this.cbCobrado.AutoSize = true;
-            this.cbCobrado.Location = new System.Drawing.Point(828, 229);
-            this.cbCobrado.Name = "cbCobrado";
-            this.cbCobrado.Size = new System.Drawing.Size(87, 23);
-            this.cbCobrado.TabIndex = 30;
-            this.cbCobrado.Text = "Cobrado";
-            this.cbCobrado.UseVisualStyleBackColor = true;
+            this.dgLineasDeReparacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLineasDeReparacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Descripcion,
+            this.Cantidad,
+            this.PrecioUnitario,
+            this.Subtotal});
+            this.dgLineasDeReparacion.Location = new System.Drawing.Point(20, 24);
+            this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
+            this.dgLineasDeReparacion.Size = new System.Drawing.Size(795, 251);
+            this.dgLineasDeReparacion.TabIndex = 19;
             // 
-            // btnAceptar
+            // ID
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(828, 267);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(253, 27);
-            this.btnAceptar.TabIndex = 40;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
             // 
-            // btnAgregarProducto
+            // Descripcion
             // 
-            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
-            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
-            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(20, 266);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(795, 28);
-            this.btnAgregarProducto.TabIndex = 39;
-            this.btnAgregarProducto.Text = "Agregar producto";
-            this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 350;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(705, 360);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(121, 21);
+            this.comboMarca.TabIndex = 47;
+            // 
+            // comboRubro
+            // 
+            this.comboRubro.FormattingEnabled = true;
+            this.comboRubro.Location = new System.Drawing.Point(507, 340);
+            this.comboRubro.Name = "comboRubro";
+            this.comboRubro.Size = new System.Drawing.Size(121, 21);
+            this.comboRubro.TabIndex = 48;
             // 
             // Form_AgregarReparacion
             // 
@@ -591,6 +609,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1135, 700);
+            this.Controls.Add(this.comboRubro);
+            this.Controls.Add(this.comboMarca);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -670,5 +690,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.ComboBox comboMarca;
+        private System.Windows.Forms.ComboBox comboRubro;
     }
 }

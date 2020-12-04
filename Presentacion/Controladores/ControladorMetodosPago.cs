@@ -84,5 +84,17 @@ namespace ShockSoft.Presentacion
                 }
             }
         }
+
+        public MetodoPago ObtenerMetodoDePago(int pIdMetodo)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    MetodoPago metodo = bUoW.RepositorioMetodoPago.Obtener(pIdMetodo);
+                    return metodo;
+                }
+            }
+        }
     }
 }
