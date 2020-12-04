@@ -291,6 +291,7 @@
             this.btnReiniciarFiltros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnReiniciarFiltros.TabIndex = 47;
             this.btnReiniciarFiltros.TabStop = false;
+            this.btnReiniciarFiltros.Click += new System.EventHandler(this.btnReiniciarFiltros_Click);
             // 
             // cbReparado
             // 
