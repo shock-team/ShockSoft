@@ -115,12 +115,18 @@
             // 
             // btnProveedores
             // 
+            this.btnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnProveedores.Location = new System.Drawing.Point(45, 293);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(600, 45);
             this.btnProveedores.TabIndex = 9;
             this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnRubros
