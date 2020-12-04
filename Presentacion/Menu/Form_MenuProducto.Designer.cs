@@ -33,6 +33,7 @@
             this.btnConsultaProducto = new System.Windows.Forms.Button();
             this.btnABMParametro = new System.Windows.Forms.Button();
             this.btnConsultaMarca = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,12 +112,23 @@
             this.btnConsultaMarca.UseVisualStyleBackColor = false;
             this.btnConsultaMarca.Click += new System.EventHandler(this.btnConsultaMarca_Click);
             // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Location = new System.Drawing.Point(45, 293);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(600, 45);
+            this.btnProveedores.TabIndex = 9;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            // 
             // Form_MenuProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnConsultaMarca);
             this.Controls.Add(this.btnABMParametro);
             this.Controls.Add(this.btnConsultaProducto);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Button btnConsultaProducto;
         private System.Windows.Forms.Button btnABMParametro;
         private System.Windows.Forms.Button btnConsultaMarca;
+        private System.Windows.Forms.Button btnProveedores;
     }
 }

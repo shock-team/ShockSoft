@@ -226,6 +226,12 @@
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
     <Compile Include="Persistencia\IRepositorio.cs" />
+    <Compile Include="Presentacion\ABMC\Form_AMCProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC\Form_AMCProveedor.Designer.cs">
+      <DependentUpon>Form_AMCProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Controladores\ControladorClientes.cs" />
     <Compile Include="Presentacion\Controladores\ControladorLocalidades.cs" />
     <Compile Include="Presentacion\Controladores\ControladorMarcas.cs" />
@@ -425,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarProducto.resx">
       <DependentUpon>Form_AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AMCProveedor.resx">
+      <DependentUpon>Form_AMCProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_BuscarProducto.resx">
       <DependentUpon>Form_BuscarProducto.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShockSoft.Presentacion.ABMC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,12 @@ namespace ShockSoft.Presentacion
         {
             Form_ConsultarMarca form_ConsultarMarca = new Form_ConsultarMarca();
             form_ConsultarMarca.Show();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            Form_AMCProveedor form_AMCProveedor = new Form_AMCProveedor();
+            form_AMCProveedor.Show();
         }
     }
 }
