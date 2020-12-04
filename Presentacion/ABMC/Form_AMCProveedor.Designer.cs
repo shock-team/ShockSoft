@@ -263,6 +263,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(900, 45);
             this.panelControl.TabIndex = 24;
+            this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -277,6 +278,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 10;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // picShock
             // 
@@ -312,6 +314,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
             this.btnTamano.UseVisualStyleBackColor = false;
+            this.btnTamano.Click += new System.EventHandler(this.btnTamano_Click);
             // 
             // btnCerrar
             // 
@@ -326,6 +329,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // Form_AMCProveedor
             // 
