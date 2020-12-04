@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShockSoft.Presentacion.ABMC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,12 @@ namespace ShockSoft.Presentacion
             Form_ConsultarClientes form_ConsultaCliente = new Form_ConsultarClientes();
             form_ConsultaCliente.Owner = this;
             form_ConsultaCliente.Show();
+        }
+
+        private void btnLocalidades_Click(object sender, EventArgs e)
+        {
+            Form_AMCLocalidad form_Localidades = new Form_AMCLocalidad();
+            form_Localidades.Show();
         }
     }
 }

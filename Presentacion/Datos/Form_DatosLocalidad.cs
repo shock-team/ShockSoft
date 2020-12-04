@@ -31,7 +31,7 @@ namespace ShockSoft.Presentacion
             try
             {
                 controlador.VerificarDatos(txtNombre.Text);
-                controlador.ModificarLocalidad(txtNombre.Text, int.Parse(txtId.Text));
+                controlador.ModificarLocalidad(int.Parse(txtId.Text), txtNombre.Text);
                 MessageBox.Show("Localidad modificada correctamente", "Éxito");
             }
             catch (Exception)

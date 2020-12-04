@@ -66,18 +66,36 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
+        /// Este método se encarga de devolver una lista de un rango de localidades
+        /// presentes en el repositorio
+        /// </summary>
+        /// <returns></returns>
+        public List<Localidad> ListarLocalidades(int pDesde, int pCantidad)
+        {
+            List<Localidad> listaLocalidades;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaLocalidades = bUoW.RepositorioLocalidad.ObtenerLocalidades(pDesde, pCantidad).ToList();
+                }
+            }
+            return listaLocalidades;
+        }
+
+        /// <summary>
         /// Este método se encarga de modificar los datos de una localidad existente
         /// en el repositorio
         /// </summary>
         /// <param name="pNombre">El nuevo nombre de la localidad</param>
-        /// <param name="idLocalidad">El ID de la localidad a modificar</param>
-        public void ModificarLocalidad(string pNombre, int idLocalidad)
+        /// <param name="pLocalidad">El ID de la localidad a modificar</param>
+        public void ModificarLocalidad(int pLocalidad, string pNombre)
         {
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    Localidad localidadAModificar = bUoW.RepositorioLocalidad.Obtener(idLocalidad);
+                    Localidad localidadAModificar = bUoW.RepositorioLocalidad.Obtener(pLocalidad);
                     localidadAModificar.Nombre = pNombre;
                     bUoW.GuardarCambios();
                 }
@@ -113,6 +131,17 @@ namespace ShockSoft.Presentacion
                     {
                         throw new DatosRepetidosException();
                     }
+                }
+            }
+        }
+
+        public int ObtenerCantidadDeLocalidades()
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    return bUoW.RepositorioLocalidad.CantidadFilas();
                 }
             }
         }

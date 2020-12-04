@@ -31,6 +31,7 @@
             this.btnAltaCliente = new System.Windows.Forms.Button();
             this.btnConsultarClientes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLocalidades = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAltaCliente
@@ -77,12 +78,23 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "powered by Shock!Team";
             // 
+            // btnLocalidades
+            // 
+            this.btnLocalidades.Location = new System.Drawing.Point(45, 162);
+            this.btnLocalidades.Name = "btnLocalidades";
+            this.btnLocalidades.Size = new System.Drawing.Size(600, 45);
+            this.btnLocalidades.TabIndex = 4;
+            this.btnLocalidades.Text = "Localidades";
+            this.btnLocalidades.UseVisualStyleBackColor = true;
+            this.btnLocalidades.Click += new System.EventHandler(this.btnLocalidades_Click);
+            // 
             // Form_MenuClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.btnLocalidades);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultarClientes);
             this.Controls.Add(this.btnAltaCliente);
@@ -99,5 +111,6 @@
         private System.Windows.Forms.Button btnAltaCliente;
         private System.Windows.Forms.Button btnConsultarClientes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLocalidades;
     }
 }

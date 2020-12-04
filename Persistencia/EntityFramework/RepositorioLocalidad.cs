@@ -20,5 +20,18 @@ namespace ShockSoft.Persistencia.EntityFramework
                                select l);
             return localidades;
         }
+
+        public IEnumerable<Localidad> ObtenerLocalidades(int pDesde, int pCantidad)
+        {
+            var localidadesFiltrados = (from l in iDbContext.Localidades
+                                        select l);
+            return localidadesFiltrados.OrderBy(x => x.IdLocalidad).Skip(pDesde).Take(pCantidad);
+        }
+
+        public int CantidadFilas()
+        {
+            var sql = "SELECT COUNT(*) FROM localidades";
+            return this.iDbContext.Database.SqlQuery<int>(sql).Single();
+        }
     }
 }
