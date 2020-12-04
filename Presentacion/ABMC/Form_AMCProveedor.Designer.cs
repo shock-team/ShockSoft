@@ -54,13 +54,15 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // dgProveedores
             // 
+            this.dgProveedores.AllowUserToAddRows = false;
+            this.dgProveedores.AllowUserToDeleteRows = false;
             this.dgProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nombre});
             this.dgProveedores.Location = new System.Drawing.Point(6, 19);
             this.dgProveedores.Name = "dgProveedores";
-            this.dgProveedores.Size = new System.Drawing.Size(487, 291);
+            this.dgProveedores.Size = new System.Drawing.Size(487, 379);
             this.dgProveedores.TabIndex = 0;
             this.dgProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProveedores_CellDoubleClick);
             // 
@@ -87,7 +89,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.groupBox1.Controls.Add(this.dgProveedores);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 351);
+            this.groupBox1.Size = new System.Drawing.Size(503, 443);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proveedores";
@@ -95,7 +97,7 @@ namespace ShockSoft.Presentacion.ABMC
             // lblPaginaActual
             // 
             this.lblPaginaActual.AutoSize = true;
-            this.lblPaginaActual.Location = new System.Drawing.Point(231, 323);
+            this.lblPaginaActual.Location = new System.Drawing.Point(227, 418);
             this.lblPaginaActual.Name = "lblPaginaActual";
             this.lblPaginaActual.Size = new System.Drawing.Size(13, 13);
             this.lblPaginaActual.TabIndex = 3;
@@ -103,7 +105,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(121, 318);
+            this.btnAnterior.Location = new System.Drawing.Point(117, 413);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 2;
@@ -113,7 +115,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(288, 318);
+            this.btnSiguiente.Location = new System.Drawing.Point(287, 413);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 1;
@@ -166,9 +168,9 @@ namespace ShockSoft.Presentacion.ABMC
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.btnModificar);
-            this.groupBox3.Location = new System.Drawing.Point(521, 226);
+            this.groupBox3.Location = new System.Drawing.Point(521, 314);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(245, 137);
+            this.groupBox3.Size = new System.Drawing.Size(245, 134);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Modificar Proveedor";
@@ -221,7 +223,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 393);
+            this.ClientSize = new System.Drawing.Size(811, 467);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

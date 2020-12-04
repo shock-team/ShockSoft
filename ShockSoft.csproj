@@ -232,6 +232,12 @@
     <Compile Include="Presentacion\ABMC\Form_AMCProveedor.Designer.cs">
       <DependentUpon>Form_AMCProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ABMC\Form_AMCRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC\Form_AMCRubro.Designer.cs">
+      <DependentUpon>Form_AMCRubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Controladores\ControladorClientes.cs" />
     <Compile Include="Presentacion\Controladores\ControladorLocalidades.cs" />
     <Compile Include="Presentacion\Controladores\ControladorMarcas.cs" />
@@ -434,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_AMCProveedor.resx">
       <DependentUpon>Form_AMCProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AMCRubro.resx">
+      <DependentUpon>Form_AMCRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_BuscarProducto.resx">
       <DependentUpon>Form_BuscarProducto.cs</DependentUpon>
