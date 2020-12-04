@@ -10,9 +10,9 @@ namespace ShockSoft.Presentacion
     /// GUI correspondiente a los casos de uso asociados a la clase MetodoPago
     /// y las clases de dominio. Esta clase aplica el patrón de diseño Singleton.
     /// </summary>
-    class ControladorMetodosPago
+    public class ControladorMetodosPago
     {
-        public static ControladorMetodosPago _instancia;
+        private static ControladorMetodosPago _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -20,7 +20,12 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorMetodosPago ObtenerInstancia()
         {
-            return _instancia ?? new ControladorMetodosPago();
+            if (_instancia == null)
+            {
+                _instancia = new ControladorMetodosPago();
+            }
+
+            return _instancia;
         }
 
         /// <summary>

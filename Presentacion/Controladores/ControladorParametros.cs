@@ -12,7 +12,7 @@ namespace ShockSoft.Presentacion
     /// </summary>
     public class ControladorParametros
     {
-        public static ControladorParametros _instancia;
+        private static ControladorParametros _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -20,7 +20,12 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorParametros ObtenerInstancia()
         {
-            return _instancia ?? new ControladorParametros();
+            if (_instancia == null)
+            {
+                _instancia = new ControladorParametros();
+            }
+
+            return _instancia;
         }
 
         /// <summary>

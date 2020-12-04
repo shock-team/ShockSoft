@@ -13,7 +13,7 @@ namespace ShockSoft.Presentacion
     /// </summary>
     public class ControladorReparaciones
     {
-        public static ControladorReparaciones _instancia;
+        private static ControladorReparaciones _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -21,7 +21,12 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorReparaciones ObtenerInstancia()
         {
-            return _instancia ?? new ControladorReparaciones();
+            if (_instancia == null)
+            {
+                _instancia = new ControladorReparaciones();
+            }
+
+            return _instancia;
         }
 
         /// <summary>

@@ -13,7 +13,7 @@ namespace ShockSoft.Presentacion
     /// </summary>
     public class ControladorMarcas
     {
-        public static ControladorMarcas _instancia;
+        private static ControladorMarcas _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -21,7 +21,12 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorMarcas ObtenerInstancia()
         {
-            return _instancia ?? new ControladorMarcas();
+            if (_instancia == null)
+            {
+                _instancia = new ControladorMarcas();
+            }
+
+            return _instancia;
         }
 
         /// <summary>

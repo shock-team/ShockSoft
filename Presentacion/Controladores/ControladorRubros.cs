@@ -10,9 +10,9 @@ namespace ShockSoft.Presentacion
     /// GUI correspondiente a los casos de uso asociados a la clase TipoEquipo
     /// y las clases de dominio. Esta clase aplica el patrón de diseño Singleton.
     /// </summary>
-    class ControladorRubros
+    public class ControladorRubros
     {
-        public static ControladorRubros _instancia;
+        private static ControladorRubros _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -20,7 +20,12 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorRubros ObtenerInstancia()
         {
-            return _instancia ?? new ControladorRubros();
+            if (_instancia == null)
+            {
+                _instancia = new ControladorRubros();
+            }
+
+            return _instancia;
         }
 
         /// <summary>

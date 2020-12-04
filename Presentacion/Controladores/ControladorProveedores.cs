@@ -10,17 +10,22 @@ namespace ShockSoft.Presentacion
     /// GUI correspondiente a los casos de uso asociados a la clase Proveedor
     /// y las clases de dominio. Esta clase aplica el patrón de diseño Singleton.
     /// </summary>
-    public class CotroladorProveedores
+    public class ControladorProveedores
     {
-        public static CotroladorProveedores _instancia;
+        private static ControladorProveedores _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
         /// </summary>
         /// <returns></returns>
-        public static CotroladorProveedores ObtenerInstancia()
+        public static ControladorProveedores ObtenerInstancia()
         {
-            return _instancia ?? new CotroladorProveedores();
+            if (_instancia == null)
+            {
+                _instancia = new ControladorProveedores();
+            }
+
+            return _instancia;
         }
 
         /// <summary>
