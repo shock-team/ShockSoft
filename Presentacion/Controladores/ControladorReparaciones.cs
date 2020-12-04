@@ -13,7 +13,7 @@ namespace ShockSoft.Presentacion
     /// </summary>
     public class ControladorReparaciones
     {
-        public static ControladorReparaciones instancia;
+        public static ControladorReparaciones _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -21,11 +21,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorReparaciones ObtenerInstancia()
         {
-            if (instancia == null)
-            {
-                instancia = new ControladorReparaciones();
-            }
-            return instancia;
+            return _instancia ?? new ControladorReparaciones();
         }
 
         /// <summary>
@@ -62,7 +58,7 @@ namespace ShockSoft.Presentacion
                     Marca marca = bUoW.RepositorioMarca.Obtener(pMarcaEquipo);
                     reparacion.Marca = marca;
                     Rubro tipo = bUoW.RepositorioRubro.Obtener(pTipoEquipo);
-                    reparacion.TipoEquipo = tipo;
+                    reparacion.Rubro = tipo;
                     bUoW.RepositorioReparacion.Agregar(reparacion);
                     bUoW.GuardarCambios();
                 }

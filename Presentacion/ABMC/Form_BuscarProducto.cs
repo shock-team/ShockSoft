@@ -1,16 +1,17 @@
-﻿using System.Windows.Forms;
-using ShockSoft.Dominio;
-using System.Data;
-using System.Runtime.InteropServices;
-using System.Collections.Generic;
+﻿using ShockSoft.Dominio;
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_ConsultarProductos : Form
+    public partial class Form_BuscarProducto : Form
     {
         ControladorProductos controlador;
-        public Form_ConsultarProductos()
+        public List<int> listaDeIDs = new List<int>();
+
+        public Form_BuscarProducto()
         {
             InitializeComponent();
             controlador = ControladorProductos.ObtenerInstancia();
@@ -18,12 +19,6 @@ namespace ShockSoft.Presentacion
             btnAnterior.Visible = false;
 
             //Carga los datos del ComboBox de Marcas
-            comboMarca.Items.Add(new Marca
-            {
-                IdMarca = -1,
-                Descripcion = "Sin Filtro"
-            });
-
             foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
             {
                 comboMarca.Items.Add(marca);
@@ -32,11 +27,6 @@ namespace ShockSoft.Presentacion
             comboMarca.DisplayMember = "Descripcion";
 
             //Carga los datos del ComboBox de Rubros
-            comboRubro.Items.Add(new Rubro
-            {
-                IdRubro = -1,
-                Descripcion = "Sin Filtro"
-            });
             foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
             {
                 comboRubro.Items.Add(rubro);
@@ -48,7 +38,8 @@ namespace ShockSoft.Presentacion
             ActualizarTabla();
         }
 
-        private void ValorCambiado(object sender, System.EventArgs e)
+
+        private void ValorCambiado(object sender, EventArgs e)
         {
             ActualizarTabla();
         }
@@ -59,17 +50,16 @@ namespace ShockSoft.Presentacion
             btnSiguiente.Visible = true;
             dgProductos.Rows.Clear();
             int CANTIDAD_POR_PAGINA = 15;
-
             Rubro rubro = (Rubro)comboRubro.SelectedItem ?? new Rubro { IdRubro = -1 };
             Marca marca = (Marca)comboMarca.SelectedItem ?? new Marca { IdMarca = -1 };
             List<Producto> listaDeProductos = controlador.ListarProductos(
-                    txtDescripcion.Text, 
-                    cbMostrarProductosBaja.Checked, 
-                    cbSinStock.Checked, 
-                    txtId.Text, 
-                    CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1), 
-                    CANTIDAD_POR_PAGINA + 1, 
-                    marca.IdMarca, 
+                    txtDescripcion.Text,
+                    false,
+                    false,
+                    txtId.Text,
+                    CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1),
+                    CANTIDAD_POR_PAGINA + 1,
+                    marca.IdMarca,
                     rubro.IdRubro);
 
             if (listaDeProductos.Count < (CANTIDAD_POR_PAGINA + 1))
@@ -82,7 +72,6 @@ namespace ShockSoft.Presentacion
                 dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.PrecioBaseDolar, producto.Cantidad);
             }
         }
-
         // Deslizar ventana desde el panel de control
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -94,12 +83,12 @@ namespace ShockSoft.Presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnMinimizar_Click(object sender, System.EventArgs e)
+        private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnTamano_Click(object sender, System.EventArgs e)
+        private void btnTamano_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
@@ -111,48 +100,36 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        private void btnCerrar_Click(object sender, System.EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnAnterior_Click(object sender, System.EventArgs e)
+        private void btnAnterior_Click(object sender, EventArgs e)
         {
-            btnSiguiente.Enabled = true;
-            btnSiguiente.Visible = true;
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) - 1).ToString();
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = false;
-                btnAnterior.Visible = false;
-            }
+            FormsHelper.PaginaAnterior(btnSiguiente, btnAnterior, lblPaginaActual);
             ActualizarTabla();
         }
 
-        private void btnSiguiente_Click(object sender, System.EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (lblPaginaActual.Text.Equals("1"))
-            {
-                btnAnterior.Enabled = true;
-                btnAnterior.Visible = true;
-            }
-            lblPaginaActual.Text = (int.Parse(lblPaginaActual.Text) + 1).ToString();
-            if (int.Parse(lblPaginaActual.Text) >= (controlador.ObtenerCantidadDeProductos() / 15))
-            {
-                btnSiguiente.Enabled = false;
-                btnSiguiente.Visible = false;
-            }
+            FormsHelper.SiguientePagina(btnSiguiente, btnAnterior, lblPaginaActual, controlador.ObtenerCantidadDeProductos());
             ActualizarTabla();
         }
 
-        private void DgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DgProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Obtiene el cliente seleccionado a partir de su ID
             int productoSeleccionado = (int)dgProductos.CurrentRow.Cells[0].Value;
-            Form_DatosProducto formDatosProducto = new Form_DatosProducto(productoSeleccionado);
-            this.Hide();
-            formDatosProducto.ShowDialog();
-            this.Show();
+            if (!(listaDeIDs.Contains(productoSeleccionado)))
+            {
+                IBusquedaDeProductos owner = (IBusquedaDeProductos)Owner;
+                owner.AgregarProducto(productoSeleccionado);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ese producto ya ha sido seleccionado", "Error");
+            }
         }
     }
 }

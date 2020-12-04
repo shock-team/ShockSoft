@@ -12,7 +12,7 @@ namespace ShockSoft.Presentacion
     /// </summary>
     class ControladorRubros
     {
-        public static ControladorRubros instancia;
+        public static ControladorRubros _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -20,11 +20,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorRubros ObtenerInstancia()
         {
-            if (instancia == null)
-            {
-                instancia = new ControladorRubros();
-            }
-            return instancia;
+            return _instancia ?? new ControladorRubros();
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace ShockSoft.Presentacion
     public class ControladorLocalidades
     {
 
-        public static ControladorLocalidades instancia;
+        public static ControladorLocalidades _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -22,11 +22,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorLocalidades ObtenerInstancia()
         {
-            if (instancia == null)
-            {
-                instancia = new ControladorLocalidades();
-            }
-            return instancia;
+            return _instancia ?? new ControladorLocalidades();
         }
 
         /// <summary>

@@ -226,16 +226,16 @@
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
     <Compile Include="Persistencia\IRepositorio.cs" />
-    <Compile Include="Presentacion\ControladorClientes.cs" />
-    <Compile Include="Presentacion\ControladorLocalidades.cs" />
-    <Compile Include="Presentacion\ControladorMarcas.cs" />
-    <Compile Include="Presentacion\ControladorMetodosPago.cs" />
-    <Compile Include="Presentacion\ControladorRubros.cs" />
-    <Compile Include="Presentacion\ControladorParametros.cs" />
-    <Compile Include="Presentacion\ControladorProductos.cs" />
-    <Compile Include="Presentacion\ControladorProveedores.cs" />
-    <Compile Include="Presentacion\ControladorReparaciones.cs" />
-    <Compile Include="Presentacion\ControladorVentas.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorClientes.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorLocalidades.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorMarcas.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorMetodosPago.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorRubros.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorParametros.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorProductos.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorProveedores.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorReparaciones.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorVentas.cs" />
     <Compile Include="Presentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,156 +243,157 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistencia\IUnitOfWork.cs" />
-    <Compile Include="Presentacion\Form_ABMParametro.cs">
+    <Compile Include="Presentacion\ABMC\Form_ABMParametro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ABMParametro.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_ABMParametro.Designer.cs">
       <DependentUpon>Form_ABMParametro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarLineaDeVenta.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarLineaDeVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarLineaDeVenta.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarLineaDeVenta.Designer.cs">
       <DependentUpon>Form_AgregarLineaDeVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarMarca.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarMarca.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarMarca.Designer.cs">
       <DependentUpon>Form_AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarReparacion.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarReparacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarReparacion.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarReparacion.Designer.cs">
       <DependentUpon>Form_AgregarReparacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarVenta.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarVenta.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarVenta.Designer.cs">
       <DependentUpon>Form_AgregarVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarCliente.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarCliente.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarCliente.Designer.cs">
       <DependentUpon>Form_AgregarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarLocalidad.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarLocalidad.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarLocalidad.Designer.cs">
       <DependentUpon>Form_AgregarLocalidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarProducto.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_AgregarProducto.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_AgregarProducto.Designer.cs">
       <DependentUpon>Form_AgregarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_BuscarProducto.cs">
+    <Compile Include="Presentacion\ABMC\Form_BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_BuscarProducto.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_BuscarProducto.Designer.cs">
       <DependentUpon>Form_BuscarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarClientes.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarClientes.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarClientes.Designer.cs">
       <DependentUpon>Form_ConsultarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarMarca.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarMarca.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarMarca.Designer.cs">
       <DependentUpon>Form_ConsultarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarProductos.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarProductos.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarProductos.Designer.cs">
       <DependentUpon>Form_ConsultarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarReparaciones.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarReparaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarReparaciones.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarReparaciones.Designer.cs">
       <DependentUpon>Form_ConsultarReparaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarVentas.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ConsultarVentas.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_ConsultarVentas.Designer.cs">
       <DependentUpon>Form_ConsultarVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosCliente.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosCliente.Designer.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosCliente.Designer.cs">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosLocalidad.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosLocalidad.Designer.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosLocalidad.Designer.cs">
       <DependentUpon>Form_DatosLocalidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosProducto.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosProducto.Designer.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosProducto.Designer.cs">
       <DependentUpon>Form_DatosProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosVenta.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_DatosVenta.Designer.cs">
+    <Compile Include="Presentacion\Datos\Form_DatosVenta.Designer.cs">
       <DependentUpon>Form_DatosVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuClientes.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuClientes.Designer.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuClientes.Designer.cs">
       <DependentUpon>Form_MenuClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuPrincipal.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuPrincipal.Designer.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuPrincipal.Designer.cs">
       <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuProducto.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuProducto.Designer.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuProducto.Designer.cs">
       <DependentUpon>Form_MenuProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuReparaciones.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuReparaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuReparaciones.Designer.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuReparaciones.Designer.cs">
       <DependentUpon>Form_MenuReparaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuVentas.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_MenuVentas.Designer.cs">
+    <Compile Include="Presentacion\Menu\Form_MenuVentas.Designer.cs">
       <DependentUpon>Form_MenuVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_ModificarProducto.cs">
+    <Compile Include="Presentacion\ABMC\Form_ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_ModificarProducto.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_ModificarProducto.Designer.cs">
       <DependentUpon>Form_ModificarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form_RegistrarPago.cs">
+    <Compile Include="Presentacion\ABMC\Form_RegistrarPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form_RegistrarPago.Designer.cs">
+    <Compile Include="Presentacion\ABMC\Form_RegistrarPago.Designer.cs">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FormsHelper.cs" />
     <Compile Include="Presentacion\IAgregarLinea.cs" />
     <Compile Include="Presentacion\IBusquedaDeClientes.cs" />
     <Compile Include="Presentacion\IBusquedaDeProductos.cs" />
@@ -401,85 +402,96 @@
     <EmbeddedResource Include="Migrations\202011201917017_init.resx">
       <DependentUpon>202011201917017_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ABMParametro.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_ABMParametro.resx">
       <DependentUpon>Form_ABMParametro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_AgregarLineaDeVenta.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarLineaDeVenta.resx">
       <DependentUpon>Form_AgregarLineaDeVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_AgregarMarca.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarMarca.resx">
       <DependentUpon>Form_AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_AgregarReparacion.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarReparacion.resx">
       <DependentUpon>Form_AgregarReparacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_AgregarVenta.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarVenta.resx">
       <DependentUpon>Form_AgregarVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_AgregarCliente.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarCliente.resx">
       <DependentUpon>Form_AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_AgregarLocalidad.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarLocalidad.resx">
       <DependentUpon>Form_AgregarLocalidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_AgregarProducto.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarProducto.resx">
       <DependentUpon>Form_AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_BuscarProducto.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_BuscarProducto.resx">
       <DependentUpon>Form_BuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ConsultarMarca.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_ConsultarClientes.resx">
+      <DependentUpon>Form_ConsultarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC\Form_ConsultarMarca.resx">
       <DependentUpon>Form_ConsultarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ConsultarReparaciones.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_ConsultarReparaciones.resx">
       <DependentUpon>Form_ConsultarReparaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ConsultarVentas.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_ConsultarVentas.resx">
       <DependentUpon>Form_ConsultarVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_DatosCliente.resx">
+    <EmbeddedResource Include="Presentacion\Datos\Form_DatosCliente.resx">
       <DependentUpon>Form_DatosCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_DatosLocalidad.resx">
+    <EmbeddedResource Include="Presentacion\Datos\Form_DatosLocalidad.resx">
       <DependentUpon>Form_DatosLocalidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_DatosProducto.resx">
+    <EmbeddedResource Include="Presentacion\Datos\Form_DatosProducto.resx">
       <DependentUpon>Form_DatosProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_DatosVenta.resx">
+    <EmbeddedResource Include="Presentacion\Datos\Form_DatosVenta.resx">
       <DependentUpon>Form_DatosVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_MenuClientes.resx">
+    <EmbeddedResource Include="Presentacion\Menu\Form_MenuClientes.resx">
       <DependentUpon>Form_MenuClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_MenuPrincipal.resx">
+    <EmbeddedResource Include="Presentacion\Menu\Form_MenuPrincipal.resx">
       <DependentUpon>Form_MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_MenuProducto.resx">
+    <EmbeddedResource Include="Presentacion\Menu\Form_MenuProducto.resx">
       <DependentUpon>Form_MenuProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_MenuReparaciones.resx">
+    <EmbeddedResource Include="Presentacion\Menu\Form_MenuReparaciones.resx">
       <DependentUpon>Form_MenuReparaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_MenuVentas.resx">
+    <EmbeddedResource Include="Presentacion\Menu\Form_MenuVentas.resx">
       <DependentUpon>Form_MenuVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_ModificarProducto.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_ModificarProducto.resx">
       <DependentUpon>Form_ModificarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form_RegistrarPago.resx">
+    <EmbeddedResource Include="Presentacion\ABMC\Form_RegistrarPago.resx">
       <DependentUpon>Form_RegistrarPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="connection.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -491,6 +503,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shock_Simbol02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5111-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

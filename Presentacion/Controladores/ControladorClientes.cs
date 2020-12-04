@@ -15,7 +15,7 @@ namespace ShockSoft.Presentacion
     public class ControladorClientes
     {
 
-        public static ControladorClientes instancia;
+        public static ControladorClientes _instancia;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -23,11 +23,7 @@ namespace ShockSoft.Presentacion
         /// <returns></returns>
         public static ControladorClientes ObtenerInstancia()
         {
-            if (instancia == null)
-            {
-                instancia = new ControladorClientes();
-            }
-            return instancia;
+            return _instancia ?? new ControladorClientes();
         }
 
         /// <summary>

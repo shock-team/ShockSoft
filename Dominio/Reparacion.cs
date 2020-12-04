@@ -16,9 +16,9 @@ namespace ShockSoft.Dominio
         public float Precio { get; set; }
         public bool Entregado { get; set; }
         public bool Cobrado { get; set; }
-        public bool Cargador { get; set; }
-        public bool Cables { get; set; }
-        public Rubro TipoEquipo { get; set; }
+        public bool? Cargador { get; set; }
+        public bool? Cables { get; set; }
+        public Rubro Rubro { get; set; }
         public Cliente Cliente { get; set; }
         public MetodoPago MetodoPago { get; set; }
         public Marca Marca { get; set; }
