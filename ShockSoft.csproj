@@ -273,11 +273,11 @@
     <Compile Include="Presentacion\ABMC\Form_AgregarMarca.Designer.cs">
       <DependentUpon>Form_AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\ABMC\Form_AgregarReparacion.cs">
+    <Compile Include="Presentacion\ABMC\Form_AMReparacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\ABMC\Form_AgregarReparacion.Designer.cs">
-      <DependentUpon>Form_AgregarReparacion.cs</DependentUpon>
+    <Compile Include="Presentacion\ABMC\Form_AMReparacion.Designer.cs">
+      <DependentUpon>Form_AMReparacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ABMC\Form_AgregarVenta.cs">
       <SubType>Form</SubType>
@@ -423,8 +423,8 @@
     <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarMarca.resx">
       <DependentUpon>Form_AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarReparacion.resx">
-      <DependentUpon>Form_AgregarReparacion.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AMReparacion.resx">
+      <DependentUpon>Form_AMReparacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarVenta.resx">
       <DependentUpon>Form_AgregarVenta.cs</DependentUpon>
