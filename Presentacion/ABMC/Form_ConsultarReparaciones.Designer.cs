@@ -44,11 +44,11 @@
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblIdCliente = new System.Windows.Forms.Label();
-            this.lblNombreCliente = new System.Windows.Forms.Label();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
-            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.lblNombreCliente = new System.Windows.Forms.Label();
+            this.lblIdCliente = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnReiniciarFiltros = new System.Windows.Forms.PictureBox();
             this.cbReparado = new System.Windows.Forms.CheckBox();
@@ -235,42 +235,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
-            // lblIdCliente
-            // 
-            this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Location = new System.Drawing.Point(16, 34);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
-            this.lblIdCliente.TabIndex = 5;
-            this.lblIdCliente.Text = "ID del cliente:";
-            // 
-            // lblNombreCliente
-            // 
-            this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(16, 73);
-            this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(142, 19);
-            this.lblNombreCliente.TabIndex = 6;
-            this.lblNombreCliente.Text = "Nombre del cliente:";
-            // 
-            // txtIdCliente
-            // 
-            this.txtIdCliente.Enabled = false;
-            this.txtIdCliente.Location = new System.Drawing.Point(130, 30);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.ReadOnly = true;
-            this.txtIdCliente.Size = new System.Drawing.Size(210, 25);
-            this.txtIdCliente.TabIndex = 7;
-            // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.Enabled = false;
-            this.txtNombreCliente.Location = new System.Drawing.Point(179, 73);
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.ReadOnly = true;
-            this.txtNombreCliente.Size = new System.Drawing.Size(352, 25);
-            this.txtNombreCliente.TabIndex = 8;
-            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
@@ -284,6 +248,42 @@
             this.btnBuscarCliente.Text = "Buscar cliente";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // txtNombreCliente
+            // 
+            this.txtNombreCliente.Enabled = false;
+            this.txtNombreCliente.Location = new System.Drawing.Point(179, 73);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.ReadOnly = true;
+            this.txtNombreCliente.Size = new System.Drawing.Size(352, 25);
+            this.txtNombreCliente.TabIndex = 8;
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.Enabled = false;
+            this.txtIdCliente.Location = new System.Drawing.Point(130, 30);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.ReadOnly = true;
+            this.txtIdCliente.Size = new System.Drawing.Size(210, 25);
+            this.txtIdCliente.TabIndex = 7;
+            // 
+            // lblNombreCliente
+            // 
+            this.lblNombreCliente.AutoSize = true;
+            this.lblNombreCliente.Location = new System.Drawing.Point(16, 73);
+            this.lblNombreCliente.Name = "lblNombreCliente";
+            this.lblNombreCliente.Size = new System.Drawing.Size(142, 19);
+            this.lblNombreCliente.TabIndex = 6;
+            this.lblNombreCliente.Text = "Nombre del cliente:";
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Location = new System.Drawing.Point(16, 34);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
+            this.lblIdCliente.TabIndex = 5;
+            this.lblIdCliente.Text = "ID del cliente:";
             // 
             // groupBox2
             // 
@@ -320,6 +320,7 @@
             this.cbReparado.TabIndex = 46;
             this.cbReparado.Text = "Reparado";
             this.cbReparado.UseVisualStyleBackColor = true;
+            this.cbReparado.CheckedChanged += new System.EventHandler(this.cbReparado_CheckedChanged);
             // 
             // cbEntregado
             // 
@@ -330,6 +331,7 @@
             this.cbEntregado.TabIndex = 44;
             this.cbEntregado.Text = "Entregado";
             this.cbEntregado.UseVisualStyleBackColor = true;
+            this.cbEntregado.CheckedChanged += new System.EventHandler(this.cbEntregado_CheckedChanged);
             // 
             // cbCobrado
             // 
@@ -340,6 +342,7 @@
             this.cbCobrado.TabIndex = 45;
             this.cbCobrado.Text = "Cobrado";
             this.cbCobrado.UseVisualStyleBackColor = true;
+            this.cbCobrado.CheckedChanged += new System.EventHandler(this.cbCobrado_CheckedChanged);
             // 
             // lblPaginaActual
             // 
