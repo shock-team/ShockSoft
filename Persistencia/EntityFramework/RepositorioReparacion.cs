@@ -38,5 +38,19 @@ namespace ShockSoft.Persistencia.EntityFramework
                                 select r);
             return reparaciones.OrderByDescending(x => x.IdReparacion).Take(1).First();
         }
+
+        public Reparacion ObtenerReparacionPorId(int pIdReparacion)
+        {
+            var reparacion = (from r in iDbContext.Reparaciones
+                              .Include("Rubro")
+                              .Include("Cliente")
+                              .Include("MetodoPago")
+                              .Include("Marca")
+                              .Include("LineasReparacion")
+                              .Include("LineasReparacion.Producto")
+                              where r.IdReparacion == pIdReparacion
+                              select r);
+            return reparacion.First();
+        }
     }
 }

@@ -67,6 +67,7 @@ namespace ShockSoft.Presentacion
             reparacion.Entregado = pEntregado;
             reparacion.LineasReparacion = new List<LineaReparacion>();
             reparacion.Precio = float.Parse(pTotal);
+            reparacion.Solucion = pSolucion;
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
@@ -205,6 +206,18 @@ namespace ShockSoft.Presentacion
                 }
             }
             return lineasDeReparacion;
+        }
+
+        public Reparacion ObtenerReparacion(int pIdReparacion)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    Reparacion reparacion = bUoW.RepositorioReparacion.ObtenerReparacionPorId(pIdReparacion);
+                    return reparacion;
+                }
+            }
         }
     }
 }

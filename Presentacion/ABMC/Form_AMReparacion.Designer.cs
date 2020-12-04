@@ -216,6 +216,7 @@
             this.cbEntregado.TabIndex = 34;
             this.cbEntregado.Text = "Equipo entregado";
             this.cbEntregado.UseVisualStyleBackColor = true;
+            this.cbEntregado.CheckedChanged += new System.EventHandler(this.CbEntregado_CheckedChanged);
             // 
             // lblFechaReparacion
             // 
@@ -243,6 +244,7 @@
             this.cbReparado.TabIndex = 12;
             this.cbReparado.Text = "Equipo reparado";
             this.cbReparado.UseVisualStyleBackColor = true;
+            this.cbReparado.CheckedChanged += new System.EventHandler(this.CbReparado_CheckedChanged);
             // 
             // dtpFechaIngreso
             // 
@@ -307,6 +309,7 @@
             this.btnBuscarCliente.TabIndex = 9;
             this.btnBuscarCliente.Text = "Buscar cliente";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // txtNombreCliente
             // 
@@ -455,6 +458,7 @@
             this.btnAceptar.TabIndex = 40;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnAgregarProducto
             // 
@@ -468,6 +472,7 @@
             this.btnAgregarProducto.TabIndex = 39;
             this.btnAgregarProducto.Text = "Agregar producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
             // 
             // cbCobrado
             // 
@@ -478,6 +483,7 @@
             this.cbCobrado.TabIndex = 30;
             this.cbCobrado.Text = "Cobrado";
             this.cbCobrado.UseVisualStyleBackColor = true;
+            this.cbCobrado.CheckedChanged += new System.EventHandler(this.CbCobrado_CheckedChanged);
             // 
             // txtTotal
             // 
@@ -502,6 +508,8 @@
             this.txtCostoTrabajo.Name = "txtCostoTrabajo";
             this.txtCostoTrabajo.Size = new System.Drawing.Size(122, 25);
             this.txtCostoTrabajo.TabIndex = 36;
+            this.txtCostoTrabajo.TextChanged += new System.EventHandler(this.PreciosCambiados);
+            this.txtCostoTrabajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCostoTrabajo_KeyPress);
             // 
             // lblCostoTrabajo
             // 
@@ -520,6 +528,7 @@
             this.comboMetodoDePago.Name = "comboMetodoDePago";
             this.comboMetodoDePago.Size = new System.Drawing.Size(253, 27);
             this.comboMetodoDePago.TabIndex = 34;
+            this.comboMetodoDePago.SelectedIndexChanged += new System.EventHandler(this.PreciosCambiados);
             // 
             // lblMetodoPago
             // 
@@ -537,6 +546,7 @@
             this.txtTotalInsumos.ReadOnly = true;
             this.txtTotalInsumos.Size = new System.Drawing.Size(145, 25);
             this.txtTotalInsumos.TabIndex = 32;
+            this.txtTotalInsumos.TextChanged += new System.EventHandler(this.PreciosCambiados);
             // 
             // lblTotalInsumos
             // 
