@@ -29,6 +29,8 @@ namespace ShockSoft.Presentacion.ABMC
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgProveedores = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +68,18 @@ namespace ShockSoft.Presentacion.ABMC
             this.dgProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nombre});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgProveedores.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgProveedores.Location = new System.Drawing.Point(6, 26);
             this.dgProveedores.Name = "dgProveedores";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgProveedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgProveedores.Size = new System.Drawing.Size(487, 250);
             this.dgProveedores.TabIndex = 0;
             this.dgProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProveedores_CellDoubleClick);
@@ -78,7 +90,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 43;
+            this.id.Width = 48;
             // 
             // nombre
             // 
