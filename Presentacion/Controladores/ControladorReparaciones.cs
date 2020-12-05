@@ -187,19 +187,34 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
+                    Reparacion reparacionActual = bUoW.RepositorioReparacion.ObtenerReparacionPorId(pIdReparacion);
+                    List<LineaReparacion> lineasActuales = reparacionActual.LineasReparacion.ToList();
+                    int indiceLineaExistente;
+                    int idProducto;
                     for (int i = 0; i < pFilas.Count; i++)
                     {
                         if (pFilas[i].Cells[0].Value != null)
                         {
-                            LineaReparacion lineaDeReparacion = new LineaReparacion();
-                            lineaDeReparacion.IdProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
-                            lineaDeReparacion.Cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
-                            Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pFilas[i].Cells[0].Value.ToString()));
-                            producto.Cantidad -= lineaDeReparacion.Cantidad;
-                            lineaDeReparacion.Producto = producto;
-                            lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
-                            lineaDeReparacion.IdReparacion = pIdReparacion;
-                            bUoW.RepositorioLineasDeReparaciones.Agregar(lineaDeReparacion);
+                            idProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
+                            int cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
+                            indiceLineaExistente = lineasActuales.FindIndex(x => x.IdProducto == idProducto);
+                            if (indiceLineaExistente == -1)
+                            {
+                                LineaReparacion lineaDeReparacion = new LineaReparacion();
+                                lineaDeReparacion.IdProducto = idProducto;
+                                lineaDeReparacion.Cantidad = cantidad;
+                                Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
+                                producto.Cantidad -= lineaDeReparacion.Cantidad;
+                                lineaDeReparacion.Producto = producto;
+                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
+                                lineaDeReparacion.IdReparacion = pIdReparacion;
+                                bUoW.RepositorioLineasDeReparaciones.Agregar(lineaDeReparacion);
+                            }
+                            else
+                            {
+                                LineaReparacion lineaDeReparacionExistente = lineasActuales[indiceLineaExistente];
+                                lineaDeReparacionExistente.Cantidad += 
+                            }
                         }
                     }
                     bUoW.GuardarCambios();

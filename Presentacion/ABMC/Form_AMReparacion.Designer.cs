@@ -55,7 +55,7 @@
             this.txtProblema = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtSolucion = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbEquipo = new System.Windows.Forms.GroupBox();
             this.cbIncluyeCables = new System.Windows.Forms.CheckBox();
             this.cbIncluyeCargador = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -78,15 +78,22 @@
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboMarca = new System.Windows.Forms.ComboBox();
             this.comboRubro = new System.Windows.Forms.ComboBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblRubro = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNuevaReparacion = new System.Windows.Forms.Label();
+            this.lblIdReparacion = new System.Windows.Forms.Label();
+            this.txtIdReparacion = new System.Windows.Forms.TextBox();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.gbLista.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbEquipo.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeReparacion)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl
@@ -265,8 +272,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
-            this.groupBox1.Controls.Add(this.txtClave);
-            this.groupBox1.Controls.Add(this.lblClave);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.txtNombreCliente);
             this.groupBox1.Controls.Add(this.txtIdCliente);
@@ -274,24 +279,24 @@
             this.groupBox1.Controls.Add(this.lblIdCliente);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(12, 52);
+            this.groupBox1.Location = new System.Drawing.Point(12, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 164);
+            this.groupBox1.Size = new System.Drawing.Size(545, 118);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(130, 115);
+            this.txtClave.Location = new System.Drawing.Point(111, 19);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(293, 25);
+            this.txtClave.Size = new System.Drawing.Size(213, 25);
             this.txtClave.TabIndex = 15;
             // 
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(16, 115);
+            this.lblClave.Location = new System.Drawing.Point(17, 22);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(88, 19);
             this.lblClave.TabIndex = 14;
@@ -303,7 +308,7 @@
             this.btnBuscarCliente.FlatAppearance.BorderSize = 0;
             this.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(185)))), ((int)(((byte)(54)))));
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(340, 29);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(339, 30);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(191, 28);
             this.btnBuscarCliente.TabIndex = 9;
@@ -314,7 +319,7 @@
             // txtNombreCliente
             // 
             this.txtNombreCliente.Enabled = false;
-            this.txtNombreCliente.Location = new System.Drawing.Point(179, 73);
+            this.txtNombreCliente.Location = new System.Drawing.Point(178, 75);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.ReadOnly = true;
             this.txtNombreCliente.Size = new System.Drawing.Size(352, 25);
@@ -323,7 +328,7 @@
             // txtIdCliente
             // 
             this.txtIdCliente.Enabled = false;
-            this.txtIdCliente.Location = new System.Drawing.Point(130, 29);
+            this.txtIdCliente.Location = new System.Drawing.Point(129, 30);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(210, 25);
@@ -332,7 +337,7 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(16, 73);
+            this.lblNombreCliente.Location = new System.Drawing.Point(15, 75);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(142, 19);
             this.lblNombreCliente.TabIndex = 6;
@@ -341,7 +346,7 @@
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Location = new System.Drawing.Point(16, 34);
+            this.lblIdCliente.Location = new System.Drawing.Point(15, 35);
             this.lblIdCliente.Name = "lblIdCliente";
             this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
             this.lblIdCliente.TabIndex = 5;
@@ -355,7 +360,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox2.Location = new System.Drawing.Point(12, 222);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 149);
+            this.groupBox2.Size = new System.Drawing.Size(361, 149);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Problema";
@@ -365,7 +370,7 @@
             this.txtProblema.Location = new System.Drawing.Point(20, 27);
             this.txtProblema.Multiline = true;
             this.txtProblema.Name = "txtProblema";
-            this.txtProblema.Size = new System.Drawing.Size(410, 104);
+            this.txtProblema.Size = new System.Drawing.Size(321, 104);
             this.txtProblema.TabIndex = 44;
             // 
             // groupBox3
@@ -374,9 +379,9 @@
             this.groupBox3.Controls.Add(this.txtSolucion);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox3.Location = new System.Drawing.Point(468, 222);
+            this.groupBox3.Location = new System.Drawing.Point(379, 222);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 149);
+            this.groupBox3.Size = new System.Drawing.Size(381, 149);
             this.groupBox3.TabIndex = 45;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Solución";
@@ -386,26 +391,33 @@
             this.txtSolucion.Location = new System.Drawing.Point(20, 27);
             this.txtSolucion.Multiline = true;
             this.txtSolucion.Name = "txtSolucion";
-            this.txtSolucion.Size = new System.Drawing.Size(410, 104);
+            this.txtSolucion.Size = new System.Drawing.Size(341, 104);
             this.txtSolucion.TabIndex = 44;
             // 
-            // groupBox4
+            // gbEquipo
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
-            this.groupBox4.Controls.Add(this.cbIncluyeCables);
-            this.groupBox4.Controls.Add(this.cbIncluyeCargador);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox4.Location = new System.Drawing.Point(924, 222);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(187, 149);
-            this.groupBox4.TabIndex = 46;
-            this.groupBox4.TabStop = false;
+            this.gbEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.gbEquipo.Controls.Add(this.lblRubro);
+            this.gbEquipo.Controls.Add(this.lblMarca);
+            this.gbEquipo.Controls.Add(this.txtClave);
+            this.gbEquipo.Controls.Add(this.lblClave);
+            this.gbEquipo.Controls.Add(this.comboRubro);
+            this.gbEquipo.Controls.Add(this.comboMarca);
+            this.gbEquipo.Controls.Add(this.cbIncluyeCables);
+            this.gbEquipo.Controls.Add(this.cbIncluyeCargador);
+            this.gbEquipo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gbEquipo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbEquipo.Location = new System.Drawing.Point(766, 222);
+            this.gbEquipo.Name = "gbEquipo";
+            this.gbEquipo.Size = new System.Drawing.Size(345, 149);
+            this.gbEquipo.TabIndex = 46;
+            this.gbEquipo.TabStop = false;
+            this.gbEquipo.Text = "Equipo";
             // 
             // cbIncluyeCables
             // 
             this.cbIncluyeCables.AutoSize = true;
-            this.cbIncluyeCables.Location = new System.Drawing.Point(17, 50);
+            this.cbIncluyeCables.Location = new System.Drawing.Point(204, 116);
             this.cbIncluyeCables.Name = "cbIncluyeCables";
             this.cbIncluyeCables.Size = new System.Drawing.Size(120, 23);
             this.cbIncluyeCables.TabIndex = 48;
@@ -415,7 +427,7 @@
             // cbIncluyeCargador
             // 
             this.cbIncluyeCargador.AutoSize = true;
-            this.cbIncluyeCargador.Location = new System.Drawing.Point(17, 93);
+            this.cbIncluyeCargador.Location = new System.Drawing.Point(21, 116);
             this.cbIncluyeCargador.Name = "cbIncluyeCargador";
             this.cbIncluyeCargador.Size = new System.Drawing.Size(140, 23);
             this.cbIncluyeCargador.TabIndex = 47;
@@ -600,18 +612,78 @@
             // comboMarca
             // 
             this.comboMarca.FormattingEnabled = true;
-            this.comboMarca.Location = new System.Drawing.Point(705, 360);
+            this.comboMarca.Location = new System.Drawing.Point(111, 50);
             this.comboMarca.Name = "comboMarca";
-            this.comboMarca.Size = new System.Drawing.Size(121, 21);
+            this.comboMarca.Size = new System.Drawing.Size(213, 27);
             this.comboMarca.TabIndex = 47;
             // 
             // comboRubro
             // 
             this.comboRubro.FormattingEnabled = true;
-            this.comboRubro.Location = new System.Drawing.Point(507, 340);
+            this.comboRubro.Location = new System.Drawing.Point(111, 83);
             this.comboRubro.Name = "comboRubro";
-            this.comboRubro.Size = new System.Drawing.Size(121, 21);
+            this.comboRubro.Size = new System.Drawing.Size(213, 27);
             this.comboRubro.TabIndex = 48;
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(50, 53);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(55, 19);
+            this.lblMarca.TabIndex = 49;
+            this.lblMarca.Text = "Marca:";
+            // 
+            // lblRubro
+            // 
+            this.lblRubro.AutoSize = true;
+            this.lblRubro.Location = new System.Drawing.Point(51, 86);
+            this.lblRubro.Name = "lblRubro";
+            this.lblRubro.Size = new System.Drawing.Size(54, 19);
+            this.lblRubro.TabIndex = 50;
+            this.lblRubro.Text = "Rubro:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.txtIdReparacion);
+            this.panel1.Controls.Add(this.lblIdReparacion);
+            this.panel1.Controls.Add(this.lblNuevaReparacion);
+            this.panel1.Location = new System.Drawing.Point(12, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(545, 40);
+            this.panel1.TabIndex = 47;
+            // 
+            // lblNuevaReparacion
+            // 
+            this.lblNuevaReparacion.AutoSize = true;
+            this.lblNuevaReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNuevaReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNuevaReparacion.Location = new System.Drawing.Point(222, 10);
+            this.lblNuevaReparacion.Name = "lblNuevaReparacion";
+            this.lblNuevaReparacion.Size = new System.Drawing.Size(129, 19);
+            this.lblNuevaReparacion.TabIndex = 51;
+            this.lblNuevaReparacion.Text = "Nueva reparación";
+            // 
+            // lblIdReparacion
+            // 
+            this.lblIdReparacion.AutoSize = true;
+            this.lblIdReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblIdReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblIdReparacion.Location = new System.Drawing.Point(138, 10);
+            this.lblIdReparacion.Name = "lblIdReparacion";
+            this.lblIdReparacion.Size = new System.Drawing.Size(141, 19);
+            this.lblIdReparacion.TabIndex = 52;
+            this.lblIdReparacion.Text = "ID de la reparación:";
+            // 
+            // txtIdReparacion
+            // 
+            this.txtIdReparacion.Enabled = false;
+            this.txtIdReparacion.Location = new System.Drawing.Point(285, 11);
+            this.txtIdReparacion.Name = "txtIdReparacion";
+            this.txtIdReparacion.ReadOnly = true;
+            this.txtIdReparacion.Size = new System.Drawing.Size(115, 20);
+            this.txtIdReparacion.TabIndex = 53;
             // 
             // Form_AgregarReparacion
             // 
@@ -619,10 +691,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1135, 700);
-            this.Controls.Add(this.comboRubro);
-            this.Controls.Add(this.comboMarca);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.gbEquipo);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -642,11 +713,13 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbEquipo.ResumeLayout(false);
+            this.gbEquipo.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeReparacion)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -679,7 +752,7 @@
         private System.Windows.Forms.TextBox txtProblema;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtSolucion;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbEquipo;
         private System.Windows.Forms.CheckBox cbIncluyeCables;
         private System.Windows.Forms.CheckBox cbIncluyeCargador;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -702,5 +775,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.ComboBox comboMarca;
         private System.Windows.Forms.ComboBox comboRubro;
+        private System.Windows.Forms.Label lblRubro;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtIdReparacion;
+        private System.Windows.Forms.Label lblIdReparacion;
+        private System.Windows.Forms.Label lblNuevaReparacion;
     }
 }

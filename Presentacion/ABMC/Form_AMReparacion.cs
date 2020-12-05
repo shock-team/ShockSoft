@@ -22,6 +22,16 @@ namespace ShockSoft.Presentacion
             txtCostoTrabajo.Text = "0";
             txtTotal.Text = "0";
             txtTotalInsumos.Text = "0";
+            txtIdReparacion.Text = pIdReparacion.ToString();
+            if (pIdReparacion == 0)
+            {
+                txtIdReparacion.Visible = false;
+                lblIdReparacion.Visible = false;
+            }
+            else
+            {
+                lblNuevaReparacion.Visible = false;
+            }
             foreach (MetodoPago metodoDePago in ControladorMetodosPago.ObtenerInstancia().ListarMetodosDePago())
             {
                 comboMetodoDePago.Items.Add(metodoDePago);
@@ -43,6 +53,7 @@ namespace ShockSoft.Presentacion
             comboMarca.DisplayMember = "Descripcion";
             comboMarca.ValueMember = "IdMarca";
             comboMarca.SelectedIndex = 0;
+            CargarDatos();
         }
 
         // Deslizar ventana desde el panel de control
@@ -113,8 +124,18 @@ namespace ShockSoft.Presentacion
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            int idReparacion = controlador.AgregarReparacion(txtProblema.Text, txtSolucion.Text , dtpFechaIngreso.Value, dtpFechaReparacion.Value,
-                                                             dtpFechaEntrega.Value, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
+            DateTime fechaReparacion = DateTime.MinValue;
+            DateTime fechaEntrega = DateTime.MinValue;
+            if (cbReparado.Checked)
+            {
+                fechaReparacion = dtpFechaReparacion.Value;
+            }
+            if (cbEntregado.Checked)
+            {
+                fechaEntrega = dtpFechaEntrega.Value;
+            }
+            int idReparacion = controlador.AgregarReparacion(txtProblema.Text, txtSolucion.Text , dtpFechaIngreso.Value, fechaReparacion,
+                                                             fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
                                                              txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
                                                              ((Marca)comboMarca.SelectedItem).IdMarca, cbReparado.Checked, cbEntregado.Checked,
                                                              ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago, txtTotal.Text);
@@ -192,11 +213,12 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        private void CargarDatos(int pIdReparacion)
+        private void CargarDatos()
         {
-            if (pIdReparacion != 0)
+            int idReparacion = int.Parse(txtIdReparacion.Text);
+            if (idReparacion != 0)
             {
-                Reparacion reparacionActual = controlador.ObtenerReparacion(pIdReparacion);
+                Reparacion reparacionActual = controlador.ObtenerReparacion(idReparacion);
                 txtIdCliente.Text = reparacionActual.IdCliente.ToString();
                 txtNombreCliente.Text = reparacionActual.Cliente.Nombre + " " + reparacionActual.Cliente.Apellido;
                 txtClave.Text = reparacionActual.Contraseña;

@@ -95,6 +95,7 @@
             this.dgReparaciones.Name = "dgReparaciones";
             this.dgReparaciones.Size = new System.Drawing.Size(862, 346);
             this.dgReparaciones.TabIndex = 0;
+            this.dgReparaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgReparaciones_CellDoubleClick);
             // 
             // ID
             // 

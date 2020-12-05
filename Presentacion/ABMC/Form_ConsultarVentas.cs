@@ -141,7 +141,7 @@ namespace ShockSoft.Presentacion
         private void DgVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int ventaSeleccionada = (int)dgVentas.CurrentRow.Cells[0].Value;
-            Form_DatosVenta form_DatosVenta = new Form_DatosVenta(ventaSeleccionada);
+            Form_AMReparacion form_DatosVenta = new Form_AMReparacion(ventaSeleccionada);
             this.Hide();
             form_DatosVenta.ShowDialog();
             this.Show();

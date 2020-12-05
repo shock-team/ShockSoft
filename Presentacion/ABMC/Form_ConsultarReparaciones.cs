@@ -124,5 +124,14 @@ namespace ShockSoft.Presentacion
         {
             this.Close();
         }
+
+        private void DgReparaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int reparacionSeleccionada = (int)dgReparaciones.CurrentRow.Cells[0].Value;
+            Form_AMReparacion form_DatosReparacion = new Form_AMReparacion(reparacionSeleccionada);
+            this.Hide();
+            form_DatosReparacion.ShowDialog();
+            this.Show();
+        }
     }
 }

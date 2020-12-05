@@ -12,10 +12,10 @@ using ShockSoft.Dominio;
 
 namespace ShockSoft.Presentacion
 {
-    public partial class Form_DatosVenta : Form
+    public partial class Form_AMReparacion : Form
     {
         ControladorVentas controlador = ControladorVentas.ObtenerInstancia();
-        public Form_DatosVenta(int pIdVenta)
+        public Form_AMReparacion(int pIdVenta)
         {
             InitializeComponent();
             Venta ventaActual = controlador.ObtenerVenta(pIdVenta);
