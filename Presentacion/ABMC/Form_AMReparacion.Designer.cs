@@ -582,6 +582,7 @@
             this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
             this.dgLineasDeReparacion.Size = new System.Drawing.Size(795, 251);
             this.dgLineasDeReparacion.TabIndex = 19;
+            this.dgLineasDeReparacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLineasDeReparacion_CellDoubleClick);
             // 
             // ID
             // 

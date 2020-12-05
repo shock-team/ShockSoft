@@ -22,9 +22,11 @@ namespace ShockSoft.Presentacion
         }
 
 
-        public void AgregarProducto(int pIdProducto)
+        public void AgregarProducto(int pIdProducto, int pCantidad = 0)
         {
             txtId.Text = pIdProducto.ToString();
+            nmCantidad.Value = pCantidad;
+            ActualizarDatos();
         }
 
         private void NmCantidad_ValueChanged(object sender, EventArgs e)
@@ -74,11 +76,7 @@ namespace ShockSoft.Presentacion
             this.Hide();
             formBuscarProducto.ShowDialog();
             this.Show();
-            Producto productoSeleccionado = ControladorProductos.ObtenerInstancia().ObtenerProducto(int.Parse(txtId.Text));
-            txtDescripcion.Text = productoSeleccionado.Descripcion;
-            nmCantidad.Maximum = productoSeleccionado.Cantidad;
-            nmCantidad.Enabled = true;
-            txtPrecioUnitario.Text = productoSeleccionado.PrecioBaseDolar.ToString();
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -87,6 +85,15 @@ namespace ShockSoft.Presentacion
             formAgregarVenta.AgregarLinea(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value));
             MessageBox.Show("Línea agregada exitosamente", "Éxito");
             this.Close();
+        }
+
+        private void ActualizarDatos()
+        {
+            Producto productoSeleccionado = ControladorProductos.ObtenerInstancia().ObtenerProducto(int.Parse(txtId.Text));
+            txtDescripcion.Text = productoSeleccionado.Descripcion;
+            nmCantidad.Maximum = productoSeleccionado.Cantidad;
+            nmCantidad.Enabled = true;
+            txtPrecioUnitario.Text = productoSeleccionado.PrecioBaseDolar.ToString();
         }
     }
 }

@@ -45,10 +45,10 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblPrecioUnitario = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblPrecioUnitario = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
             this.panelControl.SuspendLayout();
@@ -60,6 +60,7 @@
             // 
             // txtPrecioUnitario
             // 
+            this.txtPrecioUnitario.Enabled = false;
             this.txtPrecioUnitario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
             this.txtPrecioUnitario.Location = new System.Drawing.Point(12, 45);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
@@ -259,27 +260,16 @@
             this.panel3.Size = new System.Drawing.Size(480, 122);
             this.panel3.TabIndex = 26;
             // 
-            // lblPrecioUnitario
+            // lblSubtotal
             // 
-            this.lblPrecioUnitario.AutoSize = true;
-            this.lblPrecioUnitario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioUnitario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPrecioUnitario.Location = new System.Drawing.Point(8, 12);
-            this.lblPrecioUnitario.Name = "lblPrecioUnitario";
-            this.lblPrecioUnitario.Size = new System.Drawing.Size(112, 19);
-            this.lblPrecioUnitario.TabIndex = 1;
-            this.lblPrecioUnitario.Text = "Precio unitario:";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCantidad.Location = new System.Drawing.Point(283, 12);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(73, 19);
-            this.lblCantidad.TabIndex = 5;
-            this.lblCantidad.Text = "Cantidad:";
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSubtotal.Location = new System.Drawing.Point(11, 87);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(69, 19);
+            this.lblSubtotal.TabIndex = 9;
+            this.lblSubtotal.Text = "Subtotal:";
             // 
             // label3
             // 
@@ -292,16 +282,27 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "X";
             // 
-            // lblSubtotal
+            // lblCantidad
             // 
-            this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSubtotal.Location = new System.Drawing.Point(11, 87);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(69, 19);
-            this.lblSubtotal.TabIndex = 9;
-            this.lblSubtotal.Text = "Subtotal:";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCantidad.Location = new System.Drawing.Point(283, 12);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(73, 19);
+            this.lblCantidad.TabIndex = 5;
+            this.lblCantidad.Text = "Cantidad:";
+            // 
+            // lblPrecioUnitario
+            // 
+            this.lblPrecioUnitario.AutoSize = true;
+            this.lblPrecioUnitario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioUnitario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPrecioUnitario.Location = new System.Drawing.Point(8, 12);
+            this.lblPrecioUnitario.Name = "lblPrecioUnitario";
+            this.lblPrecioUnitario.Size = new System.Drawing.Size(112, 19);
+            this.lblPrecioUnitario.TabIndex = 1;
+            this.lblPrecioUnitario.Text = "Precio unitario:";
             // 
             // btnAceptar
             // 

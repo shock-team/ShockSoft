@@ -23,6 +23,7 @@ namespace ShockSoft.Presentacion
             txtTotal.Text = "0";
             txtTotalInsumos.Text = "0";
             txtIdReparacion.Text = pIdReparacion.ToString();
+
             if (pIdReparacion == 0)
             {
                 txtIdReparacion.Visible = false;
@@ -32,6 +33,7 @@ namespace ShockSoft.Presentacion
             {
                 lblNuevaReparacion.Visible = false;
             }
+
             foreach (MetodoPago metodoDePago in ControladorMetodosPago.ObtenerInstancia().ListarMetodosDePago())
             {
                 comboMetodoDePago.Items.Add(metodoDePago);
@@ -39,6 +41,7 @@ namespace ShockSoft.Presentacion
             comboMetodoDePago.DisplayMember = "Descripcion";
             comboMetodoDePago.ValueMember = "IdMetodoPago";
             comboMetodoDePago.SelectedIndex = 0;
+
             foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
             {
                 comboRubro.Items.Add(rubro);
@@ -46,6 +49,7 @@ namespace ShockSoft.Presentacion
             comboRubro.DisplayMember = "Descripcion";
             comboRubro.ValueMember = "IdRubro";
             comboRubro.SelectedIndex = 0;
+
             foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
             {
                 comboMarca.Items.Add(marca);
@@ -53,6 +57,7 @@ namespace ShockSoft.Presentacion
             comboMarca.DisplayMember = "Descripcion";
             comboMarca.ValueMember = "IdMarca";
             comboMarca.SelectedIndex = 0;
+
             CargarDatos();
         }
 
@@ -126,21 +131,38 @@ namespace ShockSoft.Presentacion
         {
             DateTime fechaReparacion = DateTime.MinValue;
             DateTime fechaEntrega = DateTime.MinValue;
+
             if (cbReparado.Checked)
             {
                 fechaReparacion = dtpFechaReparacion.Value;
             }
+
             if (cbEntregado.Checked)
             {
                 fechaEntrega = dtpFechaEntrega.Value;
             }
-            int idReparacion = controlador.AgregarReparacion(txtProblema.Text, txtSolucion.Text , dtpFechaIngreso.Value, fechaReparacion,
+
+            int idReparacion;
+            if (txtIdReparacion.Text.Equals("0"))
+            {
+                idReparacion = controlador.AgregarReparacion(txtProblema.Text, txtSolucion.Text, dtpFechaIngreso.Value, fechaReparacion,
                                                              fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
                                                              txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
-                                                             ((Marca)comboMarca.SelectedItem).IdMarca, cbReparado.Checked, cbEntregado.Checked,
-                                                             ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago, txtTotal.Text);
+                                                             ((Marca)comboMarca.SelectedItem).IdMarca, cbEntregado.Checked,
+                                                             ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago, txtCostoTrabajo.Text);
+                MessageBox.Show("La reparación se ha registrado exitosamente", "Éxito");
+            }
+            else
+            {
+                idReparacion = int.Parse(txtIdReparacion.Text);
+                controlador.ModificarReparacion(txtProblema.Text, txtSolucion.Text, dtpFechaIngreso.Value, fechaReparacion,
+                                                             fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
+                                                             txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
+                                                             ((Marca)comboMarca.SelectedItem).IdMarca, cbEntregado.Checked,
+                                                             ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago, txtCostoTrabajo.Text, idReparacion);
+                MessageBox.Show("La reparación se ha modificado exitosamente", "Éxito");
+            }
             controlador.GenerarLineasDeReparacion(dgLineasDeReparacion.Rows, idReparacion);
-            MessageBox.Show("La reparación se ha registrado exitosamente", "Éxito");
             this.Close();
         }
 
@@ -219,27 +241,59 @@ namespace ShockSoft.Presentacion
             if (idReparacion != 0)
             {
                 Reparacion reparacionActual = controlador.ObtenerReparacion(idReparacion);
+
                 txtIdCliente.Text = reparacionActual.IdCliente.ToString();
                 txtNombreCliente.Text = reparacionActual.Cliente.Nombre + " " + reparacionActual.Cliente.Apellido;
-                txtClave.Text = reparacionActual.Contraseña;
+
                 dtpFechaIngreso.Value = reparacionActual.FechaIngreso;
                 dtpFechaReparacion.Value = reparacionActual.FechaReparacion;
                 dtpFechaEntrega.Value = reparacionActual.FechaEntrega;
+
                 cbEntregado.Checked = reparacionActual.Entregado;
                 cbCobrado.Checked = reparacionActual.Cobrado;
                 cbReparado.Checked = (reparacionActual.FechaReparacion != DateTime.MinValue);
+
                 txtProblema.Text = reparacionActual.Problema;
                 txtSolucion.Text = reparacionActual.Solucion;
+
                 comboMarca.SelectedItem = reparacionActual.Marca;
-                comboMetodoDePago.SelectedItem = reparacionActual.MetodoPago;
                 comboRubro.SelectedItem = reparacionActual.Rubro;
+                txtClave.Text = reparacionActual.Contraseña;
+
                 foreach (LineaReparacion lineaReparacion in reparacionActual.LineasReparacion)
                 {
                     AgregarLinea(lineaReparacion.IdProducto.ToString(), lineaReparacion.Producto.Descripcion, lineaReparacion.PrecioActual.ToString(), lineaReparacion.Cantidad);
                 }
-                txtCostoTrabajo.Text = (reparacionActual.Precio - float.Parse(txtTotalInsumos.Text)).ToString();
-                txtTotal.Text = reparacionActual.Precio.ToString();
+
+                comboMetodoDePago.SelectedItem = reparacionActual.MetodoPago;
+                txtCostoTrabajo.Text = reparacionActual.Precio.ToString();
+                txtTotal.Text = reparacionActual.getPrecioTotal().ToString();
             }
+        }
+
+        private void DgLineasDeReparacion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int productoSeleccionado = (int)dgLineasDeReparacion.CurrentRow.Cells[0].Value;
+            int cantidad = (int)dgLineasDeReparacion.CurrentRow.Cells[3].Value;
+
+            List<int> listaDeIDs = new List<int>();
+            foreach (DataGridViewRow fila in dgLineasDeReparacion.Rows)
+            {
+                if (fila.Cells[0].Value != null)
+                {
+                    listaDeIDs.Add(int.Parse(fila.Cells[0].Value.ToString()));
+                }
+            }
+
+            Form_AgregarLineaDeVenta formAgregarLineaDeReparacion = new Form_AgregarLineaDeVenta();
+
+            formAgregarLineaDeReparacion.Owner = this;
+            formAgregarLineaDeReparacion.listaDeIDs = listaDeIDs;
+            formAgregarLineaDeReparacion.AgregarProducto(productoSeleccionado, cantidad);
+
+            this.Hide();
+            formAgregarLineaDeReparacion.ShowDialog();
+            this.Show();
         }
     }
 

@@ -44,49 +44,51 @@ namespace ShockSoft.Presentacion
         /// <param name="pCliente">El ID del cliente asociado a la nueva reparación</param>
         /// <param name="pTipoEquipo">El tipo del equipo correspondiente a la nueva reparación</param>
         /// <param name="pMarcaEquipo">La marca del equipo correspondiente a la nueva reparación</param>
-        /// <param name="pReparado">Si el trabajo de reparación fue completado o no</param>
         /// <param name="pEntregado">Si el equipo fue entregado o no</param>
         /// <param name="pMetodoPago">El método de pago seleccionado para la reparación</param>
-        /// <param name="pTotal">El costo total de la reparación</param>
-        public int AgregarReparacion(string pProblema, string pSolucion, DateTime pFechaIngreso, DateTime pFechaReparacion, DateTime pFechaEntrega, string pContraseña, bool pCargador, bool pCables, string pCliente, int pTipoEquipo, int pMarcaEquipo, bool pReparado, bool pEntregado, int pMetodoPago, string pTotal)
+        /// <param name="pPrecio">El precio del trabajo de reparación</param>
+        public int AgregarReparacion(string pProblema, string pSolucion, DateTime pFechaIngreso, DateTime pFechaReparacion, DateTime pFechaEntrega, string pContraseña, bool pCargador, bool pCables, string pCliente, int pTipoEquipo, int pMarcaEquipo, bool pEntregado, int pMetodoPago, string pPrecio)
         {
             Reparacion reparacion = new Reparacion();
+
             reparacion.Problema = pProblema;
+            reparacion.Solucion = pSolucion;
+
             reparacion.FechaIngreso = pFechaIngreso;
-            if (pReparado)
-            {
-                reparacion.FechaReparacion = pFechaReparacion;
-            }
-            if (pEntregado)
-            {
-                reparacion.FechaEntrega = pFechaEntrega;
-            }
+            reparacion.FechaReparacion = pFechaReparacion;
+            reparacion.FechaEntrega = pFechaEntrega;
+
             reparacion.Contraseña = pContraseña;
             reparacion.Cargador = pCargador;
             reparacion.Cables = pCables;
             reparacion.Entregado = pEntregado;
+
             reparacion.LineasReparacion = new List<LineaReparacion>();
-            reparacion.Precio = float.Parse(pTotal);
-            reparacion.Solucion = pSolucion;
+            reparacion.Precio = float.Parse(pPrecio);
+            
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    int idCliente = int.Parse(pCliente);
-                    Cliente cliente = bUoW.RepositorioCliente.Obtener(idCliente);
-                    reparacion.IdCliente = idCliente;
+                    Cliente cliente = bUoW.RepositorioCliente.Obtener(int.Parse(pCliente));
+                    reparacion.IdCliente = cliente.IdCliente;
                     reparacion.Cliente = cliente;
+
                     Marca marca = bUoW.RepositorioMarca.Obtener(pMarcaEquipo);
                     reparacion.Marca = marca;
                     reparacion.IdMarca = pMarcaEquipo;
+
                     Rubro tipo = bUoW.RepositorioRubro.Obtener(pTipoEquipo);
                     reparacion.Rubro = tipo;
                     reparacion.IdRubro = pTipoEquipo;
+
                     MetodoPago metodoDePago = bUoW.RepositorioMetodoPago.Obtener(pMetodoPago);
                     reparacion.MetodoPago = metodoDePago;
                     reparacion.IdMetodoPago = pMetodoPago;
+
                     bUoW.RepositorioReparacion.Agregar(reparacion);
                     bUoW.GuardarCambios();
+
                     int idReparacion = bUoW.RepositorioReparacion.ObtenerUltimaReparacion().IdReparacion;
                     return idReparacion;
                 }
@@ -116,42 +118,62 @@ namespace ShockSoft.Presentacion
             return listaReparaciones;
         }
 
-        /// <summary>
-        /// Este método se encarga de modificar los datos de una reparación existente
-        /// en el repositorio
+        ///<summary>
+        /// Este método se utiliza para modificar los datos de una reparación existente en la base de datos.
         /// </summary>
-        /// <param name="pProblema">El nuevo problema de la reparación</param>
-        /// <param name="pContraseña">La nueva contraseña de la reparación</param>
+        /// <param name="pProblema">El problema de la reparación</param>
+        /// <param name="pSolucion">La solución de la reparación</param>
+        /// <param name="pFechaIngreso">La fecha de ingreso de la reparación</param>
+        /// <param name="pFechaReparacion">La fecha de reparación del equipo</param>
+        /// <param name="pFechaEntrega">La fecha de entrega del equipo</param>
+        /// <param name="pContraseña">La contraseña del dispositivo de la reparación</param>
         /// <param name="pCargador">Si el dispositivo de la reparación incluye cargador o no</param>
         /// <param name="pCables">Si el dispositivo de la reparación incluye cables o no</param>
-        /// <param name="pSolucion">La nueva solución de la reparación</param>
-        /// <param name="pFechaReparacion">La nueva fecha de reparación</param>
-        /// <param name="pPrecio">El nuevo precio de la reparación</param>
-        /// <param name="pEntregado">Si la reparación fue entregada o no</param>
-        /// <param name="pMetodoPago">El nuevo método de pago de la reparación</param>
-        /// <param name="pProductosUtilizados">Los nuevos productos untilizados en la reparación</param>
-        /// <param name="idReparacion">El ID de la reparación a modificar</param>
-        public void ModificarReparacion(string pProblema, string pContraseña, bool pCargador, bool pCables, string pSolucion, DateTime pFechaReparacion, float pPrecio, bool pEntregado, List<LineaReparacion> pProductosUtilizados, int idReparacion, int pMetodoPago = 0)
+        /// <param name="pCliente">El ID del cliente asociado a la reparación</param>
+        /// <param name="pRubro">El rubro del equipo correspondiente a la reparación</param>
+        /// <param name="pMarcaEquipo">La marca del equipo correspondiente a la reparación</param>
+        /// <param name="pEntregado">Si el equipo fue entregado o no</param>
+        /// <param name="pMetodoPago">El método de pago seleccionado para la reparación</param>
+        /// <param name="pPrecio">El precio del trabajo de reparación</param>
+        /// <param name="pIdReparacion">El ID de la reparación a modificar</param>
+        public void ModificarReparacion(string pProblema, string pSolucion, DateTime pFechaIngreso, DateTime pFechaReparacion, DateTime pFechaEntrega, string pContraseña, bool pCargador, bool pCables, string pCliente, int pRubro, int pMarcaEquipo, bool pEntregado, int pMetodoPago, string pPrecio, int pIdReparacion)
         {
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    Reparacion reparacion = bUoW.RepositorioReparacion.Obtener(idReparacion);
+                    Reparacion reparacion = bUoW.RepositorioReparacion.Obtener(pIdReparacion);
+
                     reparacion.Problema = pProblema;
+                    reparacion.Solucion = pSolucion;
+
                     reparacion.Contraseña = pContraseña;
                     reparacion.Cargador = pCargador;
                     reparacion.Cables = pCables;
-                    reparacion.Solucion = pSolucion;
-                    reparacion.FechaReparacion = pFechaReparacion;
-                    reparacion.Precio = pPrecio;
                     reparacion.Entregado = pEntregado;
-                    if (pMetodoPago != 0)
-                    {
-                        MetodoPago metodoPago = bUoW.RepositorioMetodoPago.Obtener(pMetodoPago);
-                        reparacion.MetodoPago = metodoPago;
-                    }
-                    reparacion.LineasReparacion = pProductosUtilizados;
+
+                    reparacion.FechaIngreso = pFechaIngreso;
+                    reparacion.FechaReparacion = pFechaReparacion;
+                    reparacion.FechaEntrega = pFechaEntrega;
+
+                    reparacion.Precio = float.Parse(pPrecio);
+
+                    MetodoPago metodoPago = bUoW.RepositorioMetodoPago.Obtener(pMetodoPago);
+                    reparacion.MetodoPago = metodoPago;
+                    reparacion.IdMetodoPago = pMetodoPago;
+
+                    Cliente cliente = bUoW.RepositorioCliente.Obtener(int.Parse(pCliente));
+                    reparacion.Cliente = cliente;
+                    reparacion.IdCliente = cliente.IdCliente;
+
+                    Rubro rubro = bUoW.RepositorioRubro.Obtener(pRubro);
+                    reparacion.Rubro = rubro;
+                    reparacion.IdRubro = pRubro;
+
+                    Marca marca = bUoW.RepositorioMarca.Obtener(pMarcaEquipo);
+                    reparacion.Marca = marca;
+                    reparacion.IdMarca = pMarcaEquipo;
+
                     bUoW.GuardarCambios();
                 }
             }
@@ -175,10 +197,11 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
-        /// Genera una lista de instancias de la clase LineaReparacion a partir de los datos conocidos.
+        /// Genera una lista de instancias de la clase LineaReparacion a partir de los datos conocidos, o modifica
+        /// los valores de líneas actuales en una reparación existente.
         /// </summary>
-        /// <param name="pFilas"></param>
-        /// <param name="pIdReparacion"></param>
+        /// <param name="pFilas">Las filas de la tabla a transformar en una lista de líneas.</param>
+        /// <param name="pIdReparacion">El ID de la reparación a la cual se asignan las líneas.</param>
         /// <returns></returns>
         public List<LineaReparacion> GenerarLineasDeReparacion(DataGridViewRowCollection pFilas, int pIdReparacion)
         {
@@ -191,30 +214,39 @@ namespace ShockSoft.Presentacion
                     List<LineaReparacion> lineasActuales = reparacionActual.LineasReparacion.ToList();
                     int indiceLineaExistente;
                     int idProducto;
+                    LineaReparacion lineaDeReparacion;
                     for (int i = 0; i < pFilas.Count; i++)
                     {
                         if (pFilas[i].Cells[0].Value != null)
                         {
                             idProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
+                            Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
                             int cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
+
+                            //Busca si la reparación ya posee una línea con ese producto.
                             indiceLineaExistente = lineasActuales.FindIndex(x => x.IdProducto == idProducto);
+
+                            //Si no encuentra la línea existente, genera una nueva y la agrega.
                             if (indiceLineaExistente == -1)
                             {
-                                LineaReparacion lineaDeReparacion = new LineaReparacion();
+                                lineaDeReparacion = new LineaReparacion();
                                 lineaDeReparacion.IdProducto = idProducto;
                                 lineaDeReparacion.Cantidad = cantidad;
-                                Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
-                                producto.Cantidad -= lineaDeReparacion.Cantidad;
                                 lineaDeReparacion.Producto = producto;
-                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
                                 lineaDeReparacion.IdReparacion = pIdReparacion;
+                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
                                 bUoW.RepositorioLineasDeReparaciones.Agregar(lineaDeReparacion);
                             }
+
+                            //Si la encuentra, modifica sus valores actuales.
                             else
                             {
-                                LineaReparacion lineaDeReparacionExistente = lineasActuales[indiceLineaExistente];
-                                lineaDeReparacionExistente.Cantidad += 
+                                lineaDeReparacion = lineasActuales[indiceLineaExistente];
+                                cantidad = lineaDeReparacion.Cantidad - cantidad;
+                                lineaDeReparacion.Cantidad += cantidad;
+                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
                             }
+                            producto.Cantidad -= lineaDeReparacion.Cantidad;
                         }
                     }
                     bUoW.GuardarCambios();
@@ -223,6 +255,12 @@ namespace ShockSoft.Presentacion
             return lineasDeReparacion;
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener una reparación presente en la base de datos a partir
+        /// de su ID.
+        /// </summary>
+        /// <param name="pIdReparacion">El ID de la reparación a buscar.</param>
+        /// <returns></returns>
         public Reparacion ObtenerReparacion(int pIdReparacion)
         {
             using (var bDbContext = new ShockDbContext())

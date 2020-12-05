@@ -8,6 +8,6 @@ namespace ShockSoft.Presentacion
 {
     interface IBusquedaDeProductos
     {
-        void AgregarProducto(int pIdProducto);
+        void AgregarProducto(int pIdProducto, int pCantidad = 0);
     }
 }
