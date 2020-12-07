@@ -146,5 +146,10 @@ namespace ShockSoft.Presentacion
             form_DatosVenta.ShowDialog();
             this.Show();
         }
+
+        public void AgregarProducto(int pIdProducto, int pCantidad = 0)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -63,7 +63,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.dgLocalidades.Name = "dgLocalidades";
             this.dgLocalidades.Size = new System.Drawing.Size(342, 236);
             this.dgLocalidades.TabIndex = 0;
-            this.dgLocalidades.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgLocalidades_CellContentDoubleClick);
+            this.dgLocalidades.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgLocalidades_CellMouseClick);
             // 
             // id
             // 

@@ -44,18 +44,22 @@
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProblema = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtSolucion = new System.Windows.Forms.TextBox();
             this.gbEquipo = new System.Windows.Forms.GroupBox();
+            this.lblRubro = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.comboRubro = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             this.cbIncluyeCables = new System.Windows.Forms.CheckBox();
             this.cbIncluyeCargador = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -76,14 +80,10 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboMarca = new System.Windows.Forms.ComboBox();
-            this.comboRubro = new System.Windows.Forms.ComboBox();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.lblRubro = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNuevaReparacion = new System.Windows.Forms.Label();
-            this.lblIdReparacion = new System.Windows.Forms.Label();
             this.txtIdReparacion = new System.Windows.Forms.TextBox();
+            this.lblIdReparacion = new System.Windows.Forms.Label();
+            this.lblNuevaReparacion = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.gbLista.SuspendLayout();
@@ -286,22 +286,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(111, 19);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(213, 25);
-            this.txtClave.TabIndex = 15;
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(17, 22);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(88, 19);
-            this.lblClave.TabIndex = 14;
-            this.lblClave.Text = "Contraseña:";
-            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(40)))));
@@ -351,6 +335,22 @@
             this.lblIdCliente.Size = new System.Drawing.Size(100, 19);
             this.lblIdCliente.TabIndex = 5;
             this.lblIdCliente.Text = "ID del cliente:";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(111, 19);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(213, 25);
+            this.txtClave.TabIndex = 15;
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.Location = new System.Drawing.Point(17, 22);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(88, 19);
+            this.lblClave.TabIndex = 14;
+            this.lblClave.Text = "Contraseña:";
             // 
             // groupBox2
             // 
@@ -413,6 +413,40 @@
             this.gbEquipo.TabIndex = 46;
             this.gbEquipo.TabStop = false;
             this.gbEquipo.Text = "Equipo";
+            // 
+            // lblRubro
+            // 
+            this.lblRubro.AutoSize = true;
+            this.lblRubro.Location = new System.Drawing.Point(51, 86);
+            this.lblRubro.Name = "lblRubro";
+            this.lblRubro.Size = new System.Drawing.Size(54, 19);
+            this.lblRubro.TabIndex = 50;
+            this.lblRubro.Text = "Rubro:";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(50, 53);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(55, 19);
+            this.lblMarca.TabIndex = 49;
+            this.lblMarca.Text = "Marca:";
+            // 
+            // comboRubro
+            // 
+            this.comboRubro.FormattingEnabled = true;
+            this.comboRubro.Location = new System.Drawing.Point(111, 83);
+            this.comboRubro.Name = "comboRubro";
+            this.comboRubro.Size = new System.Drawing.Size(213, 27);
+            this.comboRubro.TabIndex = 48;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(111, 50);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(213, 27);
+            this.comboMarca.TabIndex = 47;
             // 
             // cbIncluyeCables
             // 
@@ -571,6 +605,9 @@
             // 
             // dgLineasDeReparacion
             // 
+            this.dgLineasDeReparacion.AllowUserToAddRows = false;
+            this.dgLineasDeReparacion.AllowUserToDeleteRows = false;
+            this.dgLineasDeReparacion.AllowUserToResizeRows = false;
             this.dgLineasDeReparacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLineasDeReparacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -610,40 +647,6 @@
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
             // 
-            // comboMarca
-            // 
-            this.comboMarca.FormattingEnabled = true;
-            this.comboMarca.Location = new System.Drawing.Point(111, 50);
-            this.comboMarca.Name = "comboMarca";
-            this.comboMarca.Size = new System.Drawing.Size(213, 27);
-            this.comboMarca.TabIndex = 47;
-            // 
-            // comboRubro
-            // 
-            this.comboRubro.FormattingEnabled = true;
-            this.comboRubro.Location = new System.Drawing.Point(111, 83);
-            this.comboRubro.Name = "comboRubro";
-            this.comboRubro.Size = new System.Drawing.Size(213, 27);
-            this.comboRubro.TabIndex = 48;
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(50, 53);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(55, 19);
-            this.lblMarca.TabIndex = 49;
-            this.lblMarca.Text = "Marca:";
-            // 
-            // lblRubro
-            // 
-            this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(51, 86);
-            this.lblRubro.Name = "lblRubro";
-            this.lblRubro.Size = new System.Drawing.Size(54, 19);
-            this.lblRubro.TabIndex = 50;
-            this.lblRubro.Text = "Rubro:";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
@@ -655,16 +658,14 @@
             this.panel1.Size = new System.Drawing.Size(545, 40);
             this.panel1.TabIndex = 47;
             // 
-            // lblNuevaReparacion
+            // txtIdReparacion
             // 
-            this.lblNuevaReparacion.AutoSize = true;
-            this.lblNuevaReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNuevaReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNuevaReparacion.Location = new System.Drawing.Point(222, 10);
-            this.lblNuevaReparacion.Name = "lblNuevaReparacion";
-            this.lblNuevaReparacion.Size = new System.Drawing.Size(129, 19);
-            this.lblNuevaReparacion.TabIndex = 51;
-            this.lblNuevaReparacion.Text = "Nueva reparación";
+            this.txtIdReparacion.Enabled = false;
+            this.txtIdReparacion.Location = new System.Drawing.Point(285, 11);
+            this.txtIdReparacion.Name = "txtIdReparacion";
+            this.txtIdReparacion.ReadOnly = true;
+            this.txtIdReparacion.Size = new System.Drawing.Size(115, 20);
+            this.txtIdReparacion.TabIndex = 53;
             // 
             // lblIdReparacion
             // 
@@ -677,14 +678,16 @@
             this.lblIdReparacion.TabIndex = 52;
             this.lblIdReparacion.Text = "ID de la reparación:";
             // 
-            // txtIdReparacion
+            // lblNuevaReparacion
             // 
-            this.txtIdReparacion.Enabled = false;
-            this.txtIdReparacion.Location = new System.Drawing.Point(285, 11);
-            this.txtIdReparacion.Name = "txtIdReparacion";
-            this.txtIdReparacion.ReadOnly = true;
-            this.txtIdReparacion.Size = new System.Drawing.Size(115, 20);
-            this.txtIdReparacion.TabIndex = 53;
+            this.lblNuevaReparacion.AutoSize = true;
+            this.lblNuevaReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNuevaReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNuevaReparacion.Location = new System.Drawing.Point(222, 10);
+            this.lblNuevaReparacion.Name = "lblNuevaReparacion";
+            this.lblNuevaReparacion.Size = new System.Drawing.Size(129, 19);
+            this.lblNuevaReparacion.TabIndex = 51;
+            this.lblNuevaReparacion.Text = "Nueva reparación";
             // 
             // Form_AgregarReparacion
             // 

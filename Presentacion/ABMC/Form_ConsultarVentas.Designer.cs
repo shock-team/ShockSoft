@@ -69,6 +69,8 @@
             // 
             // dgVentas
             // 
+            this.dgVentas.AllowUserToAddRows = false;
+            this.dgVentas.AllowUserToDeleteRows = false;
             this.dgVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,

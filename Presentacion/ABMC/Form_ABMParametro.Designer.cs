@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgParametros = new System.Windows.Forms.DataGridView();
             this.IdParametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,23 +63,17 @@
             // 
             // dgParametros
             // 
+            this.dgParametros.AllowUserToAddRows = false;
+            this.dgParametros.AllowUserToDeleteRows = false;
             this.dgParametros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgParametros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdParametro,
             this.descripcion,
             this.valor});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgParametros.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgParametros.Location = new System.Drawing.Point(6, 31);
             this.dgParametros.Name = "dgParametros";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgParametros.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgParametros.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgParametros.Size = new System.Drawing.Size(421, 244);
             this.dgParametros.TabIndex = 0;
             // 
