@@ -83,7 +83,7 @@ namespace ShockSoft.Presentacion.Controladores
         /// </summary>
         /// <param name="pFilas">Las filas de la tabla de la vista</param>
         /// <returns></returns>
-        public List<LineaCompra> GenerarLineasDeVenta(DataGridViewRowCollection pFilas, int pIdCompra)
+        public List<LineaCompra> GenerarLineasDeCompra(DataGridViewRowCollection pFilas, int pIdCompra)
         {
             List<LineaCompra> lineasDeCompra = new List<LineaCompra>();
             using (var bDbContext = new ShockDbContext())
@@ -116,7 +116,7 @@ namespace ShockSoft.Presentacion.Controladores
         /// en la base de datos.
         /// </summary>
         /// <returns></returns>
-        public int ObtenerCantidadDeVentas()
+        public int ObtenerCantidadDeCompras()
         {
             int cantidadDeCompras = 0;
             using (var bDbContext = new ShockDbContext())
@@ -130,12 +130,12 @@ namespace ShockSoft.Presentacion.Controladores
         }
 
         /// <summary>
-        /// Este método se utiliza para obtener una instancia específica de la clase Venta presente en
+        /// Este método se utiliza para obtener una instancia específica de la clase Compra presente en
         /// la base de datos a partir de su ID.
         /// </summary>
         /// <param name="pIdCompra">El ID de la venta a traer.</param>
         /// <returns></returns>
-        public Compra ObtenerVenta(int pIdCompra)
+        public Compra ObtenerCompra(int pIdCompra)
         {
             using (var bDbContext = new ShockDbContext())
             {

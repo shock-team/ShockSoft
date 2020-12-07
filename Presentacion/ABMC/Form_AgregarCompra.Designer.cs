@@ -49,7 +49,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(517, 42);
+            this.lblFecha.Location = new System.Drawing.Point(529, 42);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(40, 13);
             this.lblFecha.TabIndex = 2;
@@ -57,7 +57,7 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(563, 39);
+            this.dtpFecha.Location = new System.Drawing.Point(575, 39);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 3;
@@ -93,7 +93,6 @@
             this.dgLineasDeCompra.Name = "dgLineasDeCompra";
             this.dgLineasDeCompra.Size = new System.Drawing.Size(743, 225);
             this.dgLineasDeCompra.TabIndex = 6;
-            this.dgLineasDeCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLineasDeCompra_CellDoubleClick);
             // 
             // ID
             // 

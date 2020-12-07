@@ -21,6 +21,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         {
             var compra = (from c in iDbContext.Compras
                                     .Include("LineasCompra")
+                                    .Include("LineasCompra.Producto")
                                     .Include("Proveedor")
                           where c.IdCompra == pIdCompra
                           select c);

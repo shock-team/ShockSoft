@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShockSoft.Dominio;
 using System.Runtime.InteropServices;
+using ShockSoft.Presentacion.Datos;
 
 namespace ShockSoft.Presentacion
 {
@@ -141,7 +142,7 @@ namespace ShockSoft.Presentacion
         private void DgVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int ventaSeleccionada = (int)dgVentas.CurrentRow.Cells[0].Value;
-            Form_AMReparacion form_DatosVenta = new Form_AMReparacion(ventaSeleccionada);
+            Form_DatosVenta form_DatosVenta = new Form_DatosVenta(ventaSeleccionada);
             this.Hide();
             form_DatosVenta.ShowDialog();
             this.Show();

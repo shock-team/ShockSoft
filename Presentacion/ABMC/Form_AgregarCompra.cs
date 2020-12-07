@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShockSoft.Dominio;
+using ShockSoft.Presentacion.Controladores;
 
 namespace ShockSoft.Presentacion.ABMC
 {
@@ -62,15 +63,10 @@ namespace ShockSoft.Presentacion.ABMC
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            int idCompra = controlador.AgregarVenta(int.Parse(txtId.Text), ((MetodoPago)comboMetodoPago.SelectedItem).IdMetodoPago, dtpFechaVenta.Value);
-            controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows, idCompra);
+            int idCompra = controlador.AgregarCompra(((Proveedor)comboProveedores.SelectedItem).IdProveedor, dtpFecha.Value);
+            controlador.GenerarLineasDeCompra(dgLineasDeCompra.Rows, idCompra);
             MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
             this.Close();
-        }
-
-        private void DgLineasDeCompra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)

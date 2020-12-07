@@ -51,7 +51,7 @@ namespace ShockSoft.Presentacion
             cliente.DNI = pDNI;
             cliente.CUIT = pCUIT;
             cliente.Pagos = new List<Pago>();
-            cliente.Ventas = new List<Compra>();
+            cliente.Ventas = new List<Venta>();
             using (var pDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
