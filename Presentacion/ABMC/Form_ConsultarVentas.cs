@@ -29,7 +29,7 @@ namespace ShockSoft.Presentacion
             ActualizarTabla();
         }
 
-        public void AgregarProducto(int pIdProducto)
+        public void AgregarProducto(int pIdProducto, int pProducto = 0)
         {
             txtIdProducto.Text = pIdProducto.ToString();
             Producto productoActual = ControladorProductos.ObtenerInstancia().ObtenerProducto(pIdProducto);

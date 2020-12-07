@@ -34,8 +34,8 @@ namespace ShockSoft.Presentacion
         /// Este método se encarga de crear la nueva venta y agregarla al repositorio
         /// </summary>
         /// <param name="idCliente">ID del cliente correspondiente a la venta</param>
-        /// <param name="pListaLineaVenta">Lista de líneas de venta asociadas a la venta</param>
         /// <param name="idMetodoPago">ID del método de pago correspondiente a la venta</param>
+        /// <param name="pFecha">La fecha en que se efectuó la venta</param>
         public int AgregarVenta(int idCliente, int idMetodoPago, DateTime pFecha)
         {
             Venta venta = new Venta();
@@ -56,11 +56,13 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
-        /// Este método se encarga de devolver una lista de todas las marcas presentes
+        /// Este método se encarga de devolver una lista de todas las ventas presentes
         /// en el repositorio, según distintos filtros
         /// </summary>
         /// <param name="pCliente">El cliente asociado a las ventas</param>
         /// <param name="pProducto">El producto vendido en las ventas</param>
+        /// <param name="pDesde">El índice a partir del cual traer las ventas.</param>
+        /// <param name="pCantidad">La cantidad de ventas a traer.</param>
         /// <returns></returns>
         public List<Venta> ListarVentas(int pCliente, int pProducto, int pDesde, int pCantidad)
         {
@@ -118,6 +120,11 @@ namespace ShockSoft.Presentacion
             return lineasDeVenta;
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad de instancias de la clase Venta presentes
+        /// en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerCantidadDeVentas()
         {
             int cantidadDeVentas = 0;
@@ -131,6 +138,12 @@ namespace ShockSoft.Presentacion
             return cantidadDeVentas;
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener una instancia específica de la clase Venta presente en
+        /// la base de datos a partir de su ID.
+        /// </summary>
+        /// <param name="pIdVenta">El ID de la venta a traer.</param>
+        /// <returns></returns>
         public Venta ObtenerVenta(int pIdVenta)
         {
             using (var bDbContext = new ShockDbContext())

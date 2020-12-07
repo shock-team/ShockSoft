@@ -226,6 +226,12 @@
     <Compile Include="Persistencia\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Persistencia\EntityFramework\ShockDbContext.cs" />
     <Compile Include="Persistencia\IRepositorio.cs" />
+    <Compile Include="Presentacion\ABMC\Form_AgregarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC\Form_AgregarCompra.Designer.cs">
+      <DependentUpon>Form_AgregarCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ABMC\Form_AMCLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,7 @@
       <DependentUpon>Form_AMCRubro.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Controladores\ControladorClientes.cs" />
+    <Compile Include="Presentacion\Controladores\ControladorCompras.cs" />
     <Compile Include="Presentacion\Controladores\ControladorLocalidades.cs" />
     <Compile Include="Presentacion\Controladores\ControladorMarcas.cs" />
     <Compile Include="Presentacion\Controladores\ControladorMetodosPago.cs" />
@@ -369,6 +376,7 @@
     <Compile Include="Presentacion\Datos\Form_DatosVenta.Designer.cs">
       <DependentUpon>Form_DatosVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\IAgregarProveedor.cs" />
     <Compile Include="Presentacion\Menu\Form_MenuClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_ABMParametro.resx">
       <DependentUpon>Form_ABMParametro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarCompra.resx">
+      <DependentUpon>Form_AgregarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarLineaDeVenta.resx">
       <DependentUpon>Form_AgregarLineaDeVenta.cs</DependentUpon>

@@ -84,6 +84,11 @@ namespace ShockSoft.Presentacion
 
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad total de instancias de la clase Proveedor
+        /// presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerCantidadDeProveedores()
         {
             using (var bDbContext = new ShockDbContext())
@@ -91,6 +96,22 @@ namespace ShockSoft.Presentacion
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
                     return bUoW.RepositorioProveedor.CantidadFilas();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Este método se utiliza para obtener todas las instancias de la clase Proveedor presentes en
+        /// la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Proveedor> ObtenerProveedores()
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    return bUoW.RepositorioProveedor.ObtenerTodos();
                 }
             }
         }

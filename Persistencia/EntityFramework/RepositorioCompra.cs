@@ -7,8 +7,65 @@ using System.Threading.Tasks;
 
 namespace ShockSoft.Persistencia.EntityFramework
 {
-    class RepositorioCompra : Repositorio<Compra, ShockDbContext>
+    public class RepositorioCompra : Repositorio<Compra, ShockDbContext>
     {
         public RepositorioCompra(ShockDbContext pDbContext) : base(pDbContext) { }
+
+        /// <summary>
+        /// Este método se utiliza para obtener una compra particular presente en la 
+        /// base de datos, junto con sus líneas y proveedor a partir de su ID.
+        /// </summary>
+        /// <param name="pIdCompra">El ID de la compra a traer</param>
+        /// <returns></returns>
+        public Compra ObtenerCompraPorId(int pIdCompra)
+        {
+            var compra = (from c in iDbContext.Compras
+                                    .Include("LineasCompra")
+                                    .Include("Proveedor")
+                          where c.IdCompra == pIdCompra
+                          select c);
+            return compra.First();
+        }
+
+        /// <summary>
+        /// Este método se utiliza para obtener todas las compras presentes en la base de datos, acotadas
+        /// en cantidad y que cumplan con ciertos criterios.
+        /// </summary>
+        /// <param name="pIdProveedor">El ID del proveedor a quien se realizaron las compras.</param>
+        /// <param name="pIdProducto">El ID de un producto que contienen las compras.</param>
+        /// <param name="pDesde">El índice desde el cual traer las compras.</param>
+        /// <param name="pCantidad">La cantidad de preguntas a traer.</param>
+        /// <returns></returns>
+        public IEnumerable<Compra> ObtenerCompras(int pIdProveedor, int pIdProducto, int pDesde, int pCantidad)
+        {
+            var comprasFiltradas = (from c in iDbContext.Compras
+                                    join lc in iDbContext.LineasDeCompras on c.IdCompra equals lc.IdCompra
+                                    where ((pIdProveedor == 0) || (c.IdProveedor == pIdProveedor)) &&
+                                          ((pIdProducto == 0) || (lc.IdProducto == pIdProducto))
+                                    select c);
+            return comprasFiltradas.OrderByDescending(x => x.Fecha).Distinct().Skip(pDesde).Take(pCantidad);
+        }
+
+        /// <summary>
+        /// Este método se utiliza para otener la cantidad total de compras presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public int CantidadFilas()
+        {
+            var sql = "SELECT COUNT(*) FROM compras";
+            return this.iDbContext.Database.SqlQuery<int>(sql).Single();
+        }
+
+        /// <summary>
+        /// Este método se utiliza para obtener la última instancia de la clase Compra cargada 
+        /// en la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public Compra ObtenerUltimaCompra()
+        {
+            var compra = (from c in iDbContext.Compras
+                          select c);
+            return compra.OrderByDescending(x => x.IdCompra).First();
+        }
     }
 }
