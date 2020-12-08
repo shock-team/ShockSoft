@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShockSoft.Presentacion.ABMC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,12 +32,14 @@ namespace ShockSoft.Presentacion
 
         private void btnAgregarCompra_Click(object sender, EventArgs e)
         {
-
+            Form_AgregarCompra form_AgregarCompra = new Form_AgregarCompra();
+            form_AgregarCompra.Show();
         }
 
         private void btnConsultarCompras_Click(object sender, EventArgs e)
         {
-
+            Form_ConsultarCompras form_ConsultarCompras = new Form_ConsultarCompras();
+            form_ConsultarCompras.Show();
         }
     }
 }
