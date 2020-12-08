@@ -65,6 +65,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnHistorialDePagos = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -76,6 +77,7 @@
             this.panel9.SuspendLayout();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -464,6 +466,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(204)))));
+            this.panel10.Controls.Add(this.btnHistorialDePagos);
             this.panel10.Location = new System.Drawing.Point(410, 240);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(350, 47);
@@ -485,6 +488,23 @@
             this.btnModificar.Text = "Modificar Datos";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // btnHistorialDePagos
+            // 
+            this.btnHistorialDePagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnHistorialDePagos.FlatAppearance.BorderSize = 0;
+            this.btnHistorialDePagos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnHistorialDePagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
+            this.btnHistorialDePagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorialDePagos.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialDePagos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHistorialDePagos.Location = new System.Drawing.Point(0, -2);
+            this.btnHistorialDePagos.Name = "btnHistorialDePagos";
+            this.btnHistorialDePagos.Size = new System.Drawing.Size(350, 49);
+            this.btnHistorialDePagos.TabIndex = 17;
+            this.btnHistorialDePagos.Text = "Historial de pagos";
+            this.btnHistorialDePagos.UseVisualStyleBackColor = false;
+            this.btnHistorialDePagos.Click += new System.EventHandler(this.BtnHistorialDePagos_Click);
             // 
             // Form_DatosCliente
             // 
@@ -529,6 +549,7 @@
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -571,5 +592,6 @@
         private System.Windows.Forms.Button btnAgregarPago;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnHistorialDePagos;
     }
 }

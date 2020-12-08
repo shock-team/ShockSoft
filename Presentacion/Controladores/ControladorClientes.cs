@@ -189,7 +189,7 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    cliente = bUoW.RepositorioCliente.Obtener(pId);
+                    cliente = bUoW.RepositorioCliente.ObtenerClientePorId(pId);
                 }
             }
             return cliente;

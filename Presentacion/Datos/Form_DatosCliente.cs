@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using ShockSoft.Excepciones;
+using ShockSoft.Presentacion.ABMC;
 
 namespace ShockSoft.Presentacion
 {
@@ -107,6 +108,14 @@ namespace ShockSoft.Presentacion
             comboLocalidad.ValueMember = "IdLocalidad";
             comboLocalidad.DisplayMember = "Nombre";
             comboLocalidad.SelectedIndex = comboLocalidad.Items.Count - 1;
+        }
+
+        private void BtnHistorialDePagos_Click(object sender, System.EventArgs e)
+        {
+            Form_ConsultarPagosCliente form_ConsultarPagosCliente = new Form_ConsultarPagosCliente(int.Parse(txtId.Text));
+            this.Hide();
+            form_ConsultarPagosCliente.ShowDialog();
+            this.Show();
         }
     }
 }

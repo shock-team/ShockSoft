@@ -64,5 +64,23 @@ namespace ShockSoft.Persistencia.EntityFramework
                            select c);
             return cliente;
         }
+
+        /// <summary>
+        /// Este método se utiliza para obtener un cliente en particular de la base de datos a partir de su
+        /// ID, trayendo además sus pagos y ventas.
+        /// </summary>
+        /// <param name="pIdCliente">El ID del cliente a traer.</param>
+        /// <returns></returns>
+        public Cliente ObtenerClientePorId(int pIdCliente)
+        {
+            var clientes = (from c in iDbContext.Clientes
+                                     .Include("Pagos")
+                                     .Include("Ventas")
+                                     .Include("Ventas.Lineas")
+                                     .Include("Ventas.MetodoPago")
+                           where c.IdCliente == pIdCliente
+                           select c);
+            return clientes.First();
+        }
     }
 }
