@@ -74,6 +74,7 @@ namespace ShockSoft.Presentacion
             if (Owner is Form_AgregarCompra)
             {
                 Form_ConsultarProductos formBuscarProducto = new Form_ConsultarProductos();
+                formBuscarProducto.listaDeIDs = listaDeIDs;
                 formBuscarProducto.Owner = this;
                 this.Hide();
                 formBuscarProducto.ShowDialog();

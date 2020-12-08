@@ -40,11 +40,15 @@ namespace ShockSoft.Persistencia.EntityFramework
         public IEnumerable<Compra> ObtenerCompras(int pIdProveedor, int pIdProducto, int pDesde, int pCantidad)
         {
             var comprasFiltradas = (from c in iDbContext.Compras
-                                    join lc in iDbContext.LineasDeCompras on c.IdCompra equals lc.IdCompra
+                                              .Include("LineasCompra")
+                                              .Include("LineasCompra.Producto")
+                                              .Include("Proveedor")
+                                    //join lc in iDbContext.LineasDeCompras on c.IdCompra equals lc.IdCompra
                                     where ((pIdProveedor == 0) || (c.IdProveedor == pIdProveedor)) &&
-                                          ((pIdProducto == 0) || (lc.IdProducto == pIdProducto))
+                                          //((pIdProducto == 0) || (lc.IdProducto == pIdProducto)) &&
+                                          (pIdProducto == 0 || c.LineasCompra.Any(x => x.IdProducto == pIdProducto))
                                     select c);
-            return comprasFiltradas.OrderByDescending(x => x.Fecha).Distinct().Skip(pDesde).Take(pCantidad);
+            return comprasFiltradas.Distinct().OrderByDescending(x => x.Fecha).Skip(pDesde).Take(pCantidad);
         }
 
         /// <summary>

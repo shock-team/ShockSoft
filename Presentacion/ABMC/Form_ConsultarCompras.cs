@@ -13,16 +13,19 @@ using ShockSoft.Presentacion.Datos;
 
 namespace ShockSoft.Presentacion.ABMC
 {
-    public partial class Form_ConsultarCompras : Form
+    public partial class Form_ConsultarCompras : Form, IBusquedaDeProductos
     {
         ControladorCompras controlador = ControladorCompras.ObtenerInstancia();
         public Form_ConsultarCompras()
         {
             InitializeComponent();
 
+            txtIdProducto.Text = "0";
+
             Proveedor ninguno = new Proveedor();
             ninguno.Nombre = "Ninguno";
             ninguno.IdProveedor = 0;
+            comboProveedores.Items.Add(ninguno);
 
             foreach (Proveedor proveedor in ControladorProveedores.ObtenerInstancia().ObtenerProveedores())
             {
@@ -81,6 +84,23 @@ namespace ShockSoft.Presentacion.ABMC
             this.Hide();
             form_DatosCompra.ShowDialog();
             this.Show();
+        }
+
+        private void BtnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            Form_BuscarProducto form_BuscarProducto = new Form_BuscarProducto();
+            form_BuscarProducto.Owner = this;
+            this.Hide();
+            form_BuscarProducto.ShowDialog();
+            this.Show();
+        }
+
+        public void AgregarProducto(int pIdProducto, int pCantidad = 0)
+        {
+            txtIdProducto.Text = pIdProducto.ToString();
+            Producto productoActual = ControladorProductos.ObtenerInstancia().ObtenerProducto(pIdProducto);
+            txtDescripcionProducto.Text = productoActual.Descripcion;
+            ActualizarTabla();
         }
     }
 }
