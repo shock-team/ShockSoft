@@ -20,5 +20,6 @@ namespace ShockSoft.Persistencia.EntityFramework
             var sql = "SELECT COUNT(*) FROM proveedores";
             return this.iDbContext.Database.SqlQuery<int>(sql).Single();
         }
+
     }
 }
