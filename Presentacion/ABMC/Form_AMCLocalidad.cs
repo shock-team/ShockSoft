@@ -95,10 +95,13 @@ namespace ShockSoft.Presentacion.ABMC
             }
         }
 
-        private void dgLocalidades_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgLocalidades_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtModificarID.Text = dgLocalidades.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtModificarNombre.Text = dgLocalidades.Rows[e.RowIndex].Cells[1].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                txtModificarID.Text = dgLocalidades.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtModificarNombre.Text = dgLocalidades.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
         }
     }
 }

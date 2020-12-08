@@ -63,7 +63,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.dgRubros.Name = "dgRubros";
             this.dgRubros.Size = new System.Drawing.Size(459, 377);
             this.dgRubros.TabIndex = 0;
-            this.dgRubros.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRubros_CellDoubleClick);
+            this.dgRubros.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgRubros_CellMouseClick);
             // 
             // id
             // 

@@ -128,7 +128,7 @@ namespace ShockSoft.Presentacion
         private void DgReparaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int reparacionSeleccionada = (int)dgReparaciones.CurrentRow.Cells[0].Value;
-            Form_AMReparacion form_DatosReparacion = new Form_AMReparacion(reparacionSeleccionada);
+            Form_AgregarReparacion form_DatosReparacion = new Form_AgregarReparacion(reparacionSeleccionada);
             this.Hide();
             form_DatosReparacion.ShowDialog();
             this.Show();
