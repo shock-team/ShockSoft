@@ -105,14 +105,17 @@ namespace ShockSoft.Presentacion
 
             //Si esta form es invocada durante el caso de uso de Agregar Compra, no estará limitada por el stock
             //del producto.
-            if (!(Owner is Form_AgregarCompra))
+            if (Owner is Form_AgregarCompra)
             {
                 nmCantidad.Maximum = int.MaxValue;
             }
+
+            //En caso contrario, lo estará.
             else
             {
                 nmCantidad.Maximum = productoSeleccionado.Cantidad;
             }
+
             nmCantidad.Enabled = true;
             txtPrecioUnitario.Text = productoSeleccionado.PrecioBaseDolar.ToString();
         }
