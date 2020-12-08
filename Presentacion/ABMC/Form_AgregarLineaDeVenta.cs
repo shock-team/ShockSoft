@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShockSoft.Dominio;
 using System.Runtime.InteropServices;
+using ShockSoft.Presentacion.ABMC;
 
 namespace ShockSoft.Presentacion
 {
@@ -70,13 +71,23 @@ namespace ShockSoft.Presentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Form_BuscarProducto formBuscarProducto = new Form_BuscarProducto();
-            formBuscarProducto.Owner = this;
-            formBuscarProducto.listaDeIDs = listaDeIDs;
-            this.Hide();
-            formBuscarProducto.ShowDialog();
-            this.Show();
-            
+            if (Owner is Form_AgregarCompra)
+            {
+                Form_ConsultarProductos formBuscarProducto = new Form_ConsultarProductos();
+                formBuscarProducto.Owner = this;
+                this.Hide();
+                formBuscarProducto.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                Form_BuscarProducto formBuscarProducto = new Form_BuscarProducto();
+                formBuscarProducto.listaDeIDs = listaDeIDs;
+                formBuscarProducto.Owner = this;
+                this.Hide();
+                formBuscarProducto.ShowDialog();
+                this.Show();
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -91,7 +102,17 @@ namespace ShockSoft.Presentacion
         {
             Producto productoSeleccionado = ControladorProductos.ObtenerInstancia().ObtenerProducto(int.Parse(txtId.Text));
             txtDescripcion.Text = productoSeleccionado.Descripcion;
-            nmCantidad.Maximum = productoSeleccionado.Cantidad;
+
+            //Si esta form es invocada durante el caso de uso de Agregar Compra, no estará limitada por el stock
+            //del producto.
+            if (!(Owner is Form_AgregarCompra))
+            {
+                nmCantidad.Maximum = int.MaxValue;
+            }
+            else
+            {
+                nmCantidad.Maximum = productoSeleccionado.Cantidad;
+            }
             nmCantidad.Enabled = true;
             txtPrecioUnitario.Text = productoSeleccionado.PrecioBaseDolar.ToString();
         }

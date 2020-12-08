@@ -48,6 +48,7 @@ namespace ShockSoft.Presentacion.Controladores
                     Proveedor proveedor = bUoW.RepositorioProveedor.Obtener(pIdProveedor);
                     nuevaCompra.Proveedor = proveedor;
                     nuevaCompra.IdProveedor = pIdProveedor;
+                    bUoW.RepositorioCompras.Agregar(nuevaCompra);
                     bUoW.GuardarCambios();
                     int idCompra = bUoW.RepositorioCompras.ObtenerUltimaCompra().IdCompra;
                     return idCompra;
