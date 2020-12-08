@@ -10,6 +10,8 @@ namespace ShockSoft.Presentacion
     public partial class Form_ConsultarProductos : Form
     {
         ControladorProductos controlador;
+        public List<int> listaDeIDs;
+
         public Form_ConsultarProductos()
         {
             InitializeComponent();
@@ -130,12 +132,28 @@ namespace ShockSoft.Presentacion
 
         private void DgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Obtiene el cliente seleccionado a partir de su ID
+            //Obtiene el producto seleccionado a partir de su ID
             int productoSeleccionado = (int)dgProductos.CurrentRow.Cells[0].Value;
-            Form_DatosProducto formDatosProducto = new Form_DatosProducto(productoSeleccionado);
-            this.Hide();
-            formDatosProducto.ShowDialog();
-            this.Show();
+            if (!(Owner == null))
+            {
+                if (!(listaDeIDs.Contains(productoSeleccionado)))
+                {
+                    IBusquedaDeProductos owner = (IBusquedaDeProductos)Owner;
+                    owner.AgregarProducto(productoSeleccionado);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ese producto ya ha sido seleccionado", "Error");
+                }
+            }
+            else
+            {
+                Form_DatosProducto formDatosProducto = new Form_DatosProducto(productoSeleccionado);
+                this.Hide();
+                formDatosProducto.ShowDialog();
+                this.Show();
+            }
         }
     }
 }
