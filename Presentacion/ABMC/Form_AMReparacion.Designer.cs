@@ -533,6 +533,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(890, 189);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -587,6 +588,7 @@
             // 
             // txtTotalInsumos
             // 
+            this.txtTotalInsumos.Enabled = false;
             this.txtTotalInsumos.Location = new System.Drawing.Point(936, 30);
             this.txtTotalInsumos.Name = "txtTotalInsumos";
             this.txtTotalInsumos.ReadOnly = true;
@@ -617,6 +619,7 @@
             this.Subtotal});
             this.dgLineasDeReparacion.Location = new System.Drawing.Point(20, 24);
             this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
+            this.dgLineasDeReparacion.ReadOnly = true;
             this.dgLineasDeReparacion.Size = new System.Drawing.Size(795, 251);
             this.dgLineasDeReparacion.TabIndex = 19;
             this.dgLineasDeReparacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLineasDeReparacion_CellDoubleClick);
@@ -625,27 +628,32 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Descripcion
             // 
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             this.Descripcion.Width = 350;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // PrecioUnitario
             // 
             this.PrecioUnitario.HeaderText = "Precio unitario";
             this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
             // 
             // Subtotal
             // 
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
             // 
             // panel1
             // 

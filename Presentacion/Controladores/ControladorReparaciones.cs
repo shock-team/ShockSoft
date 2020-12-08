@@ -221,7 +221,7 @@ namespace ShockSoft.Presentacion
                         {
                             idProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
                             Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
-                            int cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
+                            int cantidad = int.Parse(pFilas[i].Cells[2].Value.ToString());
 
                             //Busca si la reparación ya posee una línea con ese producto.
                             indiceLineaExistente = lineasActuales.FindIndex(x => x.IdProducto == idProducto);
@@ -242,11 +242,11 @@ namespace ShockSoft.Presentacion
                             else
                             {
                                 lineaDeReparacion = lineasActuales[indiceLineaExistente];
-                                cantidad = lineaDeReparacion.Cantidad - cantidad;
+                                cantidad -= lineaDeReparacion.Cantidad;
                                 lineaDeReparacion.Cantidad += cantidad;
                                 lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
                             }
-                            producto.Cantidad -= lineaDeReparacion.Cantidad;
+                            producto.Cantidad -= cantidad;
                         }
                     }
                     bUoW.GuardarCambios();

@@ -19,11 +19,9 @@ namespace ShockSoft.Presentacion
         public Form_AgregarReparacion(int pIdReparacion = 0)
         {
             InitializeComponent();
-            txtCostoTrabajo.Text = "0";
-            txtTotal.Text = "0";
-            txtTotalInsumos.Text = "0";
+            
             txtIdReparacion.Text = pIdReparacion.ToString();
-
+            
             if (pIdReparacion == 0)
             {
                 txtIdReparacion.Visible = false;
@@ -58,7 +56,25 @@ namespace ShockSoft.Presentacion
             comboMarca.ValueMember = "IdMarca";
             comboMarca.SelectedIndex = 0;
 
+            txtCostoTrabajo.Enabled = false;
+            txtCostoTrabajo.Text = "0";
+            txtTotal.Text = "0";
+            txtTotalInsumos.Text = "0";
+
             CargarDatos();
+        }
+
+        private void ActualizarTotalInsumos()
+        {
+            double total = 0;
+            foreach (DataGridViewRow fila in dgLineasDeReparacion.Rows)
+            {
+                if (fila.Cells[4].Value != null)
+                {
+                    total += (double)fila.Cells[4].Value;
+                }
+            }
+            txtTotalInsumos.Text = total.ToString();
         }
 
         // Deslizar ventana desde el panel de control
@@ -168,16 +184,26 @@ namespace ShockSoft.Presentacion
 
         public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
         {
-            dgLineasDeReparacion.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual) * pCantidad);
-            double total = 0;
+            bool lineaModificada = false;
+
+            //Recorre la tala buscando la línea que referencie al producto seleccionado.
             foreach (DataGridViewRow fila in dgLineasDeReparacion.Rows)
             {
-                if (fila.Cells[4].Value != null)
+                if (((string)(fila.Cells[0].Value)).Equals(pIdProducto))
                 {
-                    total += (double)fila.Cells[4].Value;
+                    fila.Cells[2].Value = pCantidad;
+                    fila.Cells[4].Value = double.Parse(pPrecioActual) * pCantidad;
+                    lineaModificada = true;
                 }
             }
-            txtTotalInsumos.Text = total.ToString();
+
+            //Si no lo encuentra, genera una nueva línea.
+            if (!lineaModificada)
+            {
+                dgLineasDeReparacion.Rows.Add(pIdProducto, pDescripcion, pCantidad, pPrecioActual, double.Parse(pPrecioActual) * pCantidad);
+            }
+
+            ActualizarTotalInsumos();
         }
 
         private void CbReparado_CheckedChanged(object sender, EventArgs e)
@@ -246,12 +272,28 @@ namespace ShockSoft.Presentacion
                 txtNombreCliente.Text = reparacionActual.Cliente.Nombre + " " + reparacionActual.Cliente.Apellido;
 
                 dtpFechaIngreso.Value = reparacionActual.FechaIngreso;
-                dtpFechaReparacion.Value = reparacionActual.FechaReparacion;
-                dtpFechaEntrega.Value = reparacionActual.FechaEntrega;
+                
+                if (reparacionActual.FechaReparacion != DateTime.MinValue)
+                {
+                    dtpFechaReparacion.Value = reparacionActual.FechaReparacion;
+                    cbReparado.Checked = true;
+                }
+                else
+                {
+                    dtpFechaReparacion.Value = DateTime.Now;
+                }
+
+                if (reparacionActual.FechaEntrega != DateTime.MinValue)
+                {
+                    dtpFechaEntrega.Value = reparacionActual.FechaEntrega;
+                }
+                else
+                {
+                    dtpFechaEntrega.Value = DateTime.Now;
+                }
 
                 cbEntregado.Checked = reparacionActual.Entregado;
                 cbCobrado.Checked = reparacionActual.Cobrado;
-                cbReparado.Checked = (reparacionActual.FechaReparacion != DateTime.MinValue);
 
                 txtProblema.Text = reparacionActual.Problema;
                 txtSolucion.Text = reparacionActual.Solucion;
@@ -265,16 +307,22 @@ namespace ShockSoft.Presentacion
                     AgregarLinea(lineaReparacion.IdProducto.ToString(), lineaReparacion.Producto.Descripcion, lineaReparacion.PrecioActual.ToString(), lineaReparacion.Cantidad);
                 }
 
+                ActualizarTotalInsumos();
+
                 comboMetodoDePago.SelectedItem = reparacionActual.MetodoPago;
                 txtCostoTrabajo.Text = reparacionActual.Precio.ToString();
+                if (reparacionActual.Precio > 0)
+                {
+                    cbCobrado.Checked = true;
+                }
                 txtTotal.Text = reparacionActual.getPrecioTotal().ToString();
             }
         }
 
         private void DgLineasDeReparacion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int productoSeleccionado = (int)dgLineasDeReparacion.CurrentRow.Cells[0].Value;
-            int cantidad = (int)dgLineasDeReparacion.CurrentRow.Cells[3].Value;
+            int productoSeleccionado = int.Parse((string)(dgLineasDeReparacion.CurrentRow.Cells[0].Value));
+            int cantidad = (int)(dgLineasDeReparacion.CurrentRow.Cells[2].Value);
 
             List<int> listaDeIDs = new List<int>();
             foreach (DataGridViewRow fila in dgLineasDeReparacion.Rows)
@@ -294,6 +342,7 @@ namespace ShockSoft.Presentacion
             this.Hide();
             formAgregarLineaDeReparacion.ShowDialog();
             this.Show();
+            
         }
     }
 
