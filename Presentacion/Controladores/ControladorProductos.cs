@@ -1,4 +1,5 @@
 ﻿using ShockSoft.Dominio;
+using ShockSoft.Excepciones;
 using ShockSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,12 @@ namespace ShockSoft.Presentacion
             producto.PrecioBaseDolar = pPrecioBaseDolar;
             producto.EnVenta = true;
             producto.PorcentajeGanancia = pGanancia;
+
+            if (pIVA == 0 || pMarca == 0 || pRubro == 0)
+            {
+                throw new DatosFaltantesException();
+            }
+
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
@@ -143,7 +150,7 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    producto = bUoW.RepositorioProducto.Obtener(pId);
+                    producto = bUoW.RepositorioProducto.ObtenerProducto(pId);
                 }
             }
             return producto;

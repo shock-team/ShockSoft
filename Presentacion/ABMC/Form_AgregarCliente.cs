@@ -47,6 +47,10 @@ namespace ShockSoft.Presentacion
             {
                 MessageBox.Show("Ya existe un cliente con ese DNI o CUIT. Intente nuevamente", "Error");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

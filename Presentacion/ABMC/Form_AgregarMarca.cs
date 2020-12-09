@@ -44,16 +44,19 @@ namespace ShockSoft.Presentacion
             {
                 controlador.VerificarDatos(txtNombre.Text);
                 controlador.AgregarMarca(txtNombre.Text);
-                MessageBox.Show("La localidad se ha agregado correctamente", "Exito");
-                txtNombre.Clear();
+                MessageBox.Show($"La marca {txtNombre.Text} se ha agregado correctamente", "Exito");
             }
             catch (DatosRepetidosException)
             {
-                MessageBox.Show("Ya existe una marca con ese nombre. Intente nuevamente", "Error");
+                MessageBox.Show($"Ya existe la marca {txtNombre.Text}. Intente nuevamente", "Error");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace, "Error");
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                this.Close();
             }
         }
 
@@ -77,6 +80,14 @@ namespace ShockSoft.Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAceptar_Click(sender, e);
+            }
         }
     }
 }

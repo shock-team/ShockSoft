@@ -57,7 +57,7 @@
             this.btnConsultaReparacion.Name = "btnConsultaReparacion";
             this.btnConsultaReparacion.Size = new System.Drawing.Size(600, 45);
             this.btnConsultaReparacion.TabIndex = 8;
-            this.btnConsultaReparacion.Text = "Lista de Reparaciones";
+            this.btnConsultaReparacion.Text = "Reparaciones";
             this.btnConsultaReparacion.UseVisualStyleBackColor = false;
             this.btnConsultaReparacion.Click += new System.EventHandler(this.btnConsultaReparacion_Click);
             // 

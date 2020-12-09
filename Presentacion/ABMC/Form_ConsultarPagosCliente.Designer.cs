@@ -185,6 +185,7 @@
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.lblIdCliente);
             this.Name = "Form_ConsultarPagosCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ConsultarPagosCliente";
             ((System.ComponentModel.ISupportInitialize)(this.dgPagos)).EndInit();
             this.ResumeLayout(false);

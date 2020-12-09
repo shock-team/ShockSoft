@@ -9,11 +9,23 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         public RepositorioProducto(ShockDbContext pDbContext) : base(pDbContext) { }
 
+        public Producto ObtenerProducto(int pIdProducto)
+        {
+            var producto = (from p in iDbContext.Productos
+                            .Include("Marca")
+                            .Include("Rubro")
+                            .Include("Parametro")
+                            where p.IdProducto == pIdProducto
+                            select p);
+
+            return producto.FirstOrDefault();
+        }
         public IEnumerable<Producto> ObtenerProductos(bool pNoEnVenta, bool pSinStock, string pDescripcion, int pDesde, int pCantidad, int pIdMarca, int pIdRubro)
         {
             var productosFiltrados = (from p in iDbContext.Productos
                                       .Include("Marca")
                                       .Include("Rubro")
+                                      .Include("Parametro")
                                       where (p.EnVenta || (!p.EnVenta && pNoEnVenta)) &&
                                       (p.Cantidad > 0 || ((p.Cantidad <= 0) && pSinStock)) &&
                                       (string.IsNullOrEmpty(pDescripcion) || p.Descripcion.ToUpper().Contains(pDescripcion.ToUpper())) &&

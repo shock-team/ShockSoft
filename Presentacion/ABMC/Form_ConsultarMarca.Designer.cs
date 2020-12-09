@@ -69,7 +69,7 @@
             this.dgvMarcas.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMarcas.Size = new System.Drawing.Size(467, 205);
             this.dgvMarcas.TabIndex = 0;
-            this.dgvMarcas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarcas_CellDoubleClick);
+            this.dgvMarcas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMarcas_CellMouseClick);
             // 
             // id
             // 
@@ -308,6 +308,7 @@
             this.Controls.Add(this.gbModificar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ConsultarMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ConsultarMarca";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.gbLista.ResumeLayout(false);

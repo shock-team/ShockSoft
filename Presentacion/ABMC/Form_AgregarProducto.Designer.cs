@@ -395,6 +395,7 @@
             this.Controls.Add(this.panelControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AgregarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_AñadirProducto";
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();

@@ -3,6 +3,8 @@ using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using System.Linq;
+using ShockSoft.Excepciones;
 
 namespace ShockSoft.Presentacion
 {
@@ -16,7 +18,8 @@ namespace ShockSoft.Presentacion
             controlador = ControladorProductos.ObtenerInstancia();
 
             //Carga las marcas en el ComboBox
-            foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
+            List<Marca> marcas = ControladorMarcas.ObtenerInstancia().ListarMarcas().OrderBy(x => x.Descripcion).ToList();
+            foreach (Marca marca in marcas)
             {
                 comboMarca.Items.Add(marca);
             }
@@ -35,7 +38,8 @@ namespace ShockSoft.Presentacion
             comboIVA.ValueMember = "IdParametro";
 
             //Carga los rubros en el ComboBox
-            foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
+            List<Rubro> rubros = ControladorRubros.ObtenerInstancia().ListarRubros().OrderBy(x => x.Descripcion).ToList();
+            foreach (Rubro rubro in rubros)
             {
                 comboRubro.Items.Add(rubro);
             }
@@ -84,8 +88,29 @@ namespace ShockSoft.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            controlador.AgregarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtGanancia.Text), ((Parametro)comboIVA.SelectedItem).IdParametro, ((Marca)comboMarca.SelectedItem).IdMarca, ((Rubro)comboRubro.SelectedItem).IdRubro);
-            MessageBox.Show("El producto ha sido agregado correctamente", "Éxito");
+            try
+            {
+                int idParametro = comboIVA.SelectedItem == null ? 0 : ((Parametro)comboIVA.SelectedItem).IdParametro;
+                int idMarca = comboMarca.SelectedItem == null ? 0 : ((Marca)comboMarca.SelectedItem).IdMarca;
+                int idRubro = comboRubro.SelectedItem == null ? 0 : ((Rubro)comboRubro.SelectedItem).IdRubro;
+
+                controlador.AgregarProducto(
+                    txtDescripcion.Text, 
+                    float.Parse(txtPrecio.Text), 
+                    float.Parse(txtGanancia.Text),
+                    idParametro,
+                    idMarca, 
+                    idRubro);
+                MessageBox.Show("El producto ha sido agregado correctamente", "Éxito");
+            }
+            catch (DatosFaltantesException)
+            {
+                MessageBox.Show("Por favor, complete todos los campos para continuar", "Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)

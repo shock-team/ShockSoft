@@ -63,24 +63,48 @@ namespace ShockSoft.Presentacion.ABMC
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            int idCompra = controlador.AgregarCompra(((Proveedor)comboProveedores.SelectedItem).IdProveedor, dtpFecha.Value);
-            controlador.GenerarLineasDeCompra(dgLineasDeCompra.Rows, idCompra);
-            MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
-            this.Close();
+            try
+            {
+                int idCompra = controlador.AgregarCompra(
+                    ((Proveedor)comboProveedores.SelectedItem).IdProveedor, 
+                    dtpFecha.Value,
+                    float.Parse(txtDolarProveedor.Text),
+                    float.Parse( FormsHelper.TextToCurrency(txtTotal.Text) )
+                    );
+
+                controlador.GenerarLineasDeCompra(dgLineasDeCompra.Rows, idCompra);
+                MessageBox.Show("La compra se ha registrado exitosamente", "Éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                this.Close();
+            }
         }
 
         public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
         {
-            dgLineasDeCompra.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual) * pCantidad);
-            double total = 0;
+            dgLineasDeCompra.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, float.Parse(pPrecioActual) * pCantidad);
+            float total = 0;
             foreach (DataGridViewRow fila in dgLineasDeCompra.Rows)
             {
                 if (fila.Cells[4].Value != null)
                 {
-                    total += (double)fila.Cells[4].Value;
+                    total += (float)fila.Cells[4].Value;
                 }
             }
-            txtTotal.Text = total.ToString();
+            total *= float.Parse(txtDolarProveedor.Text);
+
+            txtTotal.Text = FormsHelper.TextToCurrency(total);
+        }
+
+        private void btnDolarActual_Click(object sender, EventArgs e)
+        {
+            float dolar = ControladorParametros.ObtenerInstancia().ObtenerPrecioDolar();
+            txtDolarProveedor.Text = dolar.ToString();
         }
     }
 }

@@ -16,10 +16,14 @@ namespace ShockSoft.Presentacion
     public partial class Form_AgregarLineaDeVenta : Form, IBusquedaDeProductos
     {
         public List<int> listaDeIDs;
+        ControladorParametros parametros = ControladorParametros.ObtenerInstancia();
+        float _precioDolar;
 
         public Form_AgregarLineaDeVenta()
         {
             InitializeComponent();
+
+            _precioDolar = parametros.ObtenerPrecioDolar();
         }
 
 
@@ -32,7 +36,9 @@ namespace ShockSoft.Presentacion
 
         private void NmCantidad_ValueChanged(object sender, EventArgs e)
         {
-            txtSubtotal.Text = (nmCantidad.Value * decimal.Parse(txtPrecioUnitario.Text)).ToString();
+            decimal precioUnitario = decimal.Parse(FormsHelper.CurrencyToText(txtPrecioUnitario.Text));
+            decimal subtotal = nmCantidad.Value * precioUnitario;
+            txtSubtotal.Text = FormsHelper.TextToCurrency(subtotal.ToString());
         }
 
         // Deslizar ventana desde el panel de control
@@ -93,10 +99,23 @@ namespace ShockSoft.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            IAgregarLinea formAgregarVenta = (IAgregarLinea)Owner;
-            formAgregarVenta.AgregarLinea(txtId.Text, txtDescripcion.Text, txtPrecioUnitario.Text, Convert.ToInt32(nmCantidad.Value));
-            MessageBox.Show("Línea agregada exitosamente", "Éxito");
-            this.Close();
+            try
+            {
+                IAgregarLinea formAgregarVenta = (IAgregarLinea)Owner;
+                formAgregarVenta.AgregarLinea(
+                    txtId.Text, 
+                    txtDescripcion.Text, 
+                    FormsHelper.CurrencyToText(txtPrecioUnitario.Text), 
+                    Convert.ToInt32(nmCantidad.Value));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                this.Close();
+            }
         }
 
         private void ActualizarDatos()
@@ -118,7 +137,15 @@ namespace ShockSoft.Presentacion
             }
 
             nmCantidad.Enabled = true;
-            txtPrecioUnitario.Text = productoSeleccionado.PrecioBaseDolar.ToString();
+
+            if (Owner is Form_AgregarCompra)
+            {
+                txtPrecioUnitario.Text = FormsHelper.TextToCurrency(productoSeleccionado.ObtenerPrecioDeVenta());
+            }
+            else
+            {
+                txtPrecioUnitario.Text = FormsHelper.TextToCurrency(productoSeleccionado.ObtenerPrecioDeVenta() * _precioDolar);
+            }
         }
     }
 }

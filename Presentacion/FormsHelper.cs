@@ -5,6 +5,32 @@ namespace ShockSoft.Presentacion
 {
     public static class FormsHelper
     {
+        public static string TextToCurrency(string pText)
+        {
+            return String.Format("{0:C2}", float.Parse(pText));
+        }
+        public static string TextToCurrency(float pFloat)
+        {
+            return String.Format("{0:C2}", pFloat);
+        }
+
+        public static string CurrencyToText(string pCurrency)
+        {
+            return pCurrency.Substring(2);
+        }
+
+        public static string BoolToText(bool pBoolean)
+        {
+            if (pBoolean)
+            {
+                return "Sí";
+            }
+            else
+            {
+                return "No";
+            }
+        }
+
         public static string NameFormatter(string pNombre, string pApellido)
         {
             return String.Format("{0}, {1}", pApellido, pNombre);

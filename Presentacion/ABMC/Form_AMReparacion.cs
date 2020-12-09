@@ -56,7 +56,7 @@ namespace ShockSoft.Presentacion
             comboMarca.ValueMember = "IdMarca";
             comboMarca.SelectedIndex = 0;
 
-            txtCostoTrabajo.Enabled = false;
+            //txtCostoTrabajo.Enabled = false;
             txtCostoTrabajo.Text = "0";
             txtTotal.Text = "0";
             txtTotalInsumos.Text = "0";
@@ -140,7 +140,7 @@ namespace ShockSoft.Presentacion
         {
             txtIdCliente.Text = pIdCliente.ToString();
             Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
-            txtNombreCliente.Text = clienteActual.Nombre + " " + clienteActual.Apellido;
+            txtNombreCliente.Text = FormsHelper.NameFormatter(clienteActual.Nombre,clienteActual.Apellido);
         }
 
         private void BtnAceptar_Click(object sender, EventArgs e)
@@ -220,7 +220,7 @@ namespace ShockSoft.Presentacion
         {
             if (cbCobrado.Checked)
             {
-                txtCostoTrabajo.Enabled = true;
+                //txtCostoTrabajo.Enabled = true;
                 if (txtCostoTrabajo.TextLength > 0)
                 {
                     txtTotal.Text = (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text)).ToString();
@@ -232,7 +232,7 @@ namespace ShockSoft.Presentacion
             }
             else
             {
-                txtCostoTrabajo.Enabled = false;
+                //txtCostoTrabajo.Enabled = false;
                 txtCostoTrabajo.Text = "0";
                 txtTotal.Text = "0";
             }
@@ -257,7 +257,9 @@ namespace ShockSoft.Presentacion
         {
             if ((txtTotalInsumos.TextLength > 0) && (txtCostoTrabajo.TextLength > 0))
             {
-                txtTotal.Text = (ControladorMetodosPago.ObtenerInstancia().ObtenerMetodoDePago(((MetodoPago) comboMetodoDePago.SelectedItem).IdMetodoPago).MultiplicadorInteres * (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text))).ToString();
+                float multInteres = (ControladorMetodosPago.ObtenerInstancia().ObtenerMetodoDePago(((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago).MultiplicadorInteres);
+                float subtotal = (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text));
+                txtTotal.Text = FormsHelper.TextToCurrency(multInteres * subtotal);
             }
         }
 

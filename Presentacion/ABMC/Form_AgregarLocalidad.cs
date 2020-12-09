@@ -53,13 +53,13 @@ namespace ShockSoft.Presentacion
             this.Close();
         }
 
-        private void BtnAceptar_Click_1(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             try
             {
                 controlador.VerificarDatos(txtNombre.Text);
                 controlador.AgregarLocalidad(txtNombre.Text);
-                MessageBox.Show("La marca se ha agregado correctamente", "Exito");
+                MessageBox.Show("La localidad se ha agregado correctamente", "Exito");
                 txtNombre.Clear();
             }
             catch (DatosRepetidosException)
@@ -68,13 +68,25 @@ namespace ShockSoft.Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace, "Error");
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                this.Close();
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnAceptar_Click(sender, e);
+            }
         }
     }
 }

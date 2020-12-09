@@ -92,7 +92,7 @@ namespace ShockSoft.Presentacion
             //Filtra a los clientes en base a si tienen deudas o no
             foreach (Cliente cliente in listaDeClientes)
             {
-                if (((cliente.ObtenerSaldo() == 0) && pSinDeudas) || ((cliente.ObtenerSaldo() < 0) && pConDeudas))
+                if (((cliente.ObtenerSaldo() == 0) && pSinDeudas) || ((cliente.ObtenerSaldo() > 0) && pConDeudas))
                 {
                     listaDeClientesFiltrados.Add(cliente);
                 }

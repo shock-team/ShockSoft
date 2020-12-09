@@ -37,7 +37,7 @@ namespace ShockSoft.Presentacion.Controladores
         /// </summary>
         /// <param name="pIdProveedor">ID del proveedor correspondiente a la compra</param>
         /// <param name="pFecha">La fecha en que se efectuó la compra</param>
-        public int AgregarCompra(int pIdProveedor, DateTime pFecha)
+        public int AgregarCompra(int pIdProveedor, DateTime pFecha, float pDolar, float pTotalEnPesos)
         {
             Compra nuevaCompra = new Compra();
             nuevaCompra.Fecha = pFecha;
@@ -48,6 +48,8 @@ namespace ShockSoft.Presentacion.Controladores
                     Proveedor proveedor = bUoW.RepositorioProveedor.Obtener(pIdProveedor);
                     nuevaCompra.Proveedor = proveedor;
                     nuevaCompra.IdProveedor = pIdProveedor;
+                    nuevaCompra.DolarProveedor = pDolar;
+                    nuevaCompra.CostoTotalPesos = pTotalEnPesos;
                     bUoW.RepositorioCompras.Agregar(nuevaCompra);
                     bUoW.GuardarCambios();
                     int idCompra = bUoW.RepositorioCompras.ObtenerUltimaCompra().IdCompra;

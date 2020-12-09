@@ -88,12 +88,6 @@ namespace ShockSoft.Presentacion
             ActualizarTabla();
         }
 
-        private void dgvMarcas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtID.Text = dgvMarcas.CurrentRow.Cells[0].Value.ToString();
-            txtNombre.Text = dgvMarcas.CurrentRow.Cells[1].Value.ToString();
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
@@ -111,6 +105,12 @@ namespace ShockSoft.Presentacion
             {
                 MessageBox.Show(ex.StackTrace, "Error");
             }
+        }
+
+        private void dgvMarcas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtID.Text = dgvMarcas.CurrentRow.Cells[0].Value.ToString();
+            txtNombre.Text = dgvMarcas.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }

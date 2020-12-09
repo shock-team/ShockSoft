@@ -356,6 +356,7 @@
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ModificarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ModificarProducto";
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();

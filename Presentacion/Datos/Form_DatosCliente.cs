@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using ShockSoft.Excepciones;
 using ShockSoft.Presentacion.ABMC;
+using System;
 
 namespace ShockSoft.Presentacion
 {
@@ -22,11 +23,11 @@ namespace ShockSoft.Presentacion
             txtTelefono.Text = cliente.Telefono;
             txtDireccion.Text = cliente.Direccion;
             ActualizarComboBox();
-            txtSaldo.Text = cliente.ObtenerSaldo().ToString();
+            txtSaldo.Text = String.Format("{0:C2}",cliente.ObtenerSaldo());
         }
 
 
-        private void BtnModificar_Click(object sender, System.EventArgs e)
+        private void BtnModificar_Click(object sender, EventArgs e)
         {
             string dniActual = txtDNI.Text;
             string cuitActual = txtCUIT.Text;
@@ -45,7 +46,7 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        private void BtnAgregarPago_Click(object sender, System.EventArgs e)
+        private void BtnAgregarPago_Click(object sender, EventArgs e)
         {
             Form_RegistrarPago formRegistrarPago = new Form_RegistrarPago(int.Parse(txtId.Text));
             formRegistrarPago.Show();
@@ -55,19 +56,19 @@ namespace ShockSoft.Presentacion
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
         private void panelControl_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnCerrar_Click(object sender, System.EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnTamano_Click(object sender, System.EventArgs e)
+        private void btnTamano_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
@@ -79,12 +80,12 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        private void btnMinimizar_Click(object sender, System.EventArgs e)
+        private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void BtnNuevaLocalidad_Click(object sender, System.EventArgs e)
+        private void BtnNuevaLocalidad_Click(object sender, EventArgs e)
         {
             Form_AgregarLocalidad formAltaLocalidad = new Form_AgregarLocalidad();
             this.Hide();
@@ -110,7 +111,7 @@ namespace ShockSoft.Presentacion
             comboLocalidad.SelectedIndex = comboLocalidad.Items.Count - 1;
         }
 
-        private void BtnHistorialDePagos_Click(object sender, System.EventArgs e)
+        private void BtnHistorialDePagos_Click(object sender, EventArgs e)
         {
             Form_ConsultarPagosCliente form_ConsultarPagosCliente = new Form_ConsultarPagosCliente(int.Parse(txtId.Text));
             this.Hide();

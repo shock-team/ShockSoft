@@ -199,9 +199,9 @@
             this.lblDolar.AutoSize = true;
             this.lblDolar.Location = new System.Drawing.Point(9, 43);
             this.lblDolar.Name = "lblDolar";
-            this.lblDolar.Size = new System.Drawing.Size(45, 19);
+            this.lblDolar.Size = new System.Drawing.Size(67, 19);
             this.lblDolar.TabIndex = 0;
-            this.lblDolar.Text = "Valor";
+            this.lblDolar.Text = "Valor ($)";
             // 
             // groupBox1
             // 
@@ -358,6 +358,7 @@
             this.Controls.Add(this.gbParametros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ABMParametro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ABMParametro";
             ((System.ComponentModel.ISupportInitialize)(this.dgParametros)).EndInit();
             this.gbParametros.ResumeLayout(false);

@@ -43,6 +43,9 @@
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.comboProveedores = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDolarProveedor = new System.Windows.Forms.TextBox();
+            this.btnDolarActual = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +85,8 @@
             // 
             // dgLineasDeCompra
             // 
+            this.dgLineasDeCompra.AllowUserToAddRows = false;
+            this.dgLineasDeCompra.AllowUserToDeleteRows = false;
             this.dgLineasDeCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLineasDeCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -147,7 +152,7 @@
             // 
             // btnAgregarProveedor
             // 
-            this.btnAgregarProveedor.Location = new System.Drawing.Point(323, 38);
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(320, 12);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
             this.btnAgregarProveedor.Size = new System.Drawing.Size(121, 23);
             this.btnAgregarProveedor.TabIndex = 9;
@@ -158,7 +163,7 @@
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Location = new System.Drawing.Point(32, 44);
+            this.lblProveedor.Location = new System.Drawing.Point(29, 18);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(59, 13);
             this.lblProveedor.TabIndex = 10;
@@ -167,16 +172,45 @@
             // comboProveedores
             // 
             this.comboProveedores.FormattingEnabled = true;
-            this.comboProveedores.Location = new System.Drawing.Point(97, 39);
+            this.comboProveedores.Location = new System.Drawing.Point(94, 13);
             this.comboProveedores.Name = "comboProveedores";
             this.comboProveedores.Size = new System.Drawing.Size(220, 21);
             this.comboProveedores.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Dólar ($):";
+            // 
+            // txtDolarProveedor
+            // 
+            this.txtDolarProveedor.Location = new System.Drawing.Point(94, 46);
+            this.txtDolarProveedor.Name = "txtDolarProveedor";
+            this.txtDolarProveedor.Size = new System.Drawing.Size(100, 20);
+            this.txtDolarProveedor.TabIndex = 13;
+            // 
+            // btnDolarActual
+            // 
+            this.btnDolarActual.Location = new System.Drawing.Point(200, 44);
+            this.btnDolarActual.Name = "btnDolarActual";
+            this.btnDolarActual.Size = new System.Drawing.Size(75, 23);
+            this.btnDolarActual.TabIndex = 14;
+            this.btnDolarActual.Text = "Actual";
+            this.btnDolarActual.UseVisualStyleBackColor = true;
+            this.btnDolarActual.Click += new System.EventHandler(this.btnDolarActual_Click);
             // 
             // Form_AgregarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 357);
+            this.Controls.Add(this.btnDolarActual);
+            this.Controls.Add(this.txtDolarProveedor);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboProveedores);
             this.Controls.Add(this.lblProveedor);
             this.Controls.Add(this.btnAgregarProveedor);
@@ -188,6 +222,7 @@
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
             this.Name = "Form_AgregarCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_AgregarCompra";
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeCompra)).EndInit();
             this.ResumeLayout(false);
@@ -211,5 +246,8 @@
         private System.Windows.Forms.Button btnAgregarProveedor;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.ComboBox comboProveedores;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDolarProveedor;
+        private System.Windows.Forms.Button btnDolarActual;
     }
 }

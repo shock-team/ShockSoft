@@ -10,12 +10,17 @@ namespace ShockSoft.Presentacion
     public partial class Form_ConsultarProductos : Form
     {
         ControladorProductos controlador;
+        ControladorParametros parametros;
         public List<int> listaDeIDs;
+        float _precioDolar;
 
         public Form_ConsultarProductos()
         {
             InitializeComponent();
             controlador = ControladorProductos.ObtenerInstancia();
+            parametros = ControladorParametros.ObtenerInstancia();
+            parametros.OnDolarChangedEvent += Parametros_OnDolarChangedEvent;
+
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
 
@@ -46,7 +51,18 @@ namespace ShockSoft.Presentacion
             comboRubro.ValueMember = "IdRubro";
             comboRubro.DisplayMember = "Descripcion";
 
+            //Cargar precio dólar
+            _precioDolar = parametros.ObtenerPrecioDolar();
+            lblPrecioDolar.Text = String.Format("{0:C2}", _precioDolar);
+
             //Carga los datos a la DataTable
+            ActualizarTabla();
+        }
+
+        private void Parametros_OnDolarChangedEvent(object sender, Parametro e)
+        {
+            _precioDolar = parametros.ObtenerPrecioDolar();
+            lblPrecioDolar.Text = String.Format("{0:C2}", _precioDolar);
             ActualizarTabla();
         }
 
@@ -81,7 +97,7 @@ namespace ShockSoft.Presentacion
             }
             foreach (Producto producto in listaDeProductos)
             {
-                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.PrecioBaseDolar, producto.Cantidad);
+                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.ObtenerPrecioDeVenta() * _precioDolar, producto.Cantidad);
             }
         }
 

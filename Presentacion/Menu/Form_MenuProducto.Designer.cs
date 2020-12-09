@@ -77,7 +77,7 @@
             this.btnConsultaProducto.Name = "btnConsultaProducto";
             this.btnConsultaProducto.Size = new System.Drawing.Size(600, 45);
             this.btnConsultaProducto.TabIndex = 6;
-            this.btnConsultaProducto.Text = "Lista de Productos";
+            this.btnConsultaProducto.Text = "Productos";
             this.btnConsultaProducto.UseVisualStyleBackColor = false;
             this.btnConsultaProducto.Click += new System.EventHandler(this.btnConsultaProducto_Click);
             // 
@@ -93,7 +93,7 @@
             this.btnABMParametro.Name = "btnABMParametro";
             this.btnABMParametro.Size = new System.Drawing.Size(600, 44);
             this.btnABMParametro.TabIndex = 7;
-            this.btnABMParametro.Text = "ABM Parametros";
+            this.btnABMParametro.Text = "Parametros";
             this.btnABMParametro.UseVisualStyleBackColor = false;
             this.btnABMParametro.Click += new System.EventHandler(this.btnABMParametro_Click);
             // 
@@ -109,7 +109,7 @@
             this.btnConsultaMarca.Name = "btnConsultaMarca";
             this.btnConsultaMarca.Size = new System.Drawing.Size(600, 45);
             this.btnConsultaMarca.TabIndex = 8;
-            this.btnConsultaMarca.Text = "Lista de Marcas";
+            this.btnConsultaMarca.Text = "Marcas";
             this.btnConsultaMarca.UseVisualStyleBackColor = false;
             this.btnConsultaMarca.Click += new System.EventHandler(this.btnConsultaMarca_Click);
             // 

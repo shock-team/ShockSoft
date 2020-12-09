@@ -1,5 +1,6 @@
 ﻿using ShockSoft.Dominio;
 using ShockSoft.Persistencia.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,6 +14,7 @@ namespace ShockSoft.Presentacion
     public class ControladorParametros
     {
         private static ControladorParametros _instancia;
+        public event EventHandler<Parametro> OnDolarChangedEvent;
 
         /// <summary>
         /// Obtiene la instancia del controlador
@@ -98,21 +100,20 @@ namespace ShockSoft.Presentacion
                     parametro.Descripcion = pDescripcion;
                     parametro.Valor = pValor;
                     bUoW.GuardarCambios();
+                    OnDolarChangedEvent?.Invoke(this, parametro);
                 }
             }
         }
 
-        public Parametro ObtenerPrecioDolar()
+        public float ObtenerPrecioDolar()
         {
-            Parametro precioDolar = new Parametro();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    precioDolar = bUoW.RepositorioParametro.ObtenerPrecioDolar();
+                    return bUoW.RepositorioParametro.ObtenerPrecioDolar().Valor;
                 }
             }
-            return precioDolar;
         }
 
         public int ObtenerCantidadDeParametros()

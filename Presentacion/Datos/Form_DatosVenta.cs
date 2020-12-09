@@ -15,11 +15,22 @@ namespace ShockSoft.Presentacion
     public partial class Form_DatosVenta : Form
     {
         ControladorVentas controlador = ControladorVentas.ObtenerInstancia();
+        ControladorParametros parametros = ControladorParametros.ObtenerInstancia();
+        int _idVenta;
+        float _precioDolar;
+
         public Form_DatosVenta(int pIdVenta)
         {
             InitializeComponent();
-            Venta ventaActual = controlador.ObtenerVenta(pIdVenta);
-            txtNombreCliente.Text = ventaActual.Cliente.Nombre + " " + ventaActual.Cliente.Apellido;
+            _idVenta = pIdVenta;
+            _precioDolar = parametros.ObtenerPrecioDolar();
+            ActualizarTabla();
+        }
+
+        public void ActualizarTabla()
+        {
+            Venta ventaActual = controlador.ObtenerVenta(_idVenta);
+            txtNombreCliente.Text = FormsHelper.NameFormatter(ventaActual.Cliente.Nombre,ventaActual.Cliente.Apellido);
             txtIdCliente.Text = ventaActual.Cliente.IdCliente.ToString();
 
             //Carga las líneas de venta
@@ -34,7 +45,6 @@ namespace ShockSoft.Presentacion
 
             txtTotal.Text = ventaActual.ObtenerTotal().ToString();
         }
-
 
         // Deslizar ventana desde el panel de control
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

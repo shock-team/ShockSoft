@@ -26,6 +26,7 @@ namespace ShockSoft.Presentacion
             txtIdCliente.Text = pIdCliente.ToString();
             Cliente clienteActual = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
             txtNombreCliente.Text = FormsHelper.NameFormatter(clienteActual.Nombre, clienteActual.Apellido);
+            ActualizarTabla();
         }
 
         private void ActualizarTabla()
@@ -54,7 +55,8 @@ namespace ShockSoft.Presentacion
             }
             foreach (Reparacion rep in listaDeReparaciones)
             {
-                dgReparaciones.Rows.Add(rep.IdReparacion, rep.FechaIngreso, FormsHelper.NameFormatter(rep.Cliente.Nombre, rep.Cliente.Apellido), rep.Rubro.Descripcion, rep.Problema, rep.Entregado );
+                string entregado = FormsHelper.BoolToText(rep.Entregado);
+                dgReparaciones.Rows.Add(rep.IdReparacion, rep.FechaIngreso, FormsHelper.NameFormatter(rep.Cliente.Nombre, rep.Cliente.Apellido), rep.Rubro.Descripcion, rep.Problema, entregado);
             }
         }
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -90,6 +92,7 @@ namespace ShockSoft.Presentacion
             cbCobrado.Checked = false;
             cbEntregado.Checked = false;
             cbReparado.Checked = false;
+            ActualizarTabla();
         }
 
         // Deslizar ventana desde el panel de control

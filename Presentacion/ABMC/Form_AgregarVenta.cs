@@ -79,10 +79,20 @@ namespace ShockSoft.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int idVenta = controlador.AgregarVenta(int.Parse(txtId.Text), ((MetodoPago)comboMetodoPago.SelectedItem).IdMetodoPago, dtpFechaVenta.Value);
-            controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows, idVenta);
-            MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
-            this.Close();
+            try
+            {
+                int idVenta = controlador.AgregarVenta(int.Parse(txtId.Text), ((MetodoPago)comboMetodoPago.SelectedItem).IdMetodoPago, dtpFechaVenta.Value);
+                controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows, idVenta);
+                MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                this.Close();
+            }
         }
 
         public void AgregarCliente(int pIdCliente)

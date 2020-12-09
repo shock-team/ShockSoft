@@ -59,7 +59,7 @@
             this.btnConsultaVenta.Name = "btnConsultaVenta";
             this.btnConsultaVenta.Size = new System.Drawing.Size(600, 45);
             this.btnConsultaVenta.TabIndex = 10;
-            this.btnConsultaVenta.Text = "Lista de Ventas";
+            this.btnConsultaVenta.Text = "Ventas";
             this.btnConsultaVenta.UseVisualStyleBackColor = false;
             this.btnConsultaVenta.Click += new System.EventHandler(this.btnConsultaVenta_Click);
             // 
@@ -91,7 +91,7 @@
             this.btnConsultarCompras.Name = "btnConsultarCompras";
             this.btnConsultarCompras.Size = new System.Drawing.Size(600, 45);
             this.btnConsultarCompras.TabIndex = 12;
-            this.btnConsultarCompras.Text = "Lista de Compras";
+            this.btnConsultarCompras.Text = "Compras";
             this.btnConsultarCompras.UseVisualStyleBackColor = false;
             this.btnConsultarCompras.Click += new System.EventHandler(this.btnConsultarCompras_Click);
             // 

@@ -27,15 +27,15 @@ namespace ShockSoft.Dominio
             float total = 0;
             foreach (Pago pago in Pagos)
             {
-                total += pago.Monto;
+                total -= pago.Monto;
             }
             foreach (Venta venta in Ventas)
             {
-                total -= venta.ObtenerTotal();
+                total += venta.ObtenerTotal();
             }
             foreach (Reparacion reparacion in Reparaciones)
             {
-                total -= reparacion.Precio;
+                total += reparacion.Precio;
             }
             return total;
         }
@@ -50,6 +50,5 @@ namespace ShockSoft.Dominio
         {
             Ventas.Add(pVenta);
         }
-
     }
 }

@@ -23,7 +23,7 @@ namespace ShockSoft.Presentacion
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
 
-            txtDolar.Text = controlador.ObtenerPrecioDolar().Valor.ToString();
+            txtDolar.Text = controlador.ObtenerPrecioDolar().ToString();
             ActualizarTabla();
         }
 
@@ -73,7 +73,7 @@ namespace ShockSoft.Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -87,7 +87,7 @@ namespace ShockSoft.Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 

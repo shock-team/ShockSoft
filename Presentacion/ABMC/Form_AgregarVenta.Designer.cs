@@ -416,6 +416,7 @@
             this.Controls.Add(this.dglineasDeVenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AgregarVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_AgregarVenta";
             ((System.ComponentModel.ISupportInitialize)(this.dglineasDeVenta)).EndInit();
             this.panelControl.ResumeLayout(false);
