@@ -8,16 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Squirrel;
+using System.Diagnostics;
 
 namespace ShockSoft.Presentacion
 {
     public partial class Form_MenuPrincipal : Form
     {
+        string releasePath = @"D:\Releases";
         public Form_MenuPrincipal()
         {
             InitializeComponent();
+            AddVersionNumber();
+            CheckForUpdates();
         }
 
+        private async Task CheckForUpdates()
+        {
+            using (var manager = new UpdateManager(@releasePath))
+            {
+                await manager.UpdateApp();
+            }
+        }
+
+        private void AddVersionNumber()
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            lblVersion.Text = $" v.{versionInfo.FileVersion}";
+        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

@@ -44,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panelLateral.SuspendLayout();
@@ -142,6 +143,7 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panelLateral.Controls.Add(this.lblVersion);
             this.panelLateral.Controls.Add(this.btnVenta);
             this.panelLateral.Controls.Add(this.panel4);
             this.panelLateral.Controls.Add(this.panel1);
@@ -251,6 +253,17 @@
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Bold);
+            this.lblVersion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblVersion.Location = new System.Drawing.Point(247, 530);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(44, 16);
+            this.lblVersion.TabIndex = 17;
+            this.lblVersion.Text = "v.1.0.0";
+            // 
             // Form_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +283,7 @@
             this.panelControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
             this.panelLateral.ResumeLayout(false);
+            this.panelLateral.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +306,6 @@
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox picShock;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
