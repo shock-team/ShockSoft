@@ -4,6 +4,7 @@ obj/
 Debug/
 test/
 packages/
+Releases/
 .vs
 *.ide-shm
 *.cache
