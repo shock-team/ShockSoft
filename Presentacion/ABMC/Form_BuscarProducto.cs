@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 using System.Runtime.InteropServices;
 
 namespace ShockSoft.Presentacion
@@ -42,6 +43,20 @@ namespace ShockSoft.Presentacion
 
             //Carga los datos a la DataTable
             ActualizarTabla();
+        }
+
+        public void CambiarColor()
+        {
+            if ((this.Owner != null) )
+            {
+                this.BackColor = Color.FromArgb(255, 85, 85, 70);
+                this.panel1.BackColor = Color.FromArgb(255, 75, 75, 60);
+                this.btnAnterior.BackColor = Color.FromArgb(255, 50, 50, 40);
+                this.btnAnterior.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 185, 54);
+                this.btnSiguiente.BackColor = Color.FromArgb(255, 50, 50, 40);
+                this.btnSiguiente.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 185, 54);
+
+            }
         }
 
         private void Parametros_OnDolarChangedEvent(object sender, Parametro e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ShockSoft.Presentacion.ABMC;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShockSoft.Dominio;
 using System.Runtime.InteropServices;
-using ShockSoft.Presentacion.ABMC;
+
 
 namespace ShockSoft.Presentacion
 {
@@ -26,6 +27,20 @@ namespace ShockSoft.Presentacion
             _precioDolar = parametros.ObtenerPrecioDolar();
         }
 
+        public void CambiarColor()
+        {
+            if ((this.Owner != null) && (this.Owner is Form_AgregarReparacion))
+            {
+                this.BackColor = Color.FromArgb(255, 85, 85, 70);
+                this.panel1.BackColor = Color.FromArgb(255, 75, 75, 60);
+                this.panel2.BackColor = Color.FromArgb(255, 75, 75, 60);
+                this.panel3.BackColor = Color.FromArgb(255, 75, 75, 60);
+                this.btnBuscar.BackColor = Color.FromArgb(255, 50, 50, 40);
+                this.btnBuscar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 185, 54);
+                this.btnAceptar.BackColor = Color.FromArgb(255, 50, 50, 40);
+                this.btnAceptar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 185, 54);
+            }
+        }
 
         public void AgregarProducto(int pIdProducto, int pCantidad = 0)
         {
@@ -92,6 +107,10 @@ namespace ShockSoft.Presentacion
                 formBuscarProducto.listaDeIDs = listaDeIDs;
                 formBuscarProducto.Owner = this;
                 this.Hide();
+                if (Owner is Form_AgregarReparacion)
+                {
+                    formBuscarProducto.CambiarColor();
+                }
                 formBuscarProducto.ShowDialog();
                 this.Show();
             }

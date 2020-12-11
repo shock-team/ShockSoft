@@ -342,6 +342,7 @@ namespace ShockSoft.Presentacion
             formAgregarLineaDeReparacion.AgregarProducto(productoSeleccionado, cantidad);
 
             this.Hide();
+            formAgregarLineaDeReparacion.CambiarColor();
             formAgregarLineaDeReparacion.ShowDialog();
             this.Show();
             

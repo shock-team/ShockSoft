@@ -77,15 +77,15 @@
             this.txtTotalInsumos = new System.Windows.Forms.TextBox();
             this.lblTotalInsumos = new System.Windows.Forms.Label();
             this.dgLineasDeReparacion = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIdReparacion = new System.Windows.Forms.TextBox();
-            this.lblIdReparacion = new System.Windows.Forms.Label();
-            this.lblNuevaReparacion = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtIdReparacion = new System.Windows.Forms.TextBox();
+            this.lblIdReparacion = new System.Windows.Forms.Label();
+            this.lblNuevaReparacion = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.gbLista.SuspendLayout();
@@ -628,48 +628,6 @@
             this.dgLineasDeReparacion.TabIndex = 19;
             this.dgLineasDeReparacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLineasDeReparacion_CellDoubleClick);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.txtIdReparacion);
-            this.panel1.Controls.Add(this.lblIdReparacion);
-            this.panel1.Controls.Add(this.lblNuevaReparacion);
-            this.panel1.Location = new System.Drawing.Point(12, 52);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 40);
-            this.panel1.TabIndex = 47;
-            // 
-            // txtIdReparacion
-            // 
-            this.txtIdReparacion.Enabled = false;
-            this.txtIdReparacion.Location = new System.Drawing.Point(285, 11);
-            this.txtIdReparacion.Name = "txtIdReparacion";
-            this.txtIdReparacion.ReadOnly = true;
-            this.txtIdReparacion.Size = new System.Drawing.Size(115, 20);
-            this.txtIdReparacion.TabIndex = 53;
-            // 
-            // lblIdReparacion
-            // 
-            this.lblIdReparacion.AutoSize = true;
-            this.lblIdReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblIdReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblIdReparacion.Location = new System.Drawing.Point(138, 10);
-            this.lblIdReparacion.Name = "lblIdReparacion";
-            this.lblIdReparacion.Size = new System.Drawing.Size(141, 19);
-            this.lblIdReparacion.TabIndex = 52;
-            this.lblIdReparacion.Text = "ID de la reparación:";
-            // 
-            // lblNuevaReparacion
-            // 
-            this.lblNuevaReparacion.AutoSize = true;
-            this.lblNuevaReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNuevaReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNuevaReparacion.Location = new System.Drawing.Point(222, 10);
-            this.lblNuevaReparacion.Name = "lblNuevaReparacion";
-            this.lblNuevaReparacion.Size = new System.Drawing.Size(129, 19);
-            this.lblNuevaReparacion.TabIndex = 51;
-            this.lblNuevaReparacion.Text = "Nueva reparación";
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -706,6 +664,48 @@
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.txtIdReparacion);
+            this.panel1.Controls.Add(this.lblIdReparacion);
+            this.panel1.Controls.Add(this.lblNuevaReparacion);
+            this.panel1.Location = new System.Drawing.Point(12, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(545, 40);
+            this.panel1.TabIndex = 47;
+            // 
+            // txtIdReparacion
+            // 
+            this.txtIdReparacion.Enabled = false;
+            this.txtIdReparacion.Location = new System.Drawing.Point(367, 9);
+            this.txtIdReparacion.Name = "txtIdReparacion";
+            this.txtIdReparacion.ReadOnly = true;
+            this.txtIdReparacion.Size = new System.Drawing.Size(115, 20);
+            this.txtIdReparacion.TabIndex = 53;
+            // 
+            // lblIdReparacion
+            // 
+            this.lblIdReparacion.AutoSize = true;
+            this.lblIdReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblIdReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblIdReparacion.Location = new System.Drawing.Point(65, 10);
+            this.lblIdReparacion.Name = "lblIdReparacion";
+            this.lblIdReparacion.Size = new System.Drawing.Size(141, 19);
+            this.lblIdReparacion.TabIndex = 52;
+            this.lblIdReparacion.Text = "ID de la reparación:";
+            // 
+            // lblNuevaReparacion
+            // 
+            this.lblNuevaReparacion.AutoSize = true;
+            this.lblNuevaReparacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNuevaReparacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNuevaReparacion.Location = new System.Drawing.Point(212, 10);
+            this.lblNuevaReparacion.Name = "lblNuevaReparacion";
+            this.lblNuevaReparacion.Size = new System.Drawing.Size(129, 19);
+            this.lblNuevaReparacion.TabIndex = 51;
+            this.lblNuevaReparacion.Text = "Nueva reparación";
             // 
             // Form_AgregarReparacion
             // 
