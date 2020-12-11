@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblFecha = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -41,7 +41,6 @@
             this.btnAgregarLinea = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
-            this.lblProveedor = new System.Windows.Forms.Label();
             this.comboProveedores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDolarProveedor = new System.Windows.Forms.TextBox();
@@ -52,49 +51,57 @@
             this.lblShock = new System.Windows.Forms.Label();
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeCompra)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(560, 109);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(40, 13);
-            this.lblFecha.TabIndex = 2;
-            this.lblFecha.Text = "Fecha:";
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(606, 106);
+            this.dtpFecha.Location = new System.Drawing.Point(24, 40);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(285, 25);
             this.dtpFecha.TabIndex = 3;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(60, 388);
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTotal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotal.Location = new System.Drawing.Point(22, 8);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.Size = new System.Drawing.Size(47, 19);
             this.lblTotal.TabIndex = 4;
             this.lblTotal.Text = "Total:";
             // 
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(100, 384);
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtTotal.Location = new System.Drawing.Point(75, 6);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(181, 20);
+            this.txtTotal.Size = new System.Drawing.Size(407, 25);
             this.txtTotal.TabIndex = 5;
             // 
             // dgLineasDeCompra
             // 
             this.dgLineasDeCompra.AllowUserToAddRows = false;
             this.dgLineasDeCompra.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgLineasDeCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgLineasDeCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLineasDeCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -102,7 +109,7 @@
             this.PrecioUnitario,
             this.Cantidad,
             this.Subtotal});
-            this.dgLineasDeCompra.Location = new System.Drawing.Point(63, 153);
+            this.dgLineasDeCompra.Location = new System.Drawing.Point(12, 168);
             this.dgLineasDeCompra.Name = "dgLineasDeCompra";
             this.dgLineasDeCompra.Size = new System.Drawing.Size(743, 225);
             this.dgLineasDeCompra.TabIndex = 6;
@@ -140,75 +147,86 @@
             // 
             // btnAgregarLinea
             // 
-            this.btnAgregarLinea.Location = new System.Drawing.Point(296, 382);
+            this.btnAgregarLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAgregarLinea.FlatAppearance.BorderSize = 0;
+            this.btnAgregarLinea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnAgregarLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarLinea.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarLinea.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarLinea.Location = new System.Drawing.Point(12, 393);
             this.btnAgregarLinea.Name = "btnAgregarLinea";
-            this.btnAgregarLinea.Size = new System.Drawing.Size(105, 23);
+            this.btnAgregarLinea.Size = new System.Drawing.Size(743, 28);
             this.btnAgregarLinea.TabIndex = 7;
             this.btnAgregarLinea.Text = "Agregar línea";
-            this.btnAgregarLinea.UseVisualStyleBackColor = true;
+            this.btnAgregarLinea.UseVisualStyleBackColor = false;
             this.btnAgregarLinea.Click += new System.EventHandler(this.BtnAgregarLinea_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(731, 385);
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAceptar.Location = new System.Drawing.Point(719, 444);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(117, 28);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnAgregarProveedor
             // 
-            this.btnAgregarProveedor.Location = new System.Drawing.Point(351, 79);
+            this.btnAgregarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAgregarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnAgregarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(346, 29);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
-            this.btnAgregarProveedor.Size = new System.Drawing.Size(121, 23);
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(121, 28);
             this.btnAgregarProveedor.TabIndex = 9;
             this.btnAgregarProveedor.Text = "Agregar proveedor";
-            this.btnAgregarProveedor.UseVisualStyleBackColor = true;
+            this.btnAgregarProveedor.UseVisualStyleBackColor = false;
             this.btnAgregarProveedor.Click += new System.EventHandler(this.BtnAgregarProveedor_Click);
-            // 
-            // lblProveedor
-            // 
-            this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Location = new System.Drawing.Point(60, 85);
-            this.lblProveedor.Name = "lblProveedor";
-            this.lblProveedor.Size = new System.Drawing.Size(59, 13);
-            this.lblProveedor.TabIndex = 10;
-            this.lblProveedor.Text = "Proveedor:";
             // 
             // comboProveedores
             // 
             this.comboProveedores.FormattingEnabled = true;
-            this.comboProveedores.Location = new System.Drawing.Point(125, 80);
+            this.comboProveedores.Location = new System.Drawing.Point(20, 30);
             this.comboProveedores.Name = "comboProveedores";
-            this.comboProveedores.Size = new System.Drawing.Size(220, 21);
+            this.comboProveedores.Size = new System.Drawing.Size(320, 27);
             this.comboProveedores.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 116);
+            this.label1.Location = new System.Drawing.Point(16, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(72, 19);
             this.label1.TabIndex = 12;
             this.label1.Text = "Dólar ($):";
             // 
             // txtDolarProveedor
             // 
-            this.txtDolarProveedor.Location = new System.Drawing.Point(125, 113);
+            this.txtDolarProveedor.Location = new System.Drawing.Point(105, 63);
             this.txtDolarProveedor.Name = "txtDolarProveedor";
-            this.txtDolarProveedor.Size = new System.Drawing.Size(100, 20);
+            this.txtDolarProveedor.Size = new System.Drawing.Size(235, 25);
             this.txtDolarProveedor.TabIndex = 13;
             // 
             // btnDolarActual
             // 
-            this.btnDolarActual.Location = new System.Drawing.Point(231, 111);
+            this.btnDolarActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnDolarActual.FlatAppearance.BorderSize = 0;
+            this.btnDolarActual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnDolarActual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDolarActual.Location = new System.Drawing.Point(346, 60);
             this.btnDolarActual.Name = "btnDolarActual";
-            this.btnDolarActual.Size = new System.Drawing.Size(75, 23);
+            this.btnDolarActual.Size = new System.Drawing.Size(121, 28);
             this.btnDolarActual.TabIndex = 14;
             this.btnDolarActual.Text = "Actual";
-            this.btnDolarActual.UseVisualStyleBackColor = true;
+            this.btnDolarActual.UseVisualStyleBackColor = false;
             this.btnDolarActual.Click += new System.EventHandler(this.btnDolarActual_Click);
             // 
             // panelControl
@@ -222,7 +240,7 @@
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(900, 45);
+            this.panelControl.Size = new System.Drawing.Size(854, 45);
             this.panelControl.TabIndex = 25;
             this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
@@ -234,7 +252,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
-            this.btnMinimizar.Location = new System.Drawing.Point(765, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(719, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 10;
@@ -270,7 +288,7 @@
             this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
-            this.btnTamano.Location = new System.Drawing.Point(810, 0);
+            this.btnTamano.Location = new System.Drawing.Point(764, 0);
             this.btnTamano.Name = "btnTamano";
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
@@ -285,32 +303,66 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
-            this.btnCerrar.Location = new System.Drawing.Point(855, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(809, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(55)))));
+            this.groupBox1.Controls.Add(this.comboProveedores);
+            this.groupBox1.Controls.Add(this.btnAgregarProveedor);
+            this.groupBox1.Controls.Add(this.btnDolarActual);
+            this.groupBox1.Controls.Add(this.txtDolarProveedor);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(12, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(482, 102);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Proveedor";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(55)))));
+            this.groupBox2.Controls.Add(this.dtpFecha);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Location = new System.Drawing.Point(510, 60);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(331, 102);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Fecha";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(55)))));
+            this.panel1.Controls.Add(this.txtTotal);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Location = new System.Drawing.Point(12, 439);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(492, 37);
+            this.panel1.TabIndex = 28;
+            // 
             // Form_AgregarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(80)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(854, 490);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelControl);
-            this.Controls.Add(this.btnDolarActual);
-            this.Controls.Add(this.txtDolarProveedor);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboProveedores);
-            this.Controls.Add(this.lblProveedor);
-            this.Controls.Add(this.btnAgregarProveedor);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnAgregarLinea);
             this.Controls.Add(this.dgLineasDeCompra);
-            this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.lblFecha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AgregarCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -319,13 +371,16 @@
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
@@ -338,7 +393,6 @@
         private System.Windows.Forms.Button btnAgregarLinea;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnAgregarProveedor;
-        private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.ComboBox comboProveedores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDolarProveedor;
@@ -349,5 +403,8 @@
         private System.Windows.Forms.Label lblShock;
         private System.Windows.Forms.Button btnTamano;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
