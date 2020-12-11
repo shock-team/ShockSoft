@@ -168,7 +168,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAñadir.Location = new System.Drawing.Point(10, 88);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(329, 28);
+            this.btnAñadir.Size = new System.Drawing.Size(345, 28);
             this.btnAñadir.TabIndex = 2;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
@@ -249,7 +249,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Location = new System.Drawing.Point(13, 115);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(326, 28);
+            this.btnModificar.Size = new System.Drawing.Size(342, 28);
             this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;

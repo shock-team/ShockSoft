@@ -80,12 +80,18 @@
             // 
             // btnLocalidades
             // 
-            this.btnLocalidades.Location = new System.Drawing.Point(45, 162);
+            this.btnLocalidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnLocalidades.FlatAppearance.BorderSize = 0;
+            this.btnLocalidades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(151)))), ((int)(((byte)(234)))));
+            this.btnLocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocalidades.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnLocalidades.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLocalidades.Location = new System.Drawing.Point(45, 167);
             this.btnLocalidades.Name = "btnLocalidades";
             this.btnLocalidades.Size = new System.Drawing.Size(600, 45);
             this.btnLocalidades.TabIndex = 4;
             this.btnLocalidades.Text = "Localidades";
-            this.btnLocalidades.UseVisualStyleBackColor = true;
+            this.btnLocalidades.UseVisualStyleBackColor = false;
             this.btnLocalidades.Click += new System.EventHandler(this.btnLocalidades_Click);
             // 
             // Form_MenuClientes

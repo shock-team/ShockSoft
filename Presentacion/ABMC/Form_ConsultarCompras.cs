@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ShockSoft.Dominio;
 using ShockSoft.Presentacion.Controladores;
 using ShockSoft.Presentacion.Datos;
+using System.Runtime.InteropServices;
 
 namespace ShockSoft.Presentacion.ABMC
 {
@@ -36,6 +37,33 @@ namespace ShockSoft.Presentacion.ABMC
             comboProveedores.SelectedIndex = 0;
 
             ActualizarTabla();
+        }
+
+        // Deslizar ventana desde el panel de control
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
+
+        private void panelControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnTamano_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void ActualizarTabla()

@@ -131,12 +131,18 @@
             // 
             // btnRubros
             // 
-            this.btnRubros.Location = new System.Drawing.Point(45, 344);
+            this.btnRubros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
+            this.btnRubros.FlatAppearance.BorderSize = 0;
+            this.btnRubros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
+            this.btnRubros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRubros.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnRubros.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRubros.Location = new System.Drawing.Point(45, 359);
             this.btnRubros.Name = "btnRubros";
             this.btnRubros.Size = new System.Drawing.Size(600, 45);
             this.btnRubros.TabIndex = 10;
             this.btnRubros.Text = "Rubros";
-            this.btnRubros.UseVisualStyleBackColor = true;
+            this.btnRubros.UseVisualStyleBackColor = false;
             this.btnRubros.Click += new System.EventHandler(this.btnRubros_Click);
             // 
             // Form_MenuProducto
