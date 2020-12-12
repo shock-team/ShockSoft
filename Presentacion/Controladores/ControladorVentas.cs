@@ -49,8 +49,7 @@ namespace ShockSoft.Presentacion
                     Cliente cliente = bUoW.RepositorioCliente.Obtener(idCliente);
                     cliente.AgregarVenta(venta);
                     bUoW.GuardarCambios();
-                    int idVenta = bUoW.RepositorioVenta.ObtenerUltimaVenta().First().IdVenta;
-                    return idVenta;
+                    return venta.IdVenta;
                 }
             }
         }

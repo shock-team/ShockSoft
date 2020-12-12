@@ -88,9 +88,7 @@ namespace ShockSoft.Presentacion
 
                     bUoW.RepositorioReparacion.Agregar(reparacion);
                     bUoW.GuardarCambios();
-
-                    int idReparacion = bUoW.RepositorioReparacion.ObtenerUltimaReparacion().IdReparacion;
-                    return idReparacion;
+                    return reparacion.IdReparacion;
                 }
             }
         }
@@ -212,6 +210,7 @@ namespace ShockSoft.Presentacion
                 {
                     Reparacion reparacionActual = bUoW.RepositorioReparacion.ObtenerReparacionPorId(pIdReparacion);
                     List<LineaReparacion> lineasActuales = reparacionActual.LineasReparacion.ToList();
+                    float precioDolar = ControladorParametros.ObtenerInstancia().ObtenerPrecioDolar();
                     int indiceLineaExistente;
                     int idProducto;
                     LineaReparacion lineaDeReparacion;
@@ -221,7 +220,7 @@ namespace ShockSoft.Presentacion
                         {
                             idProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
                             Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
-                            int cantidad = int.Parse(pFilas[i].Cells[2].Value.ToString());
+                            int cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
 
                             //Busca si la reparación ya posee una línea con ese producto.
                             indiceLineaExistente = lineasActuales.FindIndex(x => x.IdProducto == idProducto);
@@ -234,7 +233,7 @@ namespace ShockSoft.Presentacion
                                 lineaDeReparacion.Cantidad = cantidad;
                                 lineaDeReparacion.Producto = producto;
                                 lineaDeReparacion.IdReparacion = pIdReparacion;
-                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
+                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar * precioDolar;
                                 bUoW.RepositorioLineasDeReparaciones.Agregar(lineaDeReparacion);
                             }
 
@@ -244,7 +243,7 @@ namespace ShockSoft.Presentacion
                                 lineaDeReparacion = lineasActuales[indiceLineaExistente];
                                 cantidad -= lineaDeReparacion.Cantidad;
                                 lineaDeReparacion.Cantidad += cantidad;
-                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar;
+                                lineaDeReparacion.PrecioActual = producto.PrecioBaseDolar * precioDolar;
                             }
                             producto.Cantidad -= cantidad;
                         }

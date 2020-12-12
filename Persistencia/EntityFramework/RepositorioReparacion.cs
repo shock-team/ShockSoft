@@ -10,12 +10,22 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         public RepositorioReparacion(ShockDbContext pDbContext) : base(pDbContext) { }
 
+        /// <summary>
+        /// Este método se utiliza para listar todas las reparaciones presentes en la base de datos, filtradas
+        /// según distintos criterios.
+        /// </summary>
+        /// <param name="pIdCliente">El ID del cliente asociado a la reparación.</param>
+        /// <param name="pFueReparada">Si el equipo fue reparado o no.</param>
+        /// <param name="pFueEntregada">Si el equipo fue entregado o no.</param>
+        /// <param name="pFueCobrada">Si la reparación fue cobrada o no.</param>
+        /// <param name="pDesde">El índice a partir del cual devolver las reparaciones.</param>
+        /// <param name="pCantidad">La cantidad de reparaciones a devolver.</param>
+        /// <returns></returns>
         public IEnumerable<Reparacion> ObtenerReparaciones(int pIdCliente, bool pFueReparada, bool pFueEntregada, bool pFueCobrada, int pDesde, int pCantidad)
         {
             var listaReparaciones = (from r in iDbContext.Reparaciones
                                      .Include(x => x.Rubro)
                                      .Include(x => x.Cliente)
-                                     //join c in iDbContext.Clientes on r.IdCliente equals c.IdCliente
                                      where (pIdCliente == 0 || r.IdCliente == pIdCliente) &&
                                      (pFueReparada == false || r.FechaReparacion != DateTime.MinValue) &&
                                      (pFueEntregada == false || r.Entregado == true) &&
@@ -26,19 +36,22 @@ namespace ShockSoft.Persistencia.EntityFramework
             return listaReparaciones.OrderByDescending(x => x.FechaIngreso).Skip(pDesde).Take(pCantidad);
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad de reparaciones presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int CantidadFilas()
         {
             var sql = "SELECT COUNT(*) FROM reparaciones";
             return this.iDbContext.Database.SqlQuery<int>(sql).Single();
         }
 
-        public Reparacion ObtenerUltimaReparacion()
-        {
-            var reparaciones = (from r in iDbContext.Reparaciones
-                                select r);
-            return reparaciones.OrderByDescending(x => x.IdReparacion).Take(1).First();
-        }
-
+        /// <summary>
+        /// Este método se utiliza para obtener una reparación en particular a partir de su ID, así como los
+        /// demás objetos vinculados a esta.
+        /// </summary>
+        /// <param name="pIdReparacion">El ID de la reparación a obtener.</param>
+        /// <returns></returns>
         public Reparacion ObtenerReparacionPorId(int pIdReparacion)
         {
             var reparacion = (from r in iDbContext.Reparaciones

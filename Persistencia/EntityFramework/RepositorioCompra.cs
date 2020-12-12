@@ -60,17 +60,5 @@ namespace ShockSoft.Persistencia.EntityFramework
             var sql = "SELECT COUNT(*) FROM compras";
             return this.iDbContext.Database.SqlQuery<int>(sql).Single();
         }
-
-        /// <summary>
-        /// Este método se utiliza para obtener la última instancia de la clase Compra cargada 
-        /// en la base de datos.
-        /// </summary>
-        /// <returns></returns>
-        public Compra ObtenerUltimaCompra()
-        {
-            var compra = (from c in iDbContext.Compras
-                          select c);
-            return compra.OrderByDescending(x => x.IdCompra).First();
-        }
     }
 }

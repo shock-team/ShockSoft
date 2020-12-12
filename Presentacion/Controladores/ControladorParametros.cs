@@ -105,6 +105,11 @@ namespace ShockSoft.Presentacion
             }
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener únicamente el parámetro que almacena el valor
+        /// del dólar utilizado actualmente.
+        /// </summary>
+        /// <returns></returns>
         public float ObtenerPrecioDolar()
         {
             using (var bDbContext = new ShockDbContext())
@@ -116,6 +121,11 @@ namespace ShockSoft.Presentacion
             }
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad total de parámetros presentes en la 
+        /// base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerCantidadDeParametros()
         {
             using (var bDbContext = new ShockDbContext())

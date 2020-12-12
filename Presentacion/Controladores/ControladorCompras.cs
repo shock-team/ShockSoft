@@ -52,8 +52,7 @@ namespace ShockSoft.Presentacion.Controladores
                     nuevaCompra.CostoTotalPesos = pTotalEnPesos;
                     bUoW.RepositorioCompras.Agregar(nuevaCompra);
                     bUoW.GuardarCambios();
-                    int idCompra = bUoW.RepositorioCompras.ObtenerUltimaCompra().IdCompra;
-                    return idCompra;
+                    return nuevaCompra.IdCompra;
                 }
             }
         }
@@ -84,11 +83,13 @@ namespace ShockSoft.Presentacion.Controladores
         /// Genera una lista de instancias de la clase LineaCompra a partir de los datos conocidos
         /// por la vista.
         /// </summary>
-        /// <param name="pFilas">Las filas de la tabla de la vista</param>
+        /// <param name="pFilas">Las filas de la tabla de la vista.</param>
+        /// <param name="pIdCompra">El ID de la compra asociada a las líneas.</param>
         /// <returns></returns>
         public List<LineaCompra> GenerarLineasDeCompra(DataGridViewRowCollection pFilas, int pIdCompra)
         {
             List<LineaCompra> lineasDeCompra = new List<LineaCompra>();
+            float precioDolar = ControladorParametros.ObtenerInstancia().ObtenerPrecioDolar();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
@@ -103,7 +104,7 @@ namespace ShockSoft.Presentacion.Controladores
                             Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pFilas[i].Cells[0].Value.ToString()));
                             producto.Cantidad += lineaDeCompra.Cantidad;
                             lineaDeCompra.Producto = producto;
-                            lineaDeCompra.PrecioActual = producto.PrecioBaseDolar;
+                            lineaDeCompra.PrecioActual = producto.PrecioBaseDolar * precioDolar;
                             lineaDeCompra.IdCompra = pIdCompra;
                             bUoW.RepositorioLineasDeCompras.Agregar(lineaDeCompra);
                         }

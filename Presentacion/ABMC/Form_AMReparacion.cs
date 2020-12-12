@@ -323,29 +323,7 @@ namespace ShockSoft.Presentacion
 
         private void DgLineasDeReparacion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int productoSeleccionado = int.Parse((string)(dgLineasDeReparacion.CurrentRow.Cells[0].Value));
-            int cantidad = (int)(dgLineasDeReparacion.CurrentRow.Cells[2].Value);
-
-            List<int> listaDeIDs = new List<int>();
-            foreach (DataGridViewRow fila in dgLineasDeReparacion.Rows)
-            {
-                if (fila.Cells[0].Value != null)
-                {
-                    listaDeIDs.Add(int.Parse(fila.Cells[0].Value.ToString()));
-                }
-            }
-
-            Form_AgregarLineaDeVenta formAgregarLineaDeReparacion = new Form_AgregarLineaDeVenta();
-
-            formAgregarLineaDeReparacion.Owner = this;
-            formAgregarLineaDeReparacion.listaDeIDs = listaDeIDs;
-            formAgregarLineaDeReparacion.AgregarProducto(productoSeleccionado, cantidad);
-
-            this.Hide();
-            formAgregarLineaDeReparacion.CambiarColor();
-            formAgregarLineaDeReparacion.ShowDialog();
-            this.Show();
-            
+            FormsHelper.DobleClickCeldaLinea(dgLineasDeReparacion, this);
         }
     }
 

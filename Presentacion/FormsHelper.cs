@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {
@@ -61,6 +62,32 @@ namespace ShockSoft.Presentacion
                 btnAnterior.Enabled = false;
                 btnAnterior.Visible = false;
             }
+        }
+
+        public static void DobleClickCeldaLinea(DataGridView pTablaDeLineas, Form pOwner)
+        {
+            int productoSeleccionado = int.Parse((string)(pTablaDeLineas.CurrentRow.Cells[0].Value));
+            int cantidad = (int)(pTablaDeLineas.CurrentRow.Cells[3].Value);
+
+            List<int> listaDeIDs = new List<int>();
+            foreach (DataGridViewRow fila in pTablaDeLineas.Rows)
+            {
+                if (fila.Cells[0].Value != null)
+                {
+                    listaDeIDs.Add(int.Parse(fila.Cells[0].Value.ToString()));
+                }
+            }
+
+            Form_AgregarLineaDeVenta form_AgregarLinea = new Form_AgregarLineaDeVenta();
+
+            form_AgregarLinea.Owner = pOwner;
+            form_AgregarLinea.listaDeIDs = listaDeIDs;
+            form_AgregarLinea.AgregarProducto(productoSeleccionado, cantidad);
+
+            pOwner.Hide();
+            form_AgregarLinea.CambiarColor();
+            form_AgregarLinea.ShowDialog();
+            pOwner.Show();
         }
     }
 }

@@ -9,24 +9,15 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         public RepositorioVenta(ShockDbContext pDbContext) : base(pDbContext) { }
 
-        public IEnumerable<Venta> ObtenerPorCliente(int pIdCliente)
-        {
-            var ventasFiltradas = (from v in iDbContext.Ventas
-                                   join c in iDbContext.Clientes on v.IdCliente equals c.IdCliente
-                                   where c.IdCliente == pIdCliente
-                                   select v);
-            return ventasFiltradas;
-        }
-
-        public IEnumerable<Venta> ObtenerPorProducto(int pIdProducto)
-        {
-            var ventasFiltradas = (from v in iDbContext.Ventas
-                                   join lv in iDbContext.LineasDeVentas on v.IdVenta equals lv.IdVenta
-                                   where lv.IdProducto == pIdProducto
-                                   select v);
-            return ventasFiltradas;
-        }
-
+        /// <summary>
+        /// Este método se utiliza para obtener todas las ventas presentes en la base de datos, filtradas según
+        /// distintos criterios.
+        /// </summary>
+        /// <param name="pIdCliente">El ID del cliente asociado a la venta.</param>
+        /// <param name="pIdProducto">El ID de un producto asociado a una de las líneas de la venta.</param>
+        /// <param name="pDesde">El índice a partir del cual devolver las ventas.</param>
+        /// <param name="pCantidad">La cantidad de ventas a devolver.</param>
+        /// <returns></returns>
         public IEnumerable<Venta> ObtenerVentas(int pIdCliente, int pIdProducto, int pDesde, int pCantidad)
         {
             var ventasFiltradas = (from v in iDbContext.Ventas
@@ -40,19 +31,22 @@ namespace ShockSoft.Persistencia.EntityFramework
             return ventasFiltradas.OrderBy(x => x.Fecha).Skip(pDesde).Take(pCantidad);
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad de ventas presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int CantidadFilas()
         {
             var sql = "SELECT COUNT(*) FROM ventas";
             return this.iDbContext.Database.SqlQuery<int>(sql).Single();
         }
 
-        public IEnumerable<Venta> ObtenerUltimaVenta()
-        {
-            var ventas = (from v in iDbContext.Ventas
-                          select v);
-            return ventas.OrderByDescending(x => x.IdVenta).Take(1);
-        }
-
+        /// <summary>
+        /// Este método se utiliza para obtener una venta en particular a partir de su ID, así como los demás
+        /// objetos asociados a esta.
+        /// </summary>
+        /// <param name="pIdVenta">El ID de la venta a traer.</param>
+        /// <returns></returns>
         public Venta ObtenerVentaPorId(int pIdVenta)
         {
             var ventas = (from v in iDbContext.Ventas
@@ -62,16 +56,6 @@ namespace ShockSoft.Persistencia.EntityFramework
                           where v.IdVenta == pIdVenta
                           select v);
             return ventas.First();
-        }
-
-        public IEnumerable<Venta> ObtenerVentasPorCliente(int pIdCliente)
-        {
-            var ventas = (from v in iDbContext.Ventas
-                          .Include("Lineas")
-                          .Include("MetodoPago")
-                          where v.IdCliente == pIdCliente
-                          select v);
-            return ventas.Distinct();
         }
     }
 }

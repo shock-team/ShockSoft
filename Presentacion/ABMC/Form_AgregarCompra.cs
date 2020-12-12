@@ -134,5 +134,10 @@ namespace ShockSoft.Presentacion.ABMC
             float dolar = ControladorParametros.ObtenerInstancia().ObtenerPrecioDolar();
             txtDolarProveedor.Text = dolar.ToString();
         }
+
+        private void DgLineasDeCompra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormsHelper.DobleClickCeldaLinea(dgLineasDeCompra, this);
+        }
     }
 }

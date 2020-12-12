@@ -77,34 +77,41 @@
             this.Subtotal});
             this.dglineasDeVenta.Location = new System.Drawing.Point(15, 165);
             this.dglineasDeVenta.Name = "dglineasDeVenta";
+            this.dglineasDeVenta.ReadOnly = true;
             this.dglineasDeVenta.Size = new System.Drawing.Size(844, 252);
             this.dglineasDeVenta.TabIndex = 6;
+            this.dglineasDeVenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DglineasDeVenta_CellDoubleClick);
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Descripcion
             // 
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             this.Descripcion.Width = 400;
             // 
             // PrecioUnitario
             // 
             this.PrecioUnitario.HeaderText = "Precio unitario";
             this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // Subtotal
             // 
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
             // 
             // panelControl
             // 

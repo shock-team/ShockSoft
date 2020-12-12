@@ -129,5 +129,10 @@ namespace ShockSoft.Presentacion
             form_ConsultaClientes.ShowDialog();
             this.Show();
         }
+
+        private void DglineasDeVenta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormsHelper.DobleClickCeldaLinea(dglineasDeVenta, this);
+        }
     }
 }
