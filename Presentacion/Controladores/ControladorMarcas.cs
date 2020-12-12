@@ -52,7 +52,6 @@ namespace ShockSoft.Presentacion
         /// en el repositorio
         /// </summary>
         /// <returns></returns>
-        /// 
         public List<Marca> ListarMarcas()
         {
             List<Marca> listaMarcas;
@@ -66,6 +65,13 @@ namespace ShockSoft.Presentacion
             return listaMarcas;
         }
 
+        /// <summary>
+        /// Este método se utiliza para listar las marcas presentes en la base de datos, separadas por
+        /// páginas.
+        /// </summary>
+        /// <param name="pDesde">El índice a partir del cual obtener las marcas.</param>
+        /// <param name="pCantidad">La cantidad de marcas a devolver.</param>
+        /// <returns></returns>
         public List<Marca> ListarMarcas(int pDesde, int pCantidad)
         {
             List<Marca> listaMarcas;
@@ -98,18 +104,11 @@ namespace ShockSoft.Presentacion
             }
         }
 
-        public Marca Obtener(int pId)
-        {
-            using (var bDbContext = new ShockDbContext())
-            {
-                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
-                {
-                    Marca marca = bUoW.RepositorioMarca.Obtener(pId);
-                    return marca;
-                }
-            }
-        }
-
+        /// <summary>
+        /// Este método se utiliza para verificar que una marca a agregar no posee el mismo nombre
+        /// que otra presente en la base de datos.
+        /// </summary>
+        /// <param name="pNombre">El nombre de la marca a agregar.</param>
         public void VerificarDatos(string pNombre)
         {
             using (var bDbContext = new ShockDbContext())
@@ -125,6 +124,10 @@ namespace ShockSoft.Presentacion
             }
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad de marcas presente en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerCantidadDeMarcas()
         {
             int cant = 0;

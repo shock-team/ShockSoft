@@ -11,6 +11,10 @@ namespace ShockSoft.Persistencia.EntityFramework
     {
         protected readonly TDbContext iDbContext;
 
+        /// <summary>
+        /// Constructor de la clase.
+        /// </summary>
+        /// <param name="pDbContext">El contexto de la base de datos.</param>
         public Repositorio(TDbContext pDbContext)
         {
             if (pDbContext == null)

@@ -30,13 +30,14 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
-        /// Este método se encarga de crear el nuevo producto y agregarlo al repositorio
+        /// Este método se encarga de crear el nuevo producto y agregarlo al repositorio.
         /// </summary>
-        /// <param name="pDescripcion">La descripción del nuevo producto</param>
-        /// <param name="pPrecioBaseDolar">El precio base en dólares del nuevo producto</param>
-        /// <param name="pGanancia">El porcentaje de ganancia del nuevo producto</param>
-        /// <param name="pIVA">El ID del IVA asociado al nuevo producto</param>
-        /// <param name="pMarca">El ID de la marca asociada al nuevo producto</param>
+        /// <param name="pDescripcion">La descripción del nuevo producto.</param>
+        /// <param name="pPrecioBaseDolar">El precio base en dólares del nuevo producto.</param>
+        /// <param name="pGanancia">El porcentaje de ganancia del nuevo producto.</param>
+        /// <param name="pIVA">El ID del IVA asociado al nuevo producto.</param>
+        /// <param name="pMarca">El ID de la marca asociada al nuevo producto.</param>
+        /// <param name="pRubro">El ID del rubro asociado al nuevo producto.</param>
         public void AgregarProducto(string pDescripcion, float pPrecioBaseDolar, float pGanancia, int pIVA, int pMarca, int pRubro)
         {
             Producto producto = new Producto();
@@ -69,8 +70,16 @@ namespace ShockSoft.Presentacion
 
         /// <summary>
         /// Este método se encarga de devolver una lista de todos los productos 
-        /// presentes en el repositorio, según distintos filtros
+        /// presentes en el repositorio, según distintos filtros.
         /// </summary>
+        /// <param name="pDescripcion">La descripción del producto.</param>
+        /// <param name="pDeBaja">Si el producto no está en venta.</param>
+        /// <param name="pSinStock">Si no se posee stock del producto.</param>
+        /// <param name="pId">El ID del producto.</param>
+        /// <param name="pDesde">El índice a partir del cual obtener los productos.</param>
+        /// <param name="pCantidad">La cantidad de productos a devolver.</param>
+        /// <param name="pIdMarca">El ID de la marca asociada al producto.</param>
+        /// <param name="pIdRubro">El ID del rubro asociado al producto.</param>
         /// <returns></returns>
         public List<Producto> ListarProductos(string pDescripcion, bool pDeBaja, bool pSinStock, string pId, int pDesde, int pCantidad, int pIdMarca, int pIdRubro)
         {

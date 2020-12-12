@@ -103,25 +103,6 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
-        /// El objetivo de este método es devolver una parte de 
-        /// </summary>
-        /// <param name="pDesde">La posición inicial en la lista</param>
-        /// <param name="pCantidad">La cantidad a traer</param>
-        /// <returns></returns>
-        public List<Cliente> ObtenerPorPartes(int pDesde, int pCantidad)
-        {
-            List<Cliente> listaDeClientes;
-            using (var pDbContext = new ShockDbContext())
-            {
-                using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
-                {
-                    listaDeClientes = bUoW.RepositorioCliente.ObtenerPorParte(pDesde, pCantidad).ToList();
-                }
-            }
-            return listaDeClientes;
-        }
-
-        /// <summary>
         /// Este método se encarga de modificar los datos de un cliente existente
         /// en el repositorio
         /// </summary>

@@ -8,6 +8,10 @@ namespace ShockSoft.Persistencia.EntityFramework
 {
     public class RepositorioReparacion : Repositorio<Reparacion, ShockDbContext>
     {
+        /// <summary>
+        /// Constructor de la clase.
+        /// </summary>
+        /// <param name="pDbContext">El contexto de la base de datos.</param>
         public RepositorioReparacion(ShockDbContext pDbContext) : base(pDbContext) { }
 
         /// <summary>

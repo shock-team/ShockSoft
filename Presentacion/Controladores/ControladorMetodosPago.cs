@@ -32,7 +32,7 @@ namespace ShockSoft.Presentacion
         /// Este método se encarga de crear el nuevo método y agregarlo al repositorio
         /// </summary>
         /// <param name="pDescripcion">La descripción del nuevo método de pago</param>
-        /// <param name="pValor">El valor del nuevo método de pago</param>
+        /// <param name="pMultiplicadorInteres">El valor del nuevo método de pago</param>
         public void AgregarMetodoDePago(string pDescripcion, float pMultiplicadorInteres)
         {
             MetodoPago metodo = new MetodoPago();
@@ -85,6 +85,12 @@ namespace ShockSoft.Presentacion
             }
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener un método de pago en particular de la base de datos,
+        /// a partir de su ID.
+        /// </summary>
+        /// <param name="pIdMetodo">El ID del método a obtener.</param>
+        /// <returns></returns>
         public MetodoPago ObtenerMetodoDePago(int pIdMetodo)
         {
             using (var bDbContext = new ShockDbContext())

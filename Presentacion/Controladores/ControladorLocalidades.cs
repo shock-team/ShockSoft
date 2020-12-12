@@ -120,6 +120,11 @@ namespace ShockSoft.Presentacion
             return localidadObtenida;
         }
 
+        /// <summary>
+        /// Este método se usa para verificar que el nombre de una localidad a agregar no se encuentra
+        /// ocupado por otra presente en la base de datos.
+        /// </summary>
+        /// <param name="pNombre"></param>
         public void VerificarDatos(string pNombre)
         {
             using (var bDbContext = new ShockDbContext())
@@ -135,6 +140,10 @@ namespace ShockSoft.Presentacion
             }
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad de localidades presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerCantidadDeLocalidades()
         {
             using (var bDbContext = new ShockDbContext())

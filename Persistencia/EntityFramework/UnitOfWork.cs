@@ -23,6 +23,10 @@ namespace ShockSoft.Persistencia.EntityFramework
         public RepositorioLineasDeReparaciones RepositorioLineasDeReparaciones { get; private set; }
         public RepositorioCompra RepositorioCompras { get; private set; }
 
+        /// <summary>
+        /// Constructor de la clase.
+        /// </summary>
+        /// <param name="pDbContext">El contexto de la base de datos.</param>
         public UnitOfWork(ShockDbContext pDbContext)
         {
             if (pDbContext == null)
@@ -48,6 +52,9 @@ namespace ShockSoft.Persistencia.EntityFramework
             this.RepositorioCompras = new RepositorioCompra(pDbContext);
         }
 
+        /// <summary>
+        /// Este método se utiliza para hacer efectivos los cambios realizados sobre la base de datos.
+        /// </summary>
         public void GuardarCambios()
         {
             this.iDbContext.SaveChanges();

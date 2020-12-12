@@ -62,12 +62,14 @@ namespace ShockSoft.Presentacion
                 }
             }
             return listaRubros;
-        }        
-        
+        }
+
         /// <summary>
         /// Este método se encarga de devolver una lista un rango de rubros
         /// presentes en el repositorio.
         /// </summary>
+        /// <param name="pDesde">El índice a partir del cual obtener los rubros.</param>
+        /// <param name="pCantidad">La cantidad de rubros a devolver.</param>
         /// <returns></returns>
         public List<Rubro> ListarRubros(int pDesde, int pCantidad)
         {
@@ -101,6 +103,10 @@ namespace ShockSoft.Presentacion
             }
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad de rubros presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerCantidadDeRubros()
         {
             using (var bDbContext = new ShockDbContext())

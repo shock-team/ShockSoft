@@ -6,6 +6,10 @@ namespace ShockSoft.Persistencia.EntityFramework
 {
     public class RepositorioLocalidad : Repositorio<Localidad, ShockDbContext>
     {
+        /// <summary>
+        /// Constructor de la clase.
+        /// </summary>
+        /// <param name="pDbContext">El contexto de la base de datos.</param>
         public RepositorioLocalidad(ShockDbContext pDbContext) : base(pDbContext) { }
 
         /// <summary>
@@ -21,6 +25,12 @@ namespace ShockSoft.Persistencia.EntityFramework
             return localidades;
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener todas las localidades presentes en la base de datos.
+        /// </summary>
+        /// <param name="pDesde">El índice a partir del cual obtener las localidades.</param>
+        /// <param name="pCantidad">La cantidad de localidades a devolver.</param>
+        /// <returns></returns>
         public IEnumerable<Localidad> ObtenerLocalidades(int pDesde, int pCantidad)
         {
             var localidadesFiltrados = (from l in iDbContext.Localidades
@@ -28,6 +38,10 @@ namespace ShockSoft.Persistencia.EntityFramework
             return localidadesFiltrados.OrderBy(x => x.IdLocalidad).Skip(pDesde).Take(pCantidad);
         }
 
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad de localidades presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public int CantidadFilas()
         {
             var sql = "SELECT COUNT(*) FROM localidades";

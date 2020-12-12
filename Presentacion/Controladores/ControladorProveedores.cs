@@ -50,6 +50,8 @@ namespace ShockSoft.Presentacion
         /// Este método se encarga de devolver una lista de todos los proveedores 
         /// presentes en el repositorio
         /// </summary>
+        /// <param name="pDesde">El índice a partir del cual obtener los proveedores.</param>
+        /// <param name="pCantidad">La cantidad de proveedores a devolver.</param>
         /// <returns></returns>
         public List<Proveedor> ListarProveedores(int pDesde, int pCantidad)
         {

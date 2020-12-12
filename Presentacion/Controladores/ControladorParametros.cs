@@ -69,7 +69,10 @@ namespace ShockSoft.Presentacion
             return listaParametros;
         }
 
-
+        /// <summary>
+        /// Este método se utiliza para obtener todos los parámetros presentes en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public List<Parametro> ListarParametros()
         {
             List<Parametro> listaParametros;
