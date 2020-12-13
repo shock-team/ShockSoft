@@ -227,11 +227,23 @@
     <Compile Include="Presentacion\ABMC\Form_AMCRubro.Designer.cs">
       <DependentUpon>Form_AMCRubro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ABMC\Form_AMMetodoDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC\Form_AMMetodoDePago.Designer.cs">
+      <DependentUpon>Form_AMMetodoDePago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ABMC\Form_ConsultarCompras.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\ABMC\Form_ConsultarCompras.Designer.cs">
       <DependentUpon>Form_ConsultarCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC\Form_ConsultarMetodoDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC\Form_ConsultarMetodoDePago.Designer.cs">
+      <DependentUpon>Form_ConsultarMetodoDePago.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ABMC\Form_ConsultarPagosCliente.cs">
       <SubType>Form</SubType>
@@ -435,6 +447,9 @@
     <EmbeddedResource Include="Presentacion\ABMC\Form_AgregarMarca.resx">
       <DependentUpon>Form_AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC\Form_AMMetodoDePago.resx">
+      <DependentUpon>Form_AMMetodoDePago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_AMReparacion.resx">
       <DependentUpon>Form_AMReparacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,6 +485,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_ConsultarMarca.resx">
       <DependentUpon>Form_ConsultarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC\Form_ConsultarMetodoDePago.resx">
+      <DependentUpon>Form_ConsultarMetodoDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC\Form_ConsultarPagosCliente.resx">
       <DependentUpon>Form_ConsultarPagosCliente.cs</DependentUpon>

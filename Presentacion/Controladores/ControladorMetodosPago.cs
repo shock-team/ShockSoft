@@ -67,12 +67,32 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
+        /// Este método se utiliza para obtener una página de los métodos de pago presentes en
+        /// la base de datos.
+        /// </summary>
+        /// <param name="pDesde">El índice a partir del cual obtener los métodos de pago.</param>
+        /// <param name="pCantidad">La cantidad de métodos de pago a devolver.</param>
+        /// <returns></returns>
+        public List<MetodoPago> ListarMetodosDePago(int pDesde, int pCantidad)
+        {
+            List<MetodoPago> listaMetodos = new List<MetodoPago>();
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    listaMetodos = bUoW.RepositorioMetodoPago.ObtenerTodos().ToList();
+                }
+            }
+            return listaMetodos;
+        }
+
+        /// <summary>
         /// Este método se encarga de modificar los datos de un método de pago existente
         /// en el repositorio
         /// </summary>
         /// <param name="pDescripcion">La nueva descripción del método de pago</param>
         /// <param name="idMetodo">El ID del método de pago a modificar</param>
-        public void ModificarMetodoDePago(string pDescripcion, int idMetodo)
+        public void ModificarMetodoDePago(string pDescripcion, float pMultiplicador, int idMetodo)
         {
             using (var bDbContext = new ShockDbContext())
             {
@@ -80,6 +100,7 @@ namespace ShockSoft.Presentacion
                 {
                     MetodoPago metodoAModificar = bUoW.RepositorioMetodoPago.Obtener(idMetodo);
                     metodoAModificar.Descripcion = pDescripcion;
+                    metodoAModificar.MultiplicadorInteres = pMultiplicador;
                     bUoW.GuardarCambios();
                 }
             }
@@ -101,6 +122,24 @@ namespace ShockSoft.Presentacion
                     return metodo;
                 }
             }
+        }
+
+        /// <summary>
+        /// Este método se utiliza para obtener la cantidad total de métodos de pago presentes en
+        /// la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        public int ObtenerCantidadDeMetodosDePago()
+        {
+            int cantidad = 0;
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    cantidad = bUoW.RepositorioMetodoPago.CantidadFilas();
+                }
+            }
+            return cantidad;
         }
     }
 }
