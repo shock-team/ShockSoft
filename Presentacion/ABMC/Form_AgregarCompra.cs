@@ -97,7 +97,7 @@ namespace ShockSoft.Presentacion.ABMC
                     ((Proveedor)comboProveedores.SelectedItem).IdProveedor, 
                     dtpFecha.Value,
                     float.Parse(txtDolarProveedor.Text),
-                    float.Parse( FormsHelper.TextToCurrency(txtTotal.Text) )
+                    float.Parse( FormsHelper.CurrencyToText(txtTotal.Text) )
                     );
 
                 controlador.GenerarLineasDeCompra(dgLineasDeCompra.Rows, idCompra);
@@ -115,8 +115,44 @@ namespace ShockSoft.Presentacion.ABMC
 
         public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
         {
-            dgLineasDeCompra.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, float.Parse(pPrecioActual) * pCantidad);
+            bool lineaModificada = false;
+
+            //Recorre la tala buscando la línea que referencie al producto seleccionado.
+            foreach (DataGridViewRow fila in dgLineasDeCompra.Rows)
+            {
+                if (((string)(fila.Cells[0].Value)).Equals(pIdProducto))
+                {
+                    fila.Cells[3].Value = pCantidad;
+                    fila.Cells[4].Value = float.Parse(pPrecioActual) * pCantidad;
+                    lineaModificada = true;
+                }
+            }
+
+            //Si no lo encuentra, genera una nueva línea.
+            if (!lineaModificada)
+            {
+                dgLineasDeCompra.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, float.Parse(pPrecioActual) * pCantidad);
+            }
+            
+            ActualizarTotal();
+        }
+
+        private void btnDolarActual_Click(object sender, EventArgs e)
+        {
+            float dolar = ControladorParametros.ObtenerInstancia().ObtenerPrecioDolar();
+            txtDolarProveedor.Text = dolar.ToString();
+            ActualizarTotal();
+        }
+
+        private void DgLineasDeCompra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormsHelper.DobleClickCeldaLinea(dgLineasDeCompra, this);
+        }
+
+        private void ActualizarTotal()
+        {
             float total = 0;
+            
             foreach (DataGridViewRow fila in dgLineasDeCompra.Rows)
             {
                 if (fila.Cells[4].Value != null)
@@ -124,20 +160,33 @@ namespace ShockSoft.Presentacion.ABMC
                     total += (float)fila.Cells[4].Value;
                 }
             }
-            total *= float.Parse(txtDolarProveedor.Text);
+
+            string precioDolarString = txtDolarProveedor.Text;
+            if (precioDolarString.IndexOf(",") == precioDolarString.Length - 1)
+            {
+                precioDolarString += "0";
+            }
+            
+            total *= float.Parse(precioDolarString);
 
             txtTotal.Text = FormsHelper.TextToCurrency(total);
         }
 
-        private void btnDolarActual_Click(object sender, EventArgs e)
+        private void TxtDolarProveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            float dolar = ControladorParametros.ObtenerInstancia().ObtenerPrecioDolar();
-            txtDolarProveedor.Text = dolar.ToString();
-        }
+            char caracter = e.KeyChar;
+            if (caracter == 46 && txtDolarProveedor.Text.IndexOf(',') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
 
-        private void DgLineasDeCompra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            FormsHelper.DobleClickCeldaLinea(dgLineasDeCompra, this);
+            if (!Char.IsDigit(caracter) && caracter != 8 && caracter != 44)
+            {
+                e.Handled = true;
+            }
+
+            ActualizarTotal();
         }
     }
 }

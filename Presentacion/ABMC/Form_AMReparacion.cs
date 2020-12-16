@@ -191,7 +191,7 @@ namespace ShockSoft.Presentacion
             {
                 if (((string)(fila.Cells[0].Value)).Equals(pIdProducto))
                 {
-                    fila.Cells[2].Value = pCantidad;
+                    fila.Cells[3].Value = pCantidad;
                     fila.Cells[4].Value = double.Parse(pPrecioActual) * pCantidad;
                     lineaModificada = true;
                 }
@@ -200,7 +200,7 @@ namespace ShockSoft.Presentacion
             //Si no lo encuentra, genera una nueva línea.
             if (!lineaModificada)
             {
-                dgLineasDeReparacion.Rows.Add(pIdProducto, pDescripcion, pCantidad, pPrecioActual, double.Parse(pPrecioActual) * pCantidad);
+                dgLineasDeReparacion.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual) * pCantidad);
             }
 
             ActualizarTotalInsumos();
@@ -241,13 +241,13 @@ namespace ShockSoft.Presentacion
         private void TxtCostoTrabajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             char caracter = e.KeyChar;
-            if (caracter == 46 && txtCostoTrabajo.Text.IndexOf('.') != -1)
+            if (caracter == 46 && txtCostoTrabajo.Text.IndexOf(',') != -1)
             {
                 e.Handled = true;
                 return;
             }
 
-            if(!Char.IsDigit(caracter) && caracter != 8 && caracter != 46)
+            if(!Char.IsDigit(caracter) && caracter != 8 && caracter != 44)
             {
                 e.Handled = true;
             }

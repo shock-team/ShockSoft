@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShockSoft.Dominio;
 using System.Runtime.InteropServices;
+using ShockSoft.Presentacion.ABMC;
 
 namespace ShockSoft.Presentacion
 {
@@ -19,28 +20,43 @@ namespace ShockSoft.Presentacion
         public Form_AgregarVenta()
         {
             InitializeComponent();
+            ActualizarComboBox();
+        }
+
+        private void ActualizarComboBox()
+        {
+            comboMetodoPago.Items.Clear();
             foreach (MetodoPago metodoDePago in ControladorMetodosPago.ObtenerInstancia().ListarMetodosDePago())
             {
                 comboMetodoPago.Items.Add(metodoDePago);
             }
             comboMetodoPago.DisplayMember = "Descripcion";
             comboMetodoPago.ValueMember = "IdMetodoPago";
+            comboMetodoPago.SelectedIndex = 0;
         }
-
-
 
         public void AgregarLinea(string pIdProducto, string pDescripcion, string pPrecioActual, int pCantidad)
         {
-            dglineasDeVenta.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual)*pCantidad);
-            double total = 0;
+            bool lineaModificada = false;
+
+            //Recorre la tala buscando la línea que referencie al producto seleccionado.
             foreach (DataGridViewRow fila in dglineasDeVenta.Rows)
             {
-                if (fila.Cells[4].Value != null)
+                if (((string)(fila.Cells[0].Value)).Equals(pIdProducto))
                 {
-                    total += (double)fila.Cells[4].Value;
+                    fila.Cells[3].Value = pCantidad;
+                    fila.Cells[4].Value = double.Parse(pPrecioActual) * pCantidad;
+                    lineaModificada = true;
                 }
             }
-            txtTotal.Text = total.ToString();
+
+            //Si no lo encuentra, genera una nueva línea.
+            if (!lineaModificada)
+            {
+                dglineasDeVenta.Rows.Add(pIdProducto, pDescripcion, pPrecioActual, pCantidad, double.Parse(pPrecioActual) * pCantidad);
+            }
+            
+            ActualizarTotal();
         }
 
         // Deslizar ventana desde el panel de control
@@ -133,6 +149,34 @@ namespace ShockSoft.Presentacion
         private void DglineasDeVenta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             FormsHelper.DobleClickCeldaLinea(dglineasDeVenta, this);
+        }
+
+        private void ActualizarTotal()
+        {
+            MetodoPago metodoDePago = ControladorMetodosPago.ObtenerInstancia().ObtenerMetodoDePago(((MetodoPago)comboMetodoPago.SelectedItem).IdMetodoPago);
+            double total = 0;
+            foreach (DataGridViewRow fila in dglineasDeVenta.Rows)
+            {
+                if (fila.Cells[4].Value != null)
+                {
+                    total += (double)fila.Cells[4].Value;
+                }
+            }
+            txtTotal.Text = (total*metodoDePago.MultiplicadorInteres).ToString();
+        }
+
+        private void BtnAgregarMetodo_Click(object sender, EventArgs e)
+        {
+            Form_AMMetodoDePago form_AMMetodoDePago = new Form_AMMetodoDePago();
+            this.Hide();
+            form_AMMetodoDePago.ShowDialog();
+            this.Show();
+            ActualizarComboBox();
+        }
+
+        private void ComboMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ActualizarTotal();
         }
     }
 }

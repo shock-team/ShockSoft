@@ -19,11 +19,10 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_AMMetodoDePago(int pIdMetodoPago = 0)
         {
             InitializeComponent();
-
+            txtIdMetodoPago.Text = pIdMetodoPago.ToString();
             if (pIdMetodoPago != 0)
             {
                 lblNuevoMetodoPago.Visible = false;
-                txtIdMetodoPago.Text = pIdMetodoPago.ToString();
                 MetodoPago metodoPago = controlador.ObtenerMetodoDePago(pIdMetodoPago);
                 txtDescripcion.Text = metodoPago.Descripcion;
                 txtValorMuliplicador.Text = metodoPago.MultiplicadorInteres.ToString();
@@ -47,6 +46,7 @@ namespace ShockSoft.Presentacion.ABMC
                 controlador.ModificarMetodoDePago(txtDescripcion.Text, float.Parse(txtValorMuliplicador.Text), int.Parse(txtIdMetodoPago.Text));
                 MessageBox.Show("Método de pago modificado correctamente", "Éxito");
             }
+            this.Close();
         }
 
         private void TxtValorMuliplicador_KeyPress(object sender, KeyPressEventArgs e)

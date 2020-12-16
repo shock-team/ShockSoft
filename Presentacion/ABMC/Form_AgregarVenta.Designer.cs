@@ -68,6 +68,7 @@
             // 
             // dglineasDeVenta
             // 
+            this.dglineasDeVenta.AllowUserToAddRows = false;
             this.dglineasDeVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dglineasDeVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -366,6 +367,7 @@
             this.btnAgregarMetodo.TabIndex = 38;
             this.btnAgregarMetodo.Text = "Agregar método de pago";
             this.btnAgregarMetodo.UseVisualStyleBackColor = false;
+            this.btnAgregarMetodo.Click += new System.EventHandler(this.BtnAgregarMetodo_Click);
             // 
             // lblTotal
             // 
@@ -408,6 +410,7 @@
             this.comboMetodoPago.Name = "comboMetodoPago";
             this.comboMetodoPago.Size = new System.Drawing.Size(444, 27);
             this.comboMetodoPago.TabIndex = 31;
+            this.comboMetodoPago.SelectedIndexChanged += new System.EventHandler(this.ComboMetodoPago_SelectedIndexChanged);
             // 
             // Form_AgregarVenta
             // 

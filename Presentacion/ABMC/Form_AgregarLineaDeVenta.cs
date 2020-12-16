@@ -23,7 +23,7 @@ namespace ShockSoft.Presentacion
         public Form_AgregarLineaDeVenta()
         {
             InitializeComponent();
-
+            txtPrecioUnitario.Text = FormsHelper.TextToCurrency("0");
             _precioDolar = parametros.ObtenerPrecioDolar();
         }
 
@@ -45,6 +45,10 @@ namespace ShockSoft.Presentacion
         public void AgregarProducto(int pIdProducto, int pCantidad = 0)
         {
             txtId.Text = pIdProducto.ToString();
+            if (Owner is Form_AgregarCompra)
+            {
+                nmCantidad.Maximum = int.MaxValue;
+            }
             nmCantidad.Value = pCantidad;
             ActualizarDatos();
         }

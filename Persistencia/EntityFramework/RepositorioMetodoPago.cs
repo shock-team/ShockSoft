@@ -33,7 +33,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         public IEnumerable<MetodoPago> ObtenerMetodosDePago(int pDesde, int pCantidad)
         {
             var metodosDePago = (from m in iDbContext.MetodosDePago
-                                 select c);
+                                 select m);
             return metodosDePago.Skip(pDesde).Take(pCantidad);
         }
     }

@@ -17,7 +17,7 @@ namespace ShockSoft.Presentacion
 
         public static string CurrencyToText(string pCurrency)
         {
-            return pCurrency.Substring(2);
+            return pCurrency.Substring(0, pCurrency.Length - 2);
         }
 
         public static string BoolToText(bool pBoolean)
