@@ -41,5 +41,17 @@ namespace ShockSoft.Presentacion
             Form_ConsultarCompras form_ConsultarCompras = new Form_ConsultarCompras();
             form_ConsultarCompras.Show();
         }
+
+        private void BtnAgregarMetodoDePago_Click(object sender, EventArgs e)
+        {
+            Form_AMMetodoDePago form_AMMetodoDePago = new Form_AMMetodoDePago();
+            form_AMMetodoDePago.Show();
+        }
+
+        private void BtnConsultarMetodosDePago_Click(object sender, EventArgs e)
+        {
+            Form_ConsultarMetodoDePago form_ConsultarMetodoDePago = new Form_ConsultarMetodoDePago();
+            form_ConsultarMetodoDePago.Show();
+        }
     }
 }

@@ -33,6 +33,8 @@
             this.btnAltaVenta = new System.Windows.Forms.Button();
             this.btnConsultarCompras = new System.Windows.Forms.Button();
             this.btnAgregarCompra = new System.Windows.Forms.Button();
+            this.btnConsultarMetodosDePago = new System.Windows.Forms.Button();
+            this.btnAgregarMetodoDePago = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,12 +113,46 @@
             this.btnAgregarCompra.UseVisualStyleBackColor = false;
             this.btnAgregarCompra.Click += new System.EventHandler(this.btnAgregarCompra_Click);
             // 
+            // btnConsultarMetodosDePago
+            // 
+            this.btnConsultarMetodosDePago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
+            this.btnConsultarMetodosDePago.FlatAppearance.BorderSize = 0;
+            this.btnConsultarMetodosDePago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnConsultarMetodosDePago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarMetodosDePago.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarMetodosDePago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnConsultarMetodosDePago.Location = new System.Drawing.Point(45, 366);
+            this.btnConsultarMetodosDePago.Name = "btnConsultarMetodosDePago";
+            this.btnConsultarMetodosDePago.Size = new System.Drawing.Size(600, 45);
+            this.btnConsultarMetodosDePago.TabIndex = 14;
+            this.btnConsultarMetodosDePago.Text = "Métodos de Pago";
+            this.btnConsultarMetodosDePago.UseVisualStyleBackColor = false;
+            this.btnConsultarMetodosDePago.Click += new System.EventHandler(this.BtnConsultarMetodosDePago_Click);
+            // 
+            // btnAgregarMetodoDePago
+            // 
+            this.btnAgregarMetodoDePago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
+            this.btnAgregarMetodoDePago.FlatAppearance.BorderSize = 0;
+            this.btnAgregarMetodoDePago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnAgregarMetodoDePago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarMetodoDePago.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarMetodoDePago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarMetodoDePago.Location = new System.Drawing.Point(45, 300);
+            this.btnAgregarMetodoDePago.Name = "btnAgregarMetodoDePago";
+            this.btnAgregarMetodoDePago.Size = new System.Drawing.Size(600, 45);
+            this.btnAgregarMetodoDePago.TabIndex = 13;
+            this.btnAgregarMetodoDePago.Text = "Nuevo Método de Pago";
+            this.btnAgregarMetodoDePago.UseVisualStyleBackColor = false;
+            this.btnAgregarMetodoDePago.Click += new System.EventHandler(this.BtnAgregarMetodoDePago_Click);
+            // 
             // Form_MenuVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(80)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.btnConsultarMetodosDePago);
+            this.Controls.Add(this.btnAgregarMetodoDePago);
             this.Controls.Add(this.btnConsultarCompras);
             this.Controls.Add(this.btnAgregarCompra);
             this.Controls.Add(this.btnConsultaVenta);
@@ -138,5 +174,7 @@
         private System.Windows.Forms.Button btnAltaVenta;
         private System.Windows.Forms.Button btnConsultarCompras;
         private System.Windows.Forms.Button btnAgregarCompra;
+        private System.Windows.Forms.Button btnConsultarMetodosDePago;
+        private System.Windows.Forms.Button btnAgregarMetodoDePago;
     }
 }

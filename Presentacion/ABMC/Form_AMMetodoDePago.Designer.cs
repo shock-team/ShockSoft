@@ -42,6 +42,7 @@
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblNuevoMetodoPago = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -96,7 +97,7 @@
             this.txtValorMuliplicador.Name = "txtValorMuliplicador";
             this.txtValorMuliplicador.Size = new System.Drawing.Size(110, 25);
             this.txtValorMuliplicador.TabIndex = 6;
-            this.txtValorMuliplicador.Text = "1.0";
+            this.txtValorMuliplicador.Text = "1,0";
             this.txtValorMuliplicador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtValorMuliplicador_KeyPress);
             // 
             // btnAceptar
@@ -204,6 +205,7 @@
             this.groupBox2.Controls.Add(this.txtValorMuliplicador);
             this.groupBox2.Controls.Add(this.txtDescripcion);
             this.groupBox2.Controls.Add(this.lblValorMultiplicador);
+            this.groupBox2.Controls.Add(this.lblNuevoMetodoPago);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox2.Location = new System.Drawing.Point(21, 65);
@@ -211,7 +213,16 @@
             this.groupBox2.Size = new System.Drawing.Size(452, 158);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nuevo método de pago";
+            this.groupBox2.Text = "Método de pago";
+            // 
+            // lblNuevoMetodoPago
+            // 
+            this.lblNuevoMetodoPago.AutoSize = true;
+            this.lblNuevoMetodoPago.Location = new System.Drawing.Point(152, 41);
+            this.lblNuevoMetodoPago.Name = "lblNuevoMetodoPago";
+            this.lblNuevoMetodoPago.Size = new System.Drawing.Size(170, 19);
+            this.lblNuevoMetodoPago.TabIndex = 8;
+            this.lblNuevoMetodoPago.Text = "Nuevo método de pago";
             // 
             // Form_AMMetodoDePago
             // 
@@ -249,5 +260,6 @@
         private System.Windows.Forms.Button btnTamano;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblNuevoMetodoPago;
     }
 }

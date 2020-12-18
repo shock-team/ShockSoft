@@ -87,13 +87,13 @@ namespace ShockSoft.Presentacion.ABMC
         private void TxtValorMuliplicador_KeyPress(object sender, KeyPressEventArgs e)
         {
             char caracter = e.KeyChar;
-            if (caracter == 46 && txtValorMuliplicador.Text.IndexOf('.') != -1)
+            if (caracter == 46 && txtValorMuliplicador.Text.IndexOf(',') != -1)
             {
                 e.Handled = true;
                 return;
             }
 
-            if (!Char.IsDigit(caracter) && caracter != 8 && caracter != 46)
+            if (!Char.IsDigit(caracter) && caracter != 8 && caracter != 44)
             {
                 e.Handled = true;
             }
