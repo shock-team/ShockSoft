@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgCompras = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,18 +41,20 @@
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.btnSiguiente = new System.Windows.Forms.Button();
-            this.lblPaginaActual = new System.Windows.Forms.Label();
             this.panelControl = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.picShock = new System.Windows.Forms.PictureBox();
             this.lblShock = new System.Windows.Forms.Label();
             this.btnTamano = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblPaginaActual = new System.Windows.Forms.Label();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCompras)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgCompras
@@ -65,7 +67,7 @@
             this.Fecha,
             this.Proveedor,
             this.Total});
-            this.dgCompras.Location = new System.Drawing.Point(57, 143);
+            this.dgCompras.Location = new System.Drawing.Point(12, 228);
             this.dgCompras.Name = "dgCompras";
             this.dgCompras.Size = new System.Drawing.Size(743, 251);
             this.dgCompras.TabIndex = 0;
@@ -97,9 +99,9 @@
             // Total
             // 
             this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle9;
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
@@ -108,96 +110,71 @@
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Location = new System.Drawing.Point(59, 101);
+            this.lblProveedor.Location = new System.Drawing.Point(29, 27);
             this.lblProveedor.Name = "lblProveedor";
-            this.lblProveedor.Size = new System.Drawing.Size(59, 13);
+            this.lblProveedor.Size = new System.Drawing.Size(85, 19);
             this.lblProveedor.TabIndex = 1;
             this.lblProveedor.Text = "Proveedor:";
             // 
             // comboProveedores
             // 
             this.comboProveedores.FormattingEnabled = true;
-            this.comboProveedores.Location = new System.Drawing.Point(124, 98);
+            this.comboProveedores.Location = new System.Drawing.Point(127, 24);
             this.comboProveedores.Name = "comboProveedores";
-            this.comboProveedores.Size = new System.Drawing.Size(241, 21);
+            this.comboProveedores.Size = new System.Drawing.Size(590, 27);
             this.comboProveedores.TabIndex = 2;
             this.comboProveedores.SelectedIndexChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // lblIdProducto
             // 
             this.lblIdProducto.AutoSize = true;
-            this.lblIdProducto.Location = new System.Drawing.Point(520, 87);
+            this.lblIdProducto.Location = new System.Drawing.Point(87, 70);
             this.lblIdProducto.Name = "lblIdProducto";
-            this.lblIdProducto.Size = new System.Drawing.Size(21, 13);
+            this.lblIdProducto.Size = new System.Drawing.Size(27, 19);
             this.lblIdProducto.TabIndex = 3;
             this.lblIdProducto.Text = "ID:";
             // 
             // lblDescripcionProducto
             // 
             this.lblDescripcionProducto.AutoSize = true;
-            this.lblDescripcionProducto.Location = new System.Drawing.Point(475, 116);
+            this.lblDescripcionProducto.Location = new System.Drawing.Point(23, 108);
             this.lblDescripcionProducto.Name = "lblDescripcionProducto";
-            this.lblDescripcionProducto.Size = new System.Drawing.Size(66, 13);
+            this.lblDescripcionProducto.Size = new System.Drawing.Size(91, 19);
             this.lblDescripcionProducto.TabIndex = 4;
             this.lblDescripcionProducto.Text = "Descripción:";
             // 
             // txtDescripcionProducto
             // 
             this.txtDescripcionProducto.Enabled = false;
-            this.txtDescripcionProducto.Location = new System.Drawing.Point(547, 113);
+            this.txtDescripcionProducto.Location = new System.Drawing.Point(127, 105);
             this.txtDescripcionProducto.Name = "txtDescripcionProducto";
             this.txtDescripcionProducto.ReadOnly = true;
-            this.txtDescripcionProducto.Size = new System.Drawing.Size(253, 20);
+            this.txtDescripcionProducto.Size = new System.Drawing.Size(590, 25);
             this.txtDescripcionProducto.TabIndex = 5;
             // 
             // txtIdProducto
             // 
             this.txtIdProducto.Enabled = false;
-            this.txtIdProducto.Location = new System.Drawing.Point(547, 84);
+            this.txtIdProducto.Location = new System.Drawing.Point(127, 67);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.ReadOnly = true;
-            this.txtIdProducto.Size = new System.Drawing.Size(127, 20);
+            this.txtIdProducto.Size = new System.Drawing.Size(279, 25);
             this.txtIdProducto.TabIndex = 6;
             this.txtIdProducto.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
             // btnBuscarProducto
             // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(709, 81);
+            this.btnBuscarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnBuscarProducto.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(412, 65);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarProducto.Size = new System.Drawing.Size(305, 28);
             this.btnBuscarProducto.TabIndex = 7;
             this.btnBuscarProducto.Text = "Buscar";
-            this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.UseVisualStyleBackColor = false;
             this.btnBuscarProducto.Click += new System.EventHandler(this.BtnBuscarProducto_Click);
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.Location = new System.Drawing.Point(333, 400);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
-            this.btnAnterior.TabIndex = 8;
-            this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.BtnAnterior_Click);
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.Location = new System.Drawing.Point(466, 400);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
-            this.btnSiguiente.TabIndex = 9;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
-            // 
-            // lblPaginaActual
-            // 
-            this.lblPaginaActual.AutoSize = true;
-            this.lblPaginaActual.Location = new System.Drawing.Point(433, 405);
-            this.lblPaginaActual.Name = "lblPaginaActual";
-            this.lblPaginaActual.Size = new System.Drawing.Size(13, 13);
-            this.lblPaginaActual.TabIndex = 10;
-            this.lblPaginaActual.Text = "1";
             // 
             // panelControl
             // 
@@ -210,7 +187,7 @@
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(850, 45);
+            this.panelControl.Size = new System.Drawing.Size(774, 45);
             this.panelControl.TabIndex = 25;
             this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
@@ -222,7 +199,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
-            this.btnMinimizar.Location = new System.Drawing.Point(715, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(639, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 10;
@@ -258,7 +235,7 @@
             this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
-            this.btnTamano.Location = new System.Drawing.Point(760, 0);
+            this.btnTamano.Location = new System.Drawing.Point(684, 0);
             this.btnTamano.Name = "btnTamano";
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
@@ -273,29 +250,85 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
-            this.btnCerrar.Location = new System.Drawing.Point(805, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(729, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(55)))));
+            this.groupBox2.Controls.Add(this.comboProveedores);
+            this.groupBox2.Controls.Add(this.lblProveedor);
+            this.groupBox2.Controls.Add(this.txtIdProducto);
+            this.groupBox2.Controls.Add(this.lblIdProducto);
+            this.groupBox2.Controls.Add(this.lblDescripcionProducto);
+            this.groupBox2.Controls.Add(this.btnBuscarProducto);
+            this.groupBox2.Controls.Add(this.txtDescripcionProducto);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Location = new System.Drawing.Point(12, 61);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(743, 146);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            // 
+            // lblPaginaActual
+            // 
+            this.lblPaginaActual.AutoSize = true;
+            this.lblPaginaActual.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaginaActual.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPaginaActual.Location = new System.Drawing.Point(389, 499);
+            this.lblPaginaActual.Name = "lblPaginaActual";
+            this.lblPaginaActual.Size = new System.Drawing.Size(15, 17);
+            this.lblPaginaActual.TabIndex = 31;
+            this.lblPaginaActual.Text = "1";
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
+            this.btnAnterior.FlatAppearance.BorderSize = 0;
+            this.btnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnterior.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAnterior.Location = new System.Drawing.Point(264, 493);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(100, 28);
+            this.btnAnterior.TabIndex = 30;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.BtnAnterior_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSiguiente.Location = new System.Drawing.Point(424, 493);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(100, 28);
+            this.btnSiguiente.TabIndex = 29;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
+            // 
             // Form_ConsultarCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 450);
-            this.Controls.Add(this.panelControl);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(80)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(774, 533);
             this.Controls.Add(this.lblPaginaActual);
-            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
-            this.Controls.Add(this.btnBuscarProducto);
-            this.Controls.Add(this.txtIdProducto);
-            this.Controls.Add(this.txtDescripcionProducto);
-            this.Controls.Add(this.lblDescripcionProducto);
-            this.Controls.Add(this.lblIdProducto);
-            this.Controls.Add(this.comboProveedores);
-            this.Controls.Add(this.lblProveedor);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.panelControl);
             this.Controls.Add(this.dgCompras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ConsultarCompras";
@@ -305,6 +338,8 @@
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,9 +355,6 @@
         private System.Windows.Forms.TextBox txtDescripcionProducto;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.Button btnBuscarProducto;
-        private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Label lblPaginaActual;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
@@ -333,5 +365,9 @@
         private System.Windows.Forms.Label lblShock;
         private System.Windows.Forms.Button btnTamano;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblPaginaActual;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnSiguiente;
     }
 }

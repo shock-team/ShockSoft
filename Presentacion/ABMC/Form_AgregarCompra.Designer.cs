@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -94,14 +94,14 @@
             // 
             this.dgLineasDeCompra.AllowUserToAddRows = false;
             this.dgLineasDeCompra.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgLineasDeCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgLineasDeCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgLineasDeCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLineasDeCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -166,6 +166,7 @@
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -185,7 +186,7 @@
             this.btnAgregarProveedor.FlatAppearance.BorderSize = 0;
             this.btnAgregarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
             this.btnAgregarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProveedor.Location = new System.Drawing.Point(346, 29);
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(346, 30);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
             this.btnAgregarProveedor.Size = new System.Drawing.Size(121, 28);
             this.btnAgregarProveedor.TabIndex = 9;
@@ -224,7 +225,7 @@
             this.btnDolarActual.FlatAppearance.BorderSize = 0;
             this.btnDolarActual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
             this.btnDolarActual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDolarActual.Location = new System.Drawing.Point(346, 60);
+            this.btnDolarActual.Location = new System.Drawing.Point(346, 62);
             this.btnDolarActual.Name = "btnDolarActual";
             this.btnDolarActual.Size = new System.Drawing.Size(121, 28);
             this.btnDolarActual.TabIndex = 14;
