@@ -213,5 +213,35 @@ namespace ShockSoft.Presentacion
                 }
             }
         }
+
+        public void VerificarDNI(string pDNI)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    IEnumerable<Cliente> clientes = bUoW.RepositorioCliente.ObtenerPorDNI(pDNI);
+                    if (clientes.Count() > 0)
+                    {
+                        throw new DatosRepetidosException();
+                    }
+                }
+            }
+        }
+
+        public void VerificarCUIT(string pCUIT)
+        {
+            using (var bDbContext = new ShockDbContext())
+            {
+                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    IEnumerable<Cliente> clientes = bUoW.RepositorioCliente.ObtenerPorDNI(pCUIT);
+                    if (clientes.Count() > 0)
+                    {
+                        throw new DatosRepetidosException();
+                    }
+                }
+            }
+        }
     }
 }

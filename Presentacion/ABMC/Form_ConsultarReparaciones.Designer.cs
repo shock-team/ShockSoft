@@ -95,6 +95,7 @@
             this.dgReparaciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgReparaciones.Location = new System.Drawing.Point(12, 182);
             this.dgReparaciones.Name = "dgReparaciones";
+            this.dgReparaciones.ReadOnly = true;
             this.dgReparaciones.Size = new System.Drawing.Size(862, 346);
             this.dgReparaciones.TabIndex = 0;
             this.dgReparaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgReparaciones_CellDoubleClick);
@@ -104,6 +105,7 @@
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Width = 48;
             // 
             // FechaIngreso
@@ -111,6 +113,7 @@
             this.FechaIngreso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.FechaIngreso.HeaderText = "Fecha de ingreso";
             this.FechaIngreso.Name = "FechaIngreso";
+            this.FechaIngreso.ReadOnly = true;
             this.FechaIngreso.Width = 134;
             // 
             // Cliente
@@ -118,6 +121,7 @@
             this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
             this.Cliente.Width = 80;
             // 
             // Rubro
@@ -125,6 +129,7 @@
             this.Rubro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Rubro.HeaderText = "Rubro";
             this.Rubro.Name = "Rubro";
+            this.Rubro.ReadOnly = true;
             this.Rubro.Width = 75;
             // 
             // Problema
@@ -132,12 +137,14 @@
             this.Problema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Problema.HeaderText = "Problema";
             this.Problema.Name = "Problema";
+            this.Problema.ReadOnly = true;
             // 
             // Entregado
             // 
             this.Entregado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Entregado.HeaderText = "Entregado";
             this.Entregado.Name = "Entregado";
+            this.Entregado.ReadOnly = true;
             this.Entregado.Width = 103;
             // 
             // panelControl

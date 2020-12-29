@@ -10,6 +10,8 @@ namespace ShockSoft.Presentacion
     public partial class Form_DatosCliente : Form
     {
         ControladorClientes controlador = ControladorClientes.ObtenerInstancia();
+        string initDNI;
+        string initCUIT;
 
         public Form_DatosCliente(int idCliente)
         {
@@ -17,7 +19,9 @@ namespace ShockSoft.Presentacion
             Cliente cliente = controlador.ObtenerCliente(idCliente);
             txtId.Text = idCliente.ToString();
             txtDNI.Text = cliente.DNI;
+            initDNI = cliente.DNI;
             txtCUIT.Text = cliente.CUIT;
+            initCUIT = cliente.CUIT;
             txtNombre.Text = cliente.Nombre;
             txtApellido.Text = cliente.Apellido;
             txtTelefono.Text = cliente.Telefono;
@@ -29,20 +33,32 @@ namespace ShockSoft.Presentacion
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            string dniActual = txtDNI.Text;
-            string cuitActual = txtCUIT.Text;
             try
             {
                 Localidad localidad = (Localidad)comboLocalidad.SelectedItem;
-                controlador.VerificarDatos(txtDNI.Text, txtCUIT.Text);
+                if (initDNI != txtDNI.Text)
+                {
+                    controlador.VerificarDNI(txtDNI.Text);
+                }
+
+                if (initCUIT != txtCUIT.Text)
+                {
+                    controlador.VerificarCUIT(txtCUIT.Text);
+                }
+
                 controlador.ModificarCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, localidad.IdLocalidad, int.Parse(txtId.Text));
                 MessageBox.Show("Datos modificados correctamente", "Éxito");
+
+                initDNI = txtDNI.Text;
+                initCUIT = txtCUIT.Text;
             }
             catch (DatosRepetidosException)
             {
                 MessageBox.Show("Ya existe un cliente con ese DNI o CUIT. Intente nuevamente", "Error");
-                txtDNI.Text = dniActual;
-                txtCUIT.Text = cuitActual;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 

@@ -67,6 +67,22 @@ namespace ShockSoft.Persistencia.EntityFramework
                            where (c.DNI.Equals(pDNI) || (c.CUIT.Equals(pCUIT)))
                            select c);
             return cliente;
+        } 
+        
+        public IEnumerable<Cliente> ObtenerPorDNI(string pDNI)
+        {
+            var clientes = (from c in iDbContext.Clientes
+                           where c.DNI.Equals(pDNI)
+                           select c);
+            return clientes;
+        }
+
+        public IEnumerable<Cliente> ObtenerPorCUIT(string pCUIT)
+        {
+            var clientes = (from c in iDbContext.Clientes
+                           where c.DNI.Equals(pCUIT)
+                           select c);
+            return clientes;
         }
 
         /// <summary>
