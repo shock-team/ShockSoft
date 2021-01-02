@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
@@ -113,14 +113,14 @@
             // dgPagos
             // 
             this.dgPagos.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -191,7 +191,7 @@
             // 
             // picShock
             // 
-            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Image = global::ShockSoft.Properties.Resources.LOGO_ZONA;
             this.picShock.Location = new System.Drawing.Point(3, 3);
             this.picShock.Name = "picShock";
             this.picShock.Size = new System.Drawing.Size(40, 40);
@@ -208,7 +208,7 @@
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(129, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Shock!Soft";
+            this.lblShock.Text = "Zona!Soft";
             // 
             // btnTamano
             // 
@@ -316,7 +316,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ConsultarPagosCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_ConsultarPagosCliente";
+            this.Text = "Pagos de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgPagos)).EndInit();
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();

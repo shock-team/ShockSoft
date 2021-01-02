@@ -20,6 +20,8 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarMarca()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             ActualizarTabla();
         }
 

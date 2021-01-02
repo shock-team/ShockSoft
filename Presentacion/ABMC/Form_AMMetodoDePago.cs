@@ -20,6 +20,8 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_AMMetodoDePago(int pIdMetodoPago = 0)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             txtIdMetodoPago.Text = pIdMetodoPago.ToString();
             if (pIdMetodoPago != 0)
             {

@@ -18,7 +18,7 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_AMCLocalidad()
         {
             InitializeComponent();
-
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             controlador = ControladorLocalidades.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;

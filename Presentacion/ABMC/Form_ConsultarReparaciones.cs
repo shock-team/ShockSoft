@@ -18,6 +18,8 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarReparaciones()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             ActualizarTabla();
         }
 

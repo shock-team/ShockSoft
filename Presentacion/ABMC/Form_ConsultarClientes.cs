@@ -14,6 +14,8 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarClientes()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             controlador = ControladorClientes.ObtenerInstancia();
             cbConDeudas.Checked = true;
             cbSinDeudas.Checked = true;

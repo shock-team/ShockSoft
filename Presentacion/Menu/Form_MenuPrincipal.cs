@@ -16,6 +16,7 @@ namespace ShockSoft.Presentacion
         public Form_MenuPrincipal()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
 

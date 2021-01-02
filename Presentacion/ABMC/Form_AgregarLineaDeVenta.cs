@@ -23,6 +23,8 @@ namespace ShockSoft.Presentacion
         public Form_AgregarLineaDeVenta()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             txtPrecioUnitario.Text = FormsHelper.TextToCurrency("0");
             _precioDolar = parametros.ObtenerPrecioDolar();
         }

@@ -19,7 +19,8 @@ namespace ShockSoft.Presentacion
         public Form_DatosProducto(int pIdProducto)
         {
             InitializeComponent();
-            
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             //Obtiene los datos del producto y los carga en los espacios correspondientes
             Producto producto = controlador.ObtenerProducto(pIdProducto);
             txtId.Text = producto.IdProducto.ToString();

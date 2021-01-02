@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace ShockSoft.Presentacion
 {
@@ -11,6 +12,8 @@ namespace ShockSoft.Presentacion
         public Form_ModificarProducto()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             controlador = ControladorProductos.ObtenerInstancia();
 
             //Carga las marcas en el ComboBox

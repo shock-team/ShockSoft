@@ -287,7 +287,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // picShock
             // 
-            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Image = global::ShockSoft.Properties.Resources.LOGO_ZONA;
             this.picShock.Location = new System.Drawing.Point(3, 3);
             this.picShock.Name = "picShock";
             this.picShock.Size = new System.Drawing.Size(40, 40);
@@ -304,7 +304,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(129, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Shock!Soft";
+            this.lblShock.Text = "Zona!Soft";
             // 
             // btnTamano
             // 
@@ -349,7 +349,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AMCProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_AMCProveedor";
+            this.Text = "Proveedores";
             ((System.ComponentModel.ISupportInitialize)(this.dgProveedores)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

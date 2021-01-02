@@ -18,6 +18,8 @@ namespace ShockSoft.Presentacion.Datos
         public Form_DatosCompra(int pIdCompra)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             txtIdCompra.Text = pIdCompra.ToString();
             Compra compra = controlador.ObtenerCompra(pIdCompra);
 

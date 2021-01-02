@@ -246,7 +246,7 @@
             // 
             // picShock
             // 
-            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Image = global::ShockSoft.Properties.Resources.LOGO_ZONA;
             this.picShock.Location = new System.Drawing.Point(3, 3);
             this.picShock.Name = "picShock";
             this.picShock.Size = new System.Drawing.Size(40, 40);
@@ -263,7 +263,7 @@
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(129, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Shock!Soft";
+            this.lblShock.Text = "Zona!Soft";
             // 
             // btnTamano
             // 
@@ -309,7 +309,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ConsultarMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_ConsultarMarca";
+            this.Text = "Marcas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.gbLista.ResumeLayout(false);
             this.gbLista.PerformLayout();

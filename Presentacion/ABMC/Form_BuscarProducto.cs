@@ -17,6 +17,8 @@ namespace ShockSoft.Presentacion
         public Form_BuscarProducto()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             controlador = ControladorProductos.ObtenerInstancia();
             parametros.OnDolarChangedEvent += Parametros_OnDolarChangedEvent;
             btnAnterior.Enabled = false;

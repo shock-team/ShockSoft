@@ -3,6 +3,8 @@ using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using ShockSoft.Excepciones;
+using System.Drawing;
+
 
 namespace ShockSoft.Presentacion
 {
@@ -13,6 +15,7 @@ namespace ShockSoft.Presentacion
         public Form_AgregarCliente()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             controlador = ControladorClientes.ObtenerInstancia();
             ActualizarComboBox();
         }

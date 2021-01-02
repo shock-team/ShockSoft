@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Linq;
 using ShockSoft.Excepciones;
+using System.Drawing;
 
 namespace ShockSoft.Presentacion
 {
@@ -15,6 +16,7 @@ namespace ShockSoft.Presentacion
         public Form_AgregarProducto()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             controlador = ControladorProductos.ObtenerInstancia();
 
             //Carga las marcas en el ComboBox

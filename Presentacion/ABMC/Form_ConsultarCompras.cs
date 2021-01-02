@@ -20,6 +20,7 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_ConsultarCompras()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             txtIdProducto.Text = "0";
 

@@ -19,6 +19,8 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_AgregarCompra()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             txtTotal.Text = "0";
             ActualizarCombobox();
         }

@@ -20,6 +20,7 @@ namespace ShockSoft.Presentacion
         public Form_AgregarVenta()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             ActualizarComboBox();
         }
 

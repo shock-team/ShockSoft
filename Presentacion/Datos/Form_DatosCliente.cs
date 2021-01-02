@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using ShockSoft.Excepciones;
 using ShockSoft.Presentacion.ABMC;
 using System;
+using System.Drawing;
 
 namespace ShockSoft.Presentacion
 {
@@ -16,6 +17,8 @@ namespace ShockSoft.Presentacion
         public Form_DatosCliente(int idCliente)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             Cliente cliente = controlador.ObtenerCliente(idCliente);
             txtId.Text = idCliente.ToString();
             txtDNI.Text = cliente.DNI;

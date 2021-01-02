@@ -4,6 +4,7 @@ using System.Data;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System;
+using System.Drawing;
 
 namespace ShockSoft.Presentacion
 {
@@ -17,6 +18,8 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarProductos()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             controlador = ControladorProductos.ObtenerInstancia();
             parametros = ControladorParametros.ObtenerInstancia();
             parametros.OnDolarChangedEvent += Parametros_OnDolarChangedEvent;
@@ -146,7 +149,7 @@ namespace ShockSoft.Presentacion
             ActualizarTabla();
         }
 
-        private void DgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //Obtiene el producto seleccionado a partir de su ID
             int productoSeleccionado = (int)dgProductos.CurrentRow.Cells[0].Value;

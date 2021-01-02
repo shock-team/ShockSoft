@@ -1,5 +1,6 @@
 ﻿using ShockSoft.Dominio;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using ShockSoft.Excepciones;
@@ -11,6 +12,8 @@ namespace ShockSoft.Presentacion
         public Form_RegistrarPago(int pIdCliente)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             Cliente cliente = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
             txtNombreYApellido.Text = cliente.Apellido + ", " + cliente.Nombre;
             txtID.Text = cliente.IdCliente.ToString();

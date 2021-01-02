@@ -18,6 +18,7 @@ namespace ShockSoft.Presentacion
         public Form_AgregarLocalidad()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         // Deslizar ventana desde el panel de control

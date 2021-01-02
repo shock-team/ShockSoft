@@ -19,7 +19,8 @@ namespace ShockSoft.Presentacion
         public Form_AgregarReparacion(int pIdReparacion = 0)
         {
             InitializeComponent();
-            
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             txtIdReparacion.Text = pIdReparacion.ToString();
             
             if (pIdReparacion == 0)

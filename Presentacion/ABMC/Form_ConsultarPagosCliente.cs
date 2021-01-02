@@ -20,6 +20,8 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_ConsultarPagosCliente(int pIdCliente)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             Cliente clienteActual = controlador.ObtenerCliente(pIdCliente);
             txtIdCliente.Text = pIdCliente.ToString();
             txtNombreCliente.Text = FormsHelper.NameFormatter(clienteActual.Nombre, clienteActual.Apellido);

@@ -20,6 +20,8 @@ namespace ShockSoft.Presentacion
         public Form_DatosLocalidad(int pId)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             txtId.Text = pId.ToString();
             Localidad localidad = controlador.ObtenerLocalidad(pId);
             txtNombre.Text = localidad.Nombre;

@@ -18,6 +18,7 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_AMCRubro()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             controlador = ControladorRubros.ObtenerInstancia();
             btnAnterior.Enabled = false;

@@ -20,6 +20,7 @@ namespace ShockSoft.Presentacion
         public Form_AgregarMarca()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         // Deslizar ventana desde el panel de control

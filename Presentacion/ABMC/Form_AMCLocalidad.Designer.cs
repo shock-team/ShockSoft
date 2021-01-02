@@ -29,7 +29,7 @@ namespace ShockSoft.Presentacion.ABMC
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgLocalidades = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,8 +70,8 @@ namespace ShockSoft.Presentacion.ABMC
             this.nombre});
             this.dgLocalidades.Location = new System.Drawing.Point(33, 43);
             this.dgLocalidades.Name = "dgLocalidades";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgLocalidades.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgLocalidades.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgLocalidades.Size = new System.Drawing.Size(342, 236);
             this.dgLocalidades.TabIndex = 0;
             this.dgLocalidades.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgLocalidades_CellMouseClick);
@@ -286,7 +286,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // picShock
             // 
-            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Image = global::ShockSoft.Properties.Resources.LOGO_ZONA;
             this.picShock.Location = new System.Drawing.Point(3, 3);
             this.picShock.Name = "picShock";
             this.picShock.Size = new System.Drawing.Size(40, 40);
@@ -303,7 +303,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(129, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Shock!Soft";
+            this.lblShock.Text = "Zona!Soft";
             // 
             // btnTamano
             // 
@@ -348,7 +348,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AMCLocalidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_AMCLocalidad";
+            this.Text = "Localidades";
             ((System.ComponentModel.ISupportInitialize)(this.dgLocalidades)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

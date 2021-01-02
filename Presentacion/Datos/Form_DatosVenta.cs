@@ -22,6 +22,8 @@ namespace ShockSoft.Presentacion
         public Form_DatosVenta(int pIdVenta)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             _idVenta = pIdVenta;
             _precioDolar = parametros.ObtenerPrecioDolar();
             ActualizarTabla();

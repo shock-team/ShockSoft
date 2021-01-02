@@ -19,6 +19,7 @@ namespace ShockSoft.Presentacion
         public Form_ABMParametro()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             controlador = ControladorParametros.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;

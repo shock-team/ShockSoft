@@ -18,6 +18,7 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_AMCProveedor()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             controlador = ControladorProveedores.ObtenerInstancia();
             btnAnterior.Enabled = false;

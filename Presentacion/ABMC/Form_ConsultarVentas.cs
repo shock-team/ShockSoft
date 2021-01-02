@@ -19,6 +19,8 @@ namespace ShockSoft.Presentacion
         public Form_ConsultarVentas()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             ActualizarTabla();
         }
 

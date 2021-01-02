@@ -21,6 +21,8 @@ namespace ShockSoft.Presentacion.ABMC
         public Form_ConsultarMetodoDePago()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
             ActualizarTabla();

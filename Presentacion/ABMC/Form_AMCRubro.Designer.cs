@@ -29,7 +29,7 @@ namespace ShockSoft.Presentacion.ABMC
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgRubros = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,8 +70,8 @@ namespace ShockSoft.Presentacion.ABMC
             this.descripcion});
             this.dgRubros.Location = new System.Drawing.Point(19, 31);
             this.dgRubros.Name = "dgRubros";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dgRubros.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgRubros.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgRubros.Size = new System.Drawing.Size(459, 377);
             this.dgRubros.TabIndex = 0;
             // 
@@ -285,7 +285,7 @@ namespace ShockSoft.Presentacion.ABMC
             // 
             // picShock
             // 
-            this.picShock.Image = global::ShockSoft.Properties.Resources.Shock_Simbol02;
+            this.picShock.Image = global::ShockSoft.Properties.Resources.LOGO_ZONA;
             this.picShock.Location = new System.Drawing.Point(3, 3);
             this.picShock.Name = "picShock";
             this.picShock.Size = new System.Drawing.Size(40, 40);
@@ -302,7 +302,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(129, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Shock!Soft";
+            this.lblShock.Text = "Zona!Soft";
             // 
             // btnTamano
             // 
@@ -347,7 +347,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AMCRubro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_AMCRubro";
+            this.Text = "Rubros";
             ((System.ComponentModel.ISupportInitialize)(this.dgRubros)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
