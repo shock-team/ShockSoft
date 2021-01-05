@@ -40,9 +40,33 @@ namespace ShockSoft.Presentacion
         /// <param name="pNombre">El nombre del nuevo cliente</param>
         /// <param name="pTelefono">El teléfono del nuevo cliente</param>
         /// <param name="pDireccion">La dirección del nuevo cliente</param>
-        /// <param name="pLocalidad">ID de la localidad del nuevo cliente</param>
+        /// <param name="pIdLocalidad">ID de la localidad del nuevo cliente</param>
         public void AltaCliente(string pDNI, string pCUIT, string pApellido, string pNombre, string pTelefono, string pDireccion, int pIdLocalidad)
         {
+            Dictionary<string, string> camposObligatorios = new Dictionary<string, string>();
+
+            camposObligatorios.Add("Apellido", pApellido);
+            camposObligatorios.Add("Nombre", pNombre);
+            camposObligatorios.Add("Localidad", pIdLocalidad.ToString());
+
+            foreach (var item in camposObligatorios)
+            {
+                if (string.IsNullOrEmpty(item.Value))
+                {
+                    throw new DatosFaltantesException(item.Key);
+                }
+            }
+
+            if (pDNI != string.Empty)
+            {
+                VerificarDNI(pDNI);
+            }
+
+            if (pCUIT != string.Empty)
+            {
+                VerificarCUIT(pCUIT);
+            }
+
             Cliente cliente = new Cliente();
             cliente.Nombre = pNombre;
             cliente.Apellido = pApellido;
@@ -154,7 +178,6 @@ namespace ShockSoft.Presentacion
                     bUoW.GuardarCambios();
                 }
             }
-
         }
 
         /// <summary>
@@ -223,7 +246,7 @@ namespace ShockSoft.Presentacion
                     IEnumerable<Cliente> clientes = bUoW.RepositorioCliente.ObtenerPorDNI(pDNI);
                     if (clientes.Count() > 0)
                     {
-                        throw new DatosRepetidosException();
+                        throw new DatosRepetidosException($"DNI: {pDNI}");
                     }
                 }
             }
@@ -235,10 +258,10 @@ namespace ShockSoft.Presentacion
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    IEnumerable<Cliente> clientes = bUoW.RepositorioCliente.ObtenerPorDNI(pCUIT);
+                    IEnumerable<Cliente> clientes = bUoW.RepositorioCliente.ObtenerPorCUIT(pCUIT);
                     if (clientes.Count() > 0)
                     {
-                        throw new DatosRepetidosException();
+                        throw new DatosRepetidosException($"CUIT: {pCUIT}");
                     }
                 }
             }

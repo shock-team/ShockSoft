@@ -9,6 +9,10 @@ namespace ShockSoft.Excepciones
     [Serializable]
     class DatosRepetidosException : Exception
     {
-        public DatosRepetidosException() : base("Los datos están repetidos") { }
+        public DatosRepetidosException() : base() { }
+
+        public DatosRepetidosException(string message) :
+            base(String.Format("Los siguientes datos ya existen: {0}", message))
+        { }
     }
 }

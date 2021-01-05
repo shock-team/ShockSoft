@@ -59,6 +59,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,7 +74,7 @@
             // txtDNI
             // 
             this.txtDNI.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(90, 11);
+            this.txtDNI.Location = new System.Drawing.Point(107, 12);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(250, 25);
             this.txtDNI.TabIndex = 0;
@@ -103,7 +104,7 @@
             // txtCUIT
             // 
             this.txtCUIT.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCUIT.Location = new System.Drawing.Point(90, 11);
+            this.txtCUIT.Location = new System.Drawing.Point(107, 9);
             this.txtCUIT.Name = "txtCUIT";
             this.txtCUIT.Size = new System.Drawing.Size(250, 25);
             this.txtCUIT.TabIndex = 2;
@@ -115,14 +116,14 @@
             this.lblApellido.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblApellido.Location = new System.Drawing.Point(8, 12);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(70, 19);
+            this.lblApellido.Size = new System.Drawing.Size(90, 19);
             this.lblApellido.TabIndex = 5;
-            this.lblApellido.Text = "Apellido:";
+            this.lblApellido.Text = "Apellido (*):";
             // 
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(90, 11);
+            this.txtApellido.Location = new System.Drawing.Point(107, 9);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(250, 25);
             this.txtApellido.TabIndex = 4;
@@ -132,11 +133,11 @@
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLocalidad.Location = new System.Drawing.Point(8, 12);
+            this.lblLocalidad.Location = new System.Drawing.Point(3, 13);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(78, 19);
+            this.lblLocalidad.Size = new System.Drawing.Size(98, 19);
             this.lblLocalidad.TabIndex = 7;
-            this.lblLocalidad.Text = "Localidad:";
+            this.lblLocalidad.Text = "Localidad (*):";
             // 
             // lblNombre
             // 
@@ -145,14 +146,14 @@
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNombre.Location = new System.Drawing.Point(8, 12);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(69, 19);
+            this.lblNombre.Size = new System.Drawing.Size(89, 19);
             this.lblNombre.TabIndex = 13;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "Nombre (*):";
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(90, 11);
+            this.txtNombre.Location = new System.Drawing.Point(103, 9);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(250, 25);
             this.txtNombre.TabIndex = 12;
@@ -171,7 +172,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(90, 11);
+            this.txtDireccion.Location = new System.Drawing.Point(103, 9);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(250, 25);
             this.txtDireccion.TabIndex = 10;
@@ -190,7 +191,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(90, 11);
+            this.txtTelefono.Location = new System.Drawing.Point(103, 12);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(250, 25);
             this.txtTelefono.TabIndex = 8;
@@ -204,7 +205,7 @@
             this.btnNuevaLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaLocalidad.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaLocalidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNuevaLocalidad.Location = new System.Drawing.Point(350, 0);
+            this.btnNuevaLocalidad.Location = new System.Drawing.Point(410, 0);
             this.btnNuevaLocalidad.Name = "btnNuevaLocalidad";
             this.btnNuevaLocalidad.Size = new System.Drawing.Size(100, 47);
             this.btnNuevaLocalidad.TabIndex = 15;
@@ -221,7 +222,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAceptar.Location = new System.Drawing.Point(660, 310);
+            this.btnAceptar.Location = new System.Drawing.Point(725, 310);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 16;
@@ -238,7 +239,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(550, 310);
+            this.btnCancelar.Location = new System.Drawing.Point(615, 310);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 17;
@@ -251,7 +252,7 @@
             this.comboLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLocalidad.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboLocalidad.FormattingEnabled = true;
-            this.comboLocalidad.Location = new System.Drawing.Point(90, 10);
+            this.comboLocalidad.Location = new System.Drawing.Point(107, 10);
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(250, 27);
             this.comboLocalidad.TabIndex = 18;
@@ -267,7 +268,7 @@
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(800, 45);
+            this.panelControl.Size = new System.Drawing.Size(865, 45);
             this.panelControl.TabIndex = 19;
             this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
@@ -279,7 +280,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
-            this.btnMinimizar.Location = new System.Drawing.Point(665, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(730, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 10;
@@ -303,7 +304,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 
@@ -315,7 +316,7 @@
             this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
-            this.btnTamano.Location = new System.Drawing.Point(710, 0);
+            this.btnTamano.Location = new System.Drawing.Point(775, 0);
             this.btnTamano.Name = "btnTamano";
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
@@ -330,7 +331,7 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
-            this.btnCerrar.Location = new System.Drawing.Point(755, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(820, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
@@ -344,7 +345,7 @@
             this.panel1.Controls.Add(this.txtDNI);
             this.panel1.Location = new System.Drawing.Point(30, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 47);
+            this.panel1.Size = new System.Drawing.Size(410, 47);
             this.panel1.TabIndex = 20;
             // 
             // panel2
@@ -354,7 +355,7 @@
             this.panel2.Controls.Add(this.txtCUIT);
             this.panel2.Location = new System.Drawing.Point(30, 120);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 47);
+            this.panel2.Size = new System.Drawing.Size(410, 47);
             this.panel2.TabIndex = 21;
             // 
             // panel3
@@ -364,7 +365,7 @@
             this.panel3.Controls.Add(this.txtApellido);
             this.panel3.Location = new System.Drawing.Point(30, 180);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(350, 47);
+            this.panel3.Size = new System.Drawing.Size(410, 47);
             this.panel3.TabIndex = 22;
             // 
             // panel4
@@ -375,7 +376,7 @@
             this.panel4.Controls.Add(this.btnNuevaLocalidad);
             this.panel4.Location = new System.Drawing.Point(30, 240);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(450, 47);
+            this.panel4.Size = new System.Drawing.Size(507, 47);
             this.panel4.TabIndex = 23;
             // 
             // panel5
@@ -383,9 +384,9 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel5.Controls.Add(this.lblNombre);
             this.panel5.Controls.Add(this.txtNombre);
-            this.panel5.Location = new System.Drawing.Point(410, 180);
+            this.panel5.Location = new System.Drawing.Point(460, 180);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 47);
+            this.panel5.Size = new System.Drawing.Size(375, 47);
             this.panel5.TabIndex = 25;
             // 
             // panel6
@@ -393,9 +394,9 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel6.Controls.Add(this.lblDireccion);
             this.panel6.Controls.Add(this.txtDireccion);
-            this.panel6.Location = new System.Drawing.Point(410, 120);
+            this.panel6.Location = new System.Drawing.Point(460, 120);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 47);
+            this.panel6.Size = new System.Drawing.Size(375, 47);
             this.panel6.TabIndex = 24;
             // 
             // panel7
@@ -403,17 +404,29 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(70)))));
             this.panel7.Controls.Add(this.lblTelefono);
             this.panel7.Controls.Add(this.txtTelefono);
-            this.panel7.Location = new System.Drawing.Point(410, 60);
+            this.panel7.Location = new System.Drawing.Point(460, 60);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(350, 47);
+            this.panel7.Size = new System.Drawing.Size(375, 47);
             this.panel7.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(33, 315);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 19);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "(*): Campos obligatorios";
             // 
             // Form_AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(800, 350);
+            this.ClientSize = new System.Drawing.Size(865, 350);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
@@ -447,6 +460,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -482,5 +496,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label1;
     }
 }

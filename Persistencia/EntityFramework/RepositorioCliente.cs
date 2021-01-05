@@ -80,7 +80,7 @@ namespace ShockSoft.Persistencia.EntityFramework
         public IEnumerable<Cliente> ObtenerPorCUIT(string pCUIT)
         {
             var clientes = (from c in iDbContext.Clientes
-                           where c.DNI.Equals(pCUIT)
+                           where c.CUIT.Equals(pCUIT)
                            select c);
             return clientes;
         }

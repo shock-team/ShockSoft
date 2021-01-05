@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using ShockSoft.Excepciones;
 using System.Drawing;
-
+using System.Collections.Generic;
 
 namespace ShockSoft.Presentacion
 {
@@ -35,9 +35,9 @@ namespace ShockSoft.Presentacion
         {
             try
             {
-                controlador.VerificarDatos(txtDNI.Text, txtCUIT.Text);
                 controlador.AltaCliente(txtDNI.Text, txtCUIT.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text, ((Localidad)comboLocalidad.SelectedItem).IdLocalidad);
                 MessageBox.Show("El cliente se ha agregado correctamente", "Exito");
+
                 txtDNI.Clear();
                 txtTelefono.Clear();
                 txtCUIT.Clear();
@@ -46,13 +46,17 @@ namespace ShockSoft.Presentacion
                 txtNombre.Clear();
                 comboLocalidad.SelectedIndex = 0;
             }
-            catch (DatosRepetidosException)
+            catch (DatosFaltantesException ex)
             {
-                MessageBox.Show("Ya existe un cliente con ese DNI o CUIT. Intente nuevamente", "Error");
+                MessageBox.Show(ex.Message, "Error");
+            }
+            catch (DatosRepetidosException ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 
@@ -98,10 +102,14 @@ namespace ShockSoft.Presentacion
             foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
             {
                 comboLocalidad.Items.Add(localidad);
+
+                if (localidad.Nombre == "Urdinarrain")
+                {
+                    comboLocalidad.SelectedIndex = comboLocalidad.Items.Count - 1;
+                }
             }
             comboLocalidad.ValueMember = "IdLocalidad";
             comboLocalidad.DisplayMember = "Nombre";
-            comboLocalidad.SelectedIndex = comboLocalidad.Items.Count - 1;
         }
     }
 }
