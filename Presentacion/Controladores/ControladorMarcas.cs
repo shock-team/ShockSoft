@@ -35,15 +35,22 @@ namespace ShockSoft.Presentacion
         /// <param name="pDescripcion">La descripción de la nueva marca</param>
         public void AgregarMarca(string pDescripcion)
         {
-            Marca marca = new Marca();
-            marca.Descripcion = pDescripcion;
-            using (var pDbContext = new ShockDbContext())
+            if (!(pDescripcion.Equals("")))
             {
-                using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
+                Marca marca = new Marca();
+                marca.Descripcion = pDescripcion;
+                using (var pDbContext = new ShockDbContext())
                 {
-                    bUoW.RepositorioMarca.Agregar(marca);
-                    bUoW.GuardarCambios();
+                    using (UnitOfWork bUoW = new UnitOfWork(pDbContext))
+                    {
+                        bUoW.RepositorioMarca.Agregar(marca);
+                        bUoW.GuardarCambios();
+                    }
                 }
+            }
+            else
+            {
+                throw new DatosFaltantesException("Nombre");
             }
         }
 

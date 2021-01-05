@@ -126,12 +126,19 @@ namespace ShockSoft.Presentacion
         {
             try
             {
-                IAgregarLinea formAgregarVenta = (IAgregarLinea)Owner;
-                formAgregarVenta.AgregarLinea(
-                    txtId.Text, 
-                    txtDescripcion.Text, 
-                    FormsHelper.CurrencyToText(txtPrecioUnitario.Text), 
-                    Convert.ToInt32(nmCantidad.Value));
+                if (nmCantidad.Value > 0)
+                {
+                    IAgregarLinea formAgregarVenta = (IAgregarLinea)Owner;
+                    formAgregarVenta.AgregarLinea(
+                        txtId.Text,
+                        txtDescripcion.Text,
+                        FormsHelper.CurrencyToText(txtPrecioUnitario.Text),
+                        Convert.ToInt32(nmCantidad.Value));
+                }
+                else
+                {
+                    MessageBox.Show("La cantidad debe ser mayor que 0", "Error");
+                }
             }
             catch (Exception ex)
             {
