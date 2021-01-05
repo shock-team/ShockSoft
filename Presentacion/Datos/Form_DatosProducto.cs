@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShockSoft.Dominio;
 using System.Runtime.InteropServices;
+using ShockSoft.Presentacion.ABMC;
 
 namespace ShockSoft.Presentacion
 {
@@ -110,12 +111,20 @@ namespace ShockSoft.Presentacion
 
         private void btnHistorialCompra_Click(object sender, EventArgs e)
         {
-
+            Form_ConsultarCompras form_ConsultarCompras = new Form_ConsultarCompras();
+            form_ConsultarCompras.AgregarProducto(int.Parse(txtId.Text));
+            this.Hide();
+            form_ConsultarCompras.ShowDialog();
+            this.Show();
         }
 
         private void btnHistorialVenta_Click(object sender, EventArgs e)
         {
-
+            Form_ConsultarVentas form_ConsultarVentas = new Form_ConsultarVentas();
+            form_ConsultarVentas.AgregarProducto(int.Parse(txtId.Text));
+            this.Hide();
+            form_ConsultarVentas.ShowDialog();
+            this.Show();
         }
 
         // Deslizar ventana desde el panel de control
