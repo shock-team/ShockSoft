@@ -69,6 +69,7 @@
             this.Total});
             this.dgCompras.Location = new System.Drawing.Point(12, 228);
             this.dgCompras.Name = "dgCompras";
+            this.dgCompras.ReadOnly = true;
             this.dgCompras.Size = new System.Drawing.Size(743, 251);
             this.dgCompras.TabIndex = 0;
             this.dgCompras.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgCompras_CellDoubleClick);
@@ -223,7 +224,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 

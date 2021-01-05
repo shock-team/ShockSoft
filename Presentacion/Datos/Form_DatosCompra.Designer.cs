@@ -78,6 +78,7 @@
             this.Subtotal});
             this.dgLineasDeCompra.Location = new System.Drawing.Point(27, 53);
             this.dgLineasDeCompra.Name = "dgLineasDeCompra";
+            this.dgLineasDeCompra.ReadOnly = true;
             this.dgLineasDeCompra.Size = new System.Drawing.Size(743, 246);
             this.dgLineasDeCompra.TabIndex = 18;
             // 

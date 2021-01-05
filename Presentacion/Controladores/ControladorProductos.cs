@@ -38,10 +38,11 @@ namespace ShockSoft.Presentacion
         /// <param name="pIVA">El ID del IVA asociado al nuevo producto.</param>
         /// <param name="pMarca">El ID de la marca asociada al nuevo producto.</param>
         /// <param name="pRubro">El ID del rubro asociado al nuevo producto.</param>
-        public void AgregarProducto(string pDescripcion, float pPrecioBaseDolar, float pGanancia, int pIVA, int pMarca, int pRubro)
+        public void AgregarProducto(string pDescripcion, string pComentarios, float pPrecioBaseDolar, float pGanancia, int pIVA, int pMarca, int pRubro)
         {
             Producto producto = new Producto();
             producto.Descripcion = pDescripcion;
+            producto.Comentarios = pComentarios;
             producto.Cantidad = 0;
             producto.PrecioBaseDolar = pPrecioBaseDolar;
             producto.EnVenta = true;
@@ -94,7 +95,7 @@ namespace ShockSoft.Presentacion
                     }
                     else
                     {
-                        Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pId)) ?? new Producto { };
+                        Producto producto = bUoW.RepositorioProducto.ObtenerProducto(int.Parse(pId)) ?? new Producto { };
                         producto.Marca = bUoW.RepositorioMarca.Obtener(producto.IdMarca) ?? new Marca { };
                         listaProductos.Add(producto);
                     }
@@ -112,7 +113,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pGanancia">El nuevo porcentaje de ganancia del producto</param>
         /// <param name="pIVA">El ID del nuevo IVA asociado al producto</param>
         /// <param name="idProducto">El ID del producto a modificar</param>
-        public void ModificarProducto(string pDescripcion, float pPrecioBaseDolar, float pGanancia, int pIVA, int idProducto)
+        public void ModificarProducto(string pDescripcion, string pComentarios, float pPrecioBaseDolar, float pGanancia, int pIVA, int idProducto)
         {
             using (var bDbContext = new ShockDbContext())
             {
@@ -120,6 +121,7 @@ namespace ShockSoft.Presentacion
                 {
                     Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
                     producto.Descripcion = pDescripcion;
+                    producto.Comentarios = pComentarios;
                     producto.PrecioBaseDolar = pPrecioBaseDolar;
                     producto.PorcentajeGanancia = pGanancia;
                     Parametro iva = bUoW.RepositorioParametro.Obtener(pIVA);
@@ -130,18 +132,22 @@ namespace ShockSoft.Presentacion
         }
 
         /// <summary>
-        /// Este método se encarga de dar de baja un producto existente
+        /// Este método se encarga de invertir el estado de venta de un producto y devolver en qué estado quedó.
         /// </summary>
         /// <param name="idProducto">El ID del producto</param>
-        public void DarDeBaja(int idProducto)
+        public bool InvertirEstadoDeVenta(int idProducto)
         {
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
                     Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
-                    producto.EnVenta = false;
+
+                    bool estado = producto.EnVenta ? producto.EnVenta = false : producto.EnVenta = true;
+
                     bUoW.GuardarCambios();
+
+                    return estado;
                 }
             }
         }

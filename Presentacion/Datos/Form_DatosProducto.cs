@@ -21,14 +21,21 @@ namespace ShockSoft.Presentacion
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
+            CargarDatos(pIdProducto);
+        }
+        
+        private void CargarDatos(int pIdProducto)
+        {
             //Obtiene los datos del producto y los carga en los espacios correspondientes
             Producto producto = controlador.ObtenerProducto(pIdProducto);
             txtId.Text = producto.IdProducto.ToString();
             txtDescripcion.Text = producto.Descripcion;
+            txtComentarios.Text = producto.Comentarios;
             txtCantidad.Text = producto.Cantidad.ToString();
             txtPrecio.Text = producto.PrecioBaseDolar.ToString();
             txtPorcentajeDeGanancia.Text = producto.PorcentajeGanancia.ToString();
             //txtMarca.Text = ControladorMarcas.ObtenerInstancia().Obtener(producto.IdMarca).Descripcion;
+
             if (producto.EnVenta)
             {
                 txtEnVenta.Text = "Sí";
@@ -67,19 +74,37 @@ namespace ShockSoft.Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            controlador.ModificarProducto(txtDescripcion.Text, float.Parse(txtPrecio.Text), float.Parse(txtPorcentajeDeGanancia.Text), ((Parametro)comboIVA.SelectedItem).IdParametro, int.Parse(txtId.Text));
+            try
+            {
+                controlador.ModificarProducto(txtDescripcion.Text, txtComentarios.Text, float.Parse(txtPrecio.Text), float.Parse(txtPorcentajeDeGanancia.Text), ((Parametro)comboIVA.SelectedItem).IdParametro, int.Parse(txtId.Text));
+                MessageBox.Show($"Datos del producto: {txtDescripcion.Text} fueron modificados correctamente!", "Éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnAltaBaja_Click(object sender, EventArgs e)
         {
-            controlador.DarDeBaja(int.Parse(txtId.Text));
-            if (txtEnVenta.Text == "Sí")
+            try
             {
-                txtEnVenta.Text = "No";
+                bool estado = controlador.InvertirEstadoDeVenta(int.Parse(txtId.Text));
+
+                if (estado)
+                {
+                    txtEnVenta.Text = "Sí";
+                    MessageBox.Show("Producto dado de Alta!", "Éxito");
+                }
+                else
+                {
+                    txtEnVenta.Text = "No";
+                    MessageBox.Show("Producto dado de Baja!", "Éxito");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                txtEnVenta.Text = "Sí";
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 

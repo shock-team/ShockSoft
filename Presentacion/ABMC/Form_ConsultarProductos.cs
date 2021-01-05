@@ -27,12 +27,17 @@ namespace ShockSoft.Presentacion
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;
 
+            CargarDatos();
+        }
+
+        private void CargarDatos()
+        {
             //Carga los datos del ComboBox de Marcas
-            comboMarca.Items.Add(new Marca
-            {
-                IdMarca = -1,
-                Descripcion = "Sin Filtro"
-            });
+            //comboMarca.Items.Add(new Marca
+            //{
+            //    IdMarca = -1,
+            //    Descripcion = "Sin Filtro"
+            //});
 
             foreach (Marca marca in ControladorMarcas.ObtenerInstancia().ListarMarcas())
             {
@@ -42,11 +47,11 @@ namespace ShockSoft.Presentacion
             comboMarca.DisplayMember = "Descripcion";
 
             //Carga los datos del ComboBox de Rubros
-            comboRubro.Items.Add(new Rubro
-            {
-                IdRubro = -1,
-                Descripcion = "Sin Filtro"
-            });
+            //comboRubro.Items.Add(new Rubro
+            //{
+            //    IdRubro = -1,
+            //    Descripcion = "Sin Filtro"
+            //});
             foreach (Rubro rubro in ControladorRubros.ObtenerInstancia().ListarRubros())
             {
                 comboRubro.Items.Add(rubro);
@@ -58,7 +63,6 @@ namespace ShockSoft.Presentacion
             _precioDolar = parametros.ObtenerPrecioDolar();
             lblPrecioDolar.Text = String.Format("{0:C2}", _precioDolar);
 
-            //Carga los datos a la DataTable
             ActualizarTabla();
         }
 
@@ -100,7 +104,9 @@ namespace ShockSoft.Presentacion
             }
             foreach (Producto producto in listaDeProductos)
             {
-                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, producto.ObtenerPrecioDeVenta() * _precioDolar, producto.Cantidad);
+                float precio = producto.IdProducto != 0 ? producto.ObtenerPrecioDeVenta() * _precioDolar : 0;
+                
+                dgProductos.Rows.Add(producto.IdProducto, producto.Descripcion, producto.Marca.Descripcion, precio, producto.Cantidad);
             }
         }
 
@@ -169,10 +175,28 @@ namespace ShockSoft.Presentacion
             else
             {
                 Form_DatosProducto formDatosProducto = new Form_DatosProducto(productoSeleccionado);
+                formDatosProducto.FormClosing += FormDatosProducto_FormClosing;
                 this.Hide();
                 formDatosProducto.ShowDialog();
                 this.Show();
             }
+        }
+
+        private void FormDatosProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ActualizarTabla();
+        }
+
+        private void btnReiniciarFiltros_Click(object sender, EventArgs e)
+        {
+            comboMarca.SelectedIndex = -1;
+            comboRubro.SelectedIndex = -1;
+            txtDescripcion.Text = string.Empty;
+            txtId.Text = string.Empty;
+            cbMostrarProductosBaja.Checked = false;
+            cbSinStock.Checked = false;
+
+            ActualizarTabla();
         }
     }
 }

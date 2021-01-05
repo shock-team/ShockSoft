@@ -70,6 +70,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.nombre});
             this.dgLocalidades.Location = new System.Drawing.Point(33, 43);
             this.dgLocalidades.Name = "dgLocalidades";
+            this.dgLocalidades.ReadOnly = true;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgLocalidades.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgLocalidades.Size = new System.Drawing.Size(342, 236);
@@ -301,7 +302,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 

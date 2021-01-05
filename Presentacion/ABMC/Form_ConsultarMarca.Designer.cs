@@ -65,6 +65,7 @@
             this.descripcion});
             this.dgvMarcas.Location = new System.Drawing.Point(6, 23);
             this.dgvMarcas.Name = "dgvMarcas";
+            this.dgvMarcas.ReadOnly = true;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvMarcas.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMarcas.Size = new System.Drawing.Size(467, 205);
@@ -76,6 +77,7 @@
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 48;
             // 
             // descripcion
@@ -83,6 +85,7 @@
             this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descripcion.HeaderText = "Nombre";
             this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             // 
             // txtNombre
             // 
@@ -261,7 +264,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 

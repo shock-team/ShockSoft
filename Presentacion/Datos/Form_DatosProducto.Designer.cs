@@ -64,6 +64,9 @@
             this.btnHistorialCompra = new System.Windows.Forms.Button();
             this.btnAltaBaja = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtComentarios = new System.Windows.Forms.TextBox();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel5.SuspendLayout();
@@ -75,6 +78,7 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl
@@ -88,7 +92,7 @@
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(900, 45);
+            this.panelControl.Size = new System.Drawing.Size(898, 45);
             this.panelControl.TabIndex = 27;
             this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
@@ -100,7 +104,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
-            this.btnMinimizar.Location = new System.Drawing.Point(765, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(763, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btnMinimizar.TabIndex = 10;
@@ -124,7 +128,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 
@@ -136,7 +140,7 @@
             this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
-            this.btnTamano.Location = new System.Drawing.Point(810, 0);
+            this.btnTamano.Location = new System.Drawing.Point(808, 0);
             this.btnTamano.Name = "btnTamano";
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
             this.btnTamano.TabIndex = 7;
@@ -151,7 +155,7 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
-            this.btnCerrar.Location = new System.Drawing.Point(855, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(853, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);
             this.btnCerrar.TabIndex = 6;
@@ -419,7 +423,7 @@
             this.panel8.Controls.Add(this.btnHistorialCompra);
             this.panel8.Controls.Add(this.btnAltaBaja);
             this.panel8.Controls.Add(this.btnModificar);
-            this.panel8.Location = new System.Drawing.Point(30, 300);
+            this.panel8.Location = new System.Drawing.Point(30, 403);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(840, 64);
             this.panel8.TabIndex = 26;
@@ -492,12 +496,43 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(70)))));
+            this.panel10.Controls.Add(this.txtComentarios);
+            this.panel10.Controls.Add(this.label1);
+            this.panel10.Location = new System.Drawing.Point(30, 293);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(840, 104);
+            this.panel10.TabIndex = 43;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(8, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Comentarios:";
+            // 
+            // txtComentarios
+            // 
+            this.txtComentarios.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
+            this.txtComentarios.Location = new System.Drawing.Point(130, 12);
+            this.txtComentarios.Multiline = true;
+            this.txtComentarios.Name = "txtComentarios";
+            this.txtComentarios.Size = new System.Drawing.Size(690, 79);
+            this.txtComentarios.TabIndex = 3;
+            // 
             // Form_DatosProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(900, 375);
+            this.ClientSize = new System.Drawing.Size(898, 478);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -531,6 +566,8 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -572,5 +609,8 @@
         private System.Windows.Forms.Button btnHistorialCompra;
         private System.Windows.Forms.Button btnAltaBaja;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txtComentarios;
+        private System.Windows.Forms.Label label1;
     }
 }

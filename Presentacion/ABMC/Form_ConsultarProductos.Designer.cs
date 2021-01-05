@@ -60,17 +60,12 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.btnAñadir = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHistorialVenta = new System.Windows.Forms.Button();
-            this.btnHistorialCompra = new System.Windows.Forms.Button();
-            this.btnAltaBaja = new System.Windows.Forms.Button();
+            this.btnReiniciarFiltros = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReiniciarFiltros)).BeginInit();
             this.SuspendLayout();
             // 
             // dgProductos
@@ -95,7 +90,7 @@
             this.dgProductos.Location = new System.Drawing.Point(15, 180);
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.ReadOnly = true;
-            this.dgProductos.Size = new System.Drawing.Size(800, 382);
+            this.dgProductos.Size = new System.Drawing.Size(970, 382);
             this.dgProductos.TabIndex = 6;
             this.dgProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProductos_CellContentDoubleClick);
             // 
@@ -193,7 +188,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 
@@ -232,7 +227,7 @@
             this.lblPaginaActual.AutoSize = true;
             this.lblPaginaActual.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaginaActual.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPaginaActual.Location = new System.Drawing.Point(395, 587);
+            this.lblPaginaActual.Location = new System.Drawing.Point(472, 586);
             this.lblPaginaActual.Name = "lblPaginaActual";
             this.lblPaginaActual.Size = new System.Drawing.Size(15, 17);
             this.lblPaginaActual.TabIndex = 17;
@@ -246,7 +241,7 @@
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnterior.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnterior.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAnterior.Location = new System.Drawing.Point(270, 581);
+            this.btnAnterior.Location = new System.Drawing.Point(349, 580);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(100, 28);
             this.btnAnterior.TabIndex = 16;
@@ -262,7 +257,7 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSiguiente.Location = new System.Drawing.Point(430, 581);
+            this.btnSiguiente.Location = new System.Drawing.Point(509, 580);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 28);
             this.btnSiguiente.TabIndex = 15;
@@ -273,6 +268,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(70)))));
+            this.panel1.Controls.Add(this.btnReiniciarFiltros);
             this.panel1.Controls.Add(this.lblPrecioDolar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -318,7 +314,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(691, 61);
+            this.label1.Location = new System.Drawing.Point(646, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 30;
@@ -329,9 +325,10 @@
             this.comboRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRubro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboRubro.FormattingEnabled = true;
-            this.comboRubro.Location = new System.Drawing.Point(760, 59);
+            this.comboRubro.Location = new System.Drawing.Point(706, 58);
             this.comboRubro.Name = "comboRubro";
             this.comboRubro.Size = new System.Drawing.Size(200, 27);
+            this.comboRubro.Sorted = true;
             this.comboRubro.TabIndex = 31;
             this.comboRubro.SelectedIndexChanged += new System.EventHandler(this.ValorCambiado);
             // 
@@ -340,7 +337,7 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMarca.Location = new System.Drawing.Point(391, 61);
+            this.lblMarca.Location = new System.Drawing.Point(379, 61);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(55, 19);
             this.lblMarca.TabIndex = 28;
@@ -351,9 +348,10 @@
             this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMarca.FormattingEnabled = true;
-            this.comboMarca.Location = new System.Drawing.Point(460, 59);
+            this.comboMarca.Location = new System.Drawing.Point(440, 58);
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(200, 27);
+            this.comboMarca.Sorted = true;
             this.comboMarca.TabIndex = 29;
             this.comboMarca.SelectedIndexChanged += new System.EventHandler(this.ValorCambiado);
             // 
@@ -434,98 +432,17 @@
             this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.ValorCambiado);
             // 
-            // btnAñadir
+            // btnReiniciarFiltros
             // 
-            this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
-            this.btnAñadir.FlatAppearance.BorderSize = 0;
-            this.btnAñadir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAñadir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAñadir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAñadir.Location = new System.Drawing.Point(0, 7);
-            this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(170, 50);
-            this.btnAñadir.TabIndex = 23;
-            this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = false;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModificar.Location = new System.Drawing.Point(0, 63);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(170, 50);
-            this.btnModificar.TabIndex = 24;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panel2.Controls.Add(this.btnHistorialVenta);
-            this.panel2.Controls.Add(this.btnHistorialCompra);
-            this.panel2.Controls.Add(this.btnAltaBaja);
-            this.panel2.Controls.Add(this.btnAñadir);
-            this.panel2.Controls.Add(this.btnModificar);
-            this.panel2.Location = new System.Drawing.Point(815, 180);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(170, 382);
-            this.panel2.TabIndex = 25;
-            // 
-            // btnHistorialVenta
-            // 
-            this.btnHistorialVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
-            this.btnHistorialVenta.FlatAppearance.BorderSize = 0;
-            this.btnHistorialVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnHistorialVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnHistorialVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorialVenta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHistorialVenta.Location = new System.Drawing.Point(0, 279);
-            this.btnHistorialVenta.Name = "btnHistorialVenta";
-            this.btnHistorialVenta.Size = new System.Drawing.Size(170, 100);
-            this.btnHistorialVenta.TabIndex = 27;
-            this.btnHistorialVenta.Text = "Historial de Venta";
-            this.btnHistorialVenta.UseVisualStyleBackColor = false;
-            // 
-            // btnHistorialCompra
-            // 
-            this.btnHistorialCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
-            this.btnHistorialCompra.FlatAppearance.BorderSize = 0;
-            this.btnHistorialCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnHistorialCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnHistorialCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorialCompra.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialCompra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHistorialCompra.Location = new System.Drawing.Point(0, 175);
-            this.btnHistorialCompra.Name = "btnHistorialCompra";
-            this.btnHistorialCompra.Size = new System.Drawing.Size(170, 100);
-            this.btnHistorialCompra.TabIndex = 26;
-            this.btnHistorialCompra.Text = "Historial de Compra";
-            this.btnHistorialCompra.UseVisualStyleBackColor = false;
-            // 
-            // btnAltaBaja
-            // 
-            this.btnAltaBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(45)))));
-            this.btnAltaBaja.FlatAppearance.BorderSize = 0;
-            this.btnAltaBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAltaBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(175)))), ((int)(((byte)(100)))));
-            this.btnAltaBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaBaja.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaBaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAltaBaja.Location = new System.Drawing.Point(0, 119);
-            this.btnAltaBaja.Name = "btnAltaBaja";
-            this.btnAltaBaja.Size = new System.Drawing.Size(170, 50);
-            this.btnAltaBaja.TabIndex = 25;
-            this.btnAltaBaja.Text = "Alta/Baja";
-            this.btnAltaBaja.UseVisualStyleBackColor = false;
+            this.btnReiniciarFiltros.Image = global::ShockSoft.Properties.Resources._5111_512;
+            this.btnReiniciarFiltros.InitialImage = global::ShockSoft.Properties.Resources._5111_512;
+            this.btnReiniciarFiltros.Location = new System.Drawing.Point(918, 54);
+            this.btnReiniciarFiltros.Name = "btnReiniciarFiltros";
+            this.btnReiniciarFiltros.Size = new System.Drawing.Size(38, 37);
+            this.btnReiniciarFiltros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnReiniciarFiltros.TabIndex = 34;
+            this.btnReiniciarFiltros.TabStop = false;
+            this.btnReiniciarFiltros.Click += new System.EventHandler(this.btnReiniciarFiltros_Click);
             // 
             // Form_ConsultarProductos
             // 
@@ -533,7 +450,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1000, 630);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPaginaActual);
             this.Controls.Add(this.panelControl);
@@ -550,7 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnReiniciarFiltros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,14 +490,8 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Button btnAñadir;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnAltaBaja;
         private System.Windows.Forms.CheckBox cbSinStock;
         private System.Windows.Forms.CheckBox cbMostrarProductosBaja;
-        private System.Windows.Forms.Button btnHistorialVenta;
-        private System.Windows.Forms.Button btnHistorialCompra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboRubro;
         private System.Windows.Forms.Label lblMarca;
@@ -593,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.PictureBox btnReiniciarFiltros;
     }
 }

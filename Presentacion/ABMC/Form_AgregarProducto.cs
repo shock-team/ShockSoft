@@ -98,6 +98,7 @@ namespace ShockSoft.Presentacion
 
                 controlador.AgregarProducto(
                     txtDescripcion.Text, 
+                    txtComentarios.Text,
                     float.Parse(txtPrecio.Text), 
                     float.Parse(txtGanancia.Text),
                     idParametro,

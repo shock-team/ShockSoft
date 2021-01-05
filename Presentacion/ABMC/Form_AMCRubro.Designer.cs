@@ -70,6 +70,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.descripcion});
             this.dgRubros.Location = new System.Drawing.Point(19, 31);
             this.dgRubros.Name = "dgRubros";
+            this.dgRubros.ReadOnly = true;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgRubros.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgRubros.Size = new System.Drawing.Size(459, 377);
@@ -300,7 +301,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 

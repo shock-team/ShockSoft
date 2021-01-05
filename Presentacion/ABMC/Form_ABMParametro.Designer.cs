@@ -73,6 +73,7 @@
             this.valor});
             this.dgParametros.Location = new System.Drawing.Point(6, 31);
             this.dgParametros.Name = "dgParametros";
+            this.dgParametros.ReadOnly = true;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgParametros.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgParametros.Size = new System.Drawing.Size(421, 244);
@@ -313,7 +314,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 

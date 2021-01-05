@@ -110,6 +110,7 @@
             this.dgClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgClientes.Location = new System.Drawing.Point(15, 60);
             this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
             this.dgClientes.Size = new System.Drawing.Size(961, 397);
             this.dgClientes.TabIndex = 11;
             this.dgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgClientes_CellDoubleClick);
@@ -119,6 +120,7 @@
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Width = 43;
             // 
             // nombre
@@ -126,12 +128,14 @@
             this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
             // CUIT
             // 
             this.CUIT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.CUIT.HeaderText = "CUIT";
             this.CUIT.Name = "CUIT";
+            this.CUIT.ReadOnly = true;
             this.CUIT.Width = 57;
             // 
             // saldo
@@ -142,6 +146,7 @@
             this.saldo.DefaultCellStyle = dataGridViewCellStyle1;
             this.saldo.HeaderText = "Saldo";
             this.saldo.Name = "saldo";
+            this.saldo.ReadOnly = true;
             // 
             // btnSiguiente
             // 
@@ -233,7 +238,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 

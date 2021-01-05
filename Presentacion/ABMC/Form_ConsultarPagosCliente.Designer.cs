@@ -129,6 +129,7 @@
             this.Monto});
             this.dgPagos.Location = new System.Drawing.Point(12, 163);
             this.dgPagos.Name = "dgPagos";
+            this.dgPagos.ReadOnly = true;
             this.dgPagos.Size = new System.Drawing.Size(643, 273);
             this.dgPagos.TabIndex = 6;
             // 
@@ -206,7 +207,7 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
             this.lblShock.Text = "Zona!Soft";
             // 
