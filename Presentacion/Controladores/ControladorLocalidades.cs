@@ -35,15 +35,22 @@ namespace ShockSoft.Presentacion
         /// <param name="pNombre">El nombre de la nueva localidad</param>
         public void AgregarLocalidad(string pNombre)
         {
-            Localidad localidad = new Localidad();
-            localidad.Nombre = pNombre;
-            using (var bDbContext = new ShockDbContext())
+            if (!(pNombre.Equals("")))
             {
-                using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                Localidad localidad = new Localidad();
+                localidad.Nombre = pNombre;
+                using (var bDbContext = new ShockDbContext())
                 {
-                    bUoW.RepositorioLocalidad.Agregar(localidad);
-                    bUoW.GuardarCambios();
+                    using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
+                    {
+                        bUoW.RepositorioLocalidad.Agregar(localidad);
+                        bUoW.GuardarCambios();
+                    }
                 }
+            }
+            else
+            {
+                throw new DatosFaltantesException("Nombre");
             }
         }
 

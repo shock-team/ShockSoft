@@ -40,7 +40,7 @@ namespace ShockSoft.Presentacion
         {
             bool lineaModificada = false;
 
-            //Recorre la tala buscando la línea que referencie al producto seleccionado.
+            //Recorre la tabla buscando la línea que referencie al producto seleccionado.
             foreach (DataGridViewRow fila in dglineasDeVenta.Rows)
             {
                 if (((string)(fila.Cells[0].Value)).Equals(pIdProducto))
