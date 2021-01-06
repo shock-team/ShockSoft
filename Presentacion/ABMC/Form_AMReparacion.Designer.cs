@@ -145,9 +145,8 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(118, 28);
+            this.lblShock.Size = new System.Drawing.Size(0, 28);
             this.lblShock.TabIndex = 8;
-            
             // 
             // btnTamano
             // 
@@ -726,6 +725,7 @@
             this.Controls.Add(this.panelControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AgregarReparacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reparación";
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();

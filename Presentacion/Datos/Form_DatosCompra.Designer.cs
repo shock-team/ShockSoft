@@ -267,9 +267,8 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(118, 28);
+            this.lblShock.Size = new System.Drawing.Size(0, 28);
             this.lblShock.TabIndex = 8;
-            
             // 
             // btnTamano
             // 
@@ -319,6 +318,7 @@
             this.Controls.Add(this.lblProveedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_DatosCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos Compra";
             ((System.ComponentModel.ISupportInitialize)(this.dgLineasDeCompra)).EndInit();
             this.panelControl.ResumeLayout(false);
