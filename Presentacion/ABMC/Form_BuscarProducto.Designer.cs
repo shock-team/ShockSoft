@@ -168,7 +168,7 @@
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 
@@ -235,6 +235,7 @@
             this.comboRubro.Location = new System.Drawing.Point(454, 63);
             this.comboRubro.Name = "comboRubro";
             this.comboRubro.Size = new System.Drawing.Size(295, 27);
+            this.comboRubro.Sorted = true;
             this.comboRubro.TabIndex = 31;
             this.comboRubro.SelectedIndexChanged += new System.EventHandler(this.ValorCambiado);
             // 
@@ -257,6 +258,7 @@
             this.comboMarca.Location = new System.Drawing.Point(81, 63);
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(295, 27);
+            this.comboMarca.Sorted = true;
             this.comboMarca.TabIndex = 29;
             this.comboMarca.SelectedIndexChanged += new System.EventHandler(this.ValorCambiado);
             // 

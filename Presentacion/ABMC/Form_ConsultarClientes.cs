@@ -15,6 +15,7 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
 
             controlador = ControladorClientes.ObtenerInstancia();
             cbConDeudas.Checked = true;

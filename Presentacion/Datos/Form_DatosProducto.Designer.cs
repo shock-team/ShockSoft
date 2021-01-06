@@ -65,8 +65,8 @@
             this.btnAltaBaja = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtComentarios = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.panel5.SuspendLayout();
@@ -130,7 +130,7 @@
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 
@@ -185,6 +185,7 @@
             // 
             // comboIVA
             // 
+            this.comboIVA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboIVA.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboIVA.FormattingEnabled = true;
             this.comboIVA.Location = new System.Drawing.Point(80, 10);
@@ -216,11 +217,13 @@
             // 
             // comboMarca
             // 
+            this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(120, 10);
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(300, 27);
+            this.comboMarca.Sorted = true;
             this.comboMarca.TabIndex = 18;
             // 
             // btnAgregarMarca
@@ -506,6 +509,15 @@
             this.panel10.Size = new System.Drawing.Size(840, 104);
             this.panel10.TabIndex = 43;
             // 
+            // txtComentarios
+            // 
+            this.txtComentarios.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
+            this.txtComentarios.Location = new System.Drawing.Point(130, 12);
+            this.txtComentarios.Multiline = true;
+            this.txtComentarios.Name = "txtComentarios";
+            this.txtComentarios.Size = new System.Drawing.Size(690, 79);
+            this.txtComentarios.TabIndex = 3;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -516,15 +528,6 @@
             this.label1.Size = new System.Drawing.Size(98, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Comentarios:";
-            // 
-            // txtComentarios
-            // 
-            this.txtComentarios.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
-            this.txtComentarios.Location = new System.Drawing.Point(130, 12);
-            this.txtComentarios.Multiline = true;
-            this.txtComentarios.Name = "txtComentarios";
-            this.txtComentarios.Size = new System.Drawing.Size(690, 79);
-            this.txtComentarios.TabIndex = 3;
             // 
             // Form_DatosProducto
             // 

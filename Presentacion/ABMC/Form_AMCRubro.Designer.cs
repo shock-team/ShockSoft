@@ -303,7 +303,7 @@ namespace ShockSoft.Presentacion.ABMC
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 

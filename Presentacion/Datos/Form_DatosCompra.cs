@@ -20,6 +20,7 @@ namespace ShockSoft.Presentacion.Datos
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
 
             txtIdCompra.Text = pIdCompra.ToString();
             Compra compra = controlador.ObtenerCompra(pIdCompra);

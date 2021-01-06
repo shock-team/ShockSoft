@@ -139,6 +139,7 @@
             this.comboLocalidad.Location = new System.Drawing.Point(90, 10);
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(250, 27);
+            this.comboLocalidad.Sorted = true;
             this.comboLocalidad.TabIndex = 18;
             // 
             // btnNuevaLocalidad
@@ -429,9 +430,9 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 

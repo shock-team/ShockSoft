@@ -119,10 +119,12 @@
             // 
             // comboProveedores
             // 
+            this.comboProveedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProveedores.FormattingEnabled = true;
             this.comboProveedores.Location = new System.Drawing.Point(127, 24);
             this.comboProveedores.Name = "comboProveedores";
             this.comboProveedores.Size = new System.Drawing.Size(590, 27);
+            this.comboProveedores.Sorted = true;
             this.comboProveedores.TabIndex = 2;
             this.comboProveedores.SelectedIndexChanged += new System.EventHandler(this.ValorCambiado);
             // 
@@ -226,7 +228,7 @@
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 

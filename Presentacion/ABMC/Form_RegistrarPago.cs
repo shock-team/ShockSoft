@@ -13,6 +13,7 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
 
             Cliente cliente = ControladorClientes.ObtenerInstancia().ObtenerCliente(pIdCliente);
             txtNombreYApellido.Text = cliente.Apellido + ", " + cliente.Nombre;

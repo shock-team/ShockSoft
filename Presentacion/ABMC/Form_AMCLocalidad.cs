@@ -19,6 +19,8 @@ namespace ShockSoft.Presentacion.ABMC
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
+
             controlador = ControladorLocalidades.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;

@@ -98,6 +98,7 @@ namespace ShockSoft.Persistencia.EntityFramework
                                      .Include("Ventas")
                                      .Include("Ventas.Lineas")
                                      .Include("Ventas.MetodoPago")
+                                     .Include("Localidad")
                            where c.IdCliente == pIdCliente
                            select c);
             return clientes.First();

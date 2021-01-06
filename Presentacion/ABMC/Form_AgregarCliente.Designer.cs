@@ -255,6 +255,7 @@
             this.comboLocalidad.Location = new System.Drawing.Point(107, 10);
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(250, 27);
+            this.comboLocalidad.Sorted = true;
             this.comboLocalidad.TabIndex = 18;
             // 
             // panelControl
@@ -306,7 +307,7 @@
             this.lblShock.Name = "lblShock";
             this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 

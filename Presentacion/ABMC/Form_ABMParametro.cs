@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Configuration;
 
 namespace ShockSoft.Presentacion
 {
@@ -20,6 +21,8 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
+
             controlador = ControladorParametros.ObtenerInstancia();
             btnAnterior.Enabled = false;
             btnAnterior.Visible = false;

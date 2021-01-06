@@ -11,6 +11,7 @@ namespace ShockSoft.Presentacion
     public partial class Form_DatosCliente : Form
     {
         ControladorClientes controlador = ControladorClientes.ObtenerInstancia();
+        Cliente _cliente;
         string initDNI;
         string initCUIT;
 
@@ -18,19 +19,20 @@ namespace ShockSoft.Presentacion
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
 
-            Cliente cliente = controlador.ObtenerCliente(idCliente);
+            _cliente = controlador.ObtenerCliente(idCliente);
             txtId.Text = idCliente.ToString();
-            txtDNI.Text = cliente.DNI;
-            initDNI = cliente.DNI;
-            txtCUIT.Text = cliente.CUIT;
-            initCUIT = cliente.CUIT;
-            txtNombre.Text = cliente.Nombre;
-            txtApellido.Text = cliente.Apellido;
-            txtTelefono.Text = cliente.Telefono;
-            txtDireccion.Text = cliente.Direccion;
+            txtDNI.Text = _cliente.DNI;
+            initDNI = _cliente.DNI;
+            txtCUIT.Text = _cliente.CUIT;
+            initCUIT = _cliente.CUIT;
+            txtNombre.Text = _cliente.Nombre;
+            txtApellido.Text = _cliente.Apellido;
+            txtTelefono.Text = _cliente.Telefono;
+            txtDireccion.Text = _cliente.Direccion;
             ActualizarComboBox();
-            txtSaldo.Text = String.Format("{0:C2}",cliente.ObtenerSaldo());
+            txtSaldo.Text = String.Format("{0:C2}",_cliente.ObtenerSaldo());
         }
 
 
@@ -118,16 +120,19 @@ namespace ShockSoft.Presentacion
             comboLocalidad.Items.Clear();
             foreach (Localidad localidad in ControladorLocalidades.ObtenerInstancia().ListarLocalidades())
             {
-                Cliente cliente = controlador.ObtenerCliente(int.Parse(txtId.Text));
                 comboLocalidad.Items.Add(localidad);
-                if (localidad.IdLocalidad == cliente.IdLocalidad)
+            }
+
+            comboLocalidad.ValueMember = "IdLocalidad";
+            comboLocalidad.DisplayMember = "Nombre";
+
+            foreach (Localidad localidad in comboLocalidad.Items)
+            {
+                if (localidad.IdLocalidad == _cliente.IdLocalidad)
                 {
                     comboLocalidad.SelectedItem = localidad;
                 }
             }
-            comboLocalidad.ValueMember = "IdLocalidad";
-            comboLocalidad.DisplayMember = "Nombre";
-            comboLocalidad.SelectedIndex = comboLocalidad.Items.Count - 1;
         }
 
         private void BtnHistorialDePagos_Click(object sender, EventArgs e)

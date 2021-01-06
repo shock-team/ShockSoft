@@ -145,9 +145,9 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 
@@ -441,6 +441,7 @@
             this.comboRubro.Location = new System.Drawing.Point(111, 83);
             this.comboRubro.Name = "comboRubro";
             this.comboRubro.Size = new System.Drawing.Size(213, 27);
+            this.comboRubro.Sorted = true;
             this.comboRubro.TabIndex = 48;
             // 
             // comboMarca
@@ -450,6 +451,7 @@
             this.comboMarca.Location = new System.Drawing.Point(111, 50);
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(213, 27);
+            this.comboMarca.Sorted = true;
             this.comboMarca.TabIndex = 47;
             // 
             // cbIncluyeCables
@@ -578,6 +580,7 @@
             this.comboMetodoDePago.Location = new System.Drawing.Point(828, 146);
             this.comboMetodoDePago.Name = "comboMetodoDePago";
             this.comboMetodoDePago.Size = new System.Drawing.Size(253, 27);
+            this.comboMetodoDePago.Sorted = true;
             this.comboMetodoDePago.TabIndex = 34;
             this.comboMetodoDePago.SelectedIndexChanged += new System.EventHandler(this.PreciosCambiados);
             // 

@@ -108,9 +108,9 @@
             this.lblShock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblShock.Location = new System.Drawing.Point(40, 9);
             this.lblShock.Name = "lblShock";
-            this.lblShock.Size = new System.Drawing.Size(129, 28);
+            this.lblShock.Size = new System.Drawing.Size(118, 28);
             this.lblShock.TabIndex = 8;
-            this.lblShock.Text = "Zona!Soft";
+            
             // 
             // btnTamano
             // 
@@ -165,6 +165,7 @@
             // 
             // comboIVA
             // 
+            this.comboIVA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboIVA.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboIVA.FormattingEnabled = true;
             this.comboIVA.Location = new System.Drawing.Point(130, 10);
@@ -196,11 +197,13 @@
             // 
             // comboMarca
             // 
+            this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(130, 10);
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(390, 27);
+            this.comboMarca.Sorted = true;
             this.comboMarca.TabIndex = 18;
             // 
             // btnAgregarMarca
