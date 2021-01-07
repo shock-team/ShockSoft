@@ -40,6 +40,8 @@ namespace ShockSoft.Persistencia.EntityFramework
                                      .Include("Ventas")
                                      .Include("Ventas.Lineas")
                                      .Include("Ventas.MetodoPago")
+                                     .Include("Reparaciones")
+                                     .Include("Reparaciones.LineasReparacion")
                                      where (string.IsNullOrEmpty(pNombre) || c.Nombre.ToUpper().Contains(pNombre.ToUpper())) &&
                                      (string.IsNullOrEmpty(pApellido) || c.Apellido.ToUpper().Contains(pApellido.ToUpper()))
                                      select c);
