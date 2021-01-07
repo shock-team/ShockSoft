@@ -161,13 +161,14 @@ namespace ShockSoft.Presentacion
             }
 
             int idReparacion;
+            int idMetodoPago = ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago;
             if (txtIdReparacion.Text.Equals("0"))
             {
                 idReparacion = controlador.AgregarReparacion(txtProblema.Text, txtSolucion.Text, dtpFechaIngreso.Value, fechaReparacion,
                                                              fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
                                                              txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
                                                              ((Marca)comboMarca.SelectedItem).IdMarca, cbEntregado.Checked,
-                                                             ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago, txtCostoTrabajo.Text);
+                                                             idMetodoPago, txtCostoTrabajo.Text);
                 MessageBox.Show("La reparación se ha registrado exitosamente", "Éxito");
             }
             else
@@ -177,10 +178,10 @@ namespace ShockSoft.Presentacion
                                                              fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
                                                              txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
                                                              ((Marca)comboMarca.SelectedItem).IdMarca, cbEntregado.Checked,
-                                                             ((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago, txtCostoTrabajo.Text, idReparacion);
+                                                             idMetodoPago, txtCostoTrabajo.Text, idReparacion);
                 MessageBox.Show("La reparación se ha modificado exitosamente", "Éxito");
             }
-            controlador.GenerarLineasDeReparacion(dgLineasDeReparacion.Rows, idReparacion);
+            controlador.GenerarLineasDeReparacion(dgLineasDeReparacion.Rows, idReparacion, idMetodoPago);
             this.Close();
         }
 

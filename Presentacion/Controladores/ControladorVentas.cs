@@ -85,19 +85,23 @@ namespace ShockSoft.Presentacion
             return listaDeVentas;
         }
 
+
         /// <summary>
         /// Genera una lista de instancias de la clase LineaVenta a partir de los datos conocidos
         /// por la vista.
         /// </summary>
         /// <param name="pFilas">Las filas de la tabla de la vista</param>
+        /// <param name="pIdVenta">El ID de la venta.</param>
+        /// <param name="pIdMetodoPago">El ID del método de pago de la venta.</param>
         /// <returns></returns>
-        public List<LineaVenta> GenerarLineasDeVenta(DataGridViewRowCollection pFilas, int pIdVenta)
+        public List<LineaVenta> GenerarLineasDeVenta(DataGridViewRowCollection pFilas, int pIdVenta, int pIdMetodoPago)
         {
             List<LineaVenta> lineasDeVenta = new List<LineaVenta>();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
+                    MetodoPago metodoPago = bUoW.RepositorioMetodoPago.Obtener(pIdMetodoPago);
                     for (int i = 0; i < pFilas.Count; i++)
                     {
                         if (pFilas[i].Cells[0].Value != null)
@@ -105,10 +109,13 @@ namespace ShockSoft.Presentacion
                             LineaVenta lineaDeVenta = new LineaVenta();
                             lineaDeVenta.IdProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
                             lineaDeVenta.Cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
-                            Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pFilas[i].Cells[0].Value.ToString()));
+
+                            Producto producto = bUoW.RepositorioProducto.ObtenerProducto(int.Parse(pFilas[i].Cells[0].Value.ToString()));
                             producto.Cantidad -= lineaDeVenta.Cantidad;
                             lineaDeVenta.Producto = producto;
-                            lineaDeVenta.PrecioActual = producto.PrecioBaseDolar;
+                            lineaDeVenta.PrecioActual = producto.ObtenerPrecioDeVenta()
+                                                        * bUoW.RepositorioParametro.ObtenerPrecioDolar().Valor
+                                                        * metodoPago.MultiplicadorInteres;
                             lineaDeVenta.IdVenta = pIdVenta;
                             bUoW.RepositorioLineasDeVentas.Agregar(lineaDeVenta);
                         }

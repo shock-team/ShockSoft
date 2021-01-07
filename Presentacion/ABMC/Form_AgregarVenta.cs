@@ -100,8 +100,9 @@ namespace ShockSoft.Presentacion
         {
             try
             {
-                int idVenta = controlador.AgregarVenta(int.Parse(txtId.Text), ((MetodoPago)comboMetodoPago.SelectedItem).IdMetodoPago, dtpFechaVenta.Value);
-                controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows, idVenta);
+                int idMetodoPago = ((MetodoPago)comboMetodoPago.SelectedItem).IdMetodoPago;
+                int idVenta = controlador.AgregarVenta(int.Parse(txtId.Text), idMetodoPago, dtpFechaVenta.Value);
+                controlador.GenerarLineasDeVenta(dglineasDeVenta.Rows, idVenta, idMetodoPago);
                 MessageBox.Show("La venta se ha registrado exitosamente", "Éxito");
             }
             catch (Exception ex)

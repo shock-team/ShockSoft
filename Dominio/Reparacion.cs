@@ -38,7 +38,7 @@ namespace ShockSoft.Dominio
             {
                 total += linea.PrecioActual;
             }
-            return total * MetodoPago.MultiplicadorInteres;
+            return total;
         }
 
     }
