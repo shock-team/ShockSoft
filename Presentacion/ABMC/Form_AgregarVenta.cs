@@ -165,7 +165,9 @@ namespace ShockSoft.Presentacion
                     total += (double)fila.Cells[4].Value;
                 }
             }
-            txtTotal.Text = (total*metodoDePago.MultiplicadorInteres).ToString();
+            string totalStr = (total *metodoDePago.MultiplicadorInteres).ToString();
+            string totalText = FormsHelper.TextToCurrency(totalStr);
+            txtTotal.Text = totalText;
         }
 
         private void BtnAgregarMetodo_Click(object sender, EventArgs e)

@@ -17,7 +17,9 @@ namespace ShockSoft.Presentacion
 
         public static string CurrencyToText(string pCurrency)
         {
-            return pCurrency.Substring(0, pCurrency.Length - 2);
+            string aux = pCurrency.Replace(" ", "");
+            string text = aux.Replace("$", "");
+            return text;
         }
 
         public static string BoolToText(bool pBoolean)

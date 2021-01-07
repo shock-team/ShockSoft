@@ -58,7 +58,8 @@ namespace ShockSoft.Presentacion
 
         private void NmCantidad_ValueChanged(object sender, EventArgs e)
         {
-            decimal precioUnitario = decimal.Parse(FormsHelper.CurrencyToText(txtPrecioUnitario.Text));
+            string text = FormsHelper.CurrencyToText(txtPrecioUnitario.Text);
+            decimal precioUnitario = decimal.Parse(text);
             decimal subtotal = nmCantidad.Value * precioUnitario;
             txtSubtotal.Text = FormsHelper.TextToCurrency(subtotal.ToString());
         }
