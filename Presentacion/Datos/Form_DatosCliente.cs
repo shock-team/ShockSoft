@@ -11,6 +11,7 @@ namespace ShockSoft.Presentacion
     public partial class Form_DatosCliente : Form
     {
         ControladorClientes controlador = ControladorClientes.ObtenerInstancia();
+        
         Cliente _cliente;
         string initDNI;
         string initCUIT;
@@ -20,6 +21,7 @@ namespace ShockSoft.Presentacion
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
+            controlador.OnPagoRegistradoEvent += Controlador_OnPagoRegistradoEvent;
 
             _cliente = controlador.ObtenerCliente(idCliente);
             txtId.Text = idCliente.ToString();
@@ -35,6 +37,11 @@ namespace ShockSoft.Presentacion
             txtSaldo.Text = String.Format("{0:C2}",_cliente.ObtenerSaldo());
         }
 
+        private void Controlador_OnPagoRegistradoEvent(object sender, EventArgs e)
+        {
+            _cliente = controlador.ObtenerCliente(_cliente.IdCliente);
+            txtSaldo.Text = String.Format("{0:C2}", _cliente.ObtenerSaldo());
+        }
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {

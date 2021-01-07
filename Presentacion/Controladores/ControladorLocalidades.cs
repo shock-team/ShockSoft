@@ -35,7 +35,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pNombre">El nombre de la nueva localidad</param>
         public void AgregarLocalidad(string pNombre)
         {
-            if (!(pNombre.Equals("")))
+            if (!string.IsNullOrWhiteSpace(pNombre))
             {
                 Localidad localidad = new Localidad();
                 localidad.Nombre = pNombre;

@@ -30,7 +30,6 @@ namespace ShockSoft.Presentacion
 
             ActualizarTabla();
             CambiarColor();
-
         }
 
         public void CambiarColor()
