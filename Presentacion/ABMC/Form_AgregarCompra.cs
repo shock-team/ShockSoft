@@ -103,14 +103,14 @@ namespace ShockSoft.Presentacion.ABMC
         {
             try
             {
+                float precioDolar = float.Parse(txtDolarProveedor.Text);
                 int idCompra = controlador.AgregarCompra(
                     ((Proveedor)comboProveedores.SelectedItem).IdProveedor, 
-                    dtpFecha.Value,
-                    float.Parse(txtDolarProveedor.Text),
+                    dtpFecha.Value, precioDolar,
                     float.Parse( FormsHelper.CurrencyToText(txtTotal.Text) )
                     );
 
-                controlador.GenerarLineasDeCompra(dgLineasDeCompra.Rows, idCompra);
+                controlador.GenerarLineasDeCompra(dgLineasDeCompra.Rows, idCompra, precioDolar);
                 MessageBox.Show("La compra se ha registrado exitosamente", "Éxito");
             }
             catch (Exception ex)

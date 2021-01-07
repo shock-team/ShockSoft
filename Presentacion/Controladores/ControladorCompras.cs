@@ -86,10 +86,9 @@ namespace ShockSoft.Presentacion.Controladores
         /// <param name="pFilas">Las filas de la tabla de la vista.</param>
         /// <param name="pIdCompra">El ID de la compra asociada a las líneas.</param>
         /// <returns></returns>
-        public List<LineaCompra> GenerarLineasDeCompra(DataGridViewRowCollection pFilas, int pIdCompra)
+        public List<LineaCompra> GenerarLineasDeCompra(DataGridViewRowCollection pFilas, int pIdCompra, float pPrecioDolar)
         {
             List<LineaCompra> lineasDeCompra = new List<LineaCompra>();
-            float precioDolar = ControladorParametros.ObtenerInstancia().ObtenerPrecioDolar();
             using (var bDbContext = new ShockDbContext())
             {
                 using (UnitOfWork bUoW = new UnitOfWork(bDbContext))
@@ -101,11 +100,14 @@ namespace ShockSoft.Presentacion.Controladores
                             LineaCompra lineaDeCompra = new LineaCompra();
                             lineaDeCompra.IdProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
                             lineaDeCompra.Cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
+
                             Producto producto = bUoW.RepositorioProducto.Obtener(int.Parse(pFilas[i].Cells[0].Value.ToString()));
                             producto.Cantidad += lineaDeCompra.Cantidad;
+
                             lineaDeCompra.Producto = producto;
-                            lineaDeCompra.PrecioActual = producto.PrecioBaseDolar * precioDolar;
+                            lineaDeCompra.PrecioActual = producto.PrecioBaseDolar * pPrecioDolar;
                             lineaDeCompra.IdCompra = pIdCompra;
+
                             bUoW.RepositorioLineasDeCompras.Agregar(lineaDeCompra);
                         }
                     }
