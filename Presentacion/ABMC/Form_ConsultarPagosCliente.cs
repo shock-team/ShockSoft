@@ -16,6 +16,7 @@ namespace ShockSoft.Presentacion.ABMC
     public partial class Form_ConsultarPagosCliente : Form
     {
         ControladorClientes controlador = ControladorClientes.ObtenerInstancia();
+        Cliente clienteActual;
 
         public Form_ConsultarPagosCliente(int pIdCliente)
         {
@@ -23,7 +24,10 @@ namespace ShockSoft.Presentacion.ABMC
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
 
-            Cliente clienteActual = controlador.ObtenerCliente(pIdCliente);
+            btnAnterior.Enabled = false;
+            btnAnterior.Visible = false;
+
+            clienteActual = controlador.ObtenerCliente(pIdCliente);
             txtIdCliente.Text = pIdCliente.ToString();
             txtNombreCliente.Text = FormsHelper.NameFormatter(clienteActual.Nombre, clienteActual.Apellido);
             txtSaldo.Text = clienteActual.ObtenerSaldo().ToString();
@@ -60,8 +64,17 @@ namespace ShockSoft.Presentacion.ABMC
         private void ActualizarTabla()
         {
             int CANTIDAD_POR_PAGINA = 15;
-            Cliente clienteActual = controlador.ObtenerCliente(int.Parse(txtIdCliente.Text));
+            dgPagos.Rows.Clear();
+
+            clienteActual = controlador.ObtenerCliente(int.Parse(txtIdCliente.Text));
             IEnumerable<Pago> listaDePagos = clienteActual.Pagos.OrderBy(x => x.Fecha).Skip(CANTIDAD_POR_PAGINA * (int.Parse(lblPaginaActual.Text) - 1)).Take(CANTIDAD_POR_PAGINA);
+
+            if (listaDePagos.Count() < (CANTIDAD_POR_PAGINA + 1))
+            {
+                btnSiguiente.Enabled = false;
+                btnSiguiente.Visible = false;
+            }
+
             foreach (Pago pago in listaDePagos)
             {
                 dgPagos.Rows.Add(pago.IdPago, pago.Fecha, pago.Descripcion, pago.Monto);

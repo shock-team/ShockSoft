@@ -93,7 +93,7 @@
             this.btnABMParametro.Name = "btnABMParametro";
             this.btnABMParametro.Size = new System.Drawing.Size(600, 44);
             this.btnABMParametro.TabIndex = 7;
-            this.btnABMParametro.Text = "Parametros";
+            this.btnABMParametro.Text = "Parámetros";
             this.btnABMParametro.UseVisualStyleBackColor = false;
             this.btnABMParametro.Click += new System.EventHandler(this.btnABMParametro_Click);
             // 

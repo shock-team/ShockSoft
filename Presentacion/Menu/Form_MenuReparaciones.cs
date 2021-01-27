@@ -20,17 +20,13 @@ namespace ShockSoft.Presentacion
         private void BtnAltaReparacion_Click(object sender, EventArgs e)
         {
             Form_AgregarReparacion form_AgregarReparacion = new Form_AgregarReparacion();
-            this.Hide();
-            form_AgregarReparacion.ShowDialog();
-            this.Show();
+            form_AgregarReparacion.Show();
         }
 
         private void btnConsultaReparacion_Click(object sender, EventArgs e)
         {
             Form_ConsultarReparaciones form_ConsultarReparaciones = new Form_ConsultarReparaciones();
-            this.Hide();
-            form_ConsultarReparaciones.ShowDialog();
-            this.Show();
+            form_ConsultarReparaciones.Show();
         }
     }
 }

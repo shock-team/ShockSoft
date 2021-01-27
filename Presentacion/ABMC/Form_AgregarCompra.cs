@@ -16,6 +16,7 @@ namespace ShockSoft.Presentacion.ABMC
     public partial class Form_AgregarCompra : Form, IAgregarLinea
     {
         ControladorCompras controlador = ControladorCompras.ObtenerInstancia();
+        float dolarProveedor;
         public Form_AgregarCompra()
         {
             InitializeComponent();
@@ -91,12 +92,20 @@ namespace ShockSoft.Presentacion.ABMC
                     listaDeIDs.Add(int.Parse(fila.Cells[0].Value.ToString()));
                 }
             }
-            Form_AgregarLineaDeVenta formAgregarLineaDeVenta = new Form_AgregarLineaDeVenta();
-            formAgregarLineaDeVenta.Owner = this;
-            formAgregarLineaDeVenta.listaDeIDs = listaDeIDs;
-            this.Hide();
-            formAgregarLineaDeVenta.ShowDialog();
-            this.Show();
+
+            if (float.TryParse(txtDolarProveedor.Text, out dolarProveedor))
+            {
+                Form_AgregarLineaDeVenta formAgregarLineaDeVenta = new Form_AgregarLineaDeVenta(dolarProveedor);
+                formAgregarLineaDeVenta.Owner = this;
+                formAgregarLineaDeVenta.listaDeIDs = listaDeIDs;
+                this.Hide();
+                formAgregarLineaDeVenta.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show($"{txtDolarProveedor.Text} no es valor correcto de dólar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnAceptar_Click(object sender, EventArgs e)
@@ -171,13 +180,22 @@ namespace ShockSoft.Presentacion.ABMC
                 }
             }
 
-            string precioDolarString = txtDolarProveedor.Text;
-            if (precioDolarString.IndexOf(",") == precioDolarString.Length - 1)
-            {
-                precioDolarString += "0";
-            }
+            //string precioDolarString = txtDolarProveedor.Text;
+            //if (precioDolarString.IndexOf(",") == precioDolarString.Length - 1)
+            //{
+            //    precioDolarString += "0";
+            //}
+
+            //if (float.TryParse(txtDolarProveedor.Text , out dolarProveedor))
+            //{
+            //    total *= dolarProveedor;
+            //}
+            //else
+            //{
+            //    MessageBox.Show($"{txtDolarProveedor.Text} no es valor correcto de dólar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtDolarProveedor.Clear();
+            //}
             
-            total *= float.Parse(precioDolarString);
 
             txtTotal.Text = FormsHelper.TextToCurrency(total);
         }

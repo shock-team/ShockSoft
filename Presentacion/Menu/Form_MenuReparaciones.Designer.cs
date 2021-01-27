@@ -73,7 +73,7 @@
             this.btnAltaReparacion.Name = "btnAltaReparacion";
             this.btnAltaReparacion.Size = new System.Drawing.Size(600, 45);
             this.btnAltaReparacion.TabIndex = 7;
-            this.btnAltaReparacion.Text = "Nueva Reparacion";
+            this.btnAltaReparacion.Text = "Nueva Reparación";
             this.btnAltaReparacion.UseVisualStyleBackColor = false;
             this.btnAltaReparacion.Click += new System.EventHandler(this.BtnAltaReparacion_Click);
             // 

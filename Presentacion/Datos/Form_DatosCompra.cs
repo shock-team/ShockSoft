@@ -29,13 +29,14 @@ namespace ShockSoft.Presentacion.Datos
             comboProveedores.SelectedIndex = 0;
             comboProveedores.DisplayMember = "Nombre";
 
-            txtTotal.Text = compra.ObtenerTotal().ToString();
             dtpFecha.Value = compra.Fecha;
 
             foreach (LineaCompra lineaCompra in compra.LineasCompra)
             {
                 dgLineasDeCompra.Rows.Add(lineaCompra.IdLineaCompra, lineaCompra.Producto.Descripcion, lineaCompra.PrecioActual, lineaCompra.Cantidad, lineaCompra.ObtenerSubtotal());
             }
+
+            txtTotal.Text = compra.ObtenerTotal().ToString("C2");
         }
 
         // Deslizar ventana desde el panel de control

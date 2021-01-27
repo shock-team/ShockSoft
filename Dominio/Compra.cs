@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShockSoft.Dominio
 {
@@ -21,10 +22,7 @@ namespace ShockSoft.Dominio
         {
             float total = 0;
 
-            foreach (var lineaCompra in this.LineasCompra)
-            {
-                total += lineaCompra.PrecioActual;
-            }
+            total = LineasCompra.Sum(x => x.ObtenerSubtotal());
 
             return total;
         }

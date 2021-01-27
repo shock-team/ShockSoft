@@ -20,14 +20,23 @@ namespace ShockSoft.Presentacion
         ControladorParametros parametros = ControladorParametros.ObtenerInstancia();
         float _precioDolar;
 
-        public Form_AgregarLineaDeVenta()
+        public Form_AgregarLineaDeVenta(float precioDolar = 0)
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
 
             txtPrecioUnitario.Text = FormsHelper.TextToCurrency("0");
-            _precioDolar = parametros.ObtenerPrecioDolar();
+
+            if (precioDolar == 0)
+            {
+                _precioDolar = parametros.ObtenerPrecioDolar();
+
+            }
+            else
+            {
+                _precioDolar = precioDolar;
+            }
         }
 
         public void CambiarColor()
@@ -174,7 +183,7 @@ namespace ShockSoft.Presentacion
 
             if (Owner is Form_AgregarCompra)
             {
-                txtPrecioUnitario.Text = FormsHelper.TextToCurrency(productoSeleccionado.ObtenerPrecioDeVenta());
+                txtPrecioUnitario.Text = FormsHelper.TextToCurrency(productoSeleccionado.ObtenerPrecioDeVenta() * _precioDolar);
             }
             else
             {
