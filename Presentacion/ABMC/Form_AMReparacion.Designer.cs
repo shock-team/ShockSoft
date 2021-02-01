@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelControl = new System.Windows.Forms.Panel();
@@ -77,15 +78,15 @@
             this.txtTotalInsumos = new System.Windows.Forms.TextBox();
             this.lblTotalInsumos = new System.Windows.Forms.Label();
             this.dgLineasDeReparacion = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtIdReparacion = new System.Windows.Forms.TextBox();
+            this.lblIdReparacion = new System.Windows.Forms.Label();
+            this.lblNuevaReparacion = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIdReparacion = new System.Windows.Forms.TextBox();
-            this.lblIdReparacion = new System.Windows.Forms.Label();
-            this.lblNuevaReparacion = new System.Windows.Forms.Label();
             this.panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShock)).BeginInit();
             this.gbLista.SuspendLayout();
@@ -204,7 +205,7 @@
             this.dtpFechaEntrega.Location = new System.Drawing.Point(175, 115);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 25);
-            this.dtpFechaEntrega.TabIndex = 36;
+            this.dtpFechaEntrega.TabIndex = 3;
             // 
             // lblFechaEntrega
             // 
@@ -221,7 +222,7 @@
             this.cbEntregado.Location = new System.Drawing.Point(395, 117);
             this.cbEntregado.Name = "cbEntregado";
             this.cbEntregado.Size = new System.Drawing.Size(148, 23);
-            this.cbEntregado.TabIndex = 34;
+            this.cbEntregado.TabIndex = 4;
             this.cbEntregado.Text = "Equipo entregado";
             this.cbEntregado.UseVisualStyleBackColor = true;
             this.cbEntregado.CheckedChanged += new System.EventHandler(this.CbEntregado_CheckedChanged);
@@ -241,7 +242,7 @@
             this.dtpFechaReparacion.Location = new System.Drawing.Point(175, 73);
             this.dtpFechaReparacion.Name = "dtpFechaReparacion";
             this.dtpFechaReparacion.Size = new System.Drawing.Size(200, 25);
-            this.dtpFechaReparacion.TabIndex = 13;
+            this.dtpFechaReparacion.TabIndex = 1;
             // 
             // cbReparado
             // 
@@ -249,7 +250,7 @@
             this.cbReparado.Location = new System.Drawing.Point(395, 75);
             this.cbReparado.Name = "cbReparado";
             this.cbReparado.Size = new System.Drawing.Size(141, 23);
-            this.cbReparado.TabIndex = 12;
+            this.cbReparado.TabIndex = 2;
             this.cbReparado.Text = "Equipo reparado";
             this.cbReparado.UseVisualStyleBackColor = true;
             this.cbReparado.CheckedChanged += new System.EventHandler(this.CbReparado_CheckedChanged);
@@ -259,7 +260,7 @@
             this.dtpFechaIngreso.Location = new System.Drawing.Point(175, 29);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(200, 25);
-            this.dtpFechaIngreso.TabIndex = 8;
+            this.dtpFechaIngreso.TabIndex = 0;
             // 
             // lblFechaIngreso
             // 
@@ -342,7 +343,7 @@
             this.txtClave.Location = new System.Drawing.Point(111, 19);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(213, 25);
-            this.txtClave.TabIndex = 15;
+            this.txtClave.TabIndex = 7;
             // 
             // lblClave
             // 
@@ -372,7 +373,7 @@
             this.txtProblema.Multiline = true;
             this.txtProblema.Name = "txtProblema";
             this.txtProblema.Size = new System.Drawing.Size(321, 104);
-            this.txtProblema.TabIndex = 44;
+            this.txtProblema.TabIndex = 5;
             // 
             // groupBox3
             // 
@@ -393,7 +394,7 @@
             this.txtSolucion.Multiline = true;
             this.txtSolucion.Name = "txtSolucion";
             this.txtSolucion.Size = new System.Drawing.Size(341, 104);
-            this.txtSolucion.TabIndex = 44;
+            this.txtSolucion.TabIndex = 6;
             // 
             // gbEquipo
             // 
@@ -441,7 +442,7 @@
             this.comboRubro.Name = "comboRubro";
             this.comboRubro.Size = new System.Drawing.Size(213, 27);
             this.comboRubro.Sorted = true;
-            this.comboRubro.TabIndex = 48;
+            this.comboRubro.TabIndex = 9;
             // 
             // comboMarca
             // 
@@ -451,7 +452,7 @@
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(213, 27);
             this.comboMarca.Sorted = true;
-            this.comboMarca.TabIndex = 47;
+            this.comboMarca.TabIndex = 8;
             // 
             // cbIncluyeCables
             // 
@@ -459,7 +460,7 @@
             this.cbIncluyeCables.Location = new System.Drawing.Point(204, 116);
             this.cbIncluyeCables.Name = "cbIncluyeCables";
             this.cbIncluyeCables.Size = new System.Drawing.Size(120, 23);
-            this.cbIncluyeCables.TabIndex = 48;
+            this.cbIncluyeCables.TabIndex = 11;
             this.cbIncluyeCables.Text = "Incluye cables";
             this.cbIncluyeCables.UseVisualStyleBackColor = true;
             // 
@@ -469,7 +470,7 @@
             this.cbIncluyeCargador.Location = new System.Drawing.Point(21, 116);
             this.cbIncluyeCargador.Name = "cbIncluyeCargador";
             this.cbIncluyeCargador.Size = new System.Drawing.Size(140, 23);
-            this.cbIncluyeCargador.TabIndex = 47;
+            this.cbIncluyeCargador.TabIndex = 10;
             this.cbIncluyeCargador.Text = "Incluye cargador";
             this.cbIncluyeCargador.UseVisualStyleBackColor = true;
             // 
@@ -506,7 +507,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(828, 267);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(253, 27);
-            this.btnAceptar.TabIndex = 40;
+            this.btnAceptar.TabIndex = 15;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
@@ -520,7 +521,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(20, 266);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(795, 28);
-            this.btnAgregarProducto.TabIndex = 39;
+            this.btnAgregarProducto.TabIndex = 14;
             this.btnAgregarProducto.Text = "Agregar producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
             this.btnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
@@ -531,10 +532,9 @@
             this.cbCobrado.Location = new System.Drawing.Point(828, 229);
             this.cbCobrado.Name = "cbCobrado";
             this.cbCobrado.Size = new System.Drawing.Size(87, 23);
-            this.cbCobrado.TabIndex = 30;
+            this.cbCobrado.TabIndex = 13;
             this.cbCobrado.Text = "Cobrado";
             this.cbCobrado.UseVisualStyleBackColor = true;
-            this.cbCobrado.CheckedChanged += new System.EventHandler(this.CbCobrado_CheckedChanged);
             // 
             // txtTotal
             // 
@@ -559,7 +559,7 @@
             this.txtCostoTrabajo.Location = new System.Drawing.Point(959, 68);
             this.txtCostoTrabajo.Name = "txtCostoTrabajo";
             this.txtCostoTrabajo.Size = new System.Drawing.Size(122, 25);
-            this.txtCostoTrabajo.TabIndex = 36;
+            this.txtCostoTrabajo.TabIndex = 12;
             this.txtCostoTrabajo.TextChanged += new System.EventHandler(this.PreciosCambiados);
             this.txtCostoTrabajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCostoTrabajo_KeyPress);
             // 
@@ -623,49 +623,20 @@
             this.PrecioUnitario,
             this.Cantidad,
             this.Subtotal});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgLineasDeReparacion.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgLineasDeReparacion.Location = new System.Drawing.Point(20, 24);
             this.dgLineasDeReparacion.Name = "dgLineasDeReparacion";
             this.dgLineasDeReparacion.ReadOnly = true;
             this.dgLineasDeReparacion.Size = new System.Drawing.Size(795, 251);
             this.dgLineasDeReparacion.TabIndex = 19;
             this.dgLineasDeReparacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLineasDeReparacion_CellDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 350;
-            // 
-            // PrecioUnitario
-            // 
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
-            this.PrecioUnitario.HeaderText = "Precio unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            this.PrecioUnitario.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Subtotal
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
-            this.Subtotal.ReadOnly = true;
             // 
             // panel1
             // 
@@ -708,6 +679,43 @@
             this.lblNuevaReparacion.Size = new System.Drawing.Size(129, 19);
             this.lblNuevaReparacion.TabIndex = 51;
             this.lblNuevaReparacion.Text = "Nueva reparación";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 350;
+            // 
+            // PrecioUnitario
+            // 
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
+            this.PrecioUnitario.HeaderText = "Precio unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
             // 
             // Form_AgregarReparacion
             // 

@@ -14,6 +14,11 @@ namespace ShockSoft.Presentacion
         {
             return String.Format("{0:C2}", pFloat);
         }
+        
+        public static string TextToCurrency(double pDouble)
+        {
+            return String.Format("{0:C2}", pDouble);
+        }
 
         public static string CurrencyToText(string pCurrency)
         {

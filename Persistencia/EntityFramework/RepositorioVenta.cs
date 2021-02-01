@@ -32,7 +32,7 @@ namespace ShockSoft.Persistencia.EntityFramework
             ventasFiltradas = ventasFiltradas.Include("Lineas");
             ventasFiltradas = ventasFiltradas.Include("Cliente");
             ventasFiltradas = ventasFiltradas.Include("MetodoPago");
-            return ventasFiltradas.OrderBy(x => x.Fecha).Skip(pDesde).Take(pCantidad);
+            return ventasFiltradas.OrderByDescending(x => x.Fecha).Skip(pDesde).Take(pCantidad);
         }
 
         /// <summary>

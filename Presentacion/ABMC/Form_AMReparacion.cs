@@ -76,7 +76,7 @@ namespace ShockSoft.Presentacion
                     total += (double)fila.Cells[4].Value;
                 }
             }
-            txtTotalInsumos.Text = total.ToString();
+            txtTotalInsumos.Text = FormsHelper.TextToCurrency(total);
         }
 
         // Deslizar ventana desde el panel de control
@@ -165,8 +165,8 @@ namespace ShockSoft.Presentacion
             if (txtIdReparacion.Text.Equals("0"))
             {
                 idReparacion = controlador.AgregarReparacion(txtProblema.Text, txtSolucion.Text, dtpFechaIngreso.Value, fechaReparacion,
-                                                             fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
-                                                             txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
+                                                             fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbCobrado.Checked, 
+                                                             cbIncluyeCables.Checked, txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
                                                              ((Marca)comboMarca.SelectedItem).IdMarca, cbEntregado.Checked,
                                                              idMetodoPago, txtCostoTrabajo.Text);
                 MessageBox.Show("La reparación se ha registrado exitosamente", "Éxito");
@@ -175,8 +175,8 @@ namespace ShockSoft.Presentacion
             {
                 idReparacion = int.Parse(txtIdReparacion.Text);
                 controlador.ModificarReparacion(txtProblema.Text, txtSolucion.Text, dtpFechaIngreso.Value, fechaReparacion,
-                                                             fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbIncluyeCables.Checked,
-                                                             txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
+                                                             fechaEntrega, txtClave.Text, cbIncluyeCargador.Checked, cbCobrado.Checked,
+                                                             cbIncluyeCables.Checked, txtIdCliente.Text, ((Rubro)comboRubro.SelectedItem).IdRubro,
                                                              ((Marca)comboMarca.SelectedItem).IdMarca, cbEntregado.Checked,
                                                              idMetodoPago, txtCostoTrabajo.Text, idReparacion);
                 MessageBox.Show("La reparación se ha modificado exitosamente", "Éxito");
@@ -219,28 +219,6 @@ namespace ShockSoft.Presentacion
             dtpFechaEntrega.Enabled = cbEntregado.Checked;
         }
 
-        private void CbCobrado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbCobrado.Checked)
-            {
-                //txtCostoTrabajo.Enabled = true;
-                if (txtCostoTrabajo.TextLength > 0)
-                {
-                    txtTotal.Text = (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text)).ToString();
-                }
-                else
-                {
-                    txtTotal.Text = (float.Parse(txtTotalInsumos.Text)).ToString();
-                }
-            }
-            else
-            {
-                //txtCostoTrabajo.Enabled = false;
-                txtCostoTrabajo.Text = "0";
-                txtTotal.Text = "0";
-            }
-        }
-
         private void TxtCostoTrabajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             char caracter = e.KeyChar;
@@ -261,7 +239,7 @@ namespace ShockSoft.Presentacion
             if ((txtTotalInsumos.TextLength > 0) && (txtCostoTrabajo.TextLength > 0))
             {
                 float multInteres = (ControladorMetodosPago.ObtenerInstancia().ObtenerMetodoDePago(((MetodoPago)comboMetodoDePago.SelectedItem).IdMetodoPago).MultiplicadorInteres);
-                float subtotal = (float.Parse(txtTotalInsumos.Text) + float.Parse(txtCostoTrabajo.Text));
+                float subtotal = (float.Parse(FormsHelper.CurrencyToText(txtTotalInsumos.Text)) + float.Parse(txtCostoTrabajo.Text));
                 txtTotal.Text = FormsHelper.TextToCurrency(multInteres * subtotal);
             }
         }
@@ -316,11 +294,7 @@ namespace ShockSoft.Presentacion
 
                 comboMetodoDePago.SelectedItem = reparacionActual.MetodoPago;
                 txtCostoTrabajo.Text = reparacionActual.Precio.ToString();
-                if (reparacionActual.Precio > 0)
-                {
-                    cbCobrado.Checked = true;
-                }
-                txtTotal.Text = reparacionActual.getPrecioTotal().ToString();
+                txtTotal.Text = FormsHelper.TextToCurrency(reparacionActual.getPrecioTotal());
             }
         }
 

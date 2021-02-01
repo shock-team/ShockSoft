@@ -47,7 +47,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pEntregado">Si el equipo fue entregado o no</param>
         /// <param name="pMetodoPago">El método de pago seleccionado para la reparación</param>
         /// <param name="pPrecio">El precio del trabajo de reparación</param>
-        public int AgregarReparacion(string pProblema, string pSolucion, DateTime pFechaIngreso, DateTime pFechaReparacion, DateTime pFechaEntrega, string pContraseña, bool pCargador, bool pCables, string pCliente, int pTipoEquipo, int pMarcaEquipo, bool pEntregado, int pMetodoPago, string pPrecio)
+        public int AgregarReparacion(string pProblema, string pSolucion, DateTime pFechaIngreso, DateTime pFechaReparacion, DateTime pFechaEntrega, string pContraseña, bool pCargador, bool pCobrado, bool pCables, string pCliente, int pTipoEquipo, int pMarcaEquipo, bool pEntregado, int pMetodoPago, string pPrecio)
         {
             Reparacion reparacion = new Reparacion();
 
@@ -62,6 +62,7 @@ namespace ShockSoft.Presentacion
             reparacion.Cargador = pCargador;
             reparacion.Cables = pCables;
             reparacion.Entregado = pEntregado;
+            reparacion.Cobrado = pCobrado;
 
             reparacion.LineasReparacion = new List<LineaReparacion>();
             reparacion.Precio = float.Parse(pPrecio);
@@ -134,7 +135,7 @@ namespace ShockSoft.Presentacion
         /// <param name="pMetodoPago">El método de pago seleccionado para la reparación</param>
         /// <param name="pPrecio">El precio del trabajo de reparación</param>
         /// <param name="pIdReparacion">El ID de la reparación a modificar</param>
-        public void ModificarReparacion(string pProblema, string pSolucion, DateTime pFechaIngreso, DateTime pFechaReparacion, DateTime pFechaEntrega, string pContraseña, bool pCargador, bool pCables, string pCliente, int pRubro, int pMarcaEquipo, bool pEntregado, int pMetodoPago, string pPrecio, int pIdReparacion)
+        public void ModificarReparacion(string pProblema, string pSolucion, DateTime pFechaIngreso, DateTime pFechaReparacion, DateTime pFechaEntrega, string pContraseña, bool pCargador, bool pCobrado, bool pCables, string pCliente, int pRubro, int pMarcaEquipo, bool pEntregado, int pMetodoPago, string pPrecio, int pIdReparacion)
         {
             using (var bDbContext = new ShockDbContext())
             {
@@ -149,6 +150,7 @@ namespace ShockSoft.Presentacion
                     reparacion.Cargador = pCargador;
                     reparacion.Cables = pCables;
                     reparacion.Entregado = pEntregado;
+                    reparacion.Cobrado = pCobrado;
 
                     reparacion.FechaIngreso = pFechaIngreso;
                     reparacion.FechaReparacion = pFechaReparacion;
@@ -222,7 +224,7 @@ namespace ShockSoft.Presentacion
                         if (pFilas[i].Cells[0].Value != null)
                         {
                             idProducto = int.Parse(pFilas[i].Cells[0].Value.ToString());
-                            Producto producto = bUoW.RepositorioProducto.Obtener(idProducto);
+                            Producto producto = bUoW.RepositorioProducto.ObtenerProducto(idProducto);
                             int cantidad = int.Parse(pFilas[i].Cells[3].Value.ToString());
 
                             //Busca si la reparación ya posee una línea con ese producto.

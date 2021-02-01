@@ -188,13 +188,13 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
             this.lblCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCliente.Location = new System.Drawing.Point(8, 12);
+            this.lblCliente.Location = new System.Drawing.Point(385, 13);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(59, 19);
+            this.lblCliente.Size = new System.Drawing.Size(61, 19);
             this.lblCliente.TabIndex = 1;
-            this.lblCliente.Text = "Cliente:";
+            this.lblCliente.Text = "Cliente";
             // 
             // txtNombreCliente
             // 
@@ -277,7 +277,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotal.Location = new System.Drawing.Point(12, 55);
+            this.lblTotal.Location = new System.Drawing.Point(95, 52);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(47, 19);
             this.lblTotal.TabIndex = 28;
@@ -287,7 +287,7 @@
             // 
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(71, 53);
+            this.txtTotal.Location = new System.Drawing.Point(168, 49);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(180, 25);
