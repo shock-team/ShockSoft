@@ -8,18 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Squirrel;
 
 namespace ShockSoft.Presentacion
 {
     public partial class Form_MenuPrincipal : Form
     {
+        private string localPath = @"C:\ZonaSoft\Releases";
+
         public Form_MenuPrincipal()
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
+
+            CheckForUpdates();
         }
 
+        async void CheckForUpdates()
+        {
+            using (var manager = new UpdateManager(localPath))
+            {
+                await manager.UpdateApp();
+            }
+        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
