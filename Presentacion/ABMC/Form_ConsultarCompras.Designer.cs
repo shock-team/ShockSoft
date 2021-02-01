@@ -1,4 +1,4 @@
-﻿namespace ShockSoft.Presentacion.ABMC
+﻿namespace ZonaSoft.Presentacion.ABMC
 {
     partial class Form_ConsultarCompras
     {
@@ -201,7 +201,7 @@
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::ShockSoft.Properties.Resources.Shock_img02;
+            this.btnMinimizar.Image = global::ZonaSoft.Properties.Resources.Shock_img02;
             this.btnMinimizar.Location = new System.Drawing.Point(639, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 45);
@@ -211,7 +211,7 @@
             // 
             // picShock
             // 
-            this.picShock.Image = global::ShockSoft.Properties.Resources.LOGO_ZONA;
+            this.picShock.Image = global::ZonaSoft.Properties.Resources.LOGO_ZONA;
             this.picShock.Location = new System.Drawing.Point(3, 3);
             this.picShock.Name = "picShock";
             this.picShock.Size = new System.Drawing.Size(40, 40);
@@ -237,7 +237,7 @@
             this.btnTamano.FlatAppearance.BorderSize = 0;
             this.btnTamano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnTamano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTamano.Image = global::ShockSoft.Properties.Resources.Shock_img03;
+            this.btnTamano.Image = global::ZonaSoft.Properties.Resources.Shock_img03;
             this.btnTamano.Location = new System.Drawing.Point(684, 0);
             this.btnTamano.Name = "btnTamano";
             this.btnTamano.Size = new System.Drawing.Size(45, 45);
@@ -252,7 +252,7 @@
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::ShockSoft.Properties.Resources.Shock_img04;
+            this.btnCerrar.Image = global::ZonaSoft.Properties.Resources.Shock_img04;
             this.btnCerrar.Location = new System.Drawing.Point(729, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 45);

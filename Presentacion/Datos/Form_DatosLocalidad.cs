@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShockSoft.Excepciones;
-using ShockSoft.Dominio;
+using ZonaSoft.Excepciones;
+using ZonaSoft.Dominio;
 using System.Runtime.InteropServices;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_DatosLocalidad : Form
     {

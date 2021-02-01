@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShockSoft.Excepciones
+namespace ZonaSoft.Excepciones
 {
     [Serializable]
     class DatosInvalidosException : Exception

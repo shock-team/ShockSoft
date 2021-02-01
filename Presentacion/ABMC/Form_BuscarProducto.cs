@@ -1,11 +1,11 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_BuscarProducto : Form
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_MenuReparaciones : Form
     {

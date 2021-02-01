@@ -1,12 +1,12 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using ShockSoft.Excepciones;
-using ShockSoft.Presentacion.ABMC;
+using ZonaSoft.Excepciones;
+using ZonaSoft.Presentacion.ABMC;
 using System;
 using System.Drawing;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_DatosCliente : Form
     {

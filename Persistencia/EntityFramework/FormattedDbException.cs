@@ -2,7 +2,7 @@
 using System.Data.Entity.Validation;
 using System.Text;
 
-namespace ShockSoft.Persistencia.EntityFramework
+namespace ZonaSoft.Persistencia.EntityFramework
 {
     class FormattedDbException : Exception
     {

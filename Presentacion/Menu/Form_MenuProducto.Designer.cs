@@ -1,4 +1,4 @@
-﻿namespace ShockSoft.Presentacion
+﻿namespace ZonaSoft.Presentacion
 {
     partial class Form_MenuProducto
     {

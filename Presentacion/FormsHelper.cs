@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public static class FormsHelper
     {

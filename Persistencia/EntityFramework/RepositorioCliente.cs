@@ -1,4 +1,4 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShockSoft.Persistencia.EntityFramework
+namespace ZonaSoft.Persistencia.EntityFramework
 {
     public class RepositorioCliente : Repositorio<Cliente, ShockDbContext>
     {

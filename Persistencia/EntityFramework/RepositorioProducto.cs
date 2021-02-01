@@ -1,9 +1,9 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System.Collections.Generic;
 using System.Linq;
 using System;
 
-namespace ShockSoft.Persistencia.EntityFramework
+namespace ZonaSoft.Persistencia.EntityFramework
 {
     public class RepositorioProducto : Repositorio<Producto, ShockDbContext>
     {

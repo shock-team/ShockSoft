@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShockSoft.Dominio
+namespace ZonaSoft.Dominio
 {
     public class LineaReparacion
     {

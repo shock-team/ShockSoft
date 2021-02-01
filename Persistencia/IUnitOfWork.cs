@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShockSoft.Persistencia
+namespace ZonaSoft.Persistencia
 {
     public interface IUnitOfWork : IDisposable
     {

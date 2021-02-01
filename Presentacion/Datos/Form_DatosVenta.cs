@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using ShockSoft.Dominio;
+using ZonaSoft.Dominio;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_DatosVenta : Form
     {

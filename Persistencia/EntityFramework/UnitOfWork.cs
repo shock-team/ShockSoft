@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShockSoft.Persistencia.EntityFramework
+namespace ZonaSoft.Persistencia.EntityFramework
 {
     public class UnitOfWork : IUnitOfWork
     {

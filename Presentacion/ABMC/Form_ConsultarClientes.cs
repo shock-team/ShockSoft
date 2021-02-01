@@ -1,11 +1,11 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_ConsultarClientes : Form
     {

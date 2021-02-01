@@ -1,9 +1,9 @@
 ﻿using MySql.Data.EntityFramework;
-using ShockSoft.Dominio;
+using ZonaSoft.Dominio;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 
-namespace ShockSoft.Persistencia.EntityFramework
+namespace ZonaSoft.Persistencia.EntityFramework
 {
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class ShockDbContext : DbContext

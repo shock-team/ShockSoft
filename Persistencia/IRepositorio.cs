@@ -1,4 +1,4 @@
-﻿namespace ShockSoft.Persistencia
+﻿namespace ZonaSoft.Persistencia
 {
     public interface IRepositorio<TEntity>
         where TEntity : class

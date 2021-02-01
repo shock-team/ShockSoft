@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShockSoft.Dominio
+namespace ZonaSoft.Dominio
 {
     public class Compra
     {

@@ -1,12 +1,12 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using ShockSoft.Excepciones;
+using ZonaSoft.Excepciones;
 using System.Drawing;
 using System.Collections.Generic;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_AgregarCliente : Form
     {

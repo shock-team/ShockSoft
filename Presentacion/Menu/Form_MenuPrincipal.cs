@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Squirrel;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_MenuPrincipal : Form
     {
@@ -22,7 +22,7 @@ namespace ShockSoft.Presentacion
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             lblShock.Text = $"{Properties.Settings.Default.AppName}: {this.Text}";
 
-            CheckForUpdates();
+            //CheckForUpdates();
         }
 
         async void CheckForUpdates()

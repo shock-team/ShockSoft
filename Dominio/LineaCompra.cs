@@ -1,4 +1,4 @@
-﻿namespace ShockSoft.Dominio
+﻿namespace ZonaSoft.Dominio
 {
     public class LineaCompra
     {

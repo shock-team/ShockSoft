@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShockSoft.Dominio
+namespace ZonaSoft.Dominio
 {
     public class Pago
     {

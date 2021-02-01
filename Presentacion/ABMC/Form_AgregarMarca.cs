@@ -1,4 +1,4 @@
-﻿using ShockSoft.Excepciones;
+﻿using ZonaSoft.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_AgregarMarca : Form
     {

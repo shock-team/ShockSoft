@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
-using ShockSoft.Presentacion;
+using ZonaSoft.Presentacion;
 
 
-namespace ShockSoft
+namespace ZonaSoft
 {
     static class Program
     {

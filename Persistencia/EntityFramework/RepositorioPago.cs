@@ -1,6 +1,6 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 
-namespace ShockSoft.Persistencia.EntityFramework
+namespace ZonaSoft.Persistencia.EntityFramework
 {
     public class RepositorioPago : Repositorio<Pago, ShockDbContext>
     {

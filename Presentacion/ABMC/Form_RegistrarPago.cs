@@ -1,11 +1,11 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using ShockSoft.Excepciones;
+using ZonaSoft.Excepciones;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_RegistrarPago : Form
     {

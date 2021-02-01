@@ -1,5 +1,5 @@
-﻿using ShockSoft.Dominio;
-using ShockSoft.Excepciones;
+﻿using ZonaSoft.Dominio;
+using ZonaSoft.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_ConsultarMarca : Form
     {

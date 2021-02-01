@@ -1,10 +1,10 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     public partial class Form_ModificarProducto : Form
     {

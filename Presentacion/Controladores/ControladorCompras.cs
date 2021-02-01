@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ShockSoft.Dominio;
-using ShockSoft.Persistencia.EntityFramework;
+using ZonaSoft.Dominio;
+using ZonaSoft.Persistencia.EntityFramework;
 using System.Windows.Forms;
 
-namespace ShockSoft.Presentacion.Controladores
+namespace ZonaSoft.Presentacion.Controladores
 {
     /// <summary>
     /// Esta clase se encarga de funcionar como intermediaria entre la

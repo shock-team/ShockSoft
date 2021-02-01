@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShockSoft.Dominio;
-using ShockSoft.Presentacion.Controladores;
-using ShockSoft.Presentacion.Datos;
+using ZonaSoft.Dominio;
+using ZonaSoft.Presentacion.Controladores;
+using ZonaSoft.Presentacion.Datos;
 using System.Runtime.InteropServices;
 
-namespace ShockSoft.Presentacion.ABMC
+namespace ZonaSoft.Presentacion.ABMC
 {
     public partial class Form_ConsultarCompras : Form, IBusquedaDeProductos
     {

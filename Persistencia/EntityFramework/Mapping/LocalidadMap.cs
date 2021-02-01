@@ -1,8 +1,8 @@
-﻿using ShockSoft.Dominio;
+﻿using ZonaSoft.Dominio;
 using System.Data.Entity.ModelConfiguration;
 
 
-namespace ShockSoft.Persistencia.EntityFramework.Mapping
+namespace ZonaSoft.Persistencia.EntityFramework.Mapping
 {
     class LocalidadMap : EntityTypeConfiguration<Localidad>
     {

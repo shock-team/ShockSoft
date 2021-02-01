@@ -1,10 +1,10 @@
-﻿using ShockSoft.Dominio;
-using ShockSoft.Excepciones;
-using ShockSoft.Persistencia.EntityFramework;
+﻿using ZonaSoft.Dominio;
+using ZonaSoft.Excepciones;
+using ZonaSoft.Persistencia.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     /// <summary>
     /// Esta clase se encarga de funcionar como intermediaria entre la

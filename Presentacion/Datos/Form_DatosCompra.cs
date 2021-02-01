@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShockSoft.Dominio;
-using ShockSoft.Presentacion.Controladores;
+using ZonaSoft.Dominio;
+using ZonaSoft.Presentacion.Controladores;
 using System.Runtime.InteropServices;
 
-namespace ShockSoft.Presentacion.Datos
+namespace ZonaSoft.Presentacion.Datos
 {
     public partial class Form_DatosCompra : Form
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace ShockSoft.Dominio
+namespace ZonaSoft.Dominio
 {
     public class Cliente
     {

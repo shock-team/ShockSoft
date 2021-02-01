@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShockSoft.Presentacion.Controladores;
-using ShockSoft.Presentacion;
-using ShockSoft.Dominio;
+using ZonaSoft.Presentacion.Controladores;
+using ZonaSoft.Presentacion;
+using ZonaSoft.Dominio;
 using System.Runtime.InteropServices;
 
-namespace ShockSoft.Presentacion.ABMC
+namespace ZonaSoft.Presentacion.ABMC
 {
     public partial class Form_ConsultarMetodoDePago : Form
     {

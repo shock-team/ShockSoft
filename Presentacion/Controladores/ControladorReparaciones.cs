@@ -1,11 +1,11 @@
-﻿using ShockSoft.Dominio;
-using ShockSoft.Persistencia.EntityFramework;
+﻿using ZonaSoft.Dominio;
+using ZonaSoft.Persistencia.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShockSoft.Presentacion
+namespace ZonaSoft.Presentacion
 {
     /// <summary>
     /// Esta clase se encarga de funcionar como intermediaria entre la
